@@ -1,0 +1,1067 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<!-- 2024-09-05 jue 22:33 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Apuntes Graficación</title>
+<meta name="author" content="likcos" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/readtheorg.css"/>
+<script type="text/javascript" src="src/lib/js/jquery.min.js"></script>
+<script type="text/javascript" src="src/lib/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="src/readtheorg_theme/js/readtheorg.js"></script>
+<style> #content{max-width:1800px;}</style>
+<style>pre.src {background-color: #303030; color: #e5e5e5;}</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Apuntes Graficación</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>&Iacute;ndice</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org84345ee">Manual de Instalación de Git</a>
+<ul>
+<li><a href="#org4db0648">Instalación en Windows</a></li>
+<li><a href="#org0e7310c">Instalación en macOS</a>
+<ul>
+<li><a href="#orgaf6a7e8">Método recomendado: usando Homebrew</a></li>
+<li><a href="#orgd7c4a5f">Método alternativo: paquete descargado</a></li>
+</ul>
+</li>
+<li><a href="#orgde53188">Instalación en Linux (Distribuciones basadas en Debian/Ubuntu)</a></li>
+<li><a href="#org45f2041">Configuración básica de Git</a></li>
+<li><a href="#org1e4a462">Actualización de Git</a></li>
+<li><a href="#org3824520">Configurar Llave SSH con GitHub</a>
+<ul>
+<li><a href="#org5e58894">1. Verificar si ya tienes una llave SSH</a></li>
+<li><a href="#org75a6b8e">2. Generar una nueva llave SSH</a></li>
+<li><a href="#org84e0693">3. Añadir la llave SSH al agente SSH</a></li>
+<li><a href="#org5974ad9">4. Copiar la llave SSH pública</a></li>
+<li><a href="#org00ab8ab">5. Añadir la llave SSH a GitHub</a></li>
+<li><a href="#org41c4247">6. Probar la conexión SSH con GitHub</a></li>
+<li><a href="#orgeaca08b">7. Usar la conexión SSH en repositorios de GitHub</a></li>
+</ul>
+</li>
+<li><a href="#orgff6243d">Configurar Llave SSH con GitHub en Windows</a>
+<ul>
+<li><a href="#org4d572bc">1. Abrir Git Bash</a></li>
+<li><a href="#orgabfd940">2. Verificar si ya tienes una llave SSH</a></li>
+<li><a href="#orgb66bd0e">3. Generar una nueva llave SSH</a></li>
+<li><a href="#org0bc2045">4. Añadir la llave SSH al agente SSH</a></li>
+<li><a href="#org9671256">5. Copiar la llave SSH pública</a></li>
+<li><a href="#org4988cef">6. Añadir la llave SSH a GitHub</a></li>
+<li><a href="#org4038065">7. Probar la conexión SSH con GitHub</a></li>
+<li><a href="#org0fa7619">8. Usar la conexión SSH en repositorios de GitHub</a></li>
+</ul>
+</li>
+<li><a href="#org2664a91">Manual de Git en Windows</a>
+<ul>
+<li><a href="#orgbd1d2c2">1. Instalar Git en Windows</a></li>
+<li><a href="#org8d9e67e">2. Configurar Git</a></li>
+<li><a href="#org60bc176">3. Clonar un repositorio</a></li>
+<li><a href="#org0bfd58f">4. Comandos básicos de Git</a></li>
+<li><a href="#org82ad762">5. Actualizar el repositorio local</a></li>
+<li><a href="#org89761b0">6. Crear y cambiar de ramas (branches)</a></li>
+<li><a href="#orgb11333b">7. Ver historial de commits</a></li>
+<li><a href="#orgdd4458e">8. Configurar una llave SSH</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgbef5c67">Manual de Instalación de Python en Windows</a>
+<ul>
+<li><a href="#orgc216259">Paso 1: Descarga de Python</a></li>
+<li><a href="#org291db04">Paso 2: Ejecutar el instalador</a></li>
+<li><a href="#orgfe3f82c">Paso 3: Verificación de la instalación</a></li>
+<li><a href="#org9f36cd0">Paso 4: Instalar pip y otros paquetes</a></li>
+<li><a href="#org1854811">Paso 5: Configuración del entorno de desarrollo</a></li>
+<li><a href="#org8513cc6">Paso 6: Actualización de Python (opcional)</a></li>
+</ul>
+</li>
+<li><a href="#orgd1bd9e9">Programación Avanzada</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org84345ee" class="outline-2">
+<h2 id="org84345ee">Manual de Instalación de Git</h2>
+<div class="outline-text-2" id="text-org84345ee">
+</div>
+<div id="outline-container-org4db0648" class="outline-3">
+<h3 id="org4db0648">Instalación en Windows</h3>
+<div class="outline-text-3" id="text-org4db0648">
+<ul class="org-ul">
+<li>Descarga el instalador desde [<a href="https://git-scm.com/">https://git-scm.com/</a>].</li>
+</ul>
+
+
+
+<ul class="org-ul">
+<li>Haz clic en el botón “Download for Windows”.
+<ul class="org-ul">
+<li>Ejecuta el archivo descargado (.exe).</li>
+
+<li>Configuración de las opciones recomendadas durante la instalación:
+<ul class="org-ul">
+<li>Seleccionar el editor por defecto (por ejemplo, Vim o Notepad++).</li>
+<li>Usar Git desde la línea de comandos y aplicaciones de terceros (opción recomendada).</li>
+<li>Opciones de formato de fin de línea: selecciona la opción predeterminada para Windows.</li>
+</ul></li>
+
+<li>Completa la instalación.</li>
+<li>Verifica la instalación abriendo Git Bash o Command Prompt y ejecutando:</li>
+</ul></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-bash">git --version
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0e7310c" class="outline-3">
+<h3 id="org0e7310c">Instalación en macOS</h3>
+<div class="outline-text-3" id="text-org0e7310c">
+</div>
+<div id="outline-container-orgaf6a7e8" class="outline-4">
+<h4 id="orgaf6a7e8">Método recomendado: usando Homebrew</h4>
+<div class="outline-text-4" id="text-orgaf6a7e8">
+<ul class="org-ul">
+<li>Si tienes Homebrew instalado, abre la terminal y ejecuta:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-bash">brew install git
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd7c4a5f" class="outline-4">
+<h4 id="orgd7c4a5f">Método alternativo: paquete descargado</h4>
+<div class="outline-text-4" id="text-orgd7c4a5f">
+<ul class="org-ul">
+<li>Descarga el instalador desde [<a href="https://git-scm.com/">https://git-scm.com/</a>].</li>
+<li>Ejecuta el paquete descargado (.dmg).</li>
+<li>Sigue las instrucciones de instalación.</li>
+
+<li><p>
+Verifica la instalación abriendo la terminal y ejecutando:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">     git --version
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgde53188" class="outline-3">
+<h3 id="orgde53188">Instalación en Linux (Distribuciones basadas en Debian/Ubuntu)</h3>
+<div class="outline-text-3" id="text-orgde53188">
+<ul class="org-ul">
+<li><p>
+Abre la terminal y ejecuta:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">     sudo apt update
+     sudo apt install git
+</pre>
+</div></li>
+
+<li><p>
+Verifica la instalación ejecutando:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">     git --version
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org45f2041" class="outline-3">
+<h3 id="org45f2041">Configuración básica de Git</h3>
+<div class="outline-text-3" id="text-org45f2041">
+<ul class="org-ul">
+<li><p>
+Configura tu nombre de usuario:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">     git config --global user.name <span style="color: #c3e88d;">"Tu Nombre"</span>
+</pre>
+</div></li>
+
+<li><p>
+Configura tu correo electrónico:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">     git config --global user.email <span style="color: #c3e88d;">"tuemail@ejemplo.com"</span>
+</pre>
+</div></li>
+
+<li><p>
+Verifica la configuración:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">     git config --list
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1e4a462" class="outline-3">
+<h3 id="org1e4a462">Actualización de Git</h3>
+<div class="outline-text-3" id="text-org1e4a462">
+<ul class="org-ul">
+<li><b>Windows</b>: Ejecuta el instalador más reciente desde el sitio oficial.</li>
+<li><p>
+<b>macOS</b>: Ejecuta:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">     brew upgrade git
+</pre>
+</div></li>
+<li><p>
+<b>Linux</b>: Ejecuta:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">     sudo apt update &amp;&amp; sudo apt upgrade git
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org3824520" class="outline-3">
+<h3 id="org3824520">Configurar Llave SSH con GitHub</h3>
+<div class="outline-text-3" id="text-org3824520">
+</div>
+<div id="outline-container-org5e58894" class="outline-4">
+<h4 id="org5e58894">1. Verificar si ya tienes una llave SSH</h4>
+<div class="outline-text-4" id="text-org5e58894">
+<ul class="org-ul">
+<li><p>
+Abre la terminal y ejecuta el siguiente comando para verificar si ya tienes llaves SSH generadas:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">     ls -al ~/.ssh
+</pre>
+</div></li>
+
+<li>Si ves archivos como `id<sub>rsa</sub>` o `id<sub>ed25519</sub>`, ya tienes llaves SSH. Si no, continúa con el siguiente paso.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org75a6b8e" class="outline-4">
+<h4 id="org75a6b8e">2. Generar una nueva llave SSH</h4>
+<div class="outline-text-4" id="text-org75a6b8e">
+<ul class="org-ul">
+<li><p>
+Si no tienes una llave SSH, genera una nueva con el siguiente comando (puedes cambiar `ed25519` por `rsa` si lo prefieres):
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">     ssh-keygen -t ed25519 -C <span style="color: #c3e88d;">"tuemail@ejemplo.com"</span>
+</pre>
+</div></li>
+
+<li>Cuando se te pregunte por la ubicación del archivo, presiona `Enter` para usar la ubicación predeterminada (`~/.ssh/id<sub>ed25519</sub>`).</li>
+<li>Puedes agregar una contraseña para proteger tu llave, pero también puedes dejarlo en blanco.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org84e0693" class="outline-4">
+<h4 id="org84e0693">3. Añadir la llave SSH al agente SSH</h4>
+<div class="outline-text-4" id="text-org84e0693">
+<ul class="org-ul">
+<li><p>
+Para añadir tu nueva llave SSH al agente, asegúrate de que esté en ejecución:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">     <span style="color: #c099ff;">eval</span> <span style="color: #c3e88d;">"$(ssh-agent -s)"</span>
+</pre>
+</div></li>
+
+<li><p>
+Añade la llave SSH al agente:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">     ssh-add ~/.ssh/id_ed25519
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5974ad9" class="outline-4">
+<h4 id="org5974ad9">4. Copiar la llave SSH pública</h4>
+<div class="outline-text-4" id="text-org5974ad9">
+<ul class="org-ul">
+<li><p>
+Copia el contenido de tu llave pública para añadirla a GitHub:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">     cat ~/.ssh/id_ed25519.pub
+</pre>
+</div></li>
+
+<li>Copia el texto que aparece en la terminal (comienza con `ssh-ed25519` o `ssh-rsa`).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org00ab8ab" class="outline-4">
+<h4 id="org00ab8ab">5. Añadir la llave SSH a GitHub</h4>
+<div class="outline-text-4" id="text-org00ab8ab">
+<ul class="org-ul">
+<li>Inicia sesión en tu cuenta de GitHub.</li>
+<li>Ve a la sección de <b>Settings</b> (Configuración).</li>
+<li>En el menú lateral izquierdo, selecciona <b><b>SSH and GPG keys</b></b>.</li>
+<li>Haz clic en <b>New SSH key</b>.</li>
+<li>Introduce un título para identificar la llave (por ejemplo, "Mi computadora personal") y pega la llave pública copiada en el campo correspondiente.</li>
+<li>Haz clic en <b>Add SSH key</b>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org41c4247" class="outline-4">
+<h4 id="org41c4247">6. Probar la conexión SSH con GitHub</h4>
+<div class="outline-text-4" id="text-org41c4247">
+<ul class="org-ul">
+<li><p>
+Para verificar que todo está configurado correctamente, ejecuta el siguiente comando:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">     ssh -T git@github.com
+</pre>
+</div></li>
+
+<li>Si es la primera vez que te conectas, verás una advertencia preguntando si deseas continuar. Escribe `yes`.</li>
+<li><p>
+Si la conexión es exitosa, verás un mensaje similar a:
+</p>
+<blockquote>
+<p>
+Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+</p>
+</blockquote></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgeaca08b" class="outline-4">
+<h4 id="orgeaca08b">7. Usar la conexión SSH en repositorios de GitHub</h4>
+<div class="outline-text-4" id="text-orgeaca08b">
+<ul class="org-ul">
+<li><p>
+Para clonar un repositorio usando SSH, utiliza la URL SSH del repositorio:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">     git clone git@github.com:usuario/repo.git
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgff6243d" class="outline-3">
+<h3 id="orgff6243d">Configurar Llave SSH con GitHub en Windows</h3>
+<div class="outline-text-3" id="text-orgff6243d">
+<ol class="org-ol">
+<li>Git Bash: En Windows, utilizas Git Bash como terminal para ejecutar los comandos, en lugar de la terminal estándar de Linux o macOS.</li>
+
+<li>Ruta de las llaves: En Git Bash, las rutas siguen el formato Unix (<i>c/Users/tu<sub>usuario</sub></i>.ssh/ en lugar de C:\Users\tu<sub>usuario\.ssh</sub>).</li>
+</ol>
+</div>
+
+
+
+<div id="outline-container-org4d572bc" class="outline-4">
+<h4 id="org4d572bc">1. Abrir Git Bash</h4>
+<div class="outline-text-4" id="text-org4d572bc">
+<ul class="org-ul">
+<li>Abre <b><b>Git Bash</b></b> (es la terminal que se instala junto con Git en Windows).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgabfd940" class="outline-4">
+<h4 id="orgabfd940">2. Verificar si ya tienes una llave SSH</h4>
+<div class="outline-text-4" id="text-orgabfd940">
+<ul class="org-ul">
+<li><p>
+En la terminal de Git Bash, ejecuta el siguiente comando para ver si ya tienes llaves SSH generadas:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">     ls -al ~/.ssh
+</pre>
+</div></li>
+
+<li>Si ves archivos como `id<sub>rsa</sub>` o `id<sub>ed25519</sub>`, ya tienes llaves SSH. Si no, continúa con el siguiente paso.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb66bd0e" class="outline-4">
+<h4 id="orgb66bd0e">3. Generar una nueva llave SSH</h4>
+<div class="outline-text-4" id="text-orgb66bd0e">
+<ul class="org-ul">
+<li><p>
+Si no tienes una llave SSH, genera una nueva con el siguiente comando:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">     ssh-keygen -t ed25519 -C <span style="color: #c3e88d;">"tuemail@ejemplo.com"</span>
+</pre>
+</div></li>
+
+<li>Cuando se te pregunte por la ubicación del archivo, presiona `Enter` para usar la ubicación predeterminada (`/c/Users/tu<sub>usuario</sub>/.ssh/id<sub>ed25519</sub>`).</li>
+<li>Puedes agregar una contraseña para proteger tu llave, pero también puedes dejar el campo vacío si no deseas protegerla con una contraseña.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0bc2045" class="outline-4">
+<h4 id="org0bc2045">4. Añadir la llave SSH al agente SSH</h4>
+<div class="outline-text-4" id="text-org0bc2045">
+<ul class="org-ul">
+<li><p>
+Asegúrate de que el agente SSH esté en ejecución. En Git Bash, ejecuta:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">     <span style="color: #c099ff;">eval</span> <span style="color: #c3e88d;">"$(ssh-agent -s)"</span>
+</pre>
+</div></li>
+
+<li><p>
+Añade tu nueva llave SSH al agente:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">     ssh-add ~/.ssh/id_ed25519
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9671256" class="outline-4">
+<h4 id="org9671256">5. Copiar la llave SSH pública</h4>
+<div class="outline-text-4" id="text-org9671256">
+<ul class="org-ul">
+<li><p>
+Para añadir la llave SSH a GitHub, necesitas copiar tu llave pública. Ejecuta el siguiente comando en Git Bash:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">     cat ~/.ssh/id_ed25519.pub
+</pre>
+</div></li>
+
+<li>Copia el texto que aparece en la terminal, que comenzará con `ssh-ed25519` o `ssh-rsa`.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4988cef" class="outline-4">
+<h4 id="org4988cef">6. Añadir la llave SSH a GitHub</h4>
+<div class="outline-text-4" id="text-org4988cef">
+<ul class="org-ul">
+<li>Abre tu navegador web e inicia sesión en GitHub.</li>
+<li>Ve a la sección de <b>Settings</b> (Configuración).</li>
+<li>En el menú lateral izquierdo, selecciona <b><b>SSH and GPG keys</b></b>.</li>
+<li>Haz clic en <b>New SSH key</b>.</li>
+<li>Ponle un título descriptivo (como "Mi computadora con Windows") y pega la llave pública copiada en el campo correspondiente.</li>
+<li>Haz clic en <b>Add SSH key</b>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4038065" class="outline-4">
+<h4 id="org4038065">7. Probar la conexión SSH con GitHub</h4>
+<div class="outline-text-4" id="text-org4038065">
+<ul class="org-ul">
+<li><p>
+Para asegurarte de que todo está correctamente configurado, prueba la conexión con GitHub desde Git Bash:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">     ssh -T git@github.com
+</pre>
+</div></li>
+
+<li>Si es la primera vez que te conectas, te pedirá confirmar la conexión escribiendo `yes`.</li>
+<li><p>
+Si todo está bien, deberías ver un mensaje como:
+</p>
+<blockquote>
+<p>
+Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+</p>
+</blockquote></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0fa7619" class="outline-4">
+<h4 id="org0fa7619">8. Usar la conexión SSH en repositorios de GitHub</h4>
+<div class="outline-text-4" id="text-org0fa7619">
+<ul class="org-ul">
+<li><p>
+Para clonar un repositorio usando la URL SSH, ejecuta:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">     git clone git@github.com:usuario/repo.git
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org2664a91" class="outline-3">
+<h3 id="org2664a91">Manual de Git en Windows</h3>
+<div class="outline-text-3" id="text-org2664a91">
+</div>
+<div id="outline-container-orgbd1d2c2" class="outline-4">
+<h4 id="orgbd1d2c2">1. Instalar Git en Windows</h4>
+<div class="outline-text-4" id="text-orgbd1d2c2">
+<ul class="org-ul">
+<li>Visita [<a href="https://git-scm.com/">https://git-scm.com/</a>](<a href="https://git-scm.com/">https://git-scm.com/</a>) y descarga el instalador de Git para Windows.</li>
+<li>Ejecuta el archivo descargado (.exe).</li>
+<li>Durante la instalación, selecciona las opciones predeterminadas recomendadas.</li>
+<li>Abre <b>Git Bash</b> al finalizar la instalación.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8d9e67e" class="outline-4">
+<h4 id="org8d9e67e">2. Configurar Git</h4>
+<div class="outline-text-4" id="text-org8d9e67e">
+<ul class="org-ul">
+<li>Abre <b>Git Bash</b> y ejecuta los siguientes comandos para configurar tu identidad:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-bash">   git config --global user.name <span style="color: #c3e88d;">"Tu Nombre"</span>
+   git config --global user.email <span style="color: #c3e88d;">"tuemail@ejemplo.com"</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Para verificar la configuración:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-bash">   git config --list
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org60bc176" class="outline-4">
+<h4 id="org60bc176">3. Clonar un repositorio</h4>
+<div class="outline-text-4" id="text-org60bc176">
+<ul class="org-ul">
+<li>Para clonar un repositorio desde GitHub, usa el siguiente comando:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-bash">   git clone https://github.com/usuario/repo.git
+</pre>
+</div>
+
+<p>
+Esto descargará el repositorio a tu computadora.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0bfd58f" class="outline-4">
+<h4 id="org0bfd58f">4. Comandos básicos de Git</h4>
+<div class="outline-text-4" id="text-org0bfd58f">
+<ul class="org-ul">
+<li><b>Verificar el estado del repositorio</b>:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-bash">   git status
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><b>Añadir archivos al área de preparación (staging)</b>:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-bash">   git add nombre_de_archivo
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Para añadir todos los archivos modificados:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-bash">   git add .
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><b>Hacer un commit</b> (guardar los cambios localmente):</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-bash">   git commit -m <span style="color: #c3e88d;">"Mensaje de commit"</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><b>Enviar los cambios al repositorio remoto</b>:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-bash">   git push
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org82ad762" class="outline-4">
+<h4 id="org82ad762">5. Actualizar el repositorio local</h4>
+<div class="outline-text-4" id="text-org82ad762">
+<ul class="org-ul">
+<li>Para obtener los últimos cambios del repositorio remoto:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-bash">   git pull
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org89761b0" class="outline-4">
+<h4 id="org89761b0">6. Crear y cambiar de ramas (branches)</h4>
+<div class="outline-text-4" id="text-org89761b0">
+<ul class="org-ul">
+<li><b>Crear una nueva rama</b>:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-bash">   git branch nombre_de_la_rama
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><b>Cambiar a una rama existente</b>:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-bash">   git checkout nombre_de_la_rama
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><b>Crear y cambiar a una nueva rama</b>:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-bash">   git checkout -b nombre_de_la_rama
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb11333b" class="outline-4">
+<h4 id="orgb11333b">7. Ver historial de commits</h4>
+<div class="outline-text-4" id="text-orgb11333b">
+<ul class="org-ul">
+<li>Para ver el historial de cambios del repositorio:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-bash">   git log
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Para un historial más compacto:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-bash">   git log --oneline
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdd4458e" class="outline-4">
+<h4 id="orgdd4458e">8. Configurar una llave SSH</h4>
+<div class="outline-text-4" id="text-orgdd4458e">
+<ul class="org-ul">
+<li><b>Generar una llave SSH</b>:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-bash">   ssh-keygen -t ed25519 -C <span style="color: #c3e88d;">"tuemail@ejemplo.com"</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><b>Añadir la llave al agente SSH</b>:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-bash">   <span style="color: #c099ff;">eval</span> <span style="color: #c3e88d;">"$(ssh-agent -s)"</span>
+   ssh-add ~/.ssh/id_ed25519
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><b>Copiar la llave pública</b>:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-bash">   cat ~/.ssh/id_ed25519.pub
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Añádela a tu cuenta de GitHub en <b>Settings &gt; SSH and GPG keys</b>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgbef5c67" class="outline-2">
+<h2 id="orgbef5c67">Manual de Instalación de Python en Windows</h2>
+<div class="outline-text-2" id="text-orgbef5c67">
+</div>
+<div id="outline-container-orgc216259" class="outline-3">
+<h3 id="orgc216259">Paso 1: Descarga de Python</h3>
+<div class="outline-text-3" id="text-orgc216259">
+<ol class="org-ol">
+<li>Abre el navegador web y visita el sitio: <a href="https://www.python.org">https://www.python.org</a>.</li>
+<li>Ve a la pestaña "Downloads" y selecciona la versión más reciente para Windows.</li>
+<li>Haz clic en el botón que dice "Download Python (versión actual)" para descargar el instalador de Python.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org291db04" class="outline-3">
+<h3 id="org291db04">Paso 2: Ejecutar el instalador</h3>
+<div class="outline-text-3" id="text-org291db04">
+<ol class="org-ol">
+<li>Ejecuta el archivo descargado (.exe).</li>
+<li>Asegúrate de marcar la opción <code>Add Python to PATH</code> antes de proceder con la instalación.</li>
+<li>Haz clic en <code>Install Now</code> para instalar con la configuración predeterminada.</li>
+<li>Espera a que finalice el proceso de instalación y verifica el mensaje de éxito.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgfe3f82c" class="outline-3">
+<h3 id="orgfe3f82c">Paso 3: Verificación de la instalación</h3>
+<div class="outline-text-3" id="text-orgfe3f82c">
+<ol class="org-ol">
+<li>Abre la línea de comandos (cmd) escribiendo "cmd" en el menú de inicio.</li>
+<li><p>
+Verifica que Python se instaló correctamente ejecutando el siguiente comando:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">      python --version
+</pre>
+</div></li>
+<li><p>
+Abre el intérprete de Python escribiendo <code>python</code> en la línea de comandos:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">      python
+</pre>
+</div>
+<p>
+Si todo está bien, verás el prompt interactivo de Python (tres símbolos <code>&gt;&gt;&gt;</code>).
+</p></li>
+<li>Para salir del intérprete, escribe <code>exit()</code> o presiona <code>Ctrl + Z</code> seguido de <code>Enter</code>.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org9f36cd0" class="outline-3">
+<h3 id="org9f36cd0">Paso 4: Instalar pip y otros paquetes</h3>
+<div class="outline-text-3" id="text-org9f36cd0">
+<ol class="org-ol">
+<li><p>
+Verifica si pip está instalado escribiendo en la línea de comandos:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">      pip --version
+</pre>
+</div></li>
+<li><p>
+Si necesitas instalar paquetes, usa pip con el siguiente comando:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">      pip install nombre_paquete
+</pre>
+</div></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org1854811" class="outline-3">
+<h3 id="org1854811">Paso 5: Configuración del entorno de desarrollo</h3>
+<div class="outline-text-3" id="text-org1854811">
+<ol class="org-ol">
+<li>Instala un editor de código como:
+<ul class="org-ul">
+<li><a href="https://code.visualstudio.com">Visual Studio Code</a></li>
+<li><a href="https://www.jetbrains.com/pycharm/">PyCharm</a></li>
+</ul></li>
+<li>Configura el editor instalando las extensiones de Python. En Visual Studio Code, busca la extensión "Python" en el panel de extensiones.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org8513cc6" class="outline-3">
+<h3 id="org8513cc6">Paso 6: Actualización de Python (opcional)</h3>
+<div class="outline-text-3" id="text-org8513cc6">
+<ul class="org-ul">
+<li>Para actualizar Python a una nueva versión en el futuro, descarga la última versión desde <a href="https://www.python.org/downloads/">python.org</a> y sigue los pasos de instalación.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgd1bd9e9" class="outline-2">
+<h2 id="orgd1bd9e9">Programación Avanzada</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Autor: likcos</p>
+<p class="date">Created: 2024-09-05 jue 22:33</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
