@@ -1,0 +1,404 @@
+#+TITLE: Apuntes Graficación
+#+LANGUAGE: es
+#+LaTeX_HEADER: \usepackage[spanish]{inputenc}
+#+SETUPFILE: /home/likcos/Materias/Graficacion/theme-readtheorg-local.setup
+#+EXPORT_FILE_NAME: index.html
+#+OPTIONS: num:nil
+#+HTML_HEAD: <style> #content{max-width:1800px;}</style>
+#+HTML_HEAD: <style>pre.src {background-color: #303030; color: #e5e5e5;}</style>
+
+
+* Manual de Instalación de Git
+
+** Instalación en Windows
+   - Descarga el instalador desde [https://git-scm.com/].
+	 
+	 
+
+- Haz clic en el botón “Download for Windows”.
+   - Ejecuta el archivo descargado (.exe).
+   
+   - Configuración de las opciones recomendadas durante la instalación:
+     - Seleccionar el editor por defecto (por ejemplo, Vim o Notepad++).
+     - Usar Git desde la línea de comandos y aplicaciones de terceros (opción recomendada).
+     - Opciones de formato de fin de línea: selecciona la opción predeterminada para Windows.
+     
+   - Completa la instalación.
+   - Verifica la instalación abriendo Git Bash o Command Prompt y ejecutando:
+#+BEGIN_SRC bash
+git --version
+#+END_SRC
+
+** Instalación en macOS
+
+*** Método recomendado: usando Homebrew
+   - Si tienes Homebrew instalado, abre la terminal y ejecuta:
+#+BEGIN_SRC bash
+brew install git
+#+END_SRC
+
+*** Método alternativo: paquete descargado
+   - Descarga el instalador desde [https://git-scm.com/].
+   - Ejecuta el paquete descargado (.dmg).
+   - Sigue las instrucciones de instalación.
+
+   - Verifica la instalación abriendo la terminal y ejecutando:
+     #+BEGIN_SRC bash
+     git --version
+     #+END_SRC
+
+** Instalación en Linux (Distribuciones basadas en Debian/Ubuntu)
+   - Abre la terminal y ejecuta:
+     #+BEGIN_SRC bash
+     sudo apt update
+     sudo apt install git
+     #+END_SRC
+     
+   - Verifica la instalación ejecutando:
+     #+BEGIN_SRC bash
+     git --version
+     #+END_SRC
+
+** Configuración básica de Git
+   - Configura tu nombre de usuario:
+     #+BEGIN_SRC bash
+     git config --global user.name "Tu Nombre"
+     #+END_SRC
+     
+   - Configura tu correo electrónico:
+     #+BEGIN_SRC bash
+     git config --global user.email "tuemail@ejemplo.com"
+     #+END_SRC
+
+   - Verifica la configuración:
+     #+BEGIN_SRC bash
+     git config --list
+     #+END_SRC
+
+** Actualización de Git
+   - *Windows*: Ejecuta el instalador más reciente desde el sitio oficial.
+   - *macOS*: Ejecuta:
+     #+BEGIN_SRC bash
+     brew upgrade git
+     #+END_SRC
+   - *Linux*: Ejecuta:
+     #+BEGIN_SRC bash
+     sudo apt update && sudo apt upgrade git
+     #+END_SRC
+
+
+** Configurar Llave SSH con GitHub
+*** 1. Verificar si ya tienes una llave SSH
+   - Abre la terminal y ejecuta el siguiente comando para verificar si ya tienes llaves SSH generadas:
+     #+BEGIN_SRC bash
+     ls -al ~/.ssh
+     #+END_SRC
+     
+   - Si ves archivos como `id_rsa` o `id_ed25519`, ya tienes llaves SSH. Si no, continúa con el siguiente paso.
+
+*** 2. Generar una nueva llave SSH
+   - Si no tienes una llave SSH, genera una nueva con el siguiente comando (puedes cambiar `ed25519` por `rsa` si lo prefieres):
+     #+BEGIN_SRC bash
+     ssh-keygen -t ed25519 -C "tuemail@ejemplo.com"
+     #+END_SRC
+
+   - Cuando se te pregunte por la ubicación del archivo, presiona `Enter` para usar la ubicación predeterminada (`~/.ssh/id_ed25519`).
+   - Puedes agregar una contraseña para proteger tu llave, pero también puedes dejarlo en blanco.
+
+*** 3. Añadir la llave SSH al agente SSH
+   - Para añadir tu nueva llave SSH al agente, asegúrate de que esté en ejecución:
+     #+BEGIN_SRC bash
+     eval "$(ssh-agent -s)"
+     #+END_SRC
+
+   - Añade la llave SSH al agente:
+     #+BEGIN_SRC bash
+     ssh-add ~/.ssh/id_ed25519
+     #+END_SRC
+
+*** 4. Copiar la llave SSH pública
+   - Copia el contenido de tu llave pública para añadirla a GitHub:
+     #+BEGIN_SRC bash
+     cat ~/.ssh/id_ed25519.pub
+     #+END_SRC
+     
+   - Copia el texto que aparece en la terminal (comienza con `ssh-ed25519` o `ssh-rsa`).
+
+*** 5. Añadir la llave SSH a GitHub
+   - Inicia sesión en tu cuenta de GitHub.
+   - Ve a la sección de *Settings* (Configuración).
+   - En el menú lateral izquierdo, selecciona **SSH and GPG keys**.
+   - Haz clic en *New SSH key*.
+   - Introduce un título para identificar la llave (por ejemplo, "Mi computadora personal") y pega la llave pública copiada en el campo correspondiente.
+   - Haz clic en *Add SSH key*.
+
+*** 6. Probar la conexión SSH con GitHub
+   - Para verificar que todo está configurado correctamente, ejecuta el siguiente comando:
+     #+BEGIN_SRC bash
+     ssh -T git@github.com
+     #+END_SRC
+
+   - Si es la primera vez que te conectas, verás una advertencia preguntando si deseas continuar. Escribe `yes`.
+   - Si la conexión es exitosa, verás un mensaje similar a:
+     #+BEGIN_QUOTE
+     Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+     #+END_QUOTE
+
+*** 7. Usar la conexión SSH en repositorios de GitHub
+   - Para clonar un repositorio usando SSH, utiliza la URL SSH del repositorio:
+     #+BEGIN_SRC bash
+     git clone git@github.com:usuario/repo.git
+     #+END_SRC
+
+
+** Configurar Llave SSH con GitHub en Windows
+
+1. Git Bash: En Windows, utilizas Git Bash como terminal para ejecutar los comandos, en lugar de la terminal estándar de Linux o macOS.
+
+2. Ruta de las llaves: En Git Bash, las rutas siguen el formato Unix (/c/Users/tu_usuario/.ssh/ en lugar de C:\Users\tu_usuario\.ssh).
+
+
+
+*** 1. Abrir Git Bash
+   - Abre **Git Bash** (es la terminal que se instala junto con Git en Windows).
+
+*** 2. Verificar si ya tienes una llave SSH
+   - En la terminal de Git Bash, ejecuta el siguiente comando para ver si ya tienes llaves SSH generadas:
+     #+BEGIN_SRC bash
+     ls -al ~/.ssh
+     #+END_SRC
+
+   - Si ves archivos como `id_rsa` o `id_ed25519`, ya tienes llaves SSH. Si no, continúa con el siguiente paso.
+
+*** 3. Generar una nueva llave SSH
+   - Si no tienes una llave SSH, genera una nueva con el siguiente comando:
+     #+BEGIN_SRC bash
+     ssh-keygen -t ed25519 -C "tuemail@ejemplo.com"
+     #+END_SRC
+
+   - Cuando se te pregunte por la ubicación del archivo, presiona `Enter` para usar la ubicación predeterminada (`/c/Users/tu_usuario/.ssh/id_ed25519`).
+   - Puedes agregar una contraseña para proteger tu llave, pero también puedes dejar el campo vacío si no deseas protegerla con una contraseña.
+
+*** 4. Añadir la llave SSH al agente SSH
+   - Asegúrate de que el agente SSH esté en ejecución. En Git Bash, ejecuta:
+     #+BEGIN_SRC bash
+     eval "$(ssh-agent -s)"
+     #+END_SRC
+
+   - Añade tu nueva llave SSH al agente:
+     #+BEGIN_SRC bash
+     ssh-add ~/.ssh/id_ed25519
+     #+END_SRC
+
+*** 5. Copiar la llave SSH pública
+   - Para añadir la llave SSH a GitHub, necesitas copiar tu llave pública. Ejecuta el siguiente comando en Git Bash:
+     #+BEGIN_SRC bash
+     cat ~/.ssh/id_ed25519.pub
+     #+END_SRC
+
+   - Copia el texto que aparece en la terminal, que comenzará con `ssh-ed25519` o `ssh-rsa`.
+
+*** 6. Añadir la llave SSH a GitHub
+   - Abre tu navegador web e inicia sesión en GitHub.
+   - Ve a la sección de *Settings* (Configuración).
+   - En el menú lateral izquierdo, selecciona **SSH and GPG keys**.
+   - Haz clic en *New SSH key*.
+   - Ponle un título descriptivo (como "Mi computadora con Windows") y pega la llave pública copiada en el campo correspondiente.
+   - Haz clic en *Add SSH key*.
+
+*** 7. Probar la conexión SSH con GitHub
+   - Para asegurarte de que todo está correctamente configurado, prueba la conexión con GitHub desde Git Bash:
+     #+BEGIN_SRC bash
+     ssh -T git@github.com
+     #+END_SRC
+
+   - Si es la primera vez que te conectas, te pedirá confirmar la conexión escribiendo `yes`.
+   - Si todo está bien, deberías ver un mensaje como:
+     #+BEGIN_QUOTE
+     Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+     #+END_QUOTE
+
+*** 8. Usar la conexión SSH en repositorios de GitHub
+   - Para clonar un repositorio usando la URL SSH, ejecuta:
+     #+BEGIN_SRC bash
+     git clone git@github.com:usuario/repo.git
+     #+END_SRC
+
+   
+
+** Manual de Git en Windows
+
+*** 1. Instalar Git en Windows
+   - Visita [https://git-scm.com/](https://git-scm.com/) y descarga el instalador de Git para Windows.
+   - Ejecuta el archivo descargado (.exe).
+   - Durante la instalación, selecciona las opciones predeterminadas recomendadas.
+   - Abre *Git Bash* al finalizar la instalación.
+
+*** 2. Configurar Git
+   - Abre *Git Bash* y ejecuta los siguientes comandos para configurar tu identidad:
+
+   #+BEGIN_SRC bash
+   git config --global user.name "Tu Nombre"
+   git config --global user.email "tuemail@ejemplo.com"
+   #+END_SRC
+
+   - Para verificar la configuración:
+
+   #+BEGIN_SRC bash
+   git config --list
+   #+END_SRC
+
+*** 3. Clonar un repositorio
+   - Para clonar un repositorio desde GitHub, usa el siguiente comando:
+
+   #+BEGIN_SRC bash
+   git clone https://github.com/usuario/repo.git
+   #+END_SRC
+
+   Esto descargará el repositorio a tu computadora.
+
+*** 4. Comandos básicos de Git
+
+   - *Verificar el estado del repositorio*:
+
+   #+BEGIN_SRC bash
+   git status
+   #+END_SRC
+
+   - *Añadir archivos al área de preparación (staging)*:
+
+   #+BEGIN_SRC bash
+   git add nombre_de_archivo
+   #+END_SRC
+
+   - Para añadir todos los archivos modificados:
+
+   #+BEGIN_SRC bash
+   git add .
+   #+END_SRC
+
+   - *Hacer un commit* (guardar los cambios localmente):
+
+   #+BEGIN_SRC bash
+   git commit -m "Mensaje de commit"
+   #+END_SRC
+
+   - *Enviar los cambios al repositorio remoto*:
+
+   #+BEGIN_SRC bash
+   git push
+   #+END_SRC
+
+*** 5. Actualizar el repositorio local
+   - Para obtener los últimos cambios del repositorio remoto:
+
+   #+BEGIN_SRC bash
+   git pull
+   #+END_SRC
+
+*** 6. Crear y cambiar de ramas (branches)
+
+   - *Crear una nueva rama*:
+
+   #+BEGIN_SRC bash
+   git branch nombre_de_la_rama
+   #+END_SRC
+
+   - *Cambiar a una rama existente*:
+
+   #+BEGIN_SRC bash
+   git checkout nombre_de_la_rama
+   #+END_SRC
+
+   - *Crear y cambiar a una nueva rama*:
+
+   #+BEGIN_SRC bash
+   git checkout -b nombre_de_la_rama
+   #+END_SRC
+
+*** 7. Ver historial de commits
+
+   - Para ver el historial de cambios del repositorio:
+
+   #+BEGIN_SRC bash
+   git log
+   #+END_SRC
+
+   - Para un historial más compacto:
+
+   #+BEGIN_SRC bash
+   git log --oneline
+   #+END_SRC
+
+*** 8. Configurar una llave SSH
+
+   - *Generar una llave SSH*:
+
+   #+BEGIN_SRC bash
+   ssh-keygen -t ed25519 -C "tuemail@ejemplo.com"
+   #+END_SRC
+
+   - *Añadir la llave al agente SSH*:
+
+   #+BEGIN_SRC bash
+   eval "$(ssh-agent -s)"
+   ssh-add ~/.ssh/id_ed25519
+   #+END_SRC
+
+   - *Copiar la llave pública*:
+
+   #+BEGIN_SRC bash
+   cat ~/.ssh/id_ed25519.pub
+   #+END_SRC
+
+   - Añádela a tu cuenta de GitHub en *Settings > SSH and GPG keys*.
+
+   
+* Manual de Instalación de Python en Windows
+
+** Paso 1: Descarga de Python
+   1. Abre el navegador web y visita el sitio: [[https://www.python.org][https://www.python.org]].
+   2. Ve a la pestaña "Downloads" y selecciona la versión más reciente para Windows.
+   3. Haz clic en el botón que dice "Download Python (versión actual)" para descargar el instalador de Python.
+
+** Paso 2: Ejecutar el instalador
+   1. Ejecuta el archivo descargado (.exe).
+   2. Asegúrate de marcar la opción ~Add Python to PATH~ antes de proceder con la instalación.
+   3. Haz clic en ~Install Now~ para instalar con la configuración predeterminada.
+   4. Espera a que finalice el proceso de instalación y verifica el mensaje de éxito.
+
+** Paso 3: Verificación de la instalación
+   1. Abre la línea de comandos (cmd) escribiendo "cmd" en el menú de inicio.
+   2. Verifica que Python se instaló correctamente ejecutando el siguiente comando:
+      #+BEGIN_SRC bash
+      python --version
+      #+END_SRC
+   3. Abre el intérprete de Python escribiendo ~python~ en la línea de comandos:
+      #+BEGIN_SRC bash
+      python
+      #+END_SRC
+      Si todo está bien, verás el prompt interactivo de Python (tres símbolos ~>>>~).
+   4. Para salir del intérprete, escribe ~exit()~ o presiona ~Ctrl + Z~ seguido de ~Enter~.
+
+** Paso 4: Instalar pip y otros paquetes
+   1. Verifica si pip está instalado escribiendo en la línea de comandos:
+      #+BEGIN_SRC bash
+      pip --version
+      #+END_SRC
+   2. Si necesitas instalar paquetes, usa pip con el siguiente comando:
+      #+BEGIN_SRC bash
+      pip install nombre_paquete
+      #+END_SRC
+
+** Paso 5: Configuración del entorno de desarrollo
+   1. Instala un editor de código como:
+      - [[https://code.visualstudio.com][Visual Studio Code]]
+      - [[https://www.jetbrains.com/pycharm/][PyCharm]]
+   2. Configura el editor instalando las extensiones de Python. En Visual Studio Code, busca la extensión "Python" en el panel de extensiones.
+
+** Paso 6: Actualización de Python (opcional)
+   - Para actualizar Python a una nueva versión en el futuro, descarga la última versión desde [[https://www.python.org/downloads/][python.org]] y sigue los pasos de instalación.
+
+
+
+* Programación Avanzada    
