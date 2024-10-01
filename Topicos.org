@@ -1,4 +1,4 @@
-#+TITLE: Apuntes Graficación
+#+TITLE: Apuntes Tópicos de Programación 
 #+LANGUAGE: es
 #+LaTeX_HEADER: \usepackage[spanish]{inputenc}
 #+SETUPFILE: /home/likcos/Materias/Graficacion/theme-readtheorg-local.setup
@@ -402,3 +402,1051 @@ brew install git
 
 
 * Programación Avanzada    
+
+pip install opecv-contrib-python
+pin install opencv-python
+            tensorflow
+			sklearn
+
+conda install opencv-python
+
+   
+**  Estructuras de Datos
+
+*** 1. ¿Qué son las estructuras de datos?
+Las estructuras de datos son una forma de organizar, gestionar y almacenar datos de manera eficiente. Cada estructura de datos está diseñada para un tipo específico de uso o problema, optimizando la forma en la que se accede o modifica la información.
+
+*** 2. Tipos comunes de estructuras de datos
+
+**** 2.1. Arreglos (Arrays)
+- Los arreglos son colecciones de elementos del mismo tipo, organizados en una secuencia.
+- Los índices permiten acceder a los elementos.
+
+#+BEGIN_SRC pseudocode
+   Arreglo A = [1, 2, 3, 4, 5]
+   Imprimir(A[2])  // Salida: 3
+#+END_SRC
+
+**** 2.2. Listas enlazadas (Linked Lists)
+- Una lista enlazada está formada por nodos, donde cada nodo contiene un valor y un puntero al siguiente nodo.
+- Hay listas enlazadas simples (unidireccionales) y listas doblemente enlazadas (bidireccionales).
+
+#+BEGIN_SRC pseudocode
+   Clase Nodo:
+      Atributo valor
+      Atributo siguiente
+
+   ListaEnlazada:
+      Atributo cabeza = nulo
+
+      Funcion agregar(valor):
+         Si cabeza == nulo:
+            cabeza = Nodo(valor)
+         Sino:
+            Nodo actual = cabeza
+            Mientras actual.siguiente != nulo:
+               actual = actual.siguiente
+            actual.siguiente = Nodo(valor)
+#+END_SRC
+
+**** 2.3. Pilas (Stacks)
+- Una pila sigue el principio LIFO (Last In, First Out). El último elemento en ser agregado es el primero en ser retirado.
+- Operaciones comunes: `push` (agregar), `pop` (retirar), `peek` (ver el último).
+
+#+BEGIN_SRC pseudocode
+   Pila S = []
+   S.push(10)
+   S.push(20)
+   Imprimir(S.peek())  // Salida: 20
+   S.pop()
+   Imprimir(S.peek())  // Salida: 10
+#+END_SRC
+
+**** 2.4. Colas (Queues)
+- Una cola sigue el principio FIFO (First In, First Out). El primer elemento en ser agregado es el primero en ser retirado.
+- Operaciones comunes: `enqueue` (agregar), `dequeue` (retirar).
+
+#+BEGIN_SRC pseudocode
+   Cola Q = []
+   Q.enqueue(10)
+   Q.enqueue(20)
+   Imprimir(Q.dequeue())  // Salida: 10
+#+END_SRC
+
+**** 2.5. Árboles (Trees)
+- Un árbol es una estructura de datos jerárquica que consta de nodos. Cada nodo tiene un valor y referencias a sus nodos hijos.
+- El nodo superior se llama raíz, y los nodos sin hijos se llaman hojas.
+- Un tipo especial de árbol es el **árbol binario**, donde cada nodo tiene a lo sumo dos hijos (izquierdo y derecho).
+
+#+BEGIN_SRC pseudocode
+   Clase Nodo:
+      Atributo valor
+      Atributo izquierdo
+      Atributo derecho
+
+   ArbolBinario:
+      Atributo raiz = nulo
+
+      Funcion agregar(valor):
+         Si raiz == nulo:
+            raiz = Nodo(valor)
+         Sino:
+            agregarRecursivo(raiz, valor)
+
+      Funcion agregarRecursivo(nodo, valor):
+         Si valor < nodo.valor:
+            Si nodo.izquierdo == nulo:
+               nodo.izquierdo = Nodo(valor)
+            Sino:
+               agregarRecursivo(nodo.izquierdo, valor)
+         Sino:
+            Si nodo.derecho == nulo:
+               nodo.derecho = Nodo(valor)
+            Sino:
+               agregarRecursivo(nodo.derecho, valor)
+#+END_SRC
+
+**** 2.6. Grafos (Graphs)
+- Un grafo es una colección de nodos (llamados vértices) y aristas (líneas que conectan los vértices).
+- Los grafos pueden ser dirigidos o no dirigidos, dependiendo de si las conexiones entre nodos tienen dirección o no.
+
+#+BEGIN_SRC pseudocode
+   Grafo:
+      Atributo vertices = []
+
+      Funcion agregarVertice(v):
+         vertices.agregar(v)
+
+      Funcion agregarArista(v1, v2):
+         v1.vecinos.agregar(v2)
+         v2.vecinos.agregar(v1)
+#+END_SRC
+
+*** 3. Operaciones básicas en estructuras de datos
+Cada estructura de datos tiene sus propias operaciones comunes, por ejemplo:
+
+- **Arreglos**: acceso por índice, inserción, eliminación.
+- **Listas enlazadas**: agregar, eliminar, recorrer.
+- **Pilas**: `push`, `pop`, `peek`.
+- **Colas**: `enqueue`, `dequeue`.
+- **Árboles**: agregar, eliminar, búsqueda, recorrido (inorden, preorden, postorden).
+- **Grafos**: agregar vértices, agregar aristas, búsquedas (BFS, DFS).
+
+*** 4. Consideraciones sobre la complejidad
+Cada estructura de datos tiene un costo en términos de tiempo y espacio dependiendo de cómo se implementen sus operaciones. Algunos aspectos clave a considerar:
+
+- **Arreglos**: Acceso rápido (O(1)) pero inserciones y eliminaciones pueden ser costosas (O(n)).
+- **Listas enlazadas**: Inserciones y eliminaciones eficientes (O(1)) pero acceso lento (O(n)).
+- **Pilas y Colas**: Operaciones básicas eficientes (O(1)).
+- **Árboles**: Operaciones como búsqueda e inserción pueden ser eficientes en árboles balanceados (O(log n)).
+- **Grafos**: La eficiencia depende del número de vértices y aristas; búsquedas pueden ser O(V + E), donde V es el número de vértices y E el de aristas.
+
+*** 5. Ejemplo de aplicación
+Supongamos que queremos implementar un sistema donde necesitamos manejar una lista de tareas en orden de prioridad. Una estructura adecuada sería una **cola de prioridad**, que permite agregar tareas con diferentes prioridades y siempre procesar la más urgente primero.
+
+#+BEGIN_SRC pseudocode
+ColaDePrioridad:
+   Atributo tareas = []
+
+   Funcion agregarTarea(tarea, prioridad):
+      tareas.agregar({tarea, prioridad})
+      ordenarPorPrioridad(tareas)
+
+   Funcion siguienteTarea():
+      retornar tareas.eliminarPrimero()
+#+END_SRC
+
+*** 6. Conclusión
+Este es un resumen introductorio de las estructuras de datos más comunes y cómo funcionan. Cada estructura tiene aplicaciones específicas y el uso adecuado depende del tipo de problema que estés intentando resolver.
+
+
+** Estructuras de Datos en Python y C
+
+*** 1. Arreglos (Arrays)
+**** Python
+#+BEGIN_SRC python
+# En Python, los arrays son implementados como listas.
+A = [1, 2, 3, 4, 5]
+print(A[2])  # Salida: 3
+#+END_SRC
+
+**** C
+#+BEGIN_SRC c
+#include <stdio.h>
+
+int main() {
+    int A[5] = {1, 2, 3, 4, 5};
+    printf("%d\n", A[2]);  // Salida: 3
+    return 0;
+}
+#+END_SRC
+
+*** 2. Listas enlazadas (Linked Lists)
+**** Python
+#+BEGIN_SRC python
+class Nodo:
+    def __init__(self, valor):
+        self.valor = valor
+        self.siguiente = None
+
+class ListaEnlazada:
+    def __init__(self):
+        self.cabeza = None
+
+    def agregar(self, valor):
+        nuevo_nodo = Nodo(valor)
+        if not self.cabeza:
+            self.cabeza = nuevo_nodo
+        else:
+            actual = self.cabeza
+            while actual.siguiente:
+                actual = actual.siguiente
+            actual.siguiente = nuevo_nodo
+
+lista = ListaEnlazada()
+lista.agregar(10)
+lista.agregar(20)
+#+END_SRC
+
+**** C
+#+BEGIN_SRC c
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Nodo {
+    int valor;
+    struct Nodo* siguiente;
+};
+
+struct Nodo* crearNodo(int valor) {
+    struct Nodo* nuevoNodo = (struct Nodo*)malloc(sizeof(struct Nodo));
+    nuevoNodo->valor = valor;
+    nuevoNodo->siguiente = NULL;
+    return nuevoNodo;
+}
+
+void agregar(struct Nodo** cabeza, int valor) {
+    struct Nodo* nuevoNodo = crearNodo(valor);
+    if (*cabeza == NULL) {
+        *cabeza = nuevoNodo;
+    } else {
+        struct Nodo* actual = *cabeza;
+        while (actual->siguiente != NULL) {
+            actual = actual->siguiente;
+        }
+        actual->siguiente = nuevoNodo;
+    }
+}
+
+int main() {
+    struct Nodo* cabeza = NULL;
+    agregar(&cabeza, 10);
+    agregar(&cabeza, 20);
+    return 0;
+}
+#+END_SRC
+
+*** 3. Pilas (Stacks)
+**** Python
+#+BEGIN_SRC python
+# En Python, las listas pueden funcionar como pilas usando append() y pop().
+pila = []
+pila.append(10)
+pila.append(20)
+print(pila[-1])  # Peek: 20
+pila.pop()
+print(pila[-1])  # Peek: 10
+#+END_SRC
+
+**** C
+#+BEGIN_SRC c
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX 100
+
+struct Pila {
+    int items[MAX];
+    int tope;
+};
+
+void inicializarPila(struct Pila* pila) {
+    pila->tope = -1;
+}
+
+int estaVacia(struct Pila* pila) {
+    return pila->tope == -1;
+}
+
+void push(struct Pila* pila, int valor) {
+    pila->items[++(pila->tope)] = valor;
+}
+
+int pop(struct Pila* pila) {
+    return pila->items[(pila->tope)--];
+}
+
+int peek(struct Pila* pila) {
+    return pila->items[pila->tope];
+}
+
+int main() {
+    struct Pila pila;
+    inicializarPila(&pila);
+    push(&pila, 10);
+    push(&pila, 20);
+    printf("%d\n", peek(&pila));  // Peek: 20
+    pop(&pila);
+    printf("%d\n", peek(&pila));  // Peek: 10
+    return 0;
+}
+Topicos.org
+
+#+END_SRC
+
+*** 4. Colas (Queues)
+**** Python
+#+BEGIN_SRC python
+# En Python, una cola se puede implementar con deque de la colección estándar.
+from collections import deque
+
+cola = deque()
+cola.append(10)  # Enqueue
+cola.append(20)
+print(cola.popleft())  # Dequeue: 10
+#+END_SRC
+
+**** C
+#+BEGIN_SRC c
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX 100
+
+struct Cola {
+    int items[MAX];
+    int frente, final;
+};
+
+void inicializarCola(struct Cola* cola) {
+    cola->frente = -1;
+    cola->final = -1;
+}
+
+int estaVacia(struct Cola* cola) {
+    return cola->frente == -1;
+}
+
+void enqueue(struct Cola* cola, int valor) {
+    if (cola->final == MAX - 1)
+        return;
+    if (cola->frente == -1)
+        cola->frente = 0;
+    cola->items[++(cola->final)] = valor;
+}
+
+int dequeue(struct Cola* cola) {
+    if (estaVacia(cola))
+        return -1;
+    int valor = cola->items[cola->frente];
+    if (cola->frente == cola->final)
+        cola->frente = cola->final = -1;
+    else
+        cola->frente++;
+    return valor;
+}
+
+int main() {
+    struct Cola cola;
+    inicializarCola(&cola);
+    enqueue(&cola, 10);
+    enqueue(&cola, 20);
+    printf("%d\n", dequeue(&cola));  // Dequeue: 10
+    return 0;
+}
+#+END_SRC
+
+*** 5. Árboles (Trees)
+**** Python
+#+BEGIN_SRC python
+class Nodo:
+    def __init__(self, valor):
+        self.valor = valor
+        self.izquierdo = None
+        self.derecho = None
+
+class ArbolBinario:
+    def __init__(self):
+        self.raiz = None
+
+    def agregar(self, valor):
+        if not self.raiz:
+            self.raiz = Nodo(valor)
+        else:
+            self._agregar(self.raiz, valor)
+
+    def _agregar(self, nodo, valor):
+        if valor < nodo.valor:
+            if nodo.izquierdo:
+                self._agregar(nodo.izquierdo, valor)
+            else:
+                nodo.izquierdo = Nodo(valor)
+        else:
+            if nodo.derecho:
+                self._agregar(nodo.derecho, valor)
+            else:
+                nodo.derecho = Nodo(valor)
+
+arbol = ArbolBinario()
+arbol.agregar(10)
+arbol.agregar(5)
+arbol.agregar(15)
+#+END_SRC
+
+**** C
+#+BEGIN_SRC c
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Nodo {
+    int valor;
+    struct Nodo* izquierdo;
+    struct Nodo* derecho;
+};
+
+struct Nodo* crearNodo(int valor) {
+    struct Nodo* nuevoNodo = (struct Nodo*)malloc(sizeof(struct Nodo));
+    nuevoNodo->valor = valor;
+    nuevoNodo->izquierdo = NULL;
+    nuevoNodo->derecho = NULL;
+    return nuevoNodo;
+}
+
+struct Nodo* agregar(struct Nodo* nodo, int valor) {
+    if (nodo == NULL)
+        return crearNodo(valor);
+
+    if (valor < nodo->valor)
+        nodo->izquierdo = agregar(nodo->izquierdo, valor);
+    else if (valor > nodo->valor)
+        nodo->derecho = agregar(nodo->derecho, valor);
+
+    return nodo;
+}
+
+int main() {
+    struct Nodo* raiz = NULL;
+    raiz = agregar(raiz, 10);
+    agregar(raiz, 5);
+    agregar(raiz, 15);
+    return 0;
+}
+#+END_SRC
+
+*** 6. Grafos (Graphs)
+**** Python
+#+BEGIN_SRC python
+class Grafo:
+    def __init__(self):
+        self.vertices = {}
+
+    def agregar_vertice(self, v):
+        if v not in self.vertices:
+            self.vertices[v] = []
+
+    def agregar_arista(self, v1, v2):
+        if v1 in self.vertices and v2 in self.vertices:
+            self.vertices[v1].append(v2)
+            self.vertices[v2].append(v1)
+
+grafo = Grafo()
+grafo.agregar_vertice(1)
+grafo.agregar_vertice(2)
+grafo.agregar_arista(1, 2)
+#+END_SRC
+
+**** C
+#+BEGIN_SRC c
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX 100
+
+struct Grafo {
+    int matriz[MAX][MAX];
+    int numVertices;
+};
+
+void inicializarGrafo(struct Grafo* grafo, int vertices) {
+    grafo->numVertices = vertices;
+    for (int i = 0; i < vertices; i++) {
+        for (int j = 0; j < vertices; j++) {
+            grafo->matriz[i][j] = 0;
+        }
+    }
+}
+
+void agregarArista(struct Grafo* grafo, int v1, int v2) {
+    grafo->matriz[v1][v2] = 1;
+    grafo->matriz[v2][v1] = 1;
+}
+
+int main() {
+    struct Grafo grafo;
+    inicializarGrafo(&grafo, 3);
+    agregarArista(&grafo, 0, 1);
+    agregarArista(&grafo, 1, 2);
+    return 0;
+}
+#+END_SRC
+
+
+** Problema del Granjero, el Puma, la Cabra y la Lechuga
+
+*** Descripción del Problema
+- El granjero necesita cruzar un río llevando consigo un **puma**, una **cabra** y una **lechuga**.
+- El bote solo tiene espacio para el granjero y uno de los tres: el **puma**, la **cabra** o la **lechuga**.
+- Si el granjero deja al **puma** y a la **cabra** solos sin supervisión, el puma se comerá a la cabra.
+- Si el granjero deja a la **cabra** y la **lechuga** solos sin supervisión, la cabra se comerá la lechuga.
+- El objetivo es llevar al puma, la cabra y la lechuga al otro lado del río sin que ocurran estas situaciones.
+
+*** Representación del Estado
+- Cada estado puede representarse por una tupla `(gran, puma, cabra, lechuga)` donde:
+  - `gran`, `puma`, `cabra`, `lechuga` pueden tener el valor `L` (lado izquierdo) o `R` (lado derecho).
+  - Ejemplo: `(L, L, L, L)` indica que el granjero, el puma, la cabra y la lechuga están en el lado izquierdo.
+
+*** Reglas de Transición
+- El granjero puede moverse de un lado a otro llevando solo uno de los tres elementos (puma, cabra, lechuga) o viajando solo.
+- Las transiciones solo son válidas si no ocurren las situaciones indeseadas:
+  - El puma no puede quedarse solo con la cabra sin el granjero.
+  - La cabra no puede quedarse sola con la lechuga sin el granjero.
+
+*** Algoritmo de Búsqueda en Profundidad (DFS)
+
+Se utilizará una búsqueda a lo profundo para encontrar la secuencia de movimientos que lleve a todos al lado derecho del río.
+
+#+BEGIN_SRC python
+# Resolver el problema usando búsqueda en profundidad (DFS)
+def es_estado_valido(estado):
+    gran, puma, cabra, lechuga = estado
+    # El puma no puede estar solo con la cabra
+    if puma == cabra and gran != puma:
+        return False
+    # La cabra no puede estar sola con la lechuga
+    if cabra == lechuga and gran != cabra:
+        return False
+    return True
+
+def mover(estado, objeto):
+    gran, puma, cabra, lechuga = estado
+    nuevo_gran = 'R' if gran == 'L' else 'L'
+    if objeto == "puma":
+        nuevo_puma = 'R' if puma == 'L' else 'L'
+        return (nuevo_gran, nuevo_puma, cabra, lechuga)
+    elif objeto == "cabra":
+        nuevo_cabra = 'R' if cabra == 'L' else 'L'
+        return (nuevo_gran, puma, nuevo_cabra, lechuga)
+    elif objeto == "lechuga":
+        nuevo_lechuga = 'R' if lechuga == 'L' else 'L'
+        return (nuevo_gran, puma, cabra, nuevo_lechuga)
+    else:  # Si el granjero viaja solo
+        return (nuevo_gran, puma, cabra, lechuga)
+
+def dfs(estado, objetivo, visitados):
+    if estado == objetivo:
+        return [estado]
+
+    visitados.add(estado)
+
+    # Posibles movimientos: granjero viaja solo o con puma, cabra o lechuga
+    posibles_movimientos = ["solo", "puma", "cabra", "lechuga"]
+
+    for movimiento in posibles_movimientos:
+        nuevo_estado = mover(estado, movimiento)
+        if nuevo_estado not in visitados and es_estado_valido(nuevo_estado):
+            resultado = dfs(nuevo_estado, objetivo, visitados)
+            if resultado:
+                return [estado] + resultado
+
+    return None
+
+# Estado inicial: todos en el lado izquierdo
+estado_inicial = ('L', 'L', 'L', 'L')
+
+# Estado objetivo: todos en el lado derecho
+estado_objetivo = ('R', 'R', 'R', 'R')
+
+# Realizamos la búsqueda
+solucion = dfs(estado_inicial, estado_objetivo, set())
+
+if solucion:
+    print("Solución encontrada:")
+    for paso in solucion:
+        print(paso)
+else:
+    print("No se encontró solución.")
+#+END_SRC
+
+*** Árbol de Búsqueda
+El árbol de búsqueda para este problema contiene estados donde el granjero, el puma, la cabra y la lechuga pueden estar en diferentes lados del río. Aquí un ejemplo de algunos estados:
+
+- Estado inicial: `(L, L, L, L)`
+  - Mover el granjero con la cabra: `(R, L, R, L)`
+    - Mover el granjero solo: `(L, L, R, L)`
+      - Mover el granjero con el puma: `(R, R, R, L)`
+      - ...
+
+Este proceso continúa explorando todos los posibles caminos hasta encontrar el objetivo.
+
+*** Solución del Problema
+La búsqueda en profundidad explora las ramas posibles del árbol de búsqueda hasta encontrar una solución válida. Una posible secuencia de movimientos es:
+
+1. Granjero lleva a la cabra: `(R, L, R, L)`
+2. Granjero regresa solo: `(L, L, R, L)`
+3. Granjero lleva al puma: `(R, R, R, L)`
+4. Granjero regresa con la cabra: `(L, R, L, L)`
+5. Granjero lleva la lechuga: `(R, R, L, R)`
+6. Granjero regresa solo: `(L, R, L, R)`
+7. Granjero lleva la cabra: `(R, R, R, R)`
+
+¡Y todos han cruzado el río de manera segura!
+
+** Tutorial de Operaciones Bitwise en OpenCV
+
+Las operaciones *bitwise* en OpenCV son manipulaciones a nivel de bits que se pueden realizar sobre imágenes. Estas operaciones incluyen **AND**, **OR**, **XOR** y **NOT**, y son útiles cuando necesitas combinar, enmascarar, o manipular diferentes partes de una imagen.
+
+
+*** 1. Operación Bitwise AND
+La operación **AND** toma dos imágenes o una imagen y una máscara, y realiza la operación AND bit a bit. El resultado será una imagen donde los bits que son 1 en ambas entradas se mantendrán, mientras que los demás bits serán 0.
+
+#+BEGIN_SRC python
+import cv2
+import numpy as np
+
+# Crear dos imágenes binarias
+img1 = np.zeros((300, 300), dtype="uint8")
+img2 = np.zeros((300, 300), dtype="uint8")
+
+# Dibujar un rectángulo blanco en la primera imagen
+cv2.rectangle(img1, (50, 50), (250, 250), 255, -1)
+
+# Dibujar un círculo blanco en la segunda imagen
+cv2.circle(img2, (150, 150), 100, 255, -1)
+
+# Aplicar la operación bitwise AND
+resultado_and = cv2.bitwise_and(img1, img2)
+
+# Mostrar las imágenes
+cv2.imshow("Imagen 1", img1)
+cv2.imshow("Imagen 2", img2)
+cv2.imshow("Resultado AND", resultado_and)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+#+END_SRC
+
+*** 2. Operación Bitwise OR
+La operación **OR** toma dos imágenes y realiza la operación OR bit a bit. Los bits que son 1 en cualquiera de las dos entradas permanecerán en el resultado.
+
+#+BEGIN_SRC python
+# Aplicar la operación bitwise OR
+resultado_or = cv2.bitwise_or(img1, img2)
+
+# Mostrar el resultado
+cv2.imshow("Resultado OR", resultado_or)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+#+END_SRC
+
+*** 3. Operación Bitwise XOR
+La operación **XOR** compara los bits de dos imágenes y deja un 1 en la posición del resultado solo si los bits de las entradas son diferentes.
+
+#+BEGIN_SRC python
+# Aplicar la operación bitwise XOR
+resultado_xor = cv2.bitwise_xor(img1, img2)
+
+# Mostrar el resultado
+cv2.imshow("Resultado XOR", resultado_xor)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+#+END_SRC
+
+*** 4. Operación Bitwise NOT
+La operación **NOT** invierte todos los bits de la imagen (los 1s se convierten en 0s y viceversa).
+
+#+BEGIN_SRC python
+# Aplicar la operación bitwise NOT sobre la primera imagen
+resultado_not = cv2.bitwise_not(img1)
+
+# Mostrar el resultado
+cv2.imshow("Resultado NOT", resultado_not)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+#+END_SRC
+
+*** 5. Aplicaciones Prácticas
+Las operaciones bitwise son útiles en muchas aplicaciones, como:
+
+- **Enmascaramiento**: Puedes usar una máscara para seleccionar ciertas partes de una imagen y realizar operaciones solo en esas áreas.
+- **Fusión de imágenes**: Combinar dos imágenes de manera controlada.
+- **Operaciones en regiones de interés (ROI)**: Manipular partes específicas de una imagen sin afectar el resto.
+
+Por ejemplo, puedes crear una máscara que seleccione solo una región de interés en una imagen y aplicar una operación bitwise AND para enfocarte en esa área.
+
+#+BEGIN_SRC python
+# Leer una imagen en color
+img = cv2.imread("ruta/a/tu/imagen.jpg")
+
+# Crear una máscara (un círculo en el centro de la imagen)
+mascara = np.zeros(img.shape[:2], dtype="uint8")
+cv2.circle(mascara, (img.shape[1]//2, img.shape[0]//2), 100, 255, -1)
+
+# Aplicar bitwise AND para extraer solo el área dentro del círculo
+resultado_mascara = cv2.bitwise_and(img, img, mask=mascara)
+
+# Mostrar la imagen original, la máscara y el resultado
+cv2.imshow("Imagen Original", img)
+cv2.imshow("Máscara", mascara)
+cv2.imshow("Resultado con Máscara", resultado_mascara)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+#+END_SRC
+
+*** Definición: Operación Bit a Bit
+
+Una **operación bit a bit** (en inglés, *bitwise operation*) es una operación que se realiza directamente sobre los bits de los operandos. Las operaciones se ejecutan sobre los bits correspondientes de los números en formato binario.
+
+**** Principales operaciones bit a bit
+
+***** 1. AND bit a bit (~&~)
+Devuelve `1` si ambos bits en la misma posición son `1`, de lo contrario devuelve `0`.
+
+#+BEGIN_EXAMPLE
+A = 1010 (10 en decimal)
+B = 1100 (12 en decimal)
+Resultado: 1000 (8 en decimal)
+#+END_EXAMPLE
+
+***** 2. OR bit a bit (~|~)
+Devuelve `1` si al menos uno de los bits en la misma posición es `1`, de lo contrario devuelve `0`.
+
+#+BEGIN_EXAMPLE
+A = 1010 (10 en decimal)
+B = 1100 (12 en decimal)
+Resultado: 1110 (14 en decimal)
+#+END_EXAMPLE
+
+***** 3. XOR bit a bit (~^~)
+Devuelve `1` si los bits en la misma posición son diferentes, y `0` si son iguales.
+
+#+BEGIN_EXAMPLE
+A = 1010 (10 en decimal)
+B = 1100 (12 en decimal)
+Resultado: 0110 (6 en decimal)
+#+END_EXAMPLE
+
+***** 4. NOT bit a bit (~~)
+Invierte los bits de un número: convierte los `0` en `1` y los `1` en `0`. En sistemas de complemento a dos, esto también implica cambiar el signo de un número entero.
+
+#+BEGIN_EXAMPLE
+A = 1010 (10 en decimal)
+Resultado: 0101 (-11 en decimal, si estamos usando complemento a dos)
+#+END_EXAMPLE
+
+***** 5. Desplazamiento a la izquierda (~<<~)
+Desplaza todos los bits del número hacia la izquierda por un número específico de posiciones. Los bits desplazados fuera del límite se descartan y se rellenan con ceros en el extremo derecho.
+
+#+BEGIN_EXAMPLE
+A = 0001 (1 en decimal)
+A << 2 = 0100 (4 en decimal)
+#+END_EXAMPLE
+
+***** 6. Desplazamiento a la derecha (~>>~)
+Desplaza todos los bits del número hacia la derecha por un número específico de posiciones. Los bits desplazados fuera del límite se descartan y el bit más significativo depende del signo del número.
+
+#+BEGIN_EXAMPLE
+A = 1000 (8 en decimal)
+A >> 2 = 0010 (2 en decimal)
+#+END_EXAMPLE
+
+***** Aplicaciones de las operaciones bit a bit
+
+- **Máscaras de bits**: Las operaciones bit a bit se usan para aplicar máscaras que seleccionan o modifican partes específicas de un número o secuencia binaria.
+- **Manipulación de imágenes**: En procesamiento de imágenes, las operaciones bit a bit son útiles para combinar y modificar píxeles en OpenCV.
+- **Optimización de algoritmos**: Las operaciones bit a bit permiten optimizar cálculos en sistemas de bajo nivel o con restricciones de recursos.
+
+
+
+
+
+
+
+
+#+BEGIN_SRC python :results output
+import numpy as np 
+import cv2 as cv
+
+#img = np.ones((500,500), dtype=np.uint8)*255
+img = cv.imread('tr.png', 1)
+x,y=img.shape[:2]
+img2 = np.zeros((x,y), dtype=np.uint8)
+
+print(img.shape, x , y)
+r,g,b =cv.split(img)
+
+result = cv.merge([g,b,r])
+#rr=cv.merge([r,img2,img2])
+#gg=cv.merge([img2,g,img2])
+#bb=cv.merge([img2,img2,b])
+cv.imshow('img', result)
+#cv.imshow('r', r)
+#cv.imshow('g', g)
+#cv.imshow('b', b)
+#cv.imshow('rr', rr)
+#cv.imshow('gg', gg)
+#cv.imshow('bb', bb)
+cv.waitKey()
+cv.destroyAllWindows()
+
+#+END_SRC
+
+#+RESULTS:
+: (632, 635, 3) 632 635
+
+#+BEGIN_SRC python
+import numpy as np 
+import cv2 as cv
+
+img = cv.imread('tr.png', 0)
+x,y=img.shape
+img2 = np.zeros((x*2,y*2), dtype=np.uint8)
+
+for i in range(x):
+    for j in range(y):
+        img2[int(i*0.5),int(j*0.5)] = img[i,j]
+    
+cv.imshow('img', img2)
+cv.waitKey()
+cv.destroyAllWindows()
+#+END_SRC
+
+#+BEGIN_SRC python
+import numpy as np
+import cv2 as cv
+
+img = cv.imread('tr.png', 0)
+x,y=img.shape
+img2 = np.zeros((x,y), dtype=np.uint8)
+
+for i in range(x):
+    for j in range(y):
+        if img[i,j]>150:
+            img2[i,j] = 255
+        else:
+            img2[i,j] = 0
+            
+cv.imshow('img', img2)
+cv.waitKey()
+cv.destroyAllWindows()
+#+END_SRC
+
+#+BEGIN_SRC python
+import cv2 as cv
+cap = cv.VideoCapture(0)
+while(True):
+         ret, img = cap.read()
+	 if ret == True:
+                  #img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+                  img3 = cv.cvtColor(img, cv.COLOR_BGR2HSV)
+		  cv.imshow('video', img3)
+		  k =cv.waitKey(1) & 0xFF
+		  if k == 27 :
+			   break
+	 else:
+		  break
+cap.release()
+cv.destroyAllWindows()
+
+#+END_SRC
+
+#+RESULTS:
+: None
+
+
+,#+RESULTS:
+: None
+
+
+
+
+
+
+
+,#+BEGIN_SRC python
+import cv2 as cv
+import numpy as np
+
+img = np.ones((500, 500), dtype=np.uint8)*156
+cv.imshow('img', img)
+cv.waitKey()
+cv.destroyAllWindows()
+#+END_SRC
+
+#+RESULTS:
+
+
+
+
+
+
+#+BEGIN_SRC c :result output
+
+#include <stdio.h>
+
+typedef struct nodo{
+int dato;
+char info;
+struct nodo *sig;
+struct nodo *ant;
+}nodo;
+
+int main(){
+
+
+}
+
+#+END_SRC
+
+** Segmentación de color mediante el modelo de color HSV
+
+#+BEGIN_SRC python
+import cv2 as cv
+
+img = cv.imread('man1.jpg', 1)
+hsv = cv.cvtColor(img, cv.COLOR_BGR2HSV)
+uba=(10, 255, 255)
+ubb=(0, 40 ,40)
+uba2=(180, 255, 255)
+ubb2=(170, 40,40)
+mask1 = cv.inRange(hsv, ubb, uba)
+mask2 = cv.inRange(hsv, ubb2, uba2)
+mask = mask1+mask2
+res = cv.bitwise_and(img, img, mask=mask)
+cv.imshow('mask1', mask1)
+cv.imshow('mask2', mask2)
+
+cv.imshow('res', res)
+cv.imshow('hsv', hsv )
+cv.imshow('img', img)
+
+cv.waitKey()
+cv.destroyAllWindows()
+#+END_SRC
+
+#+RESULTS:
+: None
+
+#+BEGIN_SRC python
+import cv2 as cv
+import numpy as np
+cap = cv.VideoCapture(0)
+
+while(True):
+    ret, img = cap.read()
+    if ret:
+        cv.imshow('video', img)
+        hsv = cv.cvtColor(img, cv.COLOR_BGR2HSV)
+        uba=(90, 255, 255)
+        ubb=(40, 40 ,40)
+        mask = cv.inRange(hsv, ubb, uba)
+        res = cv.bitwise_and(img, img, mask=mask)
+        cv.imshow('res', res)
+        
+        k =cv.waitKey(1) & 0xFF
+        if k == 27 :
+	    break
+    else:
+        break
+    
+cap.release()
+cv.destroyAllWindows()
+#+END_SRC
+
+#+RESULTS:
+: None
+
+
+
+
+
+
+
+
+
+** Seguimiento Por color 
+
+#+BEGIN_SRC python 
+import cv2
+import numpy as np
+
+# Iniciar la captura de video desde la cámara
+cap = cv2.VideoCapture(0)
+# Definir el rango de color que quieres rastrear en el espacio de color HSV (en este caso, azul)
+lower_blue = np.array([100, 150, 0])
+upper_blue = np.array([140, 255, 255])
+img2=None
+i=0
+while True:
+    # Capturar frame por frame
+    ret, frame = cap.read()
+    if not ret:
+        break
+    
+    # Convertir el frame de BGR a HSV
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+    
+    # Crear una máscara que detecte solo el color azul
+    mask = cv2.inRange(hsv, lower_blue, upper_blue)
+    
+    # Filtrar la máscara con operaciones morfológicas
+    mask = cv2.erode(mask, None, iterations=2)
+    mask = cv2.dilate(mask, None, iterations=2)
+    
+    # Encontrar contornos en la máscara
+    contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    
+    # Si se encuentra al menos un contorno, seguir el objeto
+    if contours:
+        # Tomar el contorno más grande
+        largest_contour = max(contours, key=cv2.contourArea)
+        
+        # Encontrar el centro del contorno usando un círculo mínimo que lo rodee
+        ((x, y), radius) = cv2.minEnclosingCircle(largest_contour)
+        
+        # Dibujar el círculo y el centro en el frame original si el radio es mayor que un umbral
+        if radius > 10:
+            i=i+1
+            cv2.circle(frame, (int(x), int(y)), int(radius), (0, 255, 255), 2)
+            cv2.circle(frame, (int(x), int(y)), 5, (0, 255, 255), -1)
+            cv2.rectangle(frame, (int(x-radius), int(y-radius)), (int(x+radius), int(y+radius)), (0, 0, 255), 3)
+            img2 = frame[int(y-radius):int(y+radius), int(x-radius):int(x+radius)]
+            cv2.imwrite("/home/likcos/tarjeta/tarjeta"+str(i)+'.jpg', img2)
+            cv2.imshow('img2', img2)
+    # Mostrar el frame
+    cv2.imshow('Frame', frame)
+    cv2.imshow('img2', img2)
+    cv2.imshow('Mask', mask)
+
+    # Salir si se presiona la tecla 'q'
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+# Liberar la captura y cerrar todas las ventanas
+cap.release()
+cv2.destroyAllWindows()
+
+#+END_SRC
+
+#+RESULTS:
+: None
+
+

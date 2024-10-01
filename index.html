@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-<!-- 2024-09-05 jue 22:33 -->
+<!-- 2024-09-30 lun 23:20 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Apuntes Graficación</title>
+<title>Apuntes Tópicos de Programación</title>
 <meta name="author" content="likcos" />
 <meta name="generator" content="Org Mode" />
 <style>
@@ -225,83 +225,128 @@
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">Apuntes Graficación</h1>
+<h1 class="title">Apuntes Tópicos de Programación</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>&Iacute;ndice</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org84345ee">Manual de Instalación de Git</a>
+<li><a href="#org553e721">Manual de Instalación de Git</a>
 <ul>
-<li><a href="#org4db0648">Instalación en Windows</a></li>
-<li><a href="#org0e7310c">Instalación en macOS</a>
+<li><a href="#orgee89df7">Instalación en Windows</a></li>
+<li><a href="#orge8bcf7c">Instalación en macOS</a>
 <ul>
-<li><a href="#orgaf6a7e8">Método recomendado: usando Homebrew</a></li>
-<li><a href="#orgd7c4a5f">Método alternativo: paquete descargado</a></li>
+<li><a href="#org32f5efb">Método recomendado: usando Homebrew</a></li>
+<li><a href="#org7b651f5">Método alternativo: paquete descargado</a></li>
 </ul>
 </li>
-<li><a href="#orgde53188">Instalación en Linux (Distribuciones basadas en Debian/Ubuntu)</a></li>
-<li><a href="#org45f2041">Configuración básica de Git</a></li>
-<li><a href="#org1e4a462">Actualización de Git</a></li>
-<li><a href="#org3824520">Configurar Llave SSH con GitHub</a>
+<li><a href="#org138317d">Instalación en Linux (Distribuciones basadas en Debian/Ubuntu)</a></li>
+<li><a href="#orge7861e4">Configuración básica de Git</a></li>
+<li><a href="#org4ca92c0">Actualización de Git</a></li>
+<li><a href="#org4cad37f">Configurar Llave SSH con GitHub</a>
 <ul>
-<li><a href="#org5e58894">1. Verificar si ya tienes una llave SSH</a></li>
-<li><a href="#org75a6b8e">2. Generar una nueva llave SSH</a></li>
-<li><a href="#org84e0693">3. Añadir la llave SSH al agente SSH</a></li>
-<li><a href="#org5974ad9">4. Copiar la llave SSH pública</a></li>
-<li><a href="#org00ab8ab">5. Añadir la llave SSH a GitHub</a></li>
-<li><a href="#org41c4247">6. Probar la conexión SSH con GitHub</a></li>
-<li><a href="#orgeaca08b">7. Usar la conexión SSH en repositorios de GitHub</a></li>
+<li><a href="#org1eeb284">1. Verificar si ya tienes una llave SSH</a></li>
+<li><a href="#orga5ad079">2. Generar una nueva llave SSH</a></li>
+<li><a href="#orgeaa7f13">3. Añadir la llave SSH al agente SSH</a></li>
+<li><a href="#org9095fa6">4. Copiar la llave SSH pública</a></li>
+<li><a href="#orgaeada8a">5. Añadir la llave SSH a GitHub</a></li>
+<li><a href="#org8c291b3">6. Probar la conexión SSH con GitHub</a></li>
+<li><a href="#orge1aea82">7. Usar la conexión SSH en repositorios de GitHub</a></li>
 </ul>
 </li>
-<li><a href="#orgff6243d">Configurar Llave SSH con GitHub en Windows</a>
+<li><a href="#org4737c56">Configurar Llave SSH con GitHub en Windows</a>
 <ul>
-<li><a href="#org4d572bc">1. Abrir Git Bash</a></li>
-<li><a href="#orgabfd940">2. Verificar si ya tienes una llave SSH</a></li>
-<li><a href="#orgb66bd0e">3. Generar una nueva llave SSH</a></li>
-<li><a href="#org0bc2045">4. Añadir la llave SSH al agente SSH</a></li>
-<li><a href="#org9671256">5. Copiar la llave SSH pública</a></li>
-<li><a href="#org4988cef">6. Añadir la llave SSH a GitHub</a></li>
-<li><a href="#org4038065">7. Probar la conexión SSH con GitHub</a></li>
-<li><a href="#org0fa7619">8. Usar la conexión SSH en repositorios de GitHub</a></li>
+<li><a href="#org0320214">1. Abrir Git Bash</a></li>
+<li><a href="#org3a5b0a3">2. Verificar si ya tienes una llave SSH</a></li>
+<li><a href="#orgf3aa70a">3. Generar una nueva llave SSH</a></li>
+<li><a href="#org8ddd442">4. Añadir la llave SSH al agente SSH</a></li>
+<li><a href="#org27a9694">5. Copiar la llave SSH pública</a></li>
+<li><a href="#org4c78a4e">6. Añadir la llave SSH a GitHub</a></li>
+<li><a href="#org3ee2d78">7. Probar la conexión SSH con GitHub</a></li>
+<li><a href="#org10db285">8. Usar la conexión SSH en repositorios de GitHub</a></li>
 </ul>
 </li>
-<li><a href="#org2664a91">Manual de Git en Windows</a>
+<li><a href="#org06723a4">Manual de Git en Windows</a>
 <ul>
-<li><a href="#orgbd1d2c2">1. Instalar Git en Windows</a></li>
-<li><a href="#org8d9e67e">2. Configurar Git</a></li>
-<li><a href="#org60bc176">3. Clonar un repositorio</a></li>
-<li><a href="#org0bfd58f">4. Comandos básicos de Git</a></li>
-<li><a href="#org82ad762">5. Actualizar el repositorio local</a></li>
-<li><a href="#org89761b0">6. Crear y cambiar de ramas (branches)</a></li>
-<li><a href="#orgb11333b">7. Ver historial de commits</a></li>
-<li><a href="#orgdd4458e">8. Configurar una llave SSH</a></li>
+<li><a href="#orgf86bb02">1. Instalar Git en Windows</a></li>
+<li><a href="#org535fb7e">2. Configurar Git</a></li>
+<li><a href="#orgf08f5cc">3. Clonar un repositorio</a></li>
+<li><a href="#org1bb931a">4. Comandos básicos de Git</a></li>
+<li><a href="#org9c49fd2">5. Actualizar el repositorio local</a></li>
+<li><a href="#org766c7df">6. Crear y cambiar de ramas (branches)</a></li>
+<li><a href="#org43b9482">7. Ver historial de commits</a></li>
+<li><a href="#org882bdbc">8. Configurar una llave SSH</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgbef5c67">Manual de Instalación de Python en Windows</a>
+<li><a href="#org6be6bcb">Manual de Instalación de Python en Windows</a>
 <ul>
-<li><a href="#orgc216259">Paso 1: Descarga de Python</a></li>
-<li><a href="#org291db04">Paso 2: Ejecutar el instalador</a></li>
-<li><a href="#orgfe3f82c">Paso 3: Verificación de la instalación</a></li>
-<li><a href="#org9f36cd0">Paso 4: Instalar pip y otros paquetes</a></li>
-<li><a href="#org1854811">Paso 5: Configuración del entorno de desarrollo</a></li>
-<li><a href="#org8513cc6">Paso 6: Actualización de Python (opcional)</a></li>
+<li><a href="#org34f322b">Paso 1: Descarga de Python</a></li>
+<li><a href="#org5822fc9">Paso 2: Ejecutar el instalador</a></li>
+<li><a href="#org739a64e">Paso 3: Verificación de la instalación</a></li>
+<li><a href="#orgcf8e24c">Paso 4: Instalar pip y otros paquetes</a></li>
+<li><a href="#orgf082cc3">Paso 5: Configuración del entorno de desarrollo</a></li>
+<li><a href="#orge58beef">Paso 6: Actualización de Python (opcional)</a></li>
 </ul>
 </li>
-<li><a href="#orgd1bd9e9">Programación Avanzada</a></li>
+<li><a href="#org90c1e8b">Programación Avanzada</a>
+<ul>
+<li><a href="#orgc3e43d2">Estructuras de Datos</a>
+<ul>
+<li><a href="#orgc678998">1. ¿Qué son las estructuras de datos?</a></li>
+<li><a href="#orgad9d5f5">2. Tipos comunes de estructuras de datos</a></li>
+<li><a href="#orgfbc3b8d">3. Operaciones básicas en estructuras de datos</a></li>
+<li><a href="#org8bda8a7">4. Consideraciones sobre la complejidad</a></li>
+<li><a href="#orge941273">5. Ejemplo de aplicación</a></li>
+<li><a href="#org87337ac">6. Conclusión</a></li>
+</ul>
+</li>
+<li><a href="#orgedd2a5d">Estructuras de Datos en Python y C</a>
+<ul>
+<li><a href="#orgb726cf0">1. Arreglos (Arrays)</a></li>
+<li><a href="#orgc25fe06">2. Listas enlazadas (Linked Lists)</a></li>
+<li><a href="#org5cbe8e0">3. Pilas (Stacks)</a></li>
+<li><a href="#orgc399bff">4. Colas (Queues)</a></li>
+<li><a href="#org8c1ee5d">5. Árboles (Trees)</a></li>
+<li><a href="#org20e8cd5">6. Grafos (Graphs)</a></li>
+</ul>
+</li>
+<li><a href="#org40fbc70">Problema del Granjero, el Puma, la Cabra y la Lechuga</a>
+<ul>
+<li><a href="#org123d847">Descripción del Problema</a></li>
+<li><a href="#orgd72f706">Representación del Estado</a></li>
+<li><a href="#orge111039">Reglas de Transición</a></li>
+<li><a href="#org690cd67">Algoritmo de Búsqueda en Profundidad (DFS)</a></li>
+<li><a href="#org8e6c5f3">Árbol de Búsqueda</a></li>
+<li><a href="#org77821c0">Solución del Problema</a></li>
+</ul>
+</li>
+<li><a href="#orgc8c1585">Tutorial de Operaciones Bitwise en OpenCV</a>
+<ul>
+<li><a href="#org0eac491">1. Operación Bitwise AND</a></li>
+<li><a href="#orgfa93649">2. Operación Bitwise OR</a></li>
+<li><a href="#orgc616670">3. Operación Bitwise XOR</a></li>
+<li><a href="#org03183ff">4. Operación Bitwise NOT</a></li>
+<li><a href="#orgf76e5d6">5. Aplicaciones Prácticas</a></li>
+<li><a href="#org568a5f8">Definición: Operación Bit a Bit</a></li>
+</ul>
+</li>
+<li><a href="#org4aadcbe">Segmentación de color mediante el modelo de color HSV</a></li>
+<li><a href="#org97b20d1">Seguimiento Por color</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-org84345ee" class="outline-2">
-<h2 id="org84345ee">Manual de Instalación de Git</h2>
-<div class="outline-text-2" id="text-org84345ee">
+<div id="outline-container-org553e721" class="outline-2">
+<h2 id="org553e721">Manual de Instalación de Git</h2>
+<div class="outline-text-2" id="text-org553e721">
 </div>
-<div id="outline-container-org4db0648" class="outline-3">
-<h3 id="org4db0648">Instalación en Windows</h3>
-<div class="outline-text-3" id="text-org4db0648">
+<div id="outline-container-orgee89df7" class="outline-3">
+<h3 id="orgee89df7">Instalación en Windows</h3>
+<div class="outline-text-3" id="text-orgee89df7">
 <ul class="org-ul">
 <li>Descarga el instalador desde [<a href="https://git-scm.com/">https://git-scm.com/</a>].</li>
 </ul>
@@ -331,13 +376,13 @@
 </div>
 </div>
 
-<div id="outline-container-org0e7310c" class="outline-3">
-<h3 id="org0e7310c">Instalación en macOS</h3>
-<div class="outline-text-3" id="text-org0e7310c">
+<div id="outline-container-orge8bcf7c" class="outline-3">
+<h3 id="orge8bcf7c">Instalación en macOS</h3>
+<div class="outline-text-3" id="text-orge8bcf7c">
 </div>
-<div id="outline-container-orgaf6a7e8" class="outline-4">
-<h4 id="orgaf6a7e8">Método recomendado: usando Homebrew</h4>
-<div class="outline-text-4" id="text-orgaf6a7e8">
+<div id="outline-container-org32f5efb" class="outline-4">
+<h4 id="org32f5efb">Método recomendado: usando Homebrew</h4>
+<div class="outline-text-4" id="text-org32f5efb">
 <ul class="org-ul">
 <li>Si tienes Homebrew instalado, abre la terminal y ejecuta:</li>
 </ul>
@@ -348,9 +393,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgd7c4a5f" class="outline-4">
-<h4 id="orgd7c4a5f">Método alternativo: paquete descargado</h4>
-<div class="outline-text-4" id="text-orgd7c4a5f">
+<div id="outline-container-org7b651f5" class="outline-4">
+<h4 id="org7b651f5">Método alternativo: paquete descargado</h4>
+<div class="outline-text-4" id="text-org7b651f5">
 <ul class="org-ul">
 <li>Descarga el instalador desde [<a href="https://git-scm.com/">https://git-scm.com/</a>].</li>
 <li>Ejecuta el paquete descargado (.dmg).</li>
@@ -368,9 +413,9 @@ Verifica la instalación abriendo la terminal y ejecutando:
 </div>
 </div>
 
-<div id="outline-container-orgde53188" class="outline-3">
-<h3 id="orgde53188">Instalación en Linux (Distribuciones basadas en Debian/Ubuntu)</h3>
-<div class="outline-text-3" id="text-orgde53188">
+<div id="outline-container-org138317d" class="outline-3">
+<h3 id="org138317d">Instalación en Linux (Distribuciones basadas en Debian/Ubuntu)</h3>
+<div class="outline-text-3" id="text-org138317d">
 <ul class="org-ul">
 <li><p>
 Abre la terminal y ejecuta:
@@ -392,9 +437,9 @@ Verifica la instalación ejecutando:
 </div>
 </div>
 
-<div id="outline-container-org45f2041" class="outline-3">
-<h3 id="org45f2041">Configuración básica de Git</h3>
-<div class="outline-text-3" id="text-org45f2041">
+<div id="outline-container-orge7861e4" class="outline-3">
+<h3 id="orge7861e4">Configuración básica de Git</h3>
+<div class="outline-text-3" id="text-orge7861e4">
 <ul class="org-ul">
 <li><p>
 Configura tu nombre de usuario:
@@ -423,9 +468,9 @@ Verifica la configuración:
 </div>
 </div>
 
-<div id="outline-container-org1e4a462" class="outline-3">
-<h3 id="org1e4a462">Actualización de Git</h3>
-<div class="outline-text-3" id="text-org1e4a462">
+<div id="outline-container-org4ca92c0" class="outline-3">
+<h3 id="org4ca92c0">Actualización de Git</h3>
+<div class="outline-text-3" id="text-org4ca92c0">
 <ul class="org-ul">
 <li><b>Windows</b>: Ejecuta el instalador más reciente desde el sitio oficial.</li>
 <li><p>
@@ -447,13 +492,13 @@ Verifica la configuración:
 </div>
 
 
-<div id="outline-container-org3824520" class="outline-3">
-<h3 id="org3824520">Configurar Llave SSH con GitHub</h3>
-<div class="outline-text-3" id="text-org3824520">
+<div id="outline-container-org4cad37f" class="outline-3">
+<h3 id="org4cad37f">Configurar Llave SSH con GitHub</h3>
+<div class="outline-text-3" id="text-org4cad37f">
 </div>
-<div id="outline-container-org5e58894" class="outline-4">
-<h4 id="org5e58894">1. Verificar si ya tienes una llave SSH</h4>
-<div class="outline-text-4" id="text-org5e58894">
+<div id="outline-container-org1eeb284" class="outline-4">
+<h4 id="org1eeb284">1. Verificar si ya tienes una llave SSH</h4>
+<div class="outline-text-4" id="text-org1eeb284">
 <ul class="org-ul">
 <li><p>
 Abre la terminal y ejecuta el siguiente comando para verificar si ya tienes llaves SSH generadas:
@@ -468,9 +513,9 @@ Abre la terminal y ejecuta el siguiente comando para verificar si ya tienes llav
 </div>
 </div>
 
-<div id="outline-container-org75a6b8e" class="outline-4">
-<h4 id="org75a6b8e">2. Generar una nueva llave SSH</h4>
-<div class="outline-text-4" id="text-org75a6b8e">
+<div id="outline-container-orga5ad079" class="outline-4">
+<h4 id="orga5ad079">2. Generar una nueva llave SSH</h4>
+<div class="outline-text-4" id="text-orga5ad079">
 <ul class="org-ul">
 <li><p>
 Si no tienes una llave SSH, genera una nueva con el siguiente comando (puedes cambiar `ed25519` por `rsa` si lo prefieres):
@@ -486,9 +531,9 @@ Si no tienes una llave SSH, genera una nueva con el siguiente comando (puedes ca
 </div>
 </div>
 
-<div id="outline-container-org84e0693" class="outline-4">
-<h4 id="org84e0693">3. Añadir la llave SSH al agente SSH</h4>
-<div class="outline-text-4" id="text-org84e0693">
+<div id="outline-container-orgeaa7f13" class="outline-4">
+<h4 id="orgeaa7f13">3. Añadir la llave SSH al agente SSH</h4>
+<div class="outline-text-4" id="text-orgeaa7f13">
 <ul class="org-ul">
 <li><p>
 Para añadir tu nueva llave SSH al agente, asegúrate de que esté en ejecución:
@@ -509,9 +554,9 @@ Añade la llave SSH al agente:
 </div>
 </div>
 
-<div id="outline-container-org5974ad9" class="outline-4">
-<h4 id="org5974ad9">4. Copiar la llave SSH pública</h4>
-<div class="outline-text-4" id="text-org5974ad9">
+<div id="outline-container-org9095fa6" class="outline-4">
+<h4 id="org9095fa6">4. Copiar la llave SSH pública</h4>
+<div class="outline-text-4" id="text-org9095fa6">
 <ul class="org-ul">
 <li><p>
 Copia el contenido de tu llave pública para añadirla a GitHub:
@@ -526,9 +571,9 @@ Copia el contenido de tu llave pública para añadirla a GitHub:
 </div>
 </div>
 
-<div id="outline-container-org00ab8ab" class="outline-4">
-<h4 id="org00ab8ab">5. Añadir la llave SSH a GitHub</h4>
-<div class="outline-text-4" id="text-org00ab8ab">
+<div id="outline-container-orgaeada8a" class="outline-4">
+<h4 id="orgaeada8a">5. Añadir la llave SSH a GitHub</h4>
+<div class="outline-text-4" id="text-orgaeada8a">
 <ul class="org-ul">
 <li>Inicia sesión en tu cuenta de GitHub.</li>
 <li>Ve a la sección de <b>Settings</b> (Configuración).</li>
@@ -540,9 +585,9 @@ Copia el contenido de tu llave pública para añadirla a GitHub:
 </div>
 </div>
 
-<div id="outline-container-org41c4247" class="outline-4">
-<h4 id="org41c4247">6. Probar la conexión SSH con GitHub</h4>
-<div class="outline-text-4" id="text-org41c4247">
+<div id="outline-container-org8c291b3" class="outline-4">
+<h4 id="org8c291b3">6. Probar la conexión SSH con GitHub</h4>
+<div class="outline-text-4" id="text-org8c291b3">
 <ul class="org-ul">
 <li><p>
 Para verificar que todo está configurado correctamente, ejecuta el siguiente comando:
@@ -565,9 +610,9 @@ Hi username! You've successfully authenticated, but GitHub does not provide shel
 </div>
 </div>
 
-<div id="outline-container-orgeaca08b" class="outline-4">
-<h4 id="orgeaca08b">7. Usar la conexión SSH en repositorios de GitHub</h4>
-<div class="outline-text-4" id="text-orgeaca08b">
+<div id="outline-container-orge1aea82" class="outline-4">
+<h4 id="orge1aea82">7. Usar la conexión SSH en repositorios de GitHub</h4>
+<div class="outline-text-4" id="text-orge1aea82">
 <ul class="org-ul">
 <li><p>
 Para clonar un repositorio usando SSH, utiliza la URL SSH del repositorio:
@@ -582,9 +627,9 @@ Para clonar un repositorio usando SSH, utiliza la URL SSH del repositorio:
 </div>
 
 
-<div id="outline-container-orgff6243d" class="outline-3">
-<h3 id="orgff6243d">Configurar Llave SSH con GitHub en Windows</h3>
-<div class="outline-text-3" id="text-orgff6243d">
+<div id="outline-container-org4737c56" class="outline-3">
+<h3 id="org4737c56">Configurar Llave SSH con GitHub en Windows</h3>
+<div class="outline-text-3" id="text-org4737c56">
 <ol class="org-ol">
 <li>Git Bash: En Windows, utilizas Git Bash como terminal para ejecutar los comandos, en lugar de la terminal estándar de Linux o macOS.</li>
 
@@ -594,18 +639,18 @@ Para clonar un repositorio usando SSH, utiliza la URL SSH del repositorio:
 
 
 
-<div id="outline-container-org4d572bc" class="outline-4">
-<h4 id="org4d572bc">1. Abrir Git Bash</h4>
-<div class="outline-text-4" id="text-org4d572bc">
+<div id="outline-container-org0320214" class="outline-4">
+<h4 id="org0320214">1. Abrir Git Bash</h4>
+<div class="outline-text-4" id="text-org0320214">
 <ul class="org-ul">
 <li>Abre <b><b>Git Bash</b></b> (es la terminal que se instala junto con Git en Windows).</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgabfd940" class="outline-4">
-<h4 id="orgabfd940">2. Verificar si ya tienes una llave SSH</h4>
-<div class="outline-text-4" id="text-orgabfd940">
+<div id="outline-container-org3a5b0a3" class="outline-4">
+<h4 id="org3a5b0a3">2. Verificar si ya tienes una llave SSH</h4>
+<div class="outline-text-4" id="text-org3a5b0a3">
 <ul class="org-ul">
 <li><p>
 En la terminal de Git Bash, ejecuta el siguiente comando para ver si ya tienes llaves SSH generadas:
@@ -620,9 +665,9 @@ En la terminal de Git Bash, ejecuta el siguiente comando para ver si ya tienes l
 </div>
 </div>
 
-<div id="outline-container-orgb66bd0e" class="outline-4">
-<h4 id="orgb66bd0e">3. Generar una nueva llave SSH</h4>
-<div class="outline-text-4" id="text-orgb66bd0e">
+<div id="outline-container-orgf3aa70a" class="outline-4">
+<h4 id="orgf3aa70a">3. Generar una nueva llave SSH</h4>
+<div class="outline-text-4" id="text-orgf3aa70a">
 <ul class="org-ul">
 <li><p>
 Si no tienes una llave SSH, genera una nueva con el siguiente comando:
@@ -638,9 +683,9 @@ Si no tienes una llave SSH, genera una nueva con el siguiente comando:
 </div>
 </div>
 
-<div id="outline-container-org0bc2045" class="outline-4">
-<h4 id="org0bc2045">4. Añadir la llave SSH al agente SSH</h4>
-<div class="outline-text-4" id="text-org0bc2045">
+<div id="outline-container-org8ddd442" class="outline-4">
+<h4 id="org8ddd442">4. Añadir la llave SSH al agente SSH</h4>
+<div class="outline-text-4" id="text-org8ddd442">
 <ul class="org-ul">
 <li><p>
 Asegúrate de que el agente SSH esté en ejecución. En Git Bash, ejecuta:
@@ -661,9 +706,9 @@ Añade tu nueva llave SSH al agente:
 </div>
 </div>
 
-<div id="outline-container-org9671256" class="outline-4">
-<h4 id="org9671256">5. Copiar la llave SSH pública</h4>
-<div class="outline-text-4" id="text-org9671256">
+<div id="outline-container-org27a9694" class="outline-4">
+<h4 id="org27a9694">5. Copiar la llave SSH pública</h4>
+<div class="outline-text-4" id="text-org27a9694">
 <ul class="org-ul">
 <li><p>
 Para añadir la llave SSH a GitHub, necesitas copiar tu llave pública. Ejecuta el siguiente comando en Git Bash:
@@ -678,9 +723,9 @@ Para añadir la llave SSH a GitHub, necesitas copiar tu llave pública. Ejecuta 
 </div>
 </div>
 
-<div id="outline-container-org4988cef" class="outline-4">
-<h4 id="org4988cef">6. Añadir la llave SSH a GitHub</h4>
-<div class="outline-text-4" id="text-org4988cef">
+<div id="outline-container-org4c78a4e" class="outline-4">
+<h4 id="org4c78a4e">6. Añadir la llave SSH a GitHub</h4>
+<div class="outline-text-4" id="text-org4c78a4e">
 <ul class="org-ul">
 <li>Abre tu navegador web e inicia sesión en GitHub.</li>
 <li>Ve a la sección de <b>Settings</b> (Configuración).</li>
@@ -692,9 +737,9 @@ Para añadir la llave SSH a GitHub, necesitas copiar tu llave pública. Ejecuta 
 </div>
 </div>
 
-<div id="outline-container-org4038065" class="outline-4">
-<h4 id="org4038065">7. Probar la conexión SSH con GitHub</h4>
-<div class="outline-text-4" id="text-org4038065">
+<div id="outline-container-org3ee2d78" class="outline-4">
+<h4 id="org3ee2d78">7. Probar la conexión SSH con GitHub</h4>
+<div class="outline-text-4" id="text-org3ee2d78">
 <ul class="org-ul">
 <li><p>
 Para asegurarte de que todo está correctamente configurado, prueba la conexión con GitHub desde Git Bash:
@@ -717,9 +762,9 @@ Hi username! You've successfully authenticated, but GitHub does not provide shel
 </div>
 </div>
 
-<div id="outline-container-org0fa7619" class="outline-4">
-<h4 id="org0fa7619">8. Usar la conexión SSH en repositorios de GitHub</h4>
-<div class="outline-text-4" id="text-org0fa7619">
+<div id="outline-container-org10db285" class="outline-4">
+<h4 id="org10db285">8. Usar la conexión SSH en repositorios de GitHub</h4>
+<div class="outline-text-4" id="text-org10db285">
 <ul class="org-ul">
 <li><p>
 Para clonar un repositorio usando la URL SSH, ejecuta:
@@ -735,13 +780,13 @@ Para clonar un repositorio usando la URL SSH, ejecuta:
 
 
 
-<div id="outline-container-org2664a91" class="outline-3">
-<h3 id="org2664a91">Manual de Git en Windows</h3>
-<div class="outline-text-3" id="text-org2664a91">
+<div id="outline-container-org06723a4" class="outline-3">
+<h3 id="org06723a4">Manual de Git en Windows</h3>
+<div class="outline-text-3" id="text-org06723a4">
 </div>
-<div id="outline-container-orgbd1d2c2" class="outline-4">
-<h4 id="orgbd1d2c2">1. Instalar Git en Windows</h4>
-<div class="outline-text-4" id="text-orgbd1d2c2">
+<div id="outline-container-orgf86bb02" class="outline-4">
+<h4 id="orgf86bb02">1. Instalar Git en Windows</h4>
+<div class="outline-text-4" id="text-orgf86bb02">
 <ul class="org-ul">
 <li>Visita [<a href="https://git-scm.com/">https://git-scm.com/</a>](<a href="https://git-scm.com/">https://git-scm.com/</a>) y descarga el instalador de Git para Windows.</li>
 <li>Ejecuta el archivo descargado (.exe).</li>
@@ -751,9 +796,9 @@ Para clonar un repositorio usando la URL SSH, ejecuta:
 </div>
 </div>
 
-<div id="outline-container-org8d9e67e" class="outline-4">
-<h4 id="org8d9e67e">2. Configurar Git</h4>
-<div class="outline-text-4" id="text-org8d9e67e">
+<div id="outline-container-org535fb7e" class="outline-4">
+<h4 id="org535fb7e">2. Configurar Git</h4>
+<div class="outline-text-4" id="text-org535fb7e">
 <ul class="org-ul">
 <li>Abre <b>Git Bash</b> y ejecuta los siguientes comandos para configurar tu identidad:</li>
 </ul>
@@ -775,9 +820,9 @@ Para clonar un repositorio usando la URL SSH, ejecuta:
 </div>
 </div>
 
-<div id="outline-container-org60bc176" class="outline-4">
-<h4 id="org60bc176">3. Clonar un repositorio</h4>
-<div class="outline-text-4" id="text-org60bc176">
+<div id="outline-container-orgf08f5cc" class="outline-4">
+<h4 id="orgf08f5cc">3. Clonar un repositorio</h4>
+<div class="outline-text-4" id="text-orgf08f5cc">
 <ul class="org-ul">
 <li>Para clonar un repositorio desde GitHub, usa el siguiente comando:</li>
 </ul>
@@ -793,9 +838,9 @@ Esto descargará el repositorio a tu computadora.
 </div>
 </div>
 
-<div id="outline-container-org0bfd58f" class="outline-4">
-<h4 id="org0bfd58f">4. Comandos básicos de Git</h4>
-<div class="outline-text-4" id="text-org0bfd58f">
+<div id="outline-container-org1bb931a" class="outline-4">
+<h4 id="org1bb931a">4. Comandos básicos de Git</h4>
+<div class="outline-text-4" id="text-org1bb931a">
 <ul class="org-ul">
 <li><b>Verificar el estado del repositorio</b>:</li>
 </ul>
@@ -843,9 +888,9 @@ Esto descargará el repositorio a tu computadora.
 </div>
 </div>
 
-<div id="outline-container-org82ad762" class="outline-4">
-<h4 id="org82ad762">5. Actualizar el repositorio local</h4>
-<div class="outline-text-4" id="text-org82ad762">
+<div id="outline-container-org9c49fd2" class="outline-4">
+<h4 id="org9c49fd2">5. Actualizar el repositorio local</h4>
+<div class="outline-text-4" id="text-org9c49fd2">
 <ul class="org-ul">
 <li>Para obtener los últimos cambios del repositorio remoto:</li>
 </ul>
@@ -857,9 +902,9 @@ Esto descargará el repositorio a tu computadora.
 </div>
 </div>
 
-<div id="outline-container-org89761b0" class="outline-4">
-<h4 id="org89761b0">6. Crear y cambiar de ramas (branches)</h4>
-<div class="outline-text-4" id="text-org89761b0">
+<div id="outline-container-org766c7df" class="outline-4">
+<h4 id="org766c7df">6. Crear y cambiar de ramas (branches)</h4>
+<div class="outline-text-4" id="text-org766c7df">
 <ul class="org-ul">
 <li><b>Crear una nueva rama</b>:</li>
 </ul>
@@ -889,9 +934,9 @@ Esto descargará el repositorio a tu computadora.
 </div>
 </div>
 
-<div id="outline-container-orgb11333b" class="outline-4">
-<h4 id="orgb11333b">7. Ver historial de commits</h4>
-<div class="outline-text-4" id="text-orgb11333b">
+<div id="outline-container-org43b9482" class="outline-4">
+<h4 id="org43b9482">7. Ver historial de commits</h4>
+<div class="outline-text-4" id="text-org43b9482">
 <ul class="org-ul">
 <li>Para ver el historial de cambios del repositorio:</li>
 </ul>
@@ -912,9 +957,9 @@ Esto descargará el repositorio a tu computadora.
 </div>
 </div>
 
-<div id="outline-container-orgdd4458e" class="outline-4">
-<h4 id="orgdd4458e">8. Configurar una llave SSH</h4>
-<div class="outline-text-4" id="text-orgdd4458e">
+<div id="outline-container-org882bdbc" class="outline-4">
+<h4 id="org882bdbc">8. Configurar una llave SSH</h4>
+<div class="outline-text-4" id="text-org882bdbc">
 <ul class="org-ul">
 <li><b>Generar una llave SSH</b>:</li>
 </ul>
@@ -952,13 +997,13 @@ Esto descargará el repositorio a tu computadora.
 </div>
 
 
-<div id="outline-container-orgbef5c67" class="outline-2">
-<h2 id="orgbef5c67">Manual de Instalación de Python en Windows</h2>
-<div class="outline-text-2" id="text-orgbef5c67">
+<div id="outline-container-org6be6bcb" class="outline-2">
+<h2 id="org6be6bcb">Manual de Instalación de Python en Windows</h2>
+<div class="outline-text-2" id="text-org6be6bcb">
 </div>
-<div id="outline-container-orgc216259" class="outline-3">
-<h3 id="orgc216259">Paso 1: Descarga de Python</h3>
-<div class="outline-text-3" id="text-orgc216259">
+<div id="outline-container-org34f322b" class="outline-3">
+<h3 id="org34f322b">Paso 1: Descarga de Python</h3>
+<div class="outline-text-3" id="text-org34f322b">
 <ol class="org-ol">
 <li>Abre el navegador web y visita el sitio: <a href="https://www.python.org">https://www.python.org</a>.</li>
 <li>Ve a la pestaña "Downloads" y selecciona la versión más reciente para Windows.</li>
@@ -967,9 +1012,9 @@ Esto descargará el repositorio a tu computadora.
 </div>
 </div>
 
-<div id="outline-container-org291db04" class="outline-3">
-<h3 id="org291db04">Paso 2: Ejecutar el instalador</h3>
-<div class="outline-text-3" id="text-org291db04">
+<div id="outline-container-org5822fc9" class="outline-3">
+<h3 id="org5822fc9">Paso 2: Ejecutar el instalador</h3>
+<div class="outline-text-3" id="text-org5822fc9">
 <ol class="org-ol">
 <li>Ejecuta el archivo descargado (.exe).</li>
 <li>Asegúrate de marcar la opción <code>Add Python to PATH</code> antes de proceder con la instalación.</li>
@@ -979,9 +1024,9 @@ Esto descargará el repositorio a tu computadora.
 </div>
 </div>
 
-<div id="outline-container-orgfe3f82c" class="outline-3">
-<h3 id="orgfe3f82c">Paso 3: Verificación de la instalación</h3>
-<div class="outline-text-3" id="text-orgfe3f82c">
+<div id="outline-container-org739a64e" class="outline-3">
+<h3 id="org739a64e">Paso 3: Verificación de la instalación</h3>
+<div class="outline-text-3" id="text-org739a64e">
 <ol class="org-ol">
 <li>Abre la línea de comandos (cmd) escribiendo "cmd" en el menú de inicio.</li>
 <li><p>
@@ -1006,9 +1051,9 @@ Si todo está bien, verás el prompt interactivo de Python (tres símbolos <code
 </div>
 </div>
 
-<div id="outline-container-org9f36cd0" class="outline-3">
-<h3 id="org9f36cd0">Paso 4: Instalar pip y otros paquetes</h3>
-<div class="outline-text-3" id="text-org9f36cd0">
+<div id="outline-container-orgcf8e24c" class="outline-3">
+<h3 id="orgcf8e24c">Paso 4: Instalar pip y otros paquetes</h3>
+<div class="outline-text-3" id="text-orgcf8e24c">
 <ol class="org-ol">
 <li><p>
 Verifica si pip está instalado escribiendo en la línea de comandos:
@@ -1028,9 +1073,9 @@ Si necesitas instalar paquetes, usa pip con el siguiente comando:
 </div>
 </div>
 
-<div id="outline-container-org1854811" class="outline-3">
-<h3 id="org1854811">Paso 5: Configuración del entorno de desarrollo</h3>
-<div class="outline-text-3" id="text-org1854811">
+<div id="outline-container-orgf082cc3" class="outline-3">
+<h3 id="orgf082cc3">Paso 5: Configuración del entorno de desarrollo</h3>
+<div class="outline-text-3" id="text-orgf082cc3">
 <ol class="org-ol">
 <li>Instala un editor de código como:
 <ul class="org-ul">
@@ -1042,9 +1087,9 @@ Si necesitas instalar paquetes, usa pip con el siguiente comando:
 </div>
 </div>
 
-<div id="outline-container-org8513cc6" class="outline-3">
-<h3 id="org8513cc6">Paso 6: Actualización de Python (opcional)</h3>
-<div class="outline-text-3" id="text-org8513cc6">
+<div id="outline-container-orge58beef" class="outline-3">
+<h3 id="orge58beef">Paso 6: Actualización de Python (opcional)</h3>
+<div class="outline-text-3" id="text-orge58beef">
 <ul class="org-ul">
 <li>Para actualizar Python a una nueva versión en el futuro, descarga la última versión desde <a href="https://www.python.org/downloads/">python.org</a> y sigue los pasos de instalación.</li>
 </ul>
@@ -1054,13 +1099,1375 @@ Si necesitas instalar paquetes, usa pip con el siguiente comando:
 
 
 
-<div id="outline-container-orgd1bd9e9" class="outline-2">
-<h2 id="orgd1bd9e9">Programación Avanzada</h2>
+<div id="outline-container-org90c1e8b" class="outline-2">
+<h2 id="org90c1e8b">Programación Avanzada</h2>
+<div class="outline-text-2" id="text-org90c1e8b">
+<p>
+pip install opecv-contrib-python
+pin install opencv-python
+            tensorflow
+			sklearn
+</p>
+
+<p>
+conda install opencv-python
+</p>
+</div>
+
+
+<div id="outline-container-orgc3e43d2" class="outline-3">
+<h3 id="orgc3e43d2">Estructuras de Datos</h3>
+<div class="outline-text-3" id="text-orgc3e43d2">
+</div>
+<div id="outline-container-orgc678998" class="outline-4">
+<h4 id="orgc678998">1. ¿Qué son las estructuras de datos?</h4>
+<div class="outline-text-4" id="text-orgc678998">
+<p>
+Las estructuras de datos son una forma de organizar, gestionar y almacenar datos de manera eficiente. Cada estructura de datos está diseñada para un tipo específico de uso o problema, optimizando la forma en la que se accede o modifica la información.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgad9d5f5" class="outline-4">
+<h4 id="orgad9d5f5">2. Tipos comunes de estructuras de datos</h4>
+<div class="outline-text-4" id="text-orgad9d5f5">
+</div>
+<ul class="org-ul">
+<li><a id="org0aa2a5f"></a>2.1. Arreglos (Arrays)<br />
+<div class="outline-text-5" id="text-org0aa2a5f">
+<ul class="org-ul">
+<li>Los arreglos son colecciones de elementos del mismo tipo, organizados en una secuencia.</li>
+<li>Los índices permiten acceder a los elementos.</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-pseudocode">   Arreglo A = [1, 2, 3, 4, 5]
+   Imprimir(A[2])  // Salida: 3
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org3d77b98"></a>2.2. Listas enlazadas (Linked Lists)<br />
+<div class="outline-text-5" id="text-org3d77b98">
+<ul class="org-ul">
+<li>Una lista enlazada está formada por nodos, donde cada nodo contiene un valor y un puntero al siguiente nodo.</li>
+<li>Hay listas enlazadas simples (unidireccionales) y listas doblemente enlazadas (bidireccionales).</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-pseudocode">   Clase Nodo:
+      Atributo valor
+      Atributo siguiente
+
+   ListaEnlazada:
+      Atributo cabeza = nulo
+
+      Funcion agregar(valor):
+         Si cabeza == nulo:
+            cabeza = Nodo(valor)
+         Sino:
+            Nodo actual = cabeza
+            Mientras actual.siguiente != nulo:
+               actual = actual.siguiente
+            actual.siguiente = Nodo(valor)
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgdd3af1c"></a>2.3. Pilas (Stacks)<br />
+<div class="outline-text-5" id="text-orgdd3af1c">
+<ul class="org-ul">
+<li>Una pila sigue el principio LIFO (Last In, First Out). El último elemento en ser agregado es el primero en ser retirado.</li>
+<li>Operaciones comunes: `push` (agregar), `pop` (retirar), `peek` (ver el último).</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-pseudocode">   Pila S = []
+   S.push(10)
+   S.push(20)
+   Imprimir(S.peek())  // Salida: 20
+   S.pop()
+   Imprimir(S.peek())  // Salida: 10
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgc999c10"></a>2.4. Colas (Queues)<br />
+<div class="outline-text-5" id="text-orgc999c10">
+<ul class="org-ul">
+<li>Una cola sigue el principio FIFO (First In, First Out). El primer elemento en ser agregado es el primero en ser retirado.</li>
+<li>Operaciones comunes: `enqueue` (agregar), `dequeue` (retirar).</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-pseudocode">   Cola Q = []
+   Q.enqueue(10)
+   Q.enqueue(20)
+   Imprimir(Q.dequeue())  // Salida: 10
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orge780a5c"></a>2.5. Árboles (Trees)<br />
+<div class="outline-text-5" id="text-orge780a5c">
+<ul class="org-ul">
+<li>Un árbol es una estructura de datos jerárquica que consta de nodos. Cada nodo tiene un valor y referencias a sus nodos hijos.</li>
+<li>El nodo superior se llama raíz, y los nodos sin hijos se llaman hojas.</li>
+<li>Un tipo especial de árbol es el <b><b>árbol binario</b></b>, donde cada nodo tiene a lo sumo dos hijos (izquierdo y derecho).</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-pseudocode">   Clase Nodo:
+      Atributo valor
+      Atributo izquierdo
+      Atributo derecho
+
+   ArbolBinario:
+      Atributo raiz = nulo
+
+      Funcion agregar(valor):
+         Si raiz == nulo:
+            raiz = Nodo(valor)
+         Sino:
+            agregarRecursivo(raiz, valor)
+
+      Funcion agregarRecursivo(nodo, valor):
+         Si valor &lt; nodo.valor:
+            Si nodo.izquierdo == nulo:
+               nodo.izquierdo = Nodo(valor)
+            Sino:
+               agregarRecursivo(nodo.izquierdo, valor)
+         Sino:
+            Si nodo.derecho == nulo:
+               nodo.derecho = Nodo(valor)
+            Sino:
+               agregarRecursivo(nodo.derecho, valor)
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org7419e08"></a>2.6. Grafos (Graphs)<br />
+<div class="outline-text-5" id="text-org7419e08">
+<ul class="org-ul">
+<li>Un grafo es una colección de nodos (llamados vértices) y aristas (líneas que conectan los vértices).</li>
+<li>Los grafos pueden ser dirigidos o no dirigidos, dependiendo de si las conexiones entre nodos tienen dirección o no.</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-pseudocode">   Grafo:
+      Atributo vertices = []
+
+      Funcion agregarVertice(v):
+         vertices.agregar(v)
+
+      Funcion agregarArista(v1, v2):
+         v1.vecinos.agregar(v2)
+         v2.vecinos.agregar(v1)
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-orgfbc3b8d" class="outline-4">
+<h4 id="orgfbc3b8d">3. Operaciones básicas en estructuras de datos</h4>
+<div class="outline-text-4" id="text-orgfbc3b8d">
+<p>
+Cada estructura de datos tiene sus propias operaciones comunes, por ejemplo:
+</p>
+
+<ul class="org-ul">
+<li><b><b>Arreglos</b></b>: acceso por índice, inserción, eliminación.</li>
+<li><b><b>Listas enlazadas</b></b>: agregar, eliminar, recorrer.</li>
+<li><b><b>Pilas</b></b>: `push`, `pop`, `peek`.</li>
+<li><b><b>Colas</b></b>: `enqueue`, `dequeue`.</li>
+<li><b><b>Árboles</b></b>: agregar, eliminar, búsqueda, recorrido (inorden, preorden, postorden).</li>
+<li><b><b>Grafos</b></b>: agregar vértices, agregar aristas, búsquedas (BFS, DFS).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8bda8a7" class="outline-4">
+<h4 id="org8bda8a7">4. Consideraciones sobre la complejidad</h4>
+<div class="outline-text-4" id="text-org8bda8a7">
+<p>
+Cada estructura de datos tiene un costo en términos de tiempo y espacio dependiendo de cómo se implementen sus operaciones. Algunos aspectos clave a considerar:
+</p>
+
+<ul class="org-ul">
+<li><b><b>Arreglos</b></b>: Acceso rápido (O(1)) pero inserciones y eliminaciones pueden ser costosas (O(n)).</li>
+<li><b><b>Listas enlazadas</b></b>: Inserciones y eliminaciones eficientes (O(1)) pero acceso lento (O(n)).</li>
+<li><b><b>Pilas y Colas</b></b>: Operaciones básicas eficientes (O(1)).</li>
+<li><b><b>Árboles</b></b>: Operaciones como búsqueda e inserción pueden ser eficientes en árboles balanceados (O(log n)).</li>
+<li><b><b>Grafos</b></b>: La eficiencia depende del número de vértices y aristas; búsquedas pueden ser O(V + E), donde V es el número de vértices y E el de aristas.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge941273" class="outline-4">
+<h4 id="orge941273">5. Ejemplo de aplicación</h4>
+<div class="outline-text-4" id="text-orge941273">
+<p>
+Supongamos que queremos implementar un sistema donde necesitamos manejar una lista de tareas en orden de prioridad. Una estructura adecuada sería una <b><b>cola de prioridad</b></b>, que permite agregar tareas con diferentes prioridades y siempre procesar la más urgente primero.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-pseudocode">ColaDePrioridad:
+   Atributo tareas = []
+
+   Funcion agregarTarea(tarea, prioridad):
+      tareas.agregar({tarea, prioridad})
+      ordenarPorPrioridad(tareas)
+
+   Funcion siguienteTarea():
+      retornar tareas.eliminarPrimero()
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org87337ac" class="outline-4">
+<h4 id="org87337ac">6. Conclusión</h4>
+<div class="outline-text-4" id="text-org87337ac">
+<p>
+Este es un resumen introductorio de las estructuras de datos más comunes y cómo funcionan. Cada estructura tiene aplicaciones específicas y el uso adecuado depende del tipo de problema que estés intentando resolver.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgedd2a5d" class="outline-3">
+<h3 id="orgedd2a5d">Estructuras de Datos en Python y C</h3>
+<div class="outline-text-3" id="text-orgedd2a5d">
+</div>
+<div id="outline-container-orgb726cf0" class="outline-4">
+<h4 id="orgb726cf0">1. Arreglos (Arrays)</h4>
+<div class="outline-text-4" id="text-orgb726cf0">
+</div>
+<ul class="org-ul">
+<li><a id="org92ece2c"></a>Python<br />
+<div class="outline-text-5" id="text-org92ece2c">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">En Python, los arrays son implementados como listas.</span>
+<span style="color: #ff98a4;">A</span> = <span style="color: #c099ff;">[</span>1, 2, 3, 4, 5<span style="color: #c099ff;">]</span>
+<span style="color: #c099ff;">print</span><span style="color: #c099ff;">(</span>A<span style="color: #ff995e;">[</span>2<span style="color: #ff995e;">]</span><span style="color: #c099ff;">)</span>  <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Salida: 3</span>
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgf91a981"></a>C<br />
+<div class="outline-text-5" id="text-orgf91a981">
+<div class="org-src-container">
+<pre class="src src-c"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">main</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">A</span><span style="color: #ff995e;">[</span>5<span style="color: #ff995e;">]</span> = <span style="color: #ff995e;">{</span>1, 2, 3, 4, 5<span style="color: #ff995e;">}</span>;
+    printf<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">"%d\n"</span>, A<span style="color: #ff98a4;">[</span>2<span style="color: #ff98a4;">]</span><span style="color: #ff995e;">)</span>;  <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Salida: 3</span>
+    <span style="color: #c099ff;">return</span> 0;
+<span style="color: #c099ff;">}</span>
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-orgc25fe06" class="outline-4">
+<h4 id="orgc25fe06">2. Listas enlazadas (Linked Lists)</h4>
+<div class="outline-text-4" id="text-orgc25fe06">
+</div>
+<ul class="org-ul">
+<li><a id="orgbecfbce"></a>Python<br />
+<div class="outline-text-5" id="text-orgbecfbce">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #c099ff;">class</span> <span style="color: #ffc777;">Nodo</span>:
+    <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">__init__</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span>, valor<span style="color: #c099ff;">)</span>:
+        <span style="color: #c099ff;">self</span>.valor = valor
+        <span style="color: #c099ff;">self</span>.<span style="color: #ff98a4;">siguiente</span> = <span style="color: #ff995e;">None</span>
+
+<span style="color: #c099ff;">class</span> <span style="color: #ffc777;">ListaEnlazada</span>:
+    <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">__init__</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span><span style="color: #c099ff;">)</span>:
+        <span style="color: #c099ff;">self</span>.cabeza = <span style="color: #ff995e;">None</span>
+
+    <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">agregar</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span>, valor<span style="color: #c099ff;">)</span>:
+        <span style="color: #ff98a4;">nuevo_nodo</span> = Nodo<span style="color: #c099ff;">(</span>valor<span style="color: #c099ff;">)</span>
+        <span style="color: #c099ff;">if</span> <span style="color: #c099ff;">not</span> <span style="color: #c099ff;">self</span>.<span style="color: #ff98a4;">cabeza</span>:
+            <span style="color: #c099ff;">self</span>.cabeza = nuevo_nodo
+        <span style="color: #c099ff;">else</span>:
+            actual = <span style="color: #c099ff;">self</span>.cabeza
+            <span style="color: #c099ff;">while</span> actual.<span style="color: #ff98a4;">siguiente</span>:
+                actual = actual.siguiente
+            actual.<span style="color: #ff98a4;">siguiente</span> = nuevo_nodo
+
+<span style="color: #ff98a4;">lista</span> = ListaEnlazada<span style="color: #c099ff;">()</span>
+lista.agregar<span style="color: #c099ff;">(</span>10<span style="color: #c099ff;">)</span>
+lista.agregar<span style="color: #c099ff;">(</span>20<span style="color: #c099ff;">)</span>
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgde80c3f"></a>C<br />
+<div class="outline-text-5" id="text-orgde80c3f">
+<div class="org-src-container">
+<pre class="src src-c"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
+
+<span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Nodo</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">valor</span>;
+    <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Nodo</span>* <span style="color: #ff98a4;">siguiente</span>;
+<span style="color: #c099ff;">}</span>;
+
+<span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Nodo</span>* <span style="color: #82aaff;">crearNodo</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">valor</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Nodo</span>* <span style="color: #ff98a4;">nuevoNodo</span> = <span style="color: #ff995e;">(</span><span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Nodo</span>*<span style="color: #ff995e;">)</span>malloc<span style="color: #ff995e;">(</span><span style="color: #c099ff;">sizeof</span><span style="color: #ff98a4;">(</span><span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Nodo</span><span style="color: #ff98a4;">)</span><span style="color: #ff995e;">)</span>;
+    nuevoNodo-&gt;valor = valor;
+    nuevoNodo-&gt;siguiente = <span style="color: #ff995e;">NULL</span>;
+    <span style="color: #c099ff;">return</span> nuevoNodo;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">void</span> <span style="color: #82aaff;">agregar</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Nodo</span>** <span style="color: #ff98a4;">cabeza</span>, <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">valor</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Nodo</span>* <span style="color: #ff98a4;">nuevoNodo</span> = crearNodo<span style="color: #ff995e;">(</span>valor<span style="color: #ff995e;">)</span>;
+    <span style="color: #c099ff;">if</span> <span style="color: #ff995e;">(</span>*cabeza == <span style="color: #ff995e;">NULL</span><span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        *cabeza = nuevoNodo;
+    <span style="color: #ff995e;">}</span> <span style="color: #c099ff;">else</span> <span style="color: #ff995e;">{</span>
+        <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Nodo</span>* <span style="color: #ff98a4;">actual</span> = *cabeza;
+        <span style="color: #c099ff;">while</span> <span style="color: #ff98a4;">(</span>actual-&gt;siguiente != <span style="color: #ff995e;">NULL</span><span style="color: #ff98a4;">)</span> <span style="color: #ff98a4;">{</span>
+            actual = actual-&gt;siguiente;
+        <span style="color: #ff98a4;">}</span>
+        actual-&gt;siguiente = nuevoNodo;
+    <span style="color: #ff995e;">}</span>
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">main</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Nodo</span>* <span style="color: #ff98a4;">cabeza</span> = <span style="color: #ff995e;">NULL</span>;
+    agregar<span style="color: #ff995e;">(</span>&amp;cabeza, 10<span style="color: #ff995e;">)</span>;
+    agregar<span style="color: #ff995e;">(</span>&amp;cabeza, 20<span style="color: #ff995e;">)</span>;
+    <span style="color: #c099ff;">return</span> 0;
+<span style="color: #c099ff;">}</span>
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-org5cbe8e0" class="outline-4">
+<h4 id="org5cbe8e0">3. Pilas (Stacks)</h4>
+<div class="outline-text-4" id="text-org5cbe8e0">
+</div>
+<ul class="org-ul">
+<li><a id="org2e666aa"></a>Python<br />
+<div class="outline-text-5" id="text-org2e666aa">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">En Python, las listas pueden funcionar como pilas usando append() y pop().</span>
+<span style="color: #ff98a4;">pila</span> = <span style="color: #c099ff;">[]</span>
+pila.append<span style="color: #c099ff;">(</span>10<span style="color: #c099ff;">)</span>
+pila.append<span style="color: #c099ff;">(</span>20<span style="color: #c099ff;">)</span>
+<span style="color: #c099ff;">print</span><span style="color: #c099ff;">(</span>pila<span style="color: #ff995e;">[</span>-1<span style="color: #ff995e;">]</span><span style="color: #c099ff;">)</span>  <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Peek: 20</span>
+pila.pop<span style="color: #c099ff;">()</span>
+<span style="color: #c099ff;">print</span><span style="color: #c099ff;">(</span>pila<span style="color: #ff995e;">[</span>-1<span style="color: #ff995e;">]</span><span style="color: #c099ff;">)</span>  <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Peek: 10</span>
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org7b6ec9c"></a>C<br />
+<div class="outline-text-5" id="text-org7b6ec9c">
+<div class="org-src-container">
+<pre class="src src-c"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
+
+<span style="color: #86e1fc; font-weight: bold;">#define</span> <span style="color: #ff98a4;">MAX</span> 100
+
+<span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Pila</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">items</span><span style="color: #ff995e;">[</span>MAX<span style="color: #ff995e;">]</span>;
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">tope</span>;
+<span style="color: #c099ff;">}</span>;
+
+<span style="color: #ffc777;">void</span> <span style="color: #82aaff;">inicializarPila</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Pila</span>* <span style="color: #ff98a4;">pila</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    pila-&gt;tope = -1;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">estaVacia</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Pila</span>* <span style="color: #ff98a4;">pila</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">return</span> pila-&gt;tope == -1;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">void</span> <span style="color: #82aaff;">push</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Pila</span>* <span style="color: #ff98a4;">pila</span>, <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">valor</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    pila-&gt;items<span style="color: #ff995e;">[</span>++<span style="color: #ff98a4;">(</span>pila-&gt;tope<span style="color: #ff98a4;">)</span><span style="color: #ff995e;">]</span> = valor;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">pop</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Pila</span>* <span style="color: #ff98a4;">pila</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">return</span> pila-&gt;items<span style="color: #ff995e;">[</span><span style="color: #ff98a4;">(</span>pila-&gt;tope<span style="color: #ff98a4;">)</span>--<span style="color: #ff995e;">]</span>;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">peek</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Pila</span>* <span style="color: #ff98a4;">pila</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">return</span> pila-&gt;items<span style="color: #ff995e;">[</span>pila-&gt;tope<span style="color: #ff995e;">]</span>;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">main</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Pila</span> <span style="color: #ff98a4;">pila</span>;
+    inicializarPila<span style="color: #ff995e;">(</span>&amp;pila<span style="color: #ff995e;">)</span>;
+    push<span style="color: #ff995e;">(</span>&amp;pila, 10<span style="color: #ff995e;">)</span>;
+    push<span style="color: #ff995e;">(</span>&amp;pila, 20<span style="color: #ff995e;">)</span>;
+    printf<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">"%d\n"</span>, peek<span style="color: #ff98a4;">(</span>&amp;pila<span style="color: #ff98a4;">)</span><span style="color: #ff995e;">)</span>;  <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Peek: 20</span>
+    pop<span style="color: #ff995e;">(</span>&amp;pila<span style="color: #ff995e;">)</span>;
+    printf<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">"%d\n"</span>, peek<span style="color: #ff98a4;">(</span>&amp;pila<span style="color: #ff98a4;">)</span><span style="color: #ff995e;">)</span>;  <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Peek: 10</span>
+    <span style="color: #c099ff;">return</span> 0;
+<span style="color: #c099ff;">}</span>
+Topicos.org
+
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-orgc399bff" class="outline-4">
+<h4 id="orgc399bff">4. Colas (Queues)</h4>
+<div class="outline-text-4" id="text-orgc399bff">
+</div>
+<ul class="org-ul">
+<li><a id="org613b18a"></a>Python<br />
+<div class="outline-text-5" id="text-org613b18a">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">En Python, una cola se puede implementar con deque de la colecci&#243;n est&#225;ndar.</span>
+<span style="color: #c099ff;">from</span> collections <span style="color: #c099ff;">import</span> deque
+
+<span style="color: #ff98a4;">cola</span> = deque<span style="color: #c099ff;">()</span>
+cola.append<span style="color: #c099ff;">(</span>10<span style="color: #c099ff;">)</span>  <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Enqueue</span>
+cola.append<span style="color: #c099ff;">(</span>20<span style="color: #c099ff;">)</span>
+<span style="color: #c099ff;">print</span><span style="color: #c099ff;">(</span>cola.popleft<span style="color: #ff995e;">()</span><span style="color: #c099ff;">)</span>  <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Dequeue: 10</span>
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org784baf4"></a>C<br />
+<div class="outline-text-5" id="text-org784baf4">
+<div class="org-src-container">
+<pre class="src src-c"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
+
+<span style="color: #86e1fc; font-weight: bold;">#define</span> <span style="color: #ff98a4;">MAX</span> 100
+
+<span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Cola</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">items</span><span style="color: #ff995e;">[</span>MAX<span style="color: #ff995e;">]</span>;
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">frente</span>, <span style="color: #ff98a4;">final</span>;
+<span style="color: #c099ff;">}</span>;
+
+<span style="color: #ffc777;">void</span> <span style="color: #82aaff;">inicializarCola</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Cola</span>* <span style="color: #ff98a4;">cola</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    cola-&gt;frente = -1;
+    cola-&gt;final = -1;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">estaVacia</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Cola</span>* <span style="color: #ff98a4;">cola</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">return</span> cola-&gt;frente == -1;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">void</span> <span style="color: #82aaff;">enqueue</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Cola</span>* <span style="color: #ff98a4;">cola</span>, <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">valor</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">if</span> <span style="color: #ff995e;">(</span>cola-&gt;final == MAX - 1<span style="color: #ff995e;">)</span>
+        <span style="color: #c099ff;">return</span>;
+    <span style="color: #c099ff;">if</span> <span style="color: #ff995e;">(</span>cola-&gt;frente == -1<span style="color: #ff995e;">)</span>
+        cola-&gt;frente = 0;
+    cola-&gt;items<span style="color: #ff995e;">[</span>++<span style="color: #ff98a4;">(</span>cola-&gt;final<span style="color: #ff98a4;">)</span><span style="color: #ff995e;">]</span> = valor;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">dequeue</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Cola</span>* <span style="color: #ff98a4;">cola</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">if</span> <span style="color: #ff995e;">(</span>estaVacia<span style="color: #ff98a4;">(</span>cola<span style="color: #ff98a4;">)</span><span style="color: #ff995e;">)</span>
+        <span style="color: #c099ff;">return</span> -1;
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">valor</span> = cola-&gt;items<span style="color: #ff995e;">[</span>cola-&gt;frente<span style="color: #ff995e;">]</span>;
+    <span style="color: #c099ff;">if</span> <span style="color: #ff995e;">(</span>cola-&gt;frente == cola-&gt;final<span style="color: #ff995e;">)</span>
+        cola-&gt;frente = cola-&gt;final = -1;
+    <span style="color: #c099ff;">else</span>
+        cola-&gt;frente++;
+    <span style="color: #c099ff;">return</span> valor;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">main</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Cola</span> <span style="color: #ff98a4;">cola</span>;
+    inicializarCola<span style="color: #ff995e;">(</span>&amp;cola<span style="color: #ff995e;">)</span>;
+    enqueue<span style="color: #ff995e;">(</span>&amp;cola, 10<span style="color: #ff995e;">)</span>;
+    enqueue<span style="color: #ff995e;">(</span>&amp;cola, 20<span style="color: #ff995e;">)</span>;
+    printf<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">"%d\n"</span>, dequeue<span style="color: #ff98a4;">(</span>&amp;cola<span style="color: #ff98a4;">)</span><span style="color: #ff995e;">)</span>;  <span style="color: #7a88cf;">// </span><span style="color: #7a88cf;">Dequeue: 10</span>
+    <span style="color: #c099ff;">return</span> 0;
+<span style="color: #c099ff;">}</span>
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-org8c1ee5d" class="outline-4">
+<h4 id="org8c1ee5d">5. Árboles (Trees)</h4>
+<div class="outline-text-4" id="text-org8c1ee5d">
+</div>
+<ul class="org-ul">
+<li><a id="orgcfe6b9e"></a>Python<br />
+<div class="outline-text-5" id="text-orgcfe6b9e">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #c099ff;">class</span> <span style="color: #ffc777;">Nodo</span>:
+    <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">__init__</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span>, valor<span style="color: #c099ff;">)</span>:
+        <span style="color: #c099ff;">self</span>.valor = valor
+        <span style="color: #c099ff;">self</span>.<span style="color: #ff98a4;">izquierdo</span> = <span style="color: #ff995e;">None</span>
+        <span style="color: #c099ff;">self</span>.<span style="color: #ff98a4;">derecho</span> = <span style="color: #ff995e;">None</span>
+
+<span style="color: #c099ff;">class</span> <span style="color: #ffc777;">ArbolBinario</span>:
+    <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">__init__</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span><span style="color: #c099ff;">)</span>:
+        <span style="color: #c099ff;">self</span>.raiz = <span style="color: #ff995e;">None</span>
+
+    <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">agregar</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span>, valor<span style="color: #c099ff;">)</span>:
+        <span style="color: #c099ff;">if</span> <span style="color: #c099ff;">not</span> <span style="color: #c099ff;">self</span>.<span style="color: #ff98a4;">raiz</span>:
+            <span style="color: #c099ff;">self</span>.raiz = Nodo<span style="color: #c099ff;">(</span>valor<span style="color: #c099ff;">)</span>
+        <span style="color: #c099ff;">else</span>:
+            <span style="color: #c099ff;">self</span>._agregar<span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span>.raiz, valor<span style="color: #c099ff;">)</span>
+
+    <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">_agregar</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span>, nodo, valor<span style="color: #c099ff;">)</span>:
+        <span style="color: #c099ff;">if</span> valor &lt; nodo.<span style="color: #ff98a4;">valor</span>:
+            <span style="color: #c099ff;">if</span> nodo.izquierdo:
+                <span style="color: #c099ff;">self</span>._agregar<span style="color: #c099ff;">(</span>nodo.izquierdo, valor<span style="color: #c099ff;">)</span>
+            <span style="color: #c099ff;">else</span>:
+                nodo.izquierdo = Nodo<span style="color: #c099ff;">(</span>valor<span style="color: #c099ff;">)</span>
+        <span style="color: #c099ff;">else</span>:
+            <span style="color: #c099ff;">if</span> nodo.derecho:
+                <span style="color: #c099ff;">self</span>._agregar<span style="color: #c099ff;">(</span>nodo.derecho, valor<span style="color: #c099ff;">)</span>
+            <span style="color: #c099ff;">else</span>:
+                nodo.derecho = Nodo<span style="color: #c099ff;">(</span>valor<span style="color: #c099ff;">)</span>
+
+<span style="color: #ff98a4;">arbol</span> = ArbolBinario<span style="color: #c099ff;">()</span>
+arbol.agregar<span style="color: #c099ff;">(</span>10<span style="color: #c099ff;">)</span>
+arbol.agregar<span style="color: #c099ff;">(</span>5<span style="color: #c099ff;">)</span>
+arbol.agregar<span style="color: #c099ff;">(</span>15<span style="color: #c099ff;">)</span>
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org0267b8c"></a>C<br />
+<div class="outline-text-5" id="text-org0267b8c">
+<div class="org-src-container">
+<pre class="src src-c"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
+
+<span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Nodo</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">valor</span>;
+    <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Nodo</span>* <span style="color: #ff98a4;">izquierdo</span>;
+    <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Nodo</span>* <span style="color: #ff98a4;">derecho</span>;
+<span style="color: #c099ff;">}</span>;
+
+<span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Nodo</span>* <span style="color: #82aaff;">crearNodo</span><span style="color: #c099ff;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">valor</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Nodo</span>* <span style="color: #ff98a4;">nuevoNodo</span> = <span style="color: #ff995e;">(</span><span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Nodo</span>*<span style="color: #ff995e;">)</span>malloc<span style="color: #ff995e;">(</span><span style="color: #c099ff;">sizeof</span><span style="color: #ff98a4;">(</span><span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Nodo</span><span style="color: #ff98a4;">)</span><span style="color: #ff995e;">)</span>;
+    nuevoNodo-&gt;valor = valor;
+    nuevoNodo-&gt;izquierdo = <span style="color: #ff995e;">NULL</span>;
+    nuevoNodo-&gt;derecho = <span style="color: #ff995e;">NULL</span>;
+    <span style="color: #c099ff;">return</span> nuevoNodo;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Nodo</span>* <span style="color: #82aaff;">agregar</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Nodo</span>* <span style="color: #ff98a4;">nodo</span>, <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">valor</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">if</span> <span style="color: #ff995e;">(</span>nodo == <span style="color: #ff995e;">NULL</span><span style="color: #ff995e;">)</span>
+        <span style="color: #c099ff;">return</span> crearNodo<span style="color: #ff995e;">(</span>valor<span style="color: #ff995e;">)</span>;
+
+    <span style="color: #c099ff;">if</span> <span style="color: #ff995e;">(</span>valor &lt; nodo-&gt;valor<span style="color: #ff995e;">)</span>
+        nodo-&gt;izquierdo = agregar<span style="color: #ff995e;">(</span>nodo-&gt;izquierdo, valor<span style="color: #ff995e;">)</span>;
+    <span style="color: #c099ff;">else</span> <span style="color: #c099ff;">if</span> <span style="color: #ff995e;">(</span>valor &gt; nodo-&gt;valor<span style="color: #ff995e;">)</span>
+        nodo-&gt;derecho = agregar<span style="color: #ff995e;">(</span>nodo-&gt;derecho, valor<span style="color: #ff995e;">)</span>;
+
+    <span style="color: #c099ff;">return</span> nodo;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">main</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Nodo</span>* <span style="color: #ff98a4;">raiz</span> = <span style="color: #ff995e;">NULL</span>;
+    raiz = agregar<span style="color: #ff995e;">(</span>raiz, 10<span style="color: #ff995e;">)</span>;
+    agregar<span style="color: #ff995e;">(</span>raiz, 5<span style="color: #ff995e;">)</span>;
+    agregar<span style="color: #ff995e;">(</span>raiz, 15<span style="color: #ff995e;">)</span>;
+    <span style="color: #c099ff;">return</span> 0;
+<span style="color: #c099ff;">}</span>
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-org20e8cd5" class="outline-4">
+<h4 id="org20e8cd5">6. Grafos (Graphs)</h4>
+<div class="outline-text-4" id="text-org20e8cd5">
+</div>
+<ul class="org-ul">
+<li><a id="org6fab512"></a>Python<br />
+<div class="outline-text-5" id="text-org6fab512">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #c099ff;">class</span> <span style="color: #ffc777;">Grafo</span>:
+    <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">__init__</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span><span style="color: #c099ff;">)</span>:
+        <span style="color: #c099ff;">self</span>.vertices = <span style="color: #c099ff;">{}</span>
+
+    <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">agregar_vertice</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span>, v<span style="color: #c099ff;">)</span>:
+        <span style="color: #c099ff;">if</span> v <span style="color: #c099ff;">not</span> <span style="color: #c099ff;">in</span> <span style="color: #c099ff;">self</span>.<span style="color: #ff98a4;">vertices</span>:
+            <span style="color: #c099ff;">self</span>.vertices<span style="color: #c099ff;">[</span><span style="color: #ff98a4;">v</span><span style="color: #c099ff;">]</span> = <span style="color: #c099ff;">[]</span>
+
+    <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">agregar_arista</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span>, v1, v2<span style="color: #c099ff;">)</span>:
+        <span style="color: #c099ff;">if</span> v1 <span style="color: #c099ff;">in</span> <span style="color: #c099ff;">self</span>.vertices <span style="color: #c099ff;">and</span> v2 <span style="color: #c099ff;">in</span> <span style="color: #c099ff;">self</span>.<span style="color: #ff98a4;">vertices</span>:
+            <span style="color: #c099ff;">self</span>.vertices<span style="color: #c099ff;">[</span>v1<span style="color: #c099ff;">]</span>.append<span style="color: #c099ff;">(</span>v2<span style="color: #c099ff;">)</span>
+            <span style="color: #c099ff;">self</span>.vertices<span style="color: #c099ff;">[</span>v2<span style="color: #c099ff;">]</span>.append<span style="color: #c099ff;">(</span>v1<span style="color: #c099ff;">)</span>
+
+grafo = Grafo<span style="color: #c099ff;">()</span>
+grafo.agregar_vertice<span style="color: #c099ff;">(</span>1<span style="color: #c099ff;">)</span>
+grafo.agregar_vertice<span style="color: #c099ff;">(</span>2<span style="color: #c099ff;">)</span>
+grafo.agregar_arista<span style="color: #c099ff;">(</span>1, 2<span style="color: #c099ff;">)</span>
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org7fd46f9"></a>C<br />
+<div class="outline-text-5" id="text-org7fd46f9">
+<div class="org-src-container">
+<pre class="src src-c"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
+
+<span style="color: #86e1fc; font-weight: bold;">#define</span> <span style="color: #ff98a4;">MAX</span> 100
+
+<span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Grafo</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">matriz</span><span style="color: #ff995e;">[</span>MAX<span style="color: #ff995e;">][</span>MAX<span style="color: #ff995e;">]</span>;
+    <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">numVertices</span>;
+<span style="color: #c099ff;">}</span>;
+
+<span style="color: #ffc777;">void</span> <span style="color: #82aaff;">inicializarGrafo</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Grafo</span>* <span style="color: #ff98a4;">grafo</span>, <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">vertices</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    grafo-&gt;numVertices = vertices;
+    <span style="color: #c099ff;">for</span> <span style="color: #ff995e;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">i</span> = 0; i &lt; vertices; i++<span style="color: #ff995e;">)</span> <span style="color: #ff995e;">{</span>
+        <span style="color: #c099ff;">for</span> <span style="color: #ff98a4;">(</span><span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">j</span> = 0; j &lt; vertices; j++<span style="color: #ff98a4;">)</span> <span style="color: #ff98a4;">{</span>
+            grafo-&gt;matriz<span style="color: #b4f9f8;">[</span>i<span style="color: #b4f9f8;">][</span>j<span style="color: #b4f9f8;">]</span> = 0;
+        <span style="color: #ff98a4;">}</span>
+    <span style="color: #ff995e;">}</span>
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">void</span> <span style="color: #82aaff;">agregarArista</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Grafo</span>* <span style="color: #ff98a4;">grafo</span>, <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">v1</span>, <span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">v2</span><span style="color: #c099ff;">)</span> <span style="color: #c099ff;">{</span>
+    grafo-&gt;matriz<span style="color: #ff995e;">[</span>v1<span style="color: #ff995e;">][</span>v2<span style="color: #ff995e;">]</span> = 1;
+    grafo-&gt;matriz<span style="color: #ff995e;">[</span>v2<span style="color: #ff995e;">][</span>v1<span style="color: #ff995e;">]</span> = 1;
+<span style="color: #c099ff;">}</span>
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">main</span><span style="color: #c099ff;">()</span> <span style="color: #c099ff;">{</span>
+    <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">Grafo</span> <span style="color: #ff98a4;">grafo</span>;
+    inicializarGrafo<span style="color: #ff995e;">(</span>&amp;grafo, 3<span style="color: #ff995e;">)</span>;
+    agregarArista<span style="color: #ff995e;">(</span>&amp;grafo, 0, 1<span style="color: #ff995e;">)</span>;
+    agregarArista<span style="color: #ff995e;">(</span>&amp;grafo, 1, 2<span style="color: #ff995e;">)</span>;
+    <span style="color: #c099ff;">return</span> 0;
+<span style="color: #c099ff;">}</span>
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org40fbc70" class="outline-3">
+<h3 id="org40fbc70">Problema del Granjero, el Puma, la Cabra y la Lechuga</h3>
+<div class="outline-text-3" id="text-org40fbc70">
+</div>
+<div id="outline-container-org123d847" class="outline-4">
+<h4 id="org123d847">Descripción del Problema</h4>
+<div class="outline-text-4" id="text-org123d847">
+<ul class="org-ul">
+<li>El granjero necesita cruzar un río llevando consigo un <b><b>puma</b></b>, una <b><b>cabra</b></b> y una <b><b>lechuga</b></b>.</li>
+<li>El bote solo tiene espacio para el granjero y uno de los tres: el <b><b>puma</b></b>, la <b><b>cabra</b></b> o la <b><b>lechuga</b></b>.</li>
+<li>Si el granjero deja al <b><b>puma</b></b> y a la <b><b>cabra</b></b> solos sin supervisión, el puma se comerá a la cabra.</li>
+<li>Si el granjero deja a la <b><b>cabra</b></b> y la <b><b>lechuga</b></b> solos sin supervisión, la cabra se comerá la lechuga.</li>
+<li>El objetivo es llevar al puma, la cabra y la lechuga al otro lado del río sin que ocurran estas situaciones.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd72f706" class="outline-4">
+<h4 id="orgd72f706">Representación del Estado</h4>
+<div class="outline-text-4" id="text-orgd72f706">
+<ul class="org-ul">
+<li>Cada estado puede representarse por una tupla `(gran, puma, cabra, lechuga)` donde:
+<ul class="org-ul">
+<li>`gran`, `puma`, `cabra`, `lechuga` pueden tener el valor `L` (lado izquierdo) o `R` (lado derecho).</li>
+<li>Ejemplo: `(L, L, L, L)` indica que el granjero, el puma, la cabra y la lechuga están en el lado izquierdo.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge111039" class="outline-4">
+<h4 id="orge111039">Reglas de Transición</h4>
+<div class="outline-text-4" id="text-orge111039">
+<ul class="org-ul">
+<li>El granjero puede moverse de un lado a otro llevando solo uno de los tres elementos (puma, cabra, lechuga) o viajando solo.</li>
+<li>Las transiciones solo son válidas si no ocurren las situaciones indeseadas:
+<ul class="org-ul">
+<li>El puma no puede quedarse solo con la cabra sin el granjero.</li>
+<li>La cabra no puede quedarse sola con la lechuga sin el granjero.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org690cd67" class="outline-4">
+<h4 id="org690cd67">Algoritmo de Búsqueda en Profundidad (DFS)</h4>
+<div class="outline-text-4" id="text-org690cd67">
+<p>
+Se utilizará una búsqueda a lo profundo para encontrar la secuencia de movimientos que lleve a todos al lado derecho del río.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Resolver el problema usando b&#250;squeda en profundidad (DFS)</span>
+<span style="color: #c099ff;">def</span> <span style="color: #82aaff;">es_estado_valido</span><span style="color: #c099ff;">(</span>estado<span style="color: #c099ff;">)</span>:
+    <span style="color: #ff98a4;">gran</span>, <span style="color: #ff98a4;">puma</span>, <span style="color: #ff98a4;">cabra</span>, <span style="color: #ff98a4;">lechuga</span> = estado
+    <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">El puma no puede estar solo con la cabra</span>
+    <span style="color: #c099ff;">if</span> puma == cabra <span style="color: #c099ff;">and</span> gran != puma:
+        <span style="color: #c099ff;">return</span> <span style="color: #ff995e;">False</span>
+    <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">La cabra no puede estar sola con la lechuga</span>
+    <span style="color: #c099ff;">if</span> cabra == lechuga <span style="color: #c099ff;">and</span> gran != cabra:
+        <span style="color: #c099ff;">return</span> <span style="color: #ff995e;">False</span>
+    <span style="color: #c099ff;">return</span> <span style="color: #ff995e;">True</span>
+
+<span style="color: #c099ff;">def</span> <span style="color: #82aaff;">mover</span><span style="color: #c099ff;">(</span>estado, objeto<span style="color: #c099ff;">)</span>:
+    <span style="color: #ff98a4;">gran</span>, <span style="color: #ff98a4;">puma</span>, <span style="color: #ff98a4;">cabra</span>, <span style="color: #ff98a4;">lechuga</span> = estado
+    nuevo_gran = <span style="color: #c3e88d;">'R'</span> <span style="color: #c099ff;">if</span> gran == <span style="color: #c3e88d;">'L'</span> <span style="color: #c099ff;">else</span> <span style="color: #c3e88d;">'L'</span>
+    <span style="color: #c099ff;">if</span> objeto == <span style="color: #c3e88d;">"puma"</span>:
+        nuevo_puma = <span style="color: #c3e88d;">'R'</span> <span style="color: #c099ff;">if</span> puma == <span style="color: #c3e88d;">'L'</span> <span style="color: #c099ff;">else</span> <span style="color: #c3e88d;">'L'</span>
+        <span style="color: #c099ff;">return</span> <span style="color: #c099ff;">(</span>nuevo_gran, nuevo_puma, cabra, lechuga<span style="color: #c099ff;">)</span>
+    <span style="color: #c099ff;">elif</span> objeto == <span style="color: #c3e88d;">"cabra"</span>:
+        nuevo_cabra = <span style="color: #c3e88d;">'R'</span> <span style="color: #c099ff;">if</span> cabra == <span style="color: #c3e88d;">'L'</span> <span style="color: #c099ff;">else</span> <span style="color: #c3e88d;">'L'</span>
+        <span style="color: #c099ff;">return</span> <span style="color: #c099ff;">(</span>nuevo_gran, puma, nuevo_cabra, lechuga<span style="color: #c099ff;">)</span>
+    <span style="color: #c099ff;">elif</span> objeto == <span style="color: #c3e88d;">"lechuga"</span>:
+        nuevo_lechuga = <span style="color: #c3e88d;">'R'</span> <span style="color: #c099ff;">if</span> lechuga == <span style="color: #c3e88d;">'L'</span> <span style="color: #c099ff;">else</span> <span style="color: #c3e88d;">'L'</span>
+        <span style="color: #c099ff;">return</span> <span style="color: #c099ff;">(</span>nuevo_gran, puma, cabra, nuevo_lechuga<span style="color: #c099ff;">)</span>
+    <span style="color: #c099ff;">else</span>:  <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Si el granjero viaja solo</span>
+        <span style="color: #c099ff;">return</span> <span style="color: #c099ff;">(</span>nuevo_gran, puma, cabra, lechuga<span style="color: #c099ff;">)</span>
+
+<span style="color: #c099ff;">def</span> <span style="color: #82aaff;">dfs</span><span style="color: #c099ff;">(</span>estado, objetivo, visitados<span style="color: #c099ff;">)</span>:
+    <span style="color: #c099ff;">if</span> estado == objetivo:
+        <span style="color: #c099ff;">return</span> <span style="color: #c099ff;">[</span>estado<span style="color: #c099ff;">]</span>
+
+    visitados.add<span style="color: #c099ff;">(</span>estado<span style="color: #c099ff;">)</span>
+
+    <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Posibles movimientos: granjero viaja solo o con puma, cabra o lechuga</span>
+    posibles_movimientos = <span style="color: #c099ff;">[</span><span style="color: #c3e88d;">"solo"</span>, <span style="color: #c3e88d;">"puma"</span>, <span style="color: #c3e88d;">"cabra"</span>, <span style="color: #c3e88d;">"lechuga"</span><span style="color: #c099ff;">]</span>
+
+    <span style="color: #c099ff;">for</span> movimiento <span style="color: #c099ff;">in</span> posibles_movimientos:
+        nuevo_estado = mover<span style="color: #c099ff;">(</span>estado, movimiento<span style="color: #c099ff;">)</span>
+        <span style="color: #c099ff;">if</span> nuevo_estado <span style="color: #c099ff;">not</span> <span style="color: #c099ff;">in</span> visitados <span style="color: #c099ff;">and</span> es_estado_valido<span style="color: #c099ff;">(</span>nuevo_estado<span style="color: #c099ff;">)</span>:
+            resultado = dfs<span style="color: #c099ff;">(</span>nuevo_estado, objetivo, visitados<span style="color: #c099ff;">)</span>
+            <span style="color: #c099ff;">if</span> resultado:
+                <span style="color: #c099ff;">return</span> <span style="color: #c099ff;">[</span>estado<span style="color: #c099ff;">]</span> + resultado
+
+    <span style="color: #c099ff;">return</span> <span style="color: #ff995e;">None</span>
+
+<span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Estado inicial: todos en el lado izquierdo</span>
+estado_inicial = <span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'L'</span>, <span style="color: #c3e88d;">'L'</span>, <span style="color: #c3e88d;">'L'</span>, <span style="color: #c3e88d;">'L'</span><span style="color: #c099ff;">)</span>
+
+<span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Estado objetivo: todos en el lado derecho</span>
+estado_objetivo = <span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'R'</span>, <span style="color: #c3e88d;">'R'</span>, <span style="color: #c3e88d;">'R'</span>, <span style="color: #c3e88d;">'R'</span><span style="color: #c099ff;">)</span>
+
+<span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Realizamos la b&#250;squeda</span>
+solucion = dfs<span style="color: #c099ff;">(</span>estado_inicial, estado_objetivo, <span style="color: #c099ff;">set</span><span style="color: #ff995e;">()</span><span style="color: #c099ff;">)</span>
+
+<span style="color: #c099ff;">if</span> solucion:
+    <span style="color: #c099ff;">print</span><span style="color: #c099ff;">(</span><span style="color: #c3e88d;">"Soluci&#243;n encontrada:"</span><span style="color: #c099ff;">)</span>
+    <span style="color: #c099ff;">for</span> paso <span style="color: #c099ff;">in</span> solucion:
+        <span style="color: #c099ff;">print</span><span style="color: #c099ff;">(</span>paso<span style="color: #c099ff;">)</span>
+<span style="color: #c099ff;">else</span>:
+    <span style="color: #c099ff;">print</span><span style="color: #c099ff;">(</span><span style="color: #c3e88d;">"No se encontr&#243; soluci&#243;n."</span><span style="color: #c099ff;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8e6c5f3" class="outline-4">
+<h4 id="org8e6c5f3">Árbol de Búsqueda</h4>
+<div class="outline-text-4" id="text-org8e6c5f3">
+<p>
+El árbol de búsqueda para este problema contiene estados donde el granjero, el puma, la cabra y la lechuga pueden estar en diferentes lados del río. Aquí un ejemplo de algunos estados:
+</p>
+
+<ul class="org-ul">
+<li>Estado inicial: `(L, L, L, L)`
+<ul class="org-ul">
+<li>Mover el granjero con la cabra: `(R, L, R, L)`
+<ul class="org-ul">
+<li>Mover el granjero solo: `(L, L, R, L)`
+<ul class="org-ul">
+<li>Mover el granjero con el puma: `(R, R, R, L)`</li>
+<li>&#x2026;</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>
+Este proceso continúa explorando todos los posibles caminos hasta encontrar el objetivo.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org77821c0" class="outline-4">
+<h4 id="org77821c0">Solución del Problema</h4>
+<div class="outline-text-4" id="text-org77821c0">
+<p>
+La búsqueda en profundidad explora las ramas posibles del árbol de búsqueda hasta encontrar una solución válida. Una posible secuencia de movimientos es:
+</p>
+
+<ol class="org-ol">
+<li>Granjero lleva a la cabra: `(R, L, R, L)`</li>
+<li>Granjero regresa solo: `(L, L, R, L)`</li>
+<li>Granjero lleva al puma: `(R, R, R, L)`</li>
+<li>Granjero regresa con la cabra: `(L, R, L, L)`</li>
+<li>Granjero lleva la lechuga: `(R, R, L, R)`</li>
+<li>Granjero regresa solo: `(L, R, L, R)`</li>
+<li>Granjero lleva la cabra: `(R, R, R, R)`</li>
+</ol>
+
+<p>
+¡Y todos han cruzado el río de manera segura!
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc8c1585" class="outline-3">
+<h3 id="orgc8c1585">Tutorial de Operaciones Bitwise en OpenCV</h3>
+<div class="outline-text-3" id="text-orgc8c1585">
+<p>
+Las operaciones <b>bitwise</b> en OpenCV son manipulaciones a nivel de bits que se pueden realizar sobre imágenes. Estas operaciones incluyen <b><b>AND</b></b>, <b><b>OR</b></b>, <b><b>XOR</b></b> y <b><b>NOT</b></b>, y son útiles cuando necesitas combinar, enmascarar, o manipular diferentes partes de una imagen.
+</p>
+</div>
+
+
+<div id="outline-container-org0eac491" class="outline-4">
+<h4 id="org0eac491">1. Operación Bitwise AND</h4>
+<div class="outline-text-4" id="text-org0eac491">
+<p>
+La operación <b><b>AND</b></b> toma dos imágenes o una imagen y una máscara, y realiza la operación AND bit a bit. El resultado será una imagen donde los bits que son 1 en ambas entradas se mantendrán, mientras que los demás bits serán 0.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #c099ff;">import</span> cv2
+<span style="color: #c099ff;">import</span> numpy <span style="color: #c099ff;">as</span> np
+
+<span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Crear dos im&#225;genes binarias</span>
+<span style="color: #ff98a4;">img1</span> = np.zeros<span style="color: #c099ff;">(</span><span style="color: #ff995e;">(</span>300, 300<span style="color: #ff995e;">)</span>, dtype=<span style="color: #c3e88d;">"uint8"</span><span style="color: #c099ff;">)</span>
+img2 = np.zeros<span style="color: #c099ff;">(</span><span style="color: #ff995e;">(</span>300, 300<span style="color: #ff995e;">)</span>, dtype=<span style="color: #c3e88d;">"uint8"</span><span style="color: #c099ff;">)</span>
+
+<span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Dibujar un rect&#225;ngulo blanco en la primera imagen</span>
+cv2.rectangle<span style="color: #c099ff;">(</span>img1, <span style="color: #ff995e;">(</span>50, 50<span style="color: #ff995e;">)</span>, <span style="color: #ff995e;">(</span>250, 250<span style="color: #ff995e;">)</span>, 255, -1<span style="color: #c099ff;">)</span>
+
+<span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Dibujar un c&#237;rculo blanco en la segunda imagen</span>
+cv2.circle<span style="color: #c099ff;">(</span>img2, <span style="color: #ff995e;">(</span>150, 150<span style="color: #ff995e;">)</span>, 100, 255, -1<span style="color: #c099ff;">)</span>
+
+<span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Aplicar la operaci&#243;n bitwise AND</span>
+resultado_and = cv2.bitwise_and<span style="color: #c099ff;">(</span>img1, img2<span style="color: #c099ff;">)</span>
+
+<span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Mostrar las im&#225;genes</span>
+cv2.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">"Imagen 1"</span>, img1<span style="color: #c099ff;">)</span>
+cv2.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">"Imagen 2"</span>, img2<span style="color: #c099ff;">)</span>
+cv2.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">"Resultado AND"</span>, resultado_and<span style="color: #c099ff;">)</span>
+cv2.waitKey<span style="color: #c099ff;">(</span>0<span style="color: #c099ff;">)</span>
+cv2.destroyAllWindows<span style="color: #c099ff;">()</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfa93649" class="outline-4">
+<h4 id="orgfa93649">2. Operación Bitwise OR</h4>
+<div class="outline-text-4" id="text-orgfa93649">
+<p>
+La operación <b><b>OR</b></b> toma dos imágenes y realiza la operación OR bit a bit. Los bits que son 1 en cualquiera de las dos entradas permanecerán en el resultado.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Aplicar la operaci&#243;n bitwise OR</span>
+<span style="color: #ff98a4;">resultado_or</span> = cv2.bitwise_or<span style="color: #c099ff;">(</span>img1, img2<span style="color: #c099ff;">)</span>
+
+<span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Mostrar el resultado</span>
+cv2.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">"Resultado OR"</span>, resultado_or<span style="color: #c099ff;">)</span>
+cv2.waitKey<span style="color: #c099ff;">(</span>0<span style="color: #c099ff;">)</span>
+cv2.destroyAllWindows<span style="color: #c099ff;">()</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc616670" class="outline-4">
+<h4 id="orgc616670">3. Operación Bitwise XOR</h4>
+<div class="outline-text-4" id="text-orgc616670">
+<p>
+La operación <b><b>XOR</b></b> compara los bits de dos imágenes y deja un 1 en la posición del resultado solo si los bits de las entradas son diferentes.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Aplicar la operaci&#243;n bitwise XOR</span>
+<span style="color: #ff98a4;">resultado_xor</span> = cv2.bitwise_xor<span style="color: #c099ff;">(</span>img1, img2<span style="color: #c099ff;">)</span>
+
+<span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Mostrar el resultado</span>
+cv2.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">"Resultado XOR"</span>, resultado_xor<span style="color: #c099ff;">)</span>
+cv2.waitKey<span style="color: #c099ff;">(</span>0<span style="color: #c099ff;">)</span>
+cv2.destroyAllWindows<span style="color: #c099ff;">()</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org03183ff" class="outline-4">
+<h4 id="org03183ff">4. Operación Bitwise NOT</h4>
+<div class="outline-text-4" id="text-org03183ff">
+<p>
+La operación <b><b>NOT</b></b> invierte todos los bits de la imagen (los 1s se convierten en 0s y viceversa).
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Aplicar la operaci&#243;n bitwise NOT sobre la primera imagen</span>
+<span style="color: #ff98a4;">resultado_not</span> = cv2.bitwise_not<span style="color: #c099ff;">(</span>img1<span style="color: #c099ff;">)</span>
+
+<span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Mostrar el resultado</span>
+cv2.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">"Resultado NOT"</span>, resultado_not<span style="color: #c099ff;">)</span>
+cv2.waitKey<span style="color: #c099ff;">(</span>0<span style="color: #c099ff;">)</span>
+cv2.destroyAllWindows<span style="color: #c099ff;">()</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf76e5d6" class="outline-4">
+<h4 id="orgf76e5d6">5. Aplicaciones Prácticas</h4>
+<div class="outline-text-4" id="text-orgf76e5d6">
+<p>
+Las operaciones bitwise son útiles en muchas aplicaciones, como:
+</p>
+
+<ul class="org-ul">
+<li><b><b>Enmascaramiento</b></b>: Puedes usar una máscara para seleccionar ciertas partes de una imagen y realizar operaciones solo en esas áreas.</li>
+<li><b><b>Fusión de imágenes</b></b>: Combinar dos imágenes de manera controlada.</li>
+<li><b><b>Operaciones en regiones de interés (ROI)</b></b>: Manipular partes específicas de una imagen sin afectar el resto.</li>
+</ul>
+
+<p>
+Por ejemplo, puedes crear una máscara que seleccione solo una región de interés en una imagen y aplicar una operación bitwise AND para enfocarte en esa área.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Leer una imagen en color</span>
+<span style="color: #ff98a4;">img</span> = cv2.imread<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">"ruta/a/tu/imagen.jpg"</span><span style="color: #c099ff;">)</span>
+
+<span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Crear una m&#225;scara (un c&#237;rculo en el centro de la imagen)</span>
+<span style="color: #ff98a4;">mascara</span> = np.zeros<span style="color: #c099ff;">(</span>img.shape<span style="color: #ff995e;">[</span>:2<span style="color: #ff995e;">]</span>, dtype=<span style="color: #c3e88d;">"uint8"</span><span style="color: #c099ff;">)</span>
+cv2.circle<span style="color: #c099ff;">(</span>mascara, <span style="color: #ff995e;">(</span>img.shape<span style="color: #ff98a4;">[</span>1<span style="color: #ff98a4;">]</span>//2, img.shape<span style="color: #ff98a4;">[</span>0<span style="color: #ff98a4;">]</span>//2<span style="color: #ff995e;">)</span>, 100, 255, -1<span style="color: #c099ff;">)</span>
+
+<span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Aplicar bitwise AND para extraer solo el &#225;rea dentro del c&#237;rculo</span>
+resultado_mascara = cv2.bitwise_and<span style="color: #c099ff;">(</span>img, img, mask=mascara<span style="color: #c099ff;">)</span>
+
+<span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Mostrar la imagen original, la m&#225;scara y el resultado</span>
+cv2.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">"Imagen Original"</span>, img<span style="color: #c099ff;">)</span>
+cv2.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">"M&#225;scara"</span>, mascara<span style="color: #c099ff;">)</span>
+cv2.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">"Resultado con M&#225;scara"</span>, resultado_mascara<span style="color: #c099ff;">)</span>
+cv2.waitKey<span style="color: #c099ff;">(</span>0<span style="color: #c099ff;">)</span>
+cv2.destroyAllWindows<span style="color: #c099ff;">()</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org568a5f8" class="outline-4">
+<h4 id="org568a5f8">Definición: Operación Bit a Bit</h4>
+<div class="outline-text-4" id="text-org568a5f8">
+<p>
+Una <b><b>operación bit a bit</b></b> (en inglés, <b>bitwise operation</b>) es una operación que se realiza directamente sobre los bits de los operandos. Las operaciones se ejecutan sobre los bits correspondientes de los números en formato binario.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="orgc0bfa73"></a>Principales operaciones bit a bit<br />
+<ul class="org-ul">
+<li><a id="org0f66640"></a>1. AND bit a bit (<code>&amp;</code>)<br />
+<div class="outline-text-6" id="text-org0f66640">
+<p>
+Devuelve `1` si ambos bits en la misma posición son `1`, de lo contrario devuelve `0`.
+</p>
+
+<pre class="example" id="org518eb85">
+A = 1010 (10 en decimal)
+B = 1100 (12 en decimal)
+Resultado: 1000 (8 en decimal)
+</pre>
+</div>
+</li>
+
+<li><a id="org6ab3487"></a>2. OR bit a bit (<code>|</code>)<br />
+<div class="outline-text-6" id="text-org6ab3487">
+<p>
+Devuelve `1` si al menos uno de los bits en la misma posición es `1`, de lo contrario devuelve `0`.
+</p>
+
+<pre class="example" id="org4decec3">
+A = 1010 (10 en decimal)
+B = 1100 (12 en decimal)
+Resultado: 1110 (14 en decimal)
+</pre>
+</div>
+</li>
+
+<li><a id="org576fde1"></a>3. XOR bit a bit (<code>^</code>)<br />
+<div class="outline-text-6" id="text-org576fde1">
+<p>
+Devuelve `1` si los bits en la misma posición son diferentes, y `0` si son iguales.
+</p>
+
+<pre class="example" id="orgcf546c5">
+A = 1010 (10 en decimal)
+B = 1100 (12 en decimal)
+Resultado: 0110 (6 en decimal)
+</pre>
+</div>
+</li>
+
+<li><a id="org174abbc"></a>4. NOT bit a bit (~~)<br />
+<div class="outline-text-6" id="text-org174abbc">
+<p>
+Invierte los bits de un número: convierte los `0` en `1` y los `1` en `0`. En sistemas de complemento a dos, esto también implica cambiar el signo de un número entero.
+</p>
+
+<pre class="example" id="org7953dcb">
+A = 1010 (10 en decimal)
+Resultado: 0101 (-11 en decimal, si estamos usando complemento a dos)
+</pre>
+</div>
+</li>
+
+<li><a id="orgd4033df"></a>5. Desplazamiento a la izquierda (<code>&lt;&lt;</code>)<br />
+<div class="outline-text-6" id="text-orgd4033df">
+<p>
+Desplaza todos los bits del número hacia la izquierda por un número específico de posiciones. Los bits desplazados fuera del límite se descartan y se rellenan con ceros en el extremo derecho.
+</p>
+
+<pre class="example" id="org509f3fb">
+A = 0001 (1 en decimal)
+A &lt;&lt; 2 = 0100 (4 en decimal)
+</pre>
+</div>
+</li>
+
+<li><a id="orge32761f"></a>6. Desplazamiento a la derecha (<code>&gt;&gt;</code>)<br />
+<div class="outline-text-6" id="text-orge32761f">
+<p>
+Desplaza todos los bits del número hacia la derecha por un número específico de posiciones. Los bits desplazados fuera del límite se descartan y el bit más significativo depende del signo del número.
+</p>
+
+<pre class="example" id="org54e50e6">
+A = 1000 (8 en decimal)
+A &gt;&gt; 2 = 0010 (2 en decimal)
+</pre>
+</div>
+</li>
+
+<li><a id="orgf6c5b66"></a>Aplicaciones de las operaciones bit a bit<br />
+<div class="outline-text-6" id="text-orgf6c5b66">
+<ul class="org-ul">
+<li><b><b>Máscaras de bits</b></b>: Las operaciones bit a bit se usan para aplicar máscaras que seleccionan o modifican partes específicas de un número o secuencia binaria.</li>
+<li><b><b>Manipulación de imágenes</b></b>: En procesamiento de imágenes, las operaciones bit a bit son útiles para combinar y modificar píxeles en OpenCV.</li>
+<li><b><b>Optimización de algoritmos</b></b>: Las operaciones bit a bit permiten optimizar cálculos en sistemas de bajo nivel o con restricciones de recursos.</li>
+</ul>
+
+
+
+
+
+
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #c099ff;">import</span> numpy <span style="color: #c099ff;">as</span> np 
+<span style="color: #c099ff;">import</span> cv2 <span style="color: #c099ff;">as</span> cv
+
+<span style="color: #7a88cf;">#</span><span style="color: #7a88cf;">img = np.ones((500,500), dtype=np.uint8)*255</span>
+<span style="color: #ff98a4;">img</span> = cv.imread<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'tr.png'</span>, 1<span style="color: #c099ff;">)</span>
+<span style="color: #ff98a4;">x</span>,<span style="color: #ff98a4;">y</span>=img.shape<span style="color: #c099ff;">[</span>:2<span style="color: #c099ff;">]</span>
+<span style="color: #ff98a4;">img2</span> = np.zeros<span style="color: #c099ff;">(</span><span style="color: #ff995e;">(</span>x,y<span style="color: #ff995e;">)</span>, dtype=np.uint8<span style="color: #c099ff;">)</span>
+
+<span style="color: #c099ff;">print</span><span style="color: #c099ff;">(</span>img.shape, x , y<span style="color: #c099ff;">)</span>
+<span style="color: #ff98a4;">r</span>,<span style="color: #ff98a4;">g</span>,<span style="color: #ff98a4;">b</span> =cv.split<span style="color: #c099ff;">(</span>img<span style="color: #c099ff;">)</span>
+
+result = cv.merge<span style="color: #c099ff;">(</span><span style="color: #ff995e;">[</span>g,b,r<span style="color: #ff995e;">]</span><span style="color: #c099ff;">)</span>
+<span style="color: #7a88cf;">#</span><span style="color: #7a88cf;">rr=cv.merge([r,img2,img2])</span>
+<span style="color: #7a88cf;">#</span><span style="color: #7a88cf;">gg=cv.merge([img2,g,img2])</span>
+<span style="color: #7a88cf;">#</span><span style="color: #7a88cf;">bb=cv.merge([img2,img2,b])</span>
+cv.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'img'</span>, result<span style="color: #c099ff;">)</span>
+<span style="color: #7a88cf;">#</span><span style="color: #7a88cf;">cv.imshow('r', r)</span>
+<span style="color: #7a88cf;">#</span><span style="color: #7a88cf;">cv.imshow('g', g)</span>
+<span style="color: #7a88cf;">#</span><span style="color: #7a88cf;">cv.imshow('b', b)</span>
+<span style="color: #7a88cf;">#</span><span style="color: #7a88cf;">cv.imshow('rr', rr)</span>
+<span style="color: #7a88cf;">#</span><span style="color: #7a88cf;">cv.imshow('gg', gg)</span>
+<span style="color: #7a88cf;">#</span><span style="color: #7a88cf;">cv.imshow('bb', bb)</span>
+cv.waitKey<span style="color: #c099ff;">()</span>
+cv.destroyAllWindows<span style="color: #c099ff;">()</span>
+
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #c099ff;">import</span> numpy <span style="color: #c099ff;">as</span> np 
+<span style="color: #c099ff;">import</span> cv2 <span style="color: #c099ff;">as</span> cv
+
+<span style="color: #ff98a4;">img</span> = cv.imread<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'tr.png'</span>, 0<span style="color: #c099ff;">)</span>
+<span style="color: #ff98a4;">x</span>,<span style="color: #ff98a4;">y</span>=img.shape
+<span style="color: #ff98a4;">img2</span> = np.zeros<span style="color: #c099ff;">(</span><span style="color: #ff995e;">(</span>x*2,y*2<span style="color: #ff995e;">)</span>, dtype=np.uint8<span style="color: #c099ff;">)</span>
+
+<span style="color: #c099ff;">for</span> i <span style="color: #c099ff;">in</span> <span style="color: #c099ff;">range</span><span style="color: #c099ff;">(</span>x<span style="color: #c099ff;">)</span>:
+    <span style="color: #c099ff;">for</span> j <span style="color: #c099ff;">in</span> <span style="color: #c099ff;">range</span><span style="color: #c099ff;">(</span>y<span style="color: #c099ff;">)</span>:
+        img2<span style="color: #c099ff;">[</span><span style="color: #c099ff;">int</span><span style="color: #ff995e;">(</span>i*0.5<span style="color: #ff995e;">)</span>,<span style="color: #c099ff;">int</span><span style="color: #ff995e;">(</span>j*0.5<span style="color: #ff995e;">)</span><span style="color: #c099ff;">]</span> = img<span style="color: #c099ff;">[</span>i,j<span style="color: #c099ff;">]</span>
+    
+cv.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'img'</span>, img2<span style="color: #c099ff;">)</span>
+cv.waitKey<span style="color: #c099ff;">()</span>
+cv.destroyAllWindows<span style="color: #c099ff;">()</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #c099ff;">import</span> numpy <span style="color: #c099ff;">as</span> np
+<span style="color: #c099ff;">import</span> cv2 <span style="color: #c099ff;">as</span> cv
+
+<span style="color: #ff98a4;">img</span> = cv.imread<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'tr.png'</span>, 0<span style="color: #c099ff;">)</span>
+<span style="color: #ff98a4;">x</span>,<span style="color: #ff98a4;">y</span>=img.shape
+<span style="color: #ff98a4;">img2</span> = np.zeros<span style="color: #c099ff;">(</span><span style="color: #ff995e;">(</span>x,y<span style="color: #ff995e;">)</span>, dtype=np.uint8<span style="color: #c099ff;">)</span>
+
+<span style="color: #c099ff;">for</span> i <span style="color: #c099ff;">in</span> <span style="color: #c099ff;">range</span><span style="color: #c099ff;">(</span>x<span style="color: #c099ff;">)</span>:
+    <span style="color: #c099ff;">for</span> j <span style="color: #c099ff;">in</span> <span style="color: #c099ff;">range</span><span style="color: #c099ff;">(</span>y<span style="color: #c099ff;">)</span>:
+        <span style="color: #c099ff;">if</span> img<span style="color: #c099ff;">[</span>i,j<span style="color: #c099ff;">]</span>&gt;150:
+            img2<span style="color: #c099ff;">[</span><span style="color: #ff98a4;">i</span>,<span style="color: #ff98a4;">j</span><span style="color: #c099ff;">]</span> = 255
+        <span style="color: #c099ff;">else</span>:
+            img2<span style="color: #c099ff;">[</span><span style="color: #ff98a4;">i</span>,<span style="color: #ff98a4;">j</span><span style="color: #c099ff;">]</span> = 0
+            
+cv.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'img'</span>, img2<span style="color: #c099ff;">)</span>
+cv.waitKey<span style="color: #c099ff;">()</span>
+cv.destroyAllWindows<span style="color: #c099ff;">()</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #c099ff;">import</span> cv2 <span style="color: #c099ff;">as</span> cv
+<span style="color: #ff98a4;">cap</span> = cv.VideoCapture<span style="color: #c099ff;">(</span>0<span style="color: #c099ff;">)</span>
+<span style="color: #c099ff;">while</span><span style="color: #c099ff;">(</span><span style="color: #ff995e;">True</span><span style="color: #c099ff;">)</span>:
+         <span style="color: #ff98a4;">ret</span>, <span style="color: #ff98a4;">img</span> = cap.read<span style="color: #c099ff;">()</span>
+         <span style="color: #c099ff;">if</span> ret == <span style="color: #ff995e;">True</span>:
+                  <span style="color: #7a88cf;">#</span><span style="color: #7a88cf;">img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)</span>
+                  img3 = cv.cvtColor<span style="color: #c099ff;">(</span>img, cv.COLOR_BGR2HSV<span style="color: #c099ff;">)</span>
+                  cv.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'video'</span>, img3<span style="color: #c099ff;">)</span>
+                  k =cv.waitKey<span style="color: #c099ff;">(</span>1<span style="color: #c099ff;">)</span> &amp; 0xFF
+                  <span style="color: #c099ff;">if</span> k == 27 :
+                           <span style="color: #c099ff;">break</span>
+         <span style="color: #c099ff;">else</span>:
+                  <span style="color: #c099ff;">break</span>
+cap.release<span style="color: #c099ff;">()</span>
+cv.destroyAllWindows<span style="color: #c099ff;">()</span>
+
+</pre>
+</div>
+
+
+<p>
+,#+RESULTS:
+</p>
+<pre class="example">
+None
+</pre>
+
+
+
+
+
+
+
+
+<p>
+,#+BEGIN<sub>SRC</sub> python
+import cv2 as cv
+import numpy as np
+</p>
+
+<p>
+img = np.ones((500, 500), dtype=np.uint8)*156
+cv.imshow('img', img)
+cv.waitKey()
+cv.destroyAllWindows()
+#+END<sub>SRC</sub>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">
+<span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
+
+<span style="color: #c099ff;">typedef</span> <span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">nodo</span><span style="color: #c099ff;">{</span>
+<span style="color: #ffc777;">int</span> <span style="color: #ff98a4;">dato</span>;
+<span style="color: #ffc777;">char</span> <span style="color: #ff98a4;">info</span>;
+<span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">nodo</span> *<span style="color: #ff98a4;">sig</span>;
+<span style="color: #c099ff;">struct</span> <span style="color: #ffc777;">nodo</span> *<span style="color: #ff98a4;">ant</span>;
+<span style="color: #c099ff;">}</span><span style="color: #ffc777;">nodo</span>;
+
+<span style="color: #ffc777;">int</span> <span style="color: #82aaff;">main</span><span style="color: #c099ff;">(){</span>
+
+
+<span style="color: #c099ff;">}</span>
+
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4aadcbe" class="outline-3">
+<h3 id="org4aadcbe">Segmentación de color mediante el modelo de color HSV</h3>
+<div class="outline-text-3" id="text-org4aadcbe">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #c099ff;">import</span> cv2 <span style="color: #c099ff;">as</span> cv
+
+<span style="color: #ff98a4;">img</span> = cv.imread<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'man1.jpg'</span>, 1<span style="color: #c099ff;">)</span>
+<span style="color: #ff98a4;">hsv</span> = cv.cvtColor<span style="color: #c099ff;">(</span>img, cv.COLOR_BGR2HSV<span style="color: #c099ff;">)</span>
+<span style="color: #ff98a4;">uba</span>=<span style="color: #c099ff;">(</span>10, 255, 255<span style="color: #c099ff;">)</span>
+<span style="color: #ff98a4;">ubb</span>=<span style="color: #c099ff;">(</span>0, 40 ,40<span style="color: #c099ff;">)</span>
+<span style="color: #ff98a4;">uba2</span>=<span style="color: #c099ff;">(</span>180, 255, 255<span style="color: #c099ff;">)</span>
+<span style="color: #ff98a4;">ubb2</span>=<span style="color: #c099ff;">(</span>170, 40,40<span style="color: #c099ff;">)</span>
+<span style="color: #ff98a4;">mask1</span> = cv.inRange<span style="color: #c099ff;">(</span>hsv, ubb, uba<span style="color: #c099ff;">)</span>
+<span style="color: #ff98a4;">mask2</span> = cv.inRange<span style="color: #c099ff;">(</span>hsv, ubb2, uba2<span style="color: #c099ff;">)</span>
+<span style="color: #ff98a4;">mask</span> = mask1+mask2
+<span style="color: #ff98a4;">res</span> = cv.bitwise_and<span style="color: #c099ff;">(</span>img, img, mask=mask<span style="color: #c099ff;">)</span>
+cv.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'mask1'</span>, mask1<span style="color: #c099ff;">)</span>
+cv.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'mask2'</span>, mask2<span style="color: #c099ff;">)</span>
+
+cv.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'res'</span>, res<span style="color: #c099ff;">)</span>
+cv.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'hsv'</span>, hsv <span style="color: #c099ff;">)</span>
+cv.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'img'</span>, img<span style="color: #c099ff;">)</span>
+
+cv.waitKey<span style="color: #c099ff;">()</span>
+cv.destroyAllWindows<span style="color: #c099ff;">()</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #c099ff;">import</span> cv2 <span style="color: #c099ff;">as</span> cv
+<span style="color: #c099ff;">import</span> numpy <span style="color: #c099ff;">as</span> np
+<span style="color: #ff98a4;">cap</span> = cv.VideoCapture<span style="color: #c099ff;">(</span>0<span style="color: #c099ff;">)</span>
+
+<span style="color: #c099ff;">while</span><span style="color: #c099ff;">(</span><span style="color: #ff995e;">True</span><span style="color: #c099ff;">)</span>:
+    <span style="color: #ff98a4;">ret</span>, <span style="color: #ff98a4;">img</span> = cap.read<span style="color: #c099ff;">()</span>
+    <span style="color: #c099ff;">if</span> <span style="color: #ff98a4;">ret</span>:
+        cv.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'video'</span>, img<span style="color: #c099ff;">)</span>
+        hsv = cv.cvtColor<span style="color: #c099ff;">(</span>img, cv.COLOR_BGR2HSV<span style="color: #c099ff;">)</span>
+        <span style="color: #ff98a4;">uba</span>=<span style="color: #c099ff;">(</span>90, 255, 255<span style="color: #c099ff;">)</span>
+        <span style="color: #ff98a4;">ubb</span>=<span style="color: #c099ff;">(</span>40, 40 ,40<span style="color: #c099ff;">)</span>
+        <span style="color: #ff98a4;">mask</span> = cv.inRange<span style="color: #c099ff;">(</span>hsv, ubb, uba<span style="color: #c099ff;">)</span>
+        <span style="color: #ff98a4;">res</span> = cv.bitwise_and<span style="color: #c099ff;">(</span>img, img, mask=mask<span style="color: #c099ff;">)</span>
+        cv.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'res'</span>, res<span style="color: #c099ff;">)</span>
+        
+        k =cv.waitKey<span style="color: #c099ff;">(</span>1<span style="color: #c099ff;">)</span> &amp; 0xFF
+        <span style="color: #c099ff;">if</span> k == 27 :
+            <span style="color: #c099ff;">break</span>
+    <span style="color: #c099ff;">else</span>:
+        <span style="color: #c099ff;">break</span>
+    
+cap.release<span style="color: #c099ff;">()</span>
+cv.destroyAllWindows<span style="color: #c099ff;">()</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<div id="outline-container-org97b20d1" class="outline-3">
+<h3 id="org97b20d1">Seguimiento Por color</h3>
+<div class="outline-text-3" id="text-org97b20d1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #c099ff;">import</span> cv2
+<span style="color: #c099ff;">import</span> numpy <span style="color: #c099ff;">as</span> np
+
+<span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Iniciar la captura de video desde la c&#225;mara</span>
+<span style="color: #ff98a4;">cap</span> = cv2.VideoCapture<span style="color: #c099ff;">(</span>0<span style="color: #c099ff;">)</span>
+<span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Definir el rango de color que quieres rastrear en el espacio de color HSV (en este caso, azul)</span>
+<span style="color: #ff98a4;">lower_blue</span> = np.array<span style="color: #c099ff;">(</span><span style="color: #ff995e;">[</span>100, 150, 0<span style="color: #ff995e;">]</span><span style="color: #c099ff;">)</span>
+<span style="color: #ff98a4;">upper_blue</span> = np.array<span style="color: #c099ff;">(</span><span style="color: #ff995e;">[</span>140, 255, 255<span style="color: #ff995e;">]</span><span style="color: #c099ff;">)</span>
+<span style="color: #ff98a4;">img2</span>=<span style="color: #ff995e;">None</span>
+<span style="color: #ff98a4;">i</span>=0
+<span style="color: #c099ff;">while</span> <span style="color: #ff995e;">True</span>:
+    <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Capturar frame por frame</span>
+    <span style="color: #ff98a4;">ret</span>, <span style="color: #ff98a4;">frame</span> = cap.read<span style="color: #c099ff;">()</span>
+    <span style="color: #c099ff;">if</span> <span style="color: #c099ff;">not</span> <span style="color: #ff98a4;">ret</span>:
+        <span style="color: #c099ff;">break</span>
+    
+    <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Convertir el frame de BGR a HSV</span>
+    hsv = cv2.cvtColor<span style="color: #c099ff;">(</span>frame, cv2.COLOR_BGR2HSV<span style="color: #c099ff;">)</span>
+    
+    <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Crear una m&#225;scara que detecte solo el color azul</span>
+    <span style="color: #ff98a4;">mask</span> = cv2.inRange<span style="color: #c099ff;">(</span>hsv, lower_blue, upper_blue<span style="color: #c099ff;">)</span>
+    
+    <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Filtrar la m&#225;scara con operaciones morfol&#243;gicas</span>
+    <span style="color: #ff98a4;">mask</span> = cv2.erode<span style="color: #c099ff;">(</span>mask, <span style="color: #ff995e;">None</span>, iterations=2<span style="color: #c099ff;">)</span>
+    mask = cv2.dilate<span style="color: #c099ff;">(</span>mask, <span style="color: #ff995e;">None</span>, iterations=2<span style="color: #c099ff;">)</span>
+    
+    <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Encontrar contornos en la m&#225;scara</span>
+    contours, _ = cv2.findContours<span style="color: #c099ff;">(</span>mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE<span style="color: #c099ff;">)</span>
+    
+    <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Si se encuentra al menos un contorno, seguir el objeto</span>
+    <span style="color: #c099ff;">if</span> contours:
+        <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Tomar el contorno m&#225;s grande</span>
+        largest_contour = <span style="color: #c099ff;">max</span><span style="color: #c099ff;">(</span>contours, key=cv2.contourArea<span style="color: #c099ff;">)</span>
+        
+        <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Encontrar el centro del contorno usando un c&#237;rculo m&#237;nimo que lo rodee</span>
+        <span style="color: #c099ff;">(</span><span style="color: #ff995e;">(</span>x, y<span style="color: #ff995e;">)</span>, radius<span style="color: #c099ff;">)</span> = cv2.minEnclosingCircle<span style="color: #c099ff;">(</span>largest_contour<span style="color: #c099ff;">)</span>
+        
+        <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Dibujar el c&#237;rculo y el centro en el frame original si el radio es mayor que un umbral</span>
+        <span style="color: #c099ff;">if</span> radius &gt; 10:
+            i=i+1
+            cv2.circle<span style="color: #c099ff;">(</span>frame, <span style="color: #ff995e;">(</span><span style="color: #c099ff;">int</span><span style="color: #ff98a4;">(</span>x<span style="color: #ff98a4;">)</span>, <span style="color: #c099ff;">int</span><span style="color: #ff98a4;">(</span>y<span style="color: #ff98a4;">)</span><span style="color: #ff995e;">)</span>, <span style="color: #c099ff;">int</span><span style="color: #ff995e;">(</span>radius<span style="color: #ff995e;">)</span>, <span style="color: #ff995e;">(</span>0, 255, 255<span style="color: #ff995e;">)</span>, 2<span style="color: #c099ff;">)</span>
+            cv2.circle<span style="color: #c099ff;">(</span>frame, <span style="color: #ff995e;">(</span><span style="color: #c099ff;">int</span><span style="color: #ff98a4;">(</span>x<span style="color: #ff98a4;">)</span>, <span style="color: #c099ff;">int</span><span style="color: #ff98a4;">(</span>y<span style="color: #ff98a4;">)</span><span style="color: #ff995e;">)</span>, 5, <span style="color: #ff995e;">(</span>0, 255, 255<span style="color: #ff995e;">)</span>, -1<span style="color: #c099ff;">)</span>
+            cv2.rectangle<span style="color: #c099ff;">(</span>frame, <span style="color: #ff995e;">(</span><span style="color: #c099ff;">int</span><span style="color: #ff98a4;">(</span>x-radius<span style="color: #ff98a4;">)</span>, <span style="color: #c099ff;">int</span><span style="color: #ff98a4;">(</span>y-radius<span style="color: #ff98a4;">)</span><span style="color: #ff995e;">)</span>, <span style="color: #ff995e;">(</span><span style="color: #c099ff;">int</span><span style="color: #ff98a4;">(</span>x+radius<span style="color: #ff98a4;">)</span>, <span style="color: #c099ff;">int</span><span style="color: #ff98a4;">(</span>y+radius<span style="color: #ff98a4;">)</span><span style="color: #ff995e;">)</span>, <span style="color: #ff995e;">(</span>0, 0, 255<span style="color: #ff995e;">)</span>, 3<span style="color: #c099ff;">)</span>
+            img2 = frame<span style="color: #c099ff;">[</span><span style="color: #c099ff;">int</span><span style="color: #ff995e;">(</span>y-radius<span style="color: #ff995e;">)</span>:<span style="color: #c099ff;">int</span><span style="color: #ff995e;">(</span>y+radius<span style="color: #ff995e;">)</span>, <span style="color: #c099ff;">int</span><span style="color: #ff995e;">(</span>x-radius<span style="color: #ff995e;">)</span>:<span style="color: #c099ff;">int</span><span style="color: #ff995e;">(</span>x+radius<span style="color: #ff995e;">)</span><span style="color: #c099ff;">]</span>
+            cv2.imwrite<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">"/home/likcos/tarjeta/tarjeta"</span>+<span style="color: #c099ff;">str</span><span style="color: #ff995e;">(</span>i<span style="color: #ff995e;">)</span>+<span style="color: #c3e88d;">'.jpg'</span>, img2<span style="color: #c099ff;">)</span>
+            cv2.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'img2'</span>, img2<span style="color: #c099ff;">)</span>
+    <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Mostrar el frame</span>
+    cv2.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'Frame'</span>, frame<span style="color: #c099ff;">)</span>
+    cv2.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'img2'</span>, img2<span style="color: #c099ff;">)</span>
+    cv2.imshow<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'Mask'</span>, mask<span style="color: #c099ff;">)</span>
+
+    <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Salir si se presiona la tecla 'q'</span>
+    <span style="color: #c099ff;">if</span> cv2.waitKey<span style="color: #c099ff;">(</span>1<span style="color: #c099ff;">)</span> &amp; 0xFF == <span style="color: #c099ff;">ord</span><span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'q'</span><span style="color: #c099ff;">)</span>:
+        <span style="color: #c099ff;">break</span>
+
+<span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Liberar la captura y cerrar todas las ventanas</span>
+cap.release<span style="color: #c099ff;">()</span>
+cv2.destroyAllWindows<span style="color: #c099ff;">()</span>
+
+</pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: likcos</p>
-<p class="date">Created: 2024-09-05 jue 22:33</p>
+<p class="date">Created: 2024-09-30 lun 23:20</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
