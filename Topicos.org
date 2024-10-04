@@ -901,6 +901,511 @@ int main() {
 #+END_SRC
 
 
+
+
+** Comparación entre Java y Python
+
+Java y Python son dos de los lenguajes de programación más populares
+hoy en día, utilizados ampliamente tanto en la industria como en el
+ámbito académico. Cada uno tiene sus propias características y
+ventajas, y el uso de uno u otro depende del contexto y los requisitos
+específicos del proyecto.
+
+*** Filosofía de diseño
+  - **Java**: Fue diseñado para ser un lenguaje de programación de propósito general, con una fuerte orientación a la programación orientada a objetos. Su lema, "escribe una vez, ejecuta en cualquier lugar" (WORA, *Write Once, Run Anywhere*), refleja su capacidad de funcionar en cualquier sistema con una Máquina Virtual de Java (JVM).
+
+  - **Python**: Python fue diseñado para ser simple y fácil de leer, promoviendo la claridad del código y la productividad del programador. Está muy enfocado en la simplicidad y en el "Zen de Python", que incluye principios como *"La simplicidad es mejor que la complejidad"* y *"La legibilidad es importante"*.
+
+*** Sintaxis
+  - **Java**: Es un lenguaje que requiere declarar explícitamente los tipos de variables. Tiene una sintaxis más estricta y verbosa en comparación con Python.
+
+  **Ejemplo de Java:**
+  #+begin_src java
+    public class HolaMundo {
+        public static void main(String[] args) {
+            String mensaje = "Hola, mundo";
+            System.out.println(mensaje);
+        }
+    }
+  #+end_src
+
+  - **Python**: Python tiene una sintaxis más concisa y simple. No requiere declarar los tipos de las variables explícitamente, lo que facilita escribir código más rápidamente.
+
+  **Ejemplo de Python:**
+  #+begin_src python
+    mensaje = "Hola, mundo"
+    print(mensaje)
+  #+end_src
+
+  **Diferencias clave:**
+  - Java es más verboso, con el uso obligatorio de corchetes ={}= y la declaración de tipos.
+  - Python es dinámico y no requiere una declaración explícita de tipos, lo que resulta en menos líneas de código.
+
+*** Tipado
+  - **Java**: Es un lenguaje de *tipado estático*, lo que significa que los tipos de todas las variables deben ser conocidos en tiempo de compilación. Esto permite una mayor seguridad de tipos, ya que los errores de tipo se detectan antes de ejecutar el programa.
+
+  **Ejemplo en Java (tipado estático):**
+  #+begin_src java
+    int numero = 10;
+    String texto = "Hola";
+  #+end_src
+
+  - **Python**: Es un lenguaje de *tipado dinámico*, lo que significa que los tipos de las variables se determinan en tiempo de ejecución. Esto permite mayor flexibilidad, pero puede llevar a errores de tipo en tiempo de ejecución si no se tiene cuidado.
+
+  **Ejemplo en Python (tipado dinámico):**
+  #+begin_src python
+    numero = 10  # Puede ser un entero ahora...
+    numero = "Diez"  # ...y una cadena después.
+  #+end_src
+
+  **Diferencias clave:**
+  - Java ofrece más seguridad con el tipado estático, lo que reduce el riesgo de errores en tiempo de ejecución.
+  - Python es más flexible y fácil de usar para principiantes, pero requiere mayor atención para evitar errores de tipo.
+
+*** Manejo de memoria
+  - **Java**: Utiliza un *recolector de basura* automático que se ejecuta en segundo plano para liberar memoria de objetos que ya no se utilizan. Esto ayuda a evitar fugas de memoria, pero puede haber un impacto en el rendimiento en ciertos momentos, cuando el recolector de basura se ejecuta.
+
+  - **Python**: También utiliza un recolector de basura para la gestión automática de memoria, y emplea un sistema de conteo de referencias para liberar objetos cuando ya no son referenciados. Sin embargo, esto puede causar problemas con referencias cíclicas, que son manejadas de manera menos eficiente.
+
+*** Programación orientada a objetos
+  - **Java**: Java es completamente orientado a objetos. Todos los programas Java deben estar contenidos en clases, y no se pueden tener funciones o variables fuera de ellas. Java soporta herencia simple (una clase puede heredar solo de una clase base).
+
+  **Ejemplo de clase en Java:**
+  #+begin_src java
+    public class Persona {
+        private String nombre;
+        private int edad;
+
+        public Persona(String nombre, int edad) {
+            this.nombre = nombre;
+            this.edad = edad;
+        }
+
+        public void saludar() {
+            System.out.println("Hola, mi nombre es " + nombre);
+        }
+    }
+  #+end_src
+
+  - **Python**: Aunque Python también es un lenguaje orientado a objetos, permite combinar varios paradigmas (orientado a objetos, funcional, imperativo). Además, permite *herencia múltiple*, lo que significa que una clase puede heredar de múltiples clases base.
+
+  **Ejemplo de clase en Python:**
+  #+begin_src python
+    class Persona:
+        def __init__(self, nombre, edad):
+            self.nombre = nombre
+            self.edad = edad
+
+        def saludar(self):
+            print(f"Hola, mi nombre es {self.nombre}")
+
+  persona1 = Persona("Carlos", 30)
+  persona1.saludar()  # Hola, mi nombre es Carlos
+  #+end_src
+
+  **Diferencias clave:**
+  - En Java, todo debe estar contenido dentro de una clase, mientras que en Python puedes tener funciones y variables fuera de clases.
+  - Python permite herencia múltiple, mientras que Java solo permite herencia simple.
+
+*** Manejo de excepciones
+  - **Java**: Java obliga a manejar las excepciones con bloques =try-catch=. Además, distingue entre excepciones *verificadas* (que deben manejarse o declararse explícitamente en los métodos) y *no verificadas*.
+
+  **Ejemplo de manejo de excepciones en Java:**
+  #+begin_src java
+    public class Excepciones {
+        public static void main(String[] args) {
+            try {
+                int division = 10 / 0;
+            } catch (ArithmeticException e) {
+                System.out.println("Error: División por cero.");
+            }
+        }
+    }
+  #+end_src
+
+  - **Python**: Python también utiliza bloques =try-except= para el manejo de excepciones, pero no obliga a los desarrolladores a manejar las excepciones de forma tan estricta como Java.
+
+  **Ejemplo de manejo de excepciones en Python:**
+  #+begin_src python
+    try:
+        division = 10 / 0
+    except ZeroDivisionError:
+        print("Error: División por cero.")
+  #+end_src
+
+  **Diferencias clave:**
+  - Java tiene un manejo de excepciones más rígido con excepciones verificadas, lo que puede mejorar la seguridad del código.
+  - Python es más flexible en el manejo de excepciones, lo que lo hace más sencillo de usar, pero puede llevar a que ciertos errores no se manejen adecuadamente.
+
+*** Rendimiento
+  - **Java**: Al ser un lenguaje compilado (aunque se compila en bytecode y luego se ejecuta en la JVM), Java suele ser más rápido en términos de ejecución que Python, especialmente en aplicaciones más grandes y complejas.
+
+  - **Python**: Python es un lenguaje interpretado, lo que significa que es más lento en ejecución en comparación con Java. Sin embargo, la facilidad de desarrollo y la capacidad de integrar bibliotecas escritas en C permiten que Python sea eficiente en muchas áreas, especialmente en la ciencia de datos y el desarrollo rápido de prototipos.
+
+  **Diferencias clave:**
+  - Java es más rápido en ejecución debido a su compilación a bytecode y su ejecución en la JVM.
+  - Python es más lento, pero compensa con la rapidez en el desarrollo, la facilidad de uso y la integración con bibliotecas de alto rendimiento.
+
+*** Ecosistema y bibliotecas
+
+  - **Java**: Tiene un ecosistema robusto con un vasto número de
+    bibliotecas para diversas aplicaciones (aplicaciones web, móviles,
+    de escritorio, y sistemas empresariales). Es muy utilizado en la
+    industria para desarrollos a gran escala.
+
+  - **Python**: Python cuenta con un ecosistema de bibliotecas
+    excepcionalmente amplio, particularmente en ciencia de datos
+    (pandas, NumPy, matplotlib), inteligencia artificial (TensorFlow,
+    PyTorch), automatización y desarrollo web (Django, Flask).
+
+*** Comunidad y soporte
+  - **Java**: Es un lenguaje maduro con una comunidad establecida y
+    soporte a largo plazo. Se utiliza ampliamente en la industria para
+    sistemas grandes y complejos. La JVM y sus herramientas también
+    son una gran ventaja para la portabilidad.
+
+  - **Python**: Python tiene una comunidad vibrante y en
+    crecimiento. Aunque se usa tanto en la industria como en la
+    academia, su popularidad está especialmente marcada en áreas como
+    la ciencia de datos, la automatización y el desarrollo rápido de
+    aplicaciones.
+
+
+
+** Comparación entre Python y Java: Modificadores de Acceso
+
+Los modificadores de acceso controlan la visibilidad y el nivel de
+acceso que las clases, métodos y atributos tienen dentro de un
+programa. En lenguajes como Java, estos modificadores son explícitos y
+bien definidos, mientras que en Python los modificadores de acceso no
+son tan estrictos, sino que se implementan mediante convenciones.
+
+*** Modificadores de acceso en Java
+  En Java, existen cuatro modificadores de acceso principales, que controlan el nivel de visibilidad de las clases, métodos y atributos:
+
+  1. *public*: El modificador más abierto. Cualquier clase o método declarado como =public= es accesible desde cualquier lugar, incluso desde fuera del paquete donde se define.
+
+  2. *protected*: Cualquier miembro declarado como =protected= es accesible desde el mismo paquete y también desde clases derivadas, incluso si están en otros paquetes.
+
+  3. *private*: Los miembros declarados como =private= solo son accesibles dentro de la propia clase. No pueden ser accedidos directamente desde ninguna otra clase, ni siquiera por subclases.
+
+  4. *default (package-private)**: Si no se especifica ningún modificador, el miembro es accesible solo dentro del mismo paquete. A esto se le conoce como acceso *package-private*.
+
+  *Ejemplo de los modificadores de acceso en Java:*
+  #+begin_src java
+    public class Persona {
+        public String nombre;         // Accesible desde cualquier lugar
+        protected int edad;           // Accesible desde el mismo paquete y subclases
+        private String nacionalidad;  // Solo accesible dentro de esta clase
+        String ocupacion;             // Acceso package-private (default)
+
+        // Métodos
+        public void saludar() {
+            System.out.println("Hola");
+        }
+
+        protected void mostrarEdad() {
+            System.out.println("Tengo " + edad + " años.");
+        }
+
+        private void mostrarNacionalidad() {
+            System.out.println("Mi nacionalidad es " + nacionalidad);
+        }
+    }
+  #+end_src
+
+  *Descripción:*
+  - =nombre= tiene acceso =public=, por lo que cualquier otra clase puede acceder a él.
+  - =edad= tiene acceso =protected=, lo que significa que solo puede ser accedido dentro del mismo paquete o en subclases.
+  - =nacionalidad= tiene acceso =private= y solo puede ser usado dentro de la clase =Persona=.
+  - =ocupacion= tiene acceso por defecto, lo que significa que solo es accesible dentro del mismo paquete.
+
+*** Modificadores de acceso en Python
+  En Python, no existen modificadores de acceso explícitos como en Java. Sin embargo, se implementa un mecanismo de control de acceso mediante convenciones:
+
+  1. *Atributos Públicos*: En Python, todos los atributos y métodos son públicos por defecto. Esto significa que se pueden acceder desde cualquier lugar, sin restricciones.
+
+  2. *Atributos Protegidos (convención)*: Un atributo o método se considera protegido si su nombre empieza con un guion bajo `_`. Aunque esto no impide el acceso desde fuera de la clase, indica que es una convención no acceder a estos atributos o métodos desde fuera.
+
+  3. *Atributos Privados (name mangling)*: Un atributo se considera privado si su nombre comienza con dos guiones bajos `__`. Python realiza una ofuscación del nombre (name mangling), lo que hace que el atributo no sea directamente accesible desde fuera de la clase.
+
+  *Ejemplo de los modificadores de acceso en Python:*
+  #+begin_src python
+    class Persona:
+        def __init__(self, nombre, edad, nacionalidad):
+            self.nombre = nombre               # Atributo público
+            self._edad = edad                  # Atributo protegido (convención)
+            self.__nacionalidad = nacionalidad  # Atributo privado (name mangling)
+
+        def saludar(self):  # Método público
+            print("Hola")
+
+        def _mostrar_edad(self):  # Método protegido
+            print(f"Tengo {self._edad} años.")
+
+        def __mostrar_nacionalidad(self):  # Método privado
+            print(f"Mi nacionalidad es {self.__nacionalidad}")
+
+    persona = Persona("Carlos", 30, "Mexicana")
+    print(persona.nombre)  # Carlos (público)
+    print(persona._edad)   # 30 (protegido, pero accesible)
+    # print(persona.__nacionalidad)  # Error: no se puede acceder directamente
+  #+end_src
+
+  **Descripción:**
+  - =nombre= es un atributo público, por lo que se puede acceder desde fuera de la clase sin restricciones.
+  - =edad= está precedido por un solo guion bajo, lo que indica que es "protegido" por convención. Aún se puede acceder desde fuera de la clase, pero no es recomendable hacerlo.
+  - =nacionalidad= utiliza dos guiones bajos, lo que lo convierte en un atributo privado (name mangling), no accesible desde fuera de la clase.
+
+*** Diferencias clave entre Python y Java en modificadores de acceso
+  - **Java** tiene modificadores de acceso explícitos (=public=, =protected=, =private=) que se aplican tanto a métodos como a atributos. Esto proporciona un control más estricto sobre la visibilidad de los miembros de una clase.
+  
+  - **Python** no tiene modificadores de acceso explícitos. En su lugar, utiliza convenciones con guiones bajos para indicar niveles de acceso, pero no impide técnicamente el acceso a los atributos protegidos o privados.
+
+  - En **Java**, los atributos privados no pueden ser accedidos directamente desde fuera de la clase. En Python, los atributos privados usan *name mangling* para ofuscar el nombre, pero aún pueden ser accedidos mediante un hack (`_NombreClase__atributo`).
+
+  - **Java** obliga a usar modificadores de acceso para asegurar el control de acceso entre clases, subclases y paquetes. Python deja el control de acceso más flexible, lo que permite mayor libertad, pero requiere disciplina por parte del programador para no romper las convenciones.
+
+*** Resumen de comparación
+
+  | Aspecto                   | Java                                   | Python                                           |
+  |---------------------------+----------------------------------------+--------------------------------------------------|
+  | **Público (public)**      | Uso explícito de `public`.             | Por defecto, todo es público.                    |
+  | **Protegido (protected)** | Uso explícito de `protected`.          | Convención con `_nombre`.                        |
+  | **Privado (private)**     | Uso explícito de `private`.            | Convención con `__nombre` (name mangling).       |
+  | **Control estricto**      | Sí, controlado mediante modificadores. | No hay control estricto, basado en convenciones. |
+
+
+
+** Clases en Python
+  En Python, las clases son una parte fundamental de la programación
+  orientada a objetos (POO). Nos permiten definir tipos de datos
+  personalizados y estructurados mediante la encapsulación de
+  atributos (datos) y métodos (funciones) que interactúan con esos
+  datos.
+
+
+
+  
+*** ¿Qué es una clase?
+ Una *clase* es un molde o plantilla a partir de la cual se pueden crear múltiples instancias (objetos). Cada objeto tiene sus propios valores para los atributos definidos en la clase.
+
+  **Definición básica:**
+  
+  #+begin_src python
+    class Persona:
+        def __init__(self, nombre, edad):
+            self.nombre = nombre
+            self.edad = edad
+
+        def saludar(self):
+            print(f"Hola, mi nombre es {self.nombre} y tengo {self.edad} años.")
+  #+end_src
+
+  - La clase =Persona= tiene un constructor que inicializa los atributos =nombre= y =edad=.
+  - El método =saludar= es una función que imprime una cadena usando los atributos de la instancia.
+
+*** Creación de una instancia de una clase
+  Para crear una instancia de la clase, simplemente llamamos a la clase como si fuera una función, pasando los argumentos requeridos al constructor.
+
+  **Ejemplo:**
+
+  #+begin_src python
+    persona1 = Persona("Carlos", 30)
+    persona1.saludar()  # Salida: Hola, mi nombre es Carlos y tengo 30 años.
+  #+end_src
+
+  En este caso, hemos creado una instancia llamada =persona1= de la clase =Persona=. Luego, usamos el método =saludar= para interactuar con la instancia.
+
+*** Atributos de una clase
+  Los atributos en una clase son variables que pertenecen a la instancia del objeto. Pueden ser modificados o accedidos desde fuera de la clase a través de la notación de puntos.
+
+  **Acceso y modificación de atributos:**
+  
+  #+begin_src python
+    print(persona1.nombre)  # Carlos
+    persona1.edad = 31  # Modificamos el atributo 'edad'
+    print(persona1.edad)  # 31
+  #+end_src
+
+*** Métodos especiales (métodos mágicos)
+  Los métodos mágicos permiten personalizar el comportamiento de nuestras clases. Algunos de los más comunes son:
+
+  **`__init__`:** Constructor de la clase.
+  **`__str__`:** Permite definir cómo se muestra una instancia cuando se imprime.
+
+  **Ejemplo con `__str__`:**
+
+  #+begin_src python
+    class Persona:
+        def __init__(self, nombre, edad):
+            self.nombre = nombre
+            self.edad = edad
+
+        def __str__(self):
+            return f"Persona(nombre={self.nombre}, edad={self.edad})"
+
+    persona2 = Persona("Ana", 25)
+    print(persona2)  # Persona(nombre=Ana, edad=25)
+  #+end_src
+
+  Esto permite representar el objeto de una forma más legible cuando lo imprimimos.
+
+*** Herencia
+  La herencia es un mecanismo en el que una clase (llamada *clase hija* o *subclase*) hereda atributos y métodos de otra clase (llamada *clase padre* o *superclase*). La subclase puede agregar nuevos atributos y métodos, o sobrescribir los métodos heredados.
+
+  **Ejemplo de herencia:**
+
+  #+begin_src python
+    class Estudiante(Persona):
+        def __init__(self, nombre, edad, matricula):
+            super().__init__(nombre, edad)  # Llama al constructor de la clase padre
+            self.matricula = matricula
+
+        def saludar(self):
+            super().saludar()  # Llama al método 'saludar' de la clase padre
+            print(f"Mi matrícula es {self.matricula}")
+
+    estudiante1 = Estudiante("Luis", 22, "A12345")
+    estudiante1.saludar()
+  #+end_src
+
+  **Salida:**
+  #+begin_example
+    Hola, mi nombre es Luis y tengo 22 años.
+    Mi matrícula es A12345
+  #+end_example
+
+  **Explicación:**
+  - La subclase =Estudiante= hereda de =Persona= y añade un atributo extra =matricula=.
+  - La palabra clave =super()= llama al constructor y métodos de la clase padre.
+
+*** Encapsulamiento
+  El encapsulamiento es el concepto de ocultar los detalles internos de una clase para proteger los datos y permitir que los usuarios interactúen solo con una interfaz limitada. En Python, los atributos pueden ser privados utilizando guiones bajos dobles =__=.
+
+  **Ejemplo de encapsulamiento:**
+
+  #+begin_src python
+    class Persona:
+        def __init__(self, nombre, edad):
+            self.__nombre = nombre  # Atributo privado
+            self.edad = edad
+
+        def obtener_nombre(self):
+            return self.__nombre  # Método público para acceder al atributo privado
+
+    persona = Persona("Carlos", 30)
+    print(persona.obtener_nombre())  # Carlos
+  #+end_src
+
+  - El atributo =__nombre= está oculto fuera de la clase, pero se puede acceder mediante el método público =obtener_nombre=.
+
+*** Polimorfismo
+  El polimorfismo permite que diferentes clases tengan métodos con el mismo nombre, pero con comportamientos diferentes. Esto es útil cuando queremos tratar objetos de distintas clases de manera uniforme.
+
+  **Ejemplo de polimorfismo:**
+
+  #+begin_src python
+    class Animal:
+        def hablar(self):
+            pass
+
+    class Perro(Animal):
+        def hablar(self):
+            return "Guau"
+
+    class Gato(Animal):
+        def hablar(self):
+            return "Miau"
+
+    animales = [Perro(), Gato()]
+
+    for animal in animales:
+        print(animal.hablar())
+  #+end_src
+
+  **Salida:**
+  #+begin_example
+    Guau
+    Miau
+  #+end_example
+
+*** Composición
+  La composición es una técnica donde una clase contiene una instancia de otra clase. Esto crea una relación de *tiene un* entre objetos, en lugar de una relación de *es un*.
+
+  **Ejemplo de composición:**
+
+  #+begin_src python
+    class Motor:
+        def encender(self):
+            print("Motor encendido")
+
+    class Coche:
+        def __init__(self):
+            self.motor = Motor()  # Composición
+
+        def arrancar(self):
+            self.motor.encender()
+
+    mi_coche = Coche()
+    mi_coche.arrancar()  # Motor encendido
+  #+end_src
+
+*** Decoradores de métodos: @classmethod y @staticmethod
+  Python proporciona dos tipos de métodos que pueden estar asociados a una clase: los métodos de clase y los métodos estáticos. Ambos decoradores tienen un uso especial:
+
+  - **@classmethod**: El método recibe la propia clase como primer argumento (usualmente llamado =cls=).
+  - **@staticmethod**: No recibe ni la instancia ni la clase como argumento. Es como una función normal, pero contenida dentro de la clase.
+
+  **Ejemplo de @classmethod y @staticmethod:**
+
+  #+begin_src python
+    class Matematica:
+        @staticmethod
+        def sumar(a, b):
+            return a + b
+
+        @classmethod
+        def valor_pi(cls):
+            return 3.14159
+
+    print(Matematica.sumar(5, 10))  # 15
+    print(Matematica.valor_pi())  # 3.14159
+  #+end_src
+
+*** Ejemplo completo
+  A continuación se presenta un ejemplo que reúne varios conceptos vistos anteriormente.
+
+  #+begin_src python
+    class Persona:
+        def __init__(self, nombre, edad):
+            self.nombre = nombre
+            self.edad = edad
+
+        def __str__(self):
+            return f"{self.nombre}, {self.edad} años"
+
+    class Empleado(Persona):
+        def __init__(self, nombre, edad, puesto, salario):
+            super().__init__(nombre, edad)
+            self.puesto = puesto
+            self.salario = salario
+
+        def __str__(self):
+            return f"{super().__str__()}, {self.puesto}, Salario: {self.salario}"
+
+    empleado1 = Empleado("Ana", 28, "Ingeniera", 50000)
+    print(empleado1)
+  #+end_src
+
+  **Salida:**
+  #+begin_example
+    Ana, 28 años, Ingeniera, Salario: 50000
+  #+end_example
+
+
+
+
 ** Problema del Granjero, el Puma, la Cabra y la Lechuga
 
 *** Descripción del Problema
@@ -1010,6 +1515,9 @@ La búsqueda en profundidad explora las ramas posibles del árbol de búsqueda h
 7. Granjero lleva la cabra: `(R, R, R, R)`
 
 ¡Y todos han cruzado el río de manera segura!
+
+
+
 
 ** Tutorial de Operaciones Bitwise en OpenCV
 
