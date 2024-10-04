@@ -1958,3 +1958,157 @@ cv2.destroyAllWindows()
 : None
 
 
+
+
+
+
+** Problemas con Objetos y Estructuras de Datos
+
+*** Problema ejemplo: Control de un brazo robótico con múltiples articulaciones
+   Diseña un sistema de control para un brazo robótico con 4 articulaciones (hombro, codo, muñeca y pinza), donde cada articulación tiene sensores de posición y motores controlados individualmente. El sistema debe recibir órdenes de movimiento y controlar la posición de cada articulación para mover el brazo hacia una posición objetivo en un espacio tridimensional.
+
+**** Objetivo:
+   Crear una estructura de datos que represente las articulaciones y los estados de cada una, así como un algoritmo que controle el brazo robótico basado en estos datos.
+
+**** Requisitos:
+   1. **Estructura de datos**:
+      Cada articulación debe tener al menos los siguientes parámetros:
+      - Ángulo actual
+      - Ángulo objetivo
+      - Velocidad de movimiento
+      - Tipo de movimiento (rotación o deslizamiento, dependiendo de la articulación)
+      - Límites máximos y mínimos de ángulo
+
+   2. **Objeto articulación**:
+      - Crea una clase "Articulación" con los atributos mencionados y métodos para actualizar el estado de cada articulación.
+   
+   3. **Clase brazo robótico**:
+      - Implementa una clase "BrazoRobotico" que contenga un conjunto de objetos "Articulación". Esta clase debe tener métodos para:
+        - Recibir una posición final y calcular los ángulos necesarios para cada articulación.
+        - Actualizar las posiciones actuales de cada articulación con base en los valores de los sensores.
+        - Mover cada articulación de manera sincronizada hacia su ángulo objetivo.
+
+   4. **Resolución cinemática inversa**:
+      - Desarrolla una función que calcule los ángulos objetivos de cada articulación dado un punto objetivo en el espacio tridimensional.
+
+   5. **Planificación de trayectorias**:
+      - Implementa una función que permita suavizar el movimiento del brazo robótico para evitar movimientos bruscos, calculando trayectorias intermedias a lo largo del recorrido.
+
+**** Ejemplo de estructura de datos en Python:
+
+#+begin_src python
+class Articulacion:
+    def __init__(self, angulo_actual, angulo_objetivo, velocidad, limite_min, limite_max):
+        self.angulo_actual = angulo_actual
+        self.angulo_objetivo = angulo_objetivo
+        self.velocidad = velocidad
+        self.limite_min = limite_min
+        self.limite_max = limite_max
+
+    def actualizar_posicion(self):
+        if self.angulo_actual < self.angulo_objetivo:
+            self.angulo_actual += self.velocidad
+            if self.angulo_actual > self.angulo_objetivo:
+                self.angulo_actual = self.angulo_objetivo
+        elif self.angulo_actual > self.angulo_objetivo:
+            self.angulo_actual -= self.velocidad
+            if self.angulo_actual < self.angulo_objetivo:
+                self.angulo_actual = self.angulo_objetivo
+
+class BrazoRobotico:
+    def __init__(self):
+        self.hombro = Articulacion(0, 0, 1, -90, 90)
+        self.codo = Articulacion(0, 0, 1, 0, 135)
+        self.muneca = Articulacion(0, 0, 1, -90, 90)
+        self.pinza = Articulacion(0, 0, 1, 0, 180)
+
+    def mover_a_posicion(self, posiciones_objetivo):
+        # Calcula las posiciones objetivo para cada articulación y actualiza
+        self.hombro.angulo_objetivo = posiciones_objetivo[0]
+        self.codo.angulo_objetivo = posiciones_objetivo[1]
+        self.muneca.angulo_objetivo = posiciones_objetivo[2]
+        self.pinza.angulo_objetivo = posiciones_objetivo[3]
+
+        # Actualiza cada articulación
+        self.hombro.actualizar_posicion()
+        self.codo.actualizar_posicion()
+        self.muneca.actualizar_posicion()
+        self.pinza.actualizar_posicion()
+
+# Ejemplo de uso
+brazo = BrazoRobotico()
+brazo.mover_a_posicion([45, 90, 30, 180])
+#+end_src
+
+
+
+*** 1. Sistema de gestión de energía en un vehículo eléctrico
+   Diseña un sistema para gestionar la distribución de energía en un
+   vehículo eléctrico. El sistema debe tener una clase Batería, con
+   atributos como capacidad actual, capacidad máxima, y eficiencia de
+   carga. Además, debe tener una clase Motor que controle el consumo
+   de energía. La estructura de datos se debe utilizar para monitorear
+   el estado de la batería y del motor, optimizando el rendimiento del
+   vehículo.
+
+   - Estructura de datos: Objeto batería, objeto motor.
+   - Clases: Batería, Motor, GestorEnergía.
+
+*** 2. Control de un dron con múltiples sensores
+   Desarrolla un sistema para controlar un dron que utiliza varios
+   sensores (acelerómetro, giroscopio, GPS, cámara). Cada sensor tiene
+   su propia clase con atributos como frecuencia de actualización,
+   precisión, y datos actuales. El sistema debe combinar los datos de
+   estos sensores para mantener la estabilidad del dron y planear
+   rutas de vuelo.
+
+   - Estructura de datos: Objetos para cada sensor.
+   - Clases: Acelerometro, Giroscopio, GPS, Camara, ControladorDron.
+
+*** 3. Sistema de monitoreo de un invernadero automatizado
+   Diseña un sistema para monitorear y controlar la temperatura,
+   humedad, luz y nivel de nutrientes en un invernadero
+   automatizado. Cada variable (temperatura, humedad, etc.) debe ser
+   representada por una clase que registre su estado actual y
+   objetivo. Un controlador central utiliza estas estructuras de datos
+   para ajustar los actuadores que controlan el clima y los
+   nutrientes.
+
+   - Estructura de datos: Objetos de estado de temperatura, humedad, etc.
+   - Clases: SensorTemperatura, SensorHumedad, ActuadorLuz, ControladorInvernadero.
+
+*** 4. Sistema de estacionamiento automatizado
+   Diseña un sistema para controlar un vehículo autónomo que puede
+   estacionarse en un lugar designado. El vehículo tiene varios
+   sensores de proximidad, un sistema de cámara y un motor controlado
+   por una unidad de procesamiento. La posición y los obstáculos se
+   gestionan mediante objetos que representan el entorno. El vehículo
+   debe calcular la ruta óptima utilizando algoritmos de planificación
+   de trayectoria.
+
+   - Estructura de datos: Objetos para los sensores, cámara, motor,
+     entorno.
+   - Clases: SensorProximidad, Camara, Motor, EntornoEstacionamiento, VehiculoAutonomo.
+
+*** 5. Control de un exoesqueleto
+   Desarrolla un sistema para controlar un exoesqueleto mecánico que
+   ayuda a personas con movilidad reducida a caminar. Cada
+   articulación del exoesqueleto tiene un sensor que mide su posición
+   y un actuador que controla el movimiento. Los datos de las
+   articulaciones se gestionan con objetos, y el sistema debe
+   sincronizar los movimientos de manera natural.
+
+   - Estructura de datos: Objetos para articulaciones y actuadores.
+   - Clases: ArticulacionExoesqueleto, Sensor, Actuador, ControlExoesqueleto.
+
+*** 6. Sistema de control de calidad en una línea de producción
+   Implementa un sistema para inspeccionar productos en una línea de
+   producción automatizada. Se utilizan cámaras y sensores para
+   verificar si los productos cumplen con las especificaciones. Cada
+   producto es representado por un objeto que almacena sus
+   características (dimensiones, peso, color, etc.). Los datos de los
+   sensores se usan para aceptar o rechazar productos según las
+   tolerancias establecidas.
+
+   - Estructura de datos: Objetos para productos y sensores.
+   - Clases: Producto, Camara, SensorDimensiones, ControlCalidad.

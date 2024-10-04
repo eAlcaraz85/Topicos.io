@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-<!-- 2024-10-04 vie 00:28 -->
+<!-- 2024-10-04 vie 09:20 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Apuntes Tópicos de Programación</title>
@@ -230,144 +230,155 @@
 <h2>&Iacute;ndice</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4ecb18c">Manual de Instalación de Git</a>
+<li><a href="#org2ac3658">Manual de Instalación de Git</a>
 <ul>
-<li><a href="#org43b8137">Instalación en Windows</a></li>
-<li><a href="#org2c60ffa">Instalación en macOS</a>
+<li><a href="#org19727d4">Instalación en Windows</a></li>
+<li><a href="#orgcc4f86b">Instalación en macOS</a>
 <ul>
-<li><a href="#org68be9a9">Método recomendado: usando Homebrew</a></li>
-<li><a href="#org839258e">Método alternativo: paquete descargado</a></li>
+<li><a href="#org327253f">Método recomendado: usando Homebrew</a></li>
+<li><a href="#org058c5a7">Método alternativo: paquete descargado</a></li>
 </ul>
 </li>
-<li><a href="#org2e62900">Instalación en Linux (Distribuciones basadas en Debian/Ubuntu)</a></li>
-<li><a href="#orgc400825">Configuración básica de Git</a></li>
-<li><a href="#orgb469a73">Actualización de Git</a></li>
-<li><a href="#orge023813">Configurar Llave SSH con GitHub</a>
+<li><a href="#orgd2d1797">Instalación en Linux (Distribuciones basadas en Debian/Ubuntu)</a></li>
+<li><a href="#org031d4be">Configuración básica de Git</a></li>
+<li><a href="#org7f34e1a">Actualización de Git</a></li>
+<li><a href="#orgcfd5740">Configurar Llave SSH con GitHub</a>
 <ul>
-<li><a href="#org034af57">1. Verificar si ya tienes una llave SSH</a></li>
-<li><a href="#org50011bf">2. Generar una nueva llave SSH</a></li>
-<li><a href="#org4f71b70">3. Añadir la llave SSH al agente SSH</a></li>
-<li><a href="#org92785a9">4. Copiar la llave SSH pública</a></li>
-<li><a href="#orgfa3acdd">5. Añadir la llave SSH a GitHub</a></li>
-<li><a href="#org459a22b">6. Probar la conexión SSH con GitHub</a></li>
-<li><a href="#org550c247">7. Usar la conexión SSH en repositorios de GitHub</a></li>
+<li><a href="#org1a6e3a3">1. Verificar si ya tienes una llave SSH</a></li>
+<li><a href="#orgf5341d9">2. Generar una nueva llave SSH</a></li>
+<li><a href="#org16c991a">3. Añadir la llave SSH al agente SSH</a></li>
+<li><a href="#org6c1535e">4. Copiar la llave SSH pública</a></li>
+<li><a href="#org1d940e5">5. Añadir la llave SSH a GitHub</a></li>
+<li><a href="#org7fae650">6. Probar la conexión SSH con GitHub</a></li>
+<li><a href="#orgd518ecc">7. Usar la conexión SSH en repositorios de GitHub</a></li>
 </ul>
 </li>
-<li><a href="#org50c3dd4">Configurar Llave SSH con GitHub en Windows</a>
+<li><a href="#orgc64028b">Configurar Llave SSH con GitHub en Windows</a>
 <ul>
-<li><a href="#orga0ebf82">1. Abrir Git Bash</a></li>
-<li><a href="#orgec5195a">2. Verificar si ya tienes una llave SSH</a></li>
-<li><a href="#org7a97aae">3. Generar una nueva llave SSH</a></li>
-<li><a href="#orga4afeca">4. Añadir la llave SSH al agente SSH</a></li>
-<li><a href="#org64cdb0c">5. Copiar la llave SSH pública</a></li>
-<li><a href="#org43ed1d5">6. Añadir la llave SSH a GitHub</a></li>
-<li><a href="#org596aeac">7. Probar la conexión SSH con GitHub</a></li>
-<li><a href="#orgcdcfe1e">8. Usar la conexión SSH en repositorios de GitHub</a></li>
+<li><a href="#org8d93bf1">1. Abrir Git Bash</a></li>
+<li><a href="#org7e757bf">2. Verificar si ya tienes una llave SSH</a></li>
+<li><a href="#orgacd3ecc">3. Generar una nueva llave SSH</a></li>
+<li><a href="#orgf35f70d">4. Añadir la llave SSH al agente SSH</a></li>
+<li><a href="#org8f0d66d">5. Copiar la llave SSH pública</a></li>
+<li><a href="#org7816389">6. Añadir la llave SSH a GitHub</a></li>
+<li><a href="#org43aa150">7. Probar la conexión SSH con GitHub</a></li>
+<li><a href="#org4f24989">8. Usar la conexión SSH en repositorios de GitHub</a></li>
 </ul>
 </li>
-<li><a href="#orge6cb8c4">Manual de Git en Windows</a>
+<li><a href="#orgdc6cc19">Manual de Git en Windows</a>
 <ul>
-<li><a href="#orgbe42e2d">1. Instalar Git en Windows</a></li>
-<li><a href="#orgf7091b5">2. Configurar Git</a></li>
-<li><a href="#org703977c">3. Clonar un repositorio</a></li>
-<li><a href="#org165763c">4. Comandos básicos de Git</a></li>
-<li><a href="#org7aca6e6">5. Actualizar el repositorio local</a></li>
-<li><a href="#orgd8d472f">6. Crear y cambiar de ramas (branches)</a></li>
-<li><a href="#org525e52c">7. Ver historial de commits</a></li>
-<li><a href="#orgfa4bace">8. Configurar una llave SSH</a></li>
+<li><a href="#orgdc547fa">1. Instalar Git en Windows</a></li>
+<li><a href="#orgd705c90">2. Configurar Git</a></li>
+<li><a href="#org96f3ffa">3. Clonar un repositorio</a></li>
+<li><a href="#orgccbccbb">4. Comandos básicos de Git</a></li>
+<li><a href="#org595976b">5. Actualizar el repositorio local</a></li>
+<li><a href="#org3229579">6. Crear y cambiar de ramas (branches)</a></li>
+<li><a href="#orgc57d8d6">7. Ver historial de commits</a></li>
+<li><a href="#org5d760e9">8. Configurar una llave SSH</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgd3aa9c8">Manual de Instalación de Python en Windows</a>
+<li><a href="#org7041c9d">Manual de Instalación de Python en Windows</a>
 <ul>
-<li><a href="#org6c348ab">Paso 1: Descarga de Python</a></li>
-<li><a href="#org6956313">Paso 2: Ejecutar el instalador</a></li>
-<li><a href="#org99c23cf">Paso 3: Verificación de la instalación</a></li>
-<li><a href="#orgb550790">Paso 4: Instalar pip y otros paquetes</a></li>
-<li><a href="#org9eb4d50">Paso 5: Configuración del entorno de desarrollo</a></li>
-<li><a href="#org434616d">Paso 6: Actualización de Python (opcional)</a></li>
+<li><a href="#orgcaee090">Paso 1: Descarga de Python</a></li>
+<li><a href="#org2be30d4">Paso 2: Ejecutar el instalador</a></li>
+<li><a href="#org9ef14c6">Paso 3: Verificación de la instalación</a></li>
+<li><a href="#org623125a">Paso 4: Instalar pip y otros paquetes</a></li>
+<li><a href="#org3657eed">Paso 5: Configuración del entorno de desarrollo</a></li>
+<li><a href="#orgc2d97f9">Paso 6: Actualización de Python (opcional)</a></li>
 </ul>
 </li>
-<li><a href="#org76a483c">Programación Avanzada</a>
+<li><a href="#orgacc687f">Programación Avanzada</a>
 <ul>
-<li><a href="#org8bc7b1e">Estructuras de Datos</a>
+<li><a href="#orgce03597">Estructuras de Datos</a>
 <ul>
-<li><a href="#org4874b20">1. ¿Qué son las estructuras de datos?</a></li>
-<li><a href="#org324b1cf">2. Tipos comunes de estructuras de datos</a></li>
-<li><a href="#org402ff76">3. Operaciones básicas en estructuras de datos</a></li>
-<li><a href="#org5fd3f54">4. Consideraciones sobre la complejidad</a></li>
-<li><a href="#org45ccd39">5. Ejemplo de aplicación</a></li>
-<li><a href="#orge388ada">6. Conclusión</a></li>
+<li><a href="#org1a70f27">1. ¿Qué son las estructuras de datos?</a></li>
+<li><a href="#org3850d08">2. Tipos comunes de estructuras de datos</a></li>
+<li><a href="#orgdd0954b">3. Operaciones básicas en estructuras de datos</a></li>
+<li><a href="#orgbf809ed">4. Consideraciones sobre la complejidad</a></li>
+<li><a href="#org606117f">5. Ejemplo de aplicación</a></li>
+<li><a href="#org763ef5e">6. Conclusión</a></li>
 </ul>
 </li>
-<li><a href="#orgd967e65">Estructuras de Datos en Python y C</a>
+<li><a href="#org17d2ad8">Estructuras de Datos en Python y C</a>
 <ul>
-<li><a href="#org12abdc7">1. Arreglos (Arrays)</a></li>
-<li><a href="#orgce54863">2. Listas enlazadas (Linked Lists)</a></li>
-<li><a href="#orgd808d28">3. Pilas (Stacks)</a></li>
-<li><a href="#org1e3b60c">4. Colas (Queues)</a></li>
-<li><a href="#orgf98e509">5. Árboles (Trees)</a></li>
-<li><a href="#org15940e8">6. Grafos (Graphs)</a></li>
+<li><a href="#org61787be">1. Arreglos (Arrays)</a></li>
+<li><a href="#orga00fbd7">2. Listas enlazadas (Linked Lists)</a></li>
+<li><a href="#org1eade3d">3. Pilas (Stacks)</a></li>
+<li><a href="#orgc832ab4">4. Colas (Queues)</a></li>
+<li><a href="#org928c48a">5. Árboles (Trees)</a></li>
+<li><a href="#org685ce0f">6. Grafos (Graphs)</a></li>
 </ul>
 </li>
-<li><a href="#org7995dd8">Comparación entre Java y Python</a>
+<li><a href="#orgeff14e0">Comparación entre Java y Python</a>
 <ul>
-<li><a href="#org9bb201f">Filosofía de diseño</a></li>
-<li><a href="#org8d8cf07">Sintaxis</a></li>
-<li><a href="#org8b613cf">Tipado</a></li>
-<li><a href="#org9ba78f8">Manejo de memoria</a></li>
-<li><a href="#org50fd7f9">Programación orientada a objetos</a></li>
-<li><a href="#org35f1489">Manejo de excepciones</a></li>
-<li><a href="#org3e085e5">Rendimiento</a></li>
-<li><a href="#org9285876">Ecosistema y bibliotecas</a></li>
-<li><a href="#org9869d7a">Comunidad y soporte</a></li>
+<li><a href="#orgad01d96">Filosofía de diseño</a></li>
+<li><a href="#org8b19fa3">Sintaxis</a></li>
+<li><a href="#orgd86f3c0">Tipado</a></li>
+<li><a href="#orgd2808ef">Manejo de memoria</a></li>
+<li><a href="#org4877686">Programación orientada a objetos</a></li>
+<li><a href="#orgb40de86">Manejo de excepciones</a></li>
+<li><a href="#org5d6d218">Rendimiento</a></li>
+<li><a href="#orgdd71e4b">Ecosistema y bibliotecas</a></li>
+<li><a href="#orga0b79ee">Comunidad y soporte</a></li>
 </ul>
 </li>
-<li><a href="#org69b189b">Comparación entre Python y Java: Modificadores de Acceso</a>
+<li><a href="#orgea21f00">Comparación entre Python y Java: Modificadores de Acceso</a>
 <ul>
-<li><a href="#org6e9d148">Modificadores de acceso en Java</a></li>
-<li><a href="#org7f86d48">Modificadores de acceso en Python</a></li>
-<li><a href="#org35264cf">Diferencias clave entre Python y Java en modificadores de acceso</a></li>
-<li><a href="#org1911435">Resumen de comparación</a></li>
+<li><a href="#orgad2890b">Modificadores de acceso en Java</a></li>
+<li><a href="#orgd78cfba">Modificadores de acceso en Python</a></li>
+<li><a href="#org2c277df">Diferencias clave entre Python y Java en modificadores de acceso</a></li>
+<li><a href="#orgee4840c">Resumen de comparación</a></li>
 </ul>
 </li>
-<li><a href="#orgc76bc51">Clases en Python</a>
+<li><a href="#org710b3c9">Clases en Python</a>
 <ul>
-<li><a href="#org2dcac7e">¿Qué es una clase?</a></li>
-<li><a href="#org4058f85">Creación de una instancia de una clase</a></li>
-<li><a href="#org43668ee">Atributos de una clase</a></li>
-<li><a href="#orgb2988d3">Métodos especiales (métodos mágicos)</a></li>
-<li><a href="#orgeab534a">Herencia</a></li>
-<li><a href="#org7d99bd0">Encapsulamiento</a></li>
-<li><a href="#org6f1ba25">Polimorfismo</a></li>
-<li><a href="#org7f28c6a">Composición</a></li>
-<li><a href="#org6ca339c">Decoradores de métodos: @classmethod y @staticmethod</a></li>
-<li><a href="#org89a43bc">Ejemplo completo</a></li>
+<li><a href="#orgf073579">¿Qué es una clase?</a></li>
+<li><a href="#orgc2be4dd">Creación de una instancia de una clase</a></li>
+<li><a href="#orgfff19e7">Atributos de una clase</a></li>
+<li><a href="#orgb52304e">Métodos especiales (métodos mágicos)</a></li>
+<li><a href="#orgcaf0ac0">Herencia</a></li>
+<li><a href="#org7622d4c">Encapsulamiento</a></li>
+<li><a href="#org8baf0b0">Polimorfismo</a></li>
+<li><a href="#org54b0862">Composición</a></li>
+<li><a href="#org3435861">Decoradores de métodos: @classmethod y @staticmethod</a></li>
+<li><a href="#orgb409974">Ejemplo completo</a></li>
 </ul>
 </li>
-<li><a href="#org68798d2">Problema del Granjero, el Puma, la Cabra y la Lechuga</a>
+<li><a href="#org6a262e6">Problema del Granjero, el Puma, la Cabra y la Lechuga</a>
 <ul>
-<li><a href="#orgc16ae43">Descripción del Problema</a></li>
-<li><a href="#org34d6fb6">Representación del Estado</a></li>
-<li><a href="#org1f64ebd">Reglas de Transición</a></li>
-<li><a href="#org3ca5320">Algoritmo de Búsqueda en Profundidad (DFS)</a></li>
-<li><a href="#org400d472">Árbol de Búsqueda</a></li>
-<li><a href="#org054d991">Solución del Problema</a></li>
+<li><a href="#org4f048ce">Descripción del Problema</a></li>
+<li><a href="#org6c092f6">Representación del Estado</a></li>
+<li><a href="#orgb14191f">Reglas de Transición</a></li>
+<li><a href="#org7e65a5f">Algoritmo de Búsqueda en Profundidad (DFS)</a></li>
+<li><a href="#orgaffd477">Árbol de Búsqueda</a></li>
+<li><a href="#org3f76d94">Solución del Problema</a></li>
 </ul>
 </li>
-<li><a href="#org011bccc">Tutorial de Operaciones Bitwise en OpenCV</a>
+<li><a href="#org824733d">Tutorial de Operaciones Bitwise en OpenCV</a>
 <ul>
-<li><a href="#orgdd29c34">1. Operación Bitwise AND</a></li>
-<li><a href="#org0620df9">2. Operación Bitwise OR</a></li>
-<li><a href="#org93350db">3. Operación Bitwise XOR</a></li>
-<li><a href="#org3792eab">4. Operación Bitwise NOT</a></li>
-<li><a href="#org29b7464">5. Aplicaciones Prácticas</a></li>
-<li><a href="#orgb7f1f98">Definición: Operación Bit a Bit</a></li>
+<li><a href="#org88e0a16">1. Operación Bitwise AND</a></li>
+<li><a href="#org2edb8b9">2. Operación Bitwise OR</a></li>
+<li><a href="#orga6f785a">3. Operación Bitwise XOR</a></li>
+<li><a href="#orgf848a3c">4. Operación Bitwise NOT</a></li>
+<li><a href="#org17da0f7">5. Aplicaciones Prácticas</a></li>
+<li><a href="#orgf618b7a">Definición: Operación Bit a Bit</a></li>
 </ul>
 </li>
-<li><a href="#org5e3d776">Segmentación de color mediante el modelo de color HSV</a></li>
-<li><a href="#orgfdeffb7">Seguimiento Por color</a></li>
+<li><a href="#orgfdc9c31">Segmentación de color mediante el modelo de color HSV</a></li>
+<li><a href="#org4705a57">Seguimiento Por color</a></li>
+<li><a href="#org4e87a94">Problemas con Objetos y Estructuras de Datos</a>
+<ul>
+<li><a href="#orge6dbac8">Problema ejemplo: Control de un brazo robótico con múltiples articulaciones</a></li>
+<li><a href="#org5d1fdc8">1. Sistema de gestión de energía en un vehículo eléctrico</a></li>
+<li><a href="#orgfb57f66">2. Control de un dron con múltiples sensores</a></li>
+<li><a href="#org954d87f">3. Sistema de monitoreo de un invernadero automatizado</a></li>
+<li><a href="#org5dedb57">4. Sistema de estacionamiento automatizado</a></li>
+<li><a href="#org29d4f7e">5. Control de un exoesqueleto</a></li>
+<li><a href="#org9469fd2">6. Sistema de control de calidad en una línea de producción</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -375,13 +386,13 @@
 </div>
 
 
-<div id="outline-container-org4ecb18c" class="outline-2">
-<h2 id="org4ecb18c">Manual de Instalación de Git</h2>
-<div class="outline-text-2" id="text-org4ecb18c">
+<div id="outline-container-org2ac3658" class="outline-2">
+<h2 id="org2ac3658">Manual de Instalación de Git</h2>
+<div class="outline-text-2" id="text-org2ac3658">
 </div>
-<div id="outline-container-org43b8137" class="outline-3">
-<h3 id="org43b8137">Instalación en Windows</h3>
-<div class="outline-text-3" id="text-org43b8137">
+<div id="outline-container-org19727d4" class="outline-3">
+<h3 id="org19727d4">Instalación en Windows</h3>
+<div class="outline-text-3" id="text-org19727d4">
 <ul class="org-ul">
 <li>Descarga el instalador desde [<a href="https://git-scm.com/">https://git-scm.com/</a>].</li>
 </ul>
@@ -411,13 +422,13 @@
 </div>
 </div>
 
-<div id="outline-container-org2c60ffa" class="outline-3">
-<h3 id="org2c60ffa">Instalación en macOS</h3>
-<div class="outline-text-3" id="text-org2c60ffa">
+<div id="outline-container-orgcc4f86b" class="outline-3">
+<h3 id="orgcc4f86b">Instalación en macOS</h3>
+<div class="outline-text-3" id="text-orgcc4f86b">
 </div>
-<div id="outline-container-org68be9a9" class="outline-4">
-<h4 id="org68be9a9">Método recomendado: usando Homebrew</h4>
-<div class="outline-text-4" id="text-org68be9a9">
+<div id="outline-container-org327253f" class="outline-4">
+<h4 id="org327253f">Método recomendado: usando Homebrew</h4>
+<div class="outline-text-4" id="text-org327253f">
 <ul class="org-ul">
 <li>Si tienes Homebrew instalado, abre la terminal y ejecuta:</li>
 </ul>
@@ -428,9 +439,9 @@
 </div>
 </div>
 
-<div id="outline-container-org839258e" class="outline-4">
-<h4 id="org839258e">Método alternativo: paquete descargado</h4>
-<div class="outline-text-4" id="text-org839258e">
+<div id="outline-container-org058c5a7" class="outline-4">
+<h4 id="org058c5a7">Método alternativo: paquete descargado</h4>
+<div class="outline-text-4" id="text-org058c5a7">
 <ul class="org-ul">
 <li>Descarga el instalador desde [<a href="https://git-scm.com/">https://git-scm.com/</a>].</li>
 <li>Ejecuta el paquete descargado (.dmg).</li>
@@ -448,9 +459,9 @@ Verifica la instalación abriendo la terminal y ejecutando:
 </div>
 </div>
 
-<div id="outline-container-org2e62900" class="outline-3">
-<h3 id="org2e62900">Instalación en Linux (Distribuciones basadas en Debian/Ubuntu)</h3>
-<div class="outline-text-3" id="text-org2e62900">
+<div id="outline-container-orgd2d1797" class="outline-3">
+<h3 id="orgd2d1797">Instalación en Linux (Distribuciones basadas en Debian/Ubuntu)</h3>
+<div class="outline-text-3" id="text-orgd2d1797">
 <ul class="org-ul">
 <li><p>
 Abre la terminal y ejecuta:
@@ -472,9 +483,9 @@ Verifica la instalación ejecutando:
 </div>
 </div>
 
-<div id="outline-container-orgc400825" class="outline-3">
-<h3 id="orgc400825">Configuración básica de Git</h3>
-<div class="outline-text-3" id="text-orgc400825">
+<div id="outline-container-org031d4be" class="outline-3">
+<h3 id="org031d4be">Configuración básica de Git</h3>
+<div class="outline-text-3" id="text-org031d4be">
 <ul class="org-ul">
 <li><p>
 Configura tu nombre de usuario:
@@ -503,9 +514,9 @@ Verifica la configuración:
 </div>
 </div>
 
-<div id="outline-container-orgb469a73" class="outline-3">
-<h3 id="orgb469a73">Actualización de Git</h3>
-<div class="outline-text-3" id="text-orgb469a73">
+<div id="outline-container-org7f34e1a" class="outline-3">
+<h3 id="org7f34e1a">Actualización de Git</h3>
+<div class="outline-text-3" id="text-org7f34e1a">
 <ul class="org-ul">
 <li><b>Windows</b>: Ejecuta el instalador más reciente desde el sitio oficial.</li>
 <li><p>
@@ -527,13 +538,13 @@ Verifica la configuración:
 </div>
 
 
-<div id="outline-container-orge023813" class="outline-3">
-<h3 id="orge023813">Configurar Llave SSH con GitHub</h3>
-<div class="outline-text-3" id="text-orge023813">
+<div id="outline-container-orgcfd5740" class="outline-3">
+<h3 id="orgcfd5740">Configurar Llave SSH con GitHub</h3>
+<div class="outline-text-3" id="text-orgcfd5740">
 </div>
-<div id="outline-container-org034af57" class="outline-4">
-<h4 id="org034af57">1. Verificar si ya tienes una llave SSH</h4>
-<div class="outline-text-4" id="text-org034af57">
+<div id="outline-container-org1a6e3a3" class="outline-4">
+<h4 id="org1a6e3a3">1. Verificar si ya tienes una llave SSH</h4>
+<div class="outline-text-4" id="text-org1a6e3a3">
 <ul class="org-ul">
 <li><p>
 Abre la terminal y ejecuta el siguiente comando para verificar si ya tienes llaves SSH generadas:
@@ -548,9 +559,9 @@ Abre la terminal y ejecuta el siguiente comando para verificar si ya tienes llav
 </div>
 </div>
 
-<div id="outline-container-org50011bf" class="outline-4">
-<h4 id="org50011bf">2. Generar una nueva llave SSH</h4>
-<div class="outline-text-4" id="text-org50011bf">
+<div id="outline-container-orgf5341d9" class="outline-4">
+<h4 id="orgf5341d9">2. Generar una nueva llave SSH</h4>
+<div class="outline-text-4" id="text-orgf5341d9">
 <ul class="org-ul">
 <li><p>
 Si no tienes una llave SSH, genera una nueva con el siguiente comando (puedes cambiar `ed25519` por `rsa` si lo prefieres):
@@ -566,9 +577,9 @@ Si no tienes una llave SSH, genera una nueva con el siguiente comando (puedes ca
 </div>
 </div>
 
-<div id="outline-container-org4f71b70" class="outline-4">
-<h4 id="org4f71b70">3. Añadir la llave SSH al agente SSH</h4>
-<div class="outline-text-4" id="text-org4f71b70">
+<div id="outline-container-org16c991a" class="outline-4">
+<h4 id="org16c991a">3. Añadir la llave SSH al agente SSH</h4>
+<div class="outline-text-4" id="text-org16c991a">
 <ul class="org-ul">
 <li><p>
 Para añadir tu nueva llave SSH al agente, asegúrate de que esté en ejecución:
@@ -589,9 +600,9 @@ Añade la llave SSH al agente:
 </div>
 </div>
 
-<div id="outline-container-org92785a9" class="outline-4">
-<h4 id="org92785a9">4. Copiar la llave SSH pública</h4>
-<div class="outline-text-4" id="text-org92785a9">
+<div id="outline-container-org6c1535e" class="outline-4">
+<h4 id="org6c1535e">4. Copiar la llave SSH pública</h4>
+<div class="outline-text-4" id="text-org6c1535e">
 <ul class="org-ul">
 <li><p>
 Copia el contenido de tu llave pública para añadirla a GitHub:
@@ -606,9 +617,9 @@ Copia el contenido de tu llave pública para añadirla a GitHub:
 </div>
 </div>
 
-<div id="outline-container-orgfa3acdd" class="outline-4">
-<h4 id="orgfa3acdd">5. Añadir la llave SSH a GitHub</h4>
-<div class="outline-text-4" id="text-orgfa3acdd">
+<div id="outline-container-org1d940e5" class="outline-4">
+<h4 id="org1d940e5">5. Añadir la llave SSH a GitHub</h4>
+<div class="outline-text-4" id="text-org1d940e5">
 <ul class="org-ul">
 <li>Inicia sesión en tu cuenta de GitHub.</li>
 <li>Ve a la sección de <b>Settings</b> (Configuración).</li>
@@ -620,9 +631,9 @@ Copia el contenido de tu llave pública para añadirla a GitHub:
 </div>
 </div>
 
-<div id="outline-container-org459a22b" class="outline-4">
-<h4 id="org459a22b">6. Probar la conexión SSH con GitHub</h4>
-<div class="outline-text-4" id="text-org459a22b">
+<div id="outline-container-org7fae650" class="outline-4">
+<h4 id="org7fae650">6. Probar la conexión SSH con GitHub</h4>
+<div class="outline-text-4" id="text-org7fae650">
 <ul class="org-ul">
 <li><p>
 Para verificar que todo está configurado correctamente, ejecuta el siguiente comando:
@@ -645,9 +656,9 @@ Hi username! You've successfully authenticated, but GitHub does not provide shel
 </div>
 </div>
 
-<div id="outline-container-org550c247" class="outline-4">
-<h4 id="org550c247">7. Usar la conexión SSH en repositorios de GitHub</h4>
-<div class="outline-text-4" id="text-org550c247">
+<div id="outline-container-orgd518ecc" class="outline-4">
+<h4 id="orgd518ecc">7. Usar la conexión SSH en repositorios de GitHub</h4>
+<div class="outline-text-4" id="text-orgd518ecc">
 <ul class="org-ul">
 <li><p>
 Para clonar un repositorio usando SSH, utiliza la URL SSH del repositorio:
@@ -662,9 +673,9 @@ Para clonar un repositorio usando SSH, utiliza la URL SSH del repositorio:
 </div>
 
 
-<div id="outline-container-org50c3dd4" class="outline-3">
-<h3 id="org50c3dd4">Configurar Llave SSH con GitHub en Windows</h3>
-<div class="outline-text-3" id="text-org50c3dd4">
+<div id="outline-container-orgc64028b" class="outline-3">
+<h3 id="orgc64028b">Configurar Llave SSH con GitHub en Windows</h3>
+<div class="outline-text-3" id="text-orgc64028b">
 <ol class="org-ol">
 <li>Git Bash: En Windows, utilizas Git Bash como terminal para ejecutar los comandos, en lugar de la terminal estándar de Linux o macOS.</li>
 
@@ -674,18 +685,18 @@ Para clonar un repositorio usando SSH, utiliza la URL SSH del repositorio:
 
 
 
-<div id="outline-container-orga0ebf82" class="outline-4">
-<h4 id="orga0ebf82">1. Abrir Git Bash</h4>
-<div class="outline-text-4" id="text-orga0ebf82">
+<div id="outline-container-org8d93bf1" class="outline-4">
+<h4 id="org8d93bf1">1. Abrir Git Bash</h4>
+<div class="outline-text-4" id="text-org8d93bf1">
 <ul class="org-ul">
 <li>Abre <b><b>Git Bash</b></b> (es la terminal que se instala junto con Git en Windows).</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgec5195a" class="outline-4">
-<h4 id="orgec5195a">2. Verificar si ya tienes una llave SSH</h4>
-<div class="outline-text-4" id="text-orgec5195a">
+<div id="outline-container-org7e757bf" class="outline-4">
+<h4 id="org7e757bf">2. Verificar si ya tienes una llave SSH</h4>
+<div class="outline-text-4" id="text-org7e757bf">
 <ul class="org-ul">
 <li><p>
 En la terminal de Git Bash, ejecuta el siguiente comando para ver si ya tienes llaves SSH generadas:
@@ -700,9 +711,9 @@ En la terminal de Git Bash, ejecuta el siguiente comando para ver si ya tienes l
 </div>
 </div>
 
-<div id="outline-container-org7a97aae" class="outline-4">
-<h4 id="org7a97aae">3. Generar una nueva llave SSH</h4>
-<div class="outline-text-4" id="text-org7a97aae">
+<div id="outline-container-orgacd3ecc" class="outline-4">
+<h4 id="orgacd3ecc">3. Generar una nueva llave SSH</h4>
+<div class="outline-text-4" id="text-orgacd3ecc">
 <ul class="org-ul">
 <li><p>
 Si no tienes una llave SSH, genera una nueva con el siguiente comando:
@@ -718,9 +729,9 @@ Si no tienes una llave SSH, genera una nueva con el siguiente comando:
 </div>
 </div>
 
-<div id="outline-container-orga4afeca" class="outline-4">
-<h4 id="orga4afeca">4. Añadir la llave SSH al agente SSH</h4>
-<div class="outline-text-4" id="text-orga4afeca">
+<div id="outline-container-orgf35f70d" class="outline-4">
+<h4 id="orgf35f70d">4. Añadir la llave SSH al agente SSH</h4>
+<div class="outline-text-4" id="text-orgf35f70d">
 <ul class="org-ul">
 <li><p>
 Asegúrate de que el agente SSH esté en ejecución. En Git Bash, ejecuta:
@@ -741,9 +752,9 @@ Añade tu nueva llave SSH al agente:
 </div>
 </div>
 
-<div id="outline-container-org64cdb0c" class="outline-4">
-<h4 id="org64cdb0c">5. Copiar la llave SSH pública</h4>
-<div class="outline-text-4" id="text-org64cdb0c">
+<div id="outline-container-org8f0d66d" class="outline-4">
+<h4 id="org8f0d66d">5. Copiar la llave SSH pública</h4>
+<div class="outline-text-4" id="text-org8f0d66d">
 <ul class="org-ul">
 <li><p>
 Para añadir la llave SSH a GitHub, necesitas copiar tu llave pública. Ejecuta el siguiente comando en Git Bash:
@@ -758,9 +769,9 @@ Para añadir la llave SSH a GitHub, necesitas copiar tu llave pública. Ejecuta 
 </div>
 </div>
 
-<div id="outline-container-org43ed1d5" class="outline-4">
-<h4 id="org43ed1d5">6. Añadir la llave SSH a GitHub</h4>
-<div class="outline-text-4" id="text-org43ed1d5">
+<div id="outline-container-org7816389" class="outline-4">
+<h4 id="org7816389">6. Añadir la llave SSH a GitHub</h4>
+<div class="outline-text-4" id="text-org7816389">
 <ul class="org-ul">
 <li>Abre tu navegador web e inicia sesión en GitHub.</li>
 <li>Ve a la sección de <b>Settings</b> (Configuración).</li>
@@ -772,9 +783,9 @@ Para añadir la llave SSH a GitHub, necesitas copiar tu llave pública. Ejecuta 
 </div>
 </div>
 
-<div id="outline-container-org596aeac" class="outline-4">
-<h4 id="org596aeac">7. Probar la conexión SSH con GitHub</h4>
-<div class="outline-text-4" id="text-org596aeac">
+<div id="outline-container-org43aa150" class="outline-4">
+<h4 id="org43aa150">7. Probar la conexión SSH con GitHub</h4>
+<div class="outline-text-4" id="text-org43aa150">
 <ul class="org-ul">
 <li><p>
 Para asegurarte de que todo está correctamente configurado, prueba la conexión con GitHub desde Git Bash:
@@ -797,9 +808,9 @@ Hi username! You've successfully authenticated, but GitHub does not provide shel
 </div>
 </div>
 
-<div id="outline-container-orgcdcfe1e" class="outline-4">
-<h4 id="orgcdcfe1e">8. Usar la conexión SSH en repositorios de GitHub</h4>
-<div class="outline-text-4" id="text-orgcdcfe1e">
+<div id="outline-container-org4f24989" class="outline-4">
+<h4 id="org4f24989">8. Usar la conexión SSH en repositorios de GitHub</h4>
+<div class="outline-text-4" id="text-org4f24989">
 <ul class="org-ul">
 <li><p>
 Para clonar un repositorio usando la URL SSH, ejecuta:
@@ -815,13 +826,13 @@ Para clonar un repositorio usando la URL SSH, ejecuta:
 
 
 
-<div id="outline-container-orge6cb8c4" class="outline-3">
-<h3 id="orge6cb8c4">Manual de Git en Windows</h3>
-<div class="outline-text-3" id="text-orge6cb8c4">
+<div id="outline-container-orgdc6cc19" class="outline-3">
+<h3 id="orgdc6cc19">Manual de Git en Windows</h3>
+<div class="outline-text-3" id="text-orgdc6cc19">
 </div>
-<div id="outline-container-orgbe42e2d" class="outline-4">
-<h4 id="orgbe42e2d">1. Instalar Git en Windows</h4>
-<div class="outline-text-4" id="text-orgbe42e2d">
+<div id="outline-container-orgdc547fa" class="outline-4">
+<h4 id="orgdc547fa">1. Instalar Git en Windows</h4>
+<div class="outline-text-4" id="text-orgdc547fa">
 <ul class="org-ul">
 <li>Visita [<a href="https://git-scm.com/">https://git-scm.com/</a>](<a href="https://git-scm.com/">https://git-scm.com/</a>) y descarga el instalador de Git para Windows.</li>
 <li>Ejecuta el archivo descargado (.exe).</li>
@@ -831,9 +842,9 @@ Para clonar un repositorio usando la URL SSH, ejecuta:
 </div>
 </div>
 
-<div id="outline-container-orgf7091b5" class="outline-4">
-<h4 id="orgf7091b5">2. Configurar Git</h4>
-<div class="outline-text-4" id="text-orgf7091b5">
+<div id="outline-container-orgd705c90" class="outline-4">
+<h4 id="orgd705c90">2. Configurar Git</h4>
+<div class="outline-text-4" id="text-orgd705c90">
 <ul class="org-ul">
 <li>Abre <b>Git Bash</b> y ejecuta los siguientes comandos para configurar tu identidad:</li>
 </ul>
@@ -855,9 +866,9 @@ Para clonar un repositorio usando la URL SSH, ejecuta:
 </div>
 </div>
 
-<div id="outline-container-org703977c" class="outline-4">
-<h4 id="org703977c">3. Clonar un repositorio</h4>
-<div class="outline-text-4" id="text-org703977c">
+<div id="outline-container-org96f3ffa" class="outline-4">
+<h4 id="org96f3ffa">3. Clonar un repositorio</h4>
+<div class="outline-text-4" id="text-org96f3ffa">
 <ul class="org-ul">
 <li>Para clonar un repositorio desde GitHub, usa el siguiente comando:</li>
 </ul>
@@ -873,9 +884,9 @@ Esto descargará el repositorio a tu computadora.
 </div>
 </div>
 
-<div id="outline-container-org165763c" class="outline-4">
-<h4 id="org165763c">4. Comandos básicos de Git</h4>
-<div class="outline-text-4" id="text-org165763c">
+<div id="outline-container-orgccbccbb" class="outline-4">
+<h4 id="orgccbccbb">4. Comandos básicos de Git</h4>
+<div class="outline-text-4" id="text-orgccbccbb">
 <ul class="org-ul">
 <li><b>Verificar el estado del repositorio</b>:</li>
 </ul>
@@ -923,9 +934,9 @@ Esto descargará el repositorio a tu computadora.
 </div>
 </div>
 
-<div id="outline-container-org7aca6e6" class="outline-4">
-<h4 id="org7aca6e6">5. Actualizar el repositorio local</h4>
-<div class="outline-text-4" id="text-org7aca6e6">
+<div id="outline-container-org595976b" class="outline-4">
+<h4 id="org595976b">5. Actualizar el repositorio local</h4>
+<div class="outline-text-4" id="text-org595976b">
 <ul class="org-ul">
 <li>Para obtener los últimos cambios del repositorio remoto:</li>
 </ul>
@@ -937,9 +948,9 @@ Esto descargará el repositorio a tu computadora.
 </div>
 </div>
 
-<div id="outline-container-orgd8d472f" class="outline-4">
-<h4 id="orgd8d472f">6. Crear y cambiar de ramas (branches)</h4>
-<div class="outline-text-4" id="text-orgd8d472f">
+<div id="outline-container-org3229579" class="outline-4">
+<h4 id="org3229579">6. Crear y cambiar de ramas (branches)</h4>
+<div class="outline-text-4" id="text-org3229579">
 <ul class="org-ul">
 <li><b>Crear una nueva rama</b>:</li>
 </ul>
@@ -969,9 +980,9 @@ Esto descargará el repositorio a tu computadora.
 </div>
 </div>
 
-<div id="outline-container-org525e52c" class="outline-4">
-<h4 id="org525e52c">7. Ver historial de commits</h4>
-<div class="outline-text-4" id="text-org525e52c">
+<div id="outline-container-orgc57d8d6" class="outline-4">
+<h4 id="orgc57d8d6">7. Ver historial de commits</h4>
+<div class="outline-text-4" id="text-orgc57d8d6">
 <ul class="org-ul">
 <li>Para ver el historial de cambios del repositorio:</li>
 </ul>
@@ -992,9 +1003,9 @@ Esto descargará el repositorio a tu computadora.
 </div>
 </div>
 
-<div id="outline-container-orgfa4bace" class="outline-4">
-<h4 id="orgfa4bace">8. Configurar una llave SSH</h4>
-<div class="outline-text-4" id="text-orgfa4bace">
+<div id="outline-container-org5d760e9" class="outline-4">
+<h4 id="org5d760e9">8. Configurar una llave SSH</h4>
+<div class="outline-text-4" id="text-org5d760e9">
 <ul class="org-ul">
 <li><b>Generar una llave SSH</b>:</li>
 </ul>
@@ -1032,13 +1043,13 @@ Esto descargará el repositorio a tu computadora.
 </div>
 
 
-<div id="outline-container-orgd3aa9c8" class="outline-2">
-<h2 id="orgd3aa9c8">Manual de Instalación de Python en Windows</h2>
-<div class="outline-text-2" id="text-orgd3aa9c8">
+<div id="outline-container-org7041c9d" class="outline-2">
+<h2 id="org7041c9d">Manual de Instalación de Python en Windows</h2>
+<div class="outline-text-2" id="text-org7041c9d">
 </div>
-<div id="outline-container-org6c348ab" class="outline-3">
-<h3 id="org6c348ab">Paso 1: Descarga de Python</h3>
-<div class="outline-text-3" id="text-org6c348ab">
+<div id="outline-container-orgcaee090" class="outline-3">
+<h3 id="orgcaee090">Paso 1: Descarga de Python</h3>
+<div class="outline-text-3" id="text-orgcaee090">
 <ol class="org-ol">
 <li>Abre el navegador web y visita el sitio: <a href="https://www.python.org">https://www.python.org</a>.</li>
 <li>Ve a la pestaña "Downloads" y selecciona la versión más reciente para Windows.</li>
@@ -1047,9 +1058,9 @@ Esto descargará el repositorio a tu computadora.
 </div>
 </div>
 
-<div id="outline-container-org6956313" class="outline-3">
-<h3 id="org6956313">Paso 2: Ejecutar el instalador</h3>
-<div class="outline-text-3" id="text-org6956313">
+<div id="outline-container-org2be30d4" class="outline-3">
+<h3 id="org2be30d4">Paso 2: Ejecutar el instalador</h3>
+<div class="outline-text-3" id="text-org2be30d4">
 <ol class="org-ol">
 <li>Ejecuta el archivo descargado (.exe).</li>
 <li>Asegúrate de marcar la opción <code>Add Python to PATH</code> antes de proceder con la instalación.</li>
@@ -1059,9 +1070,9 @@ Esto descargará el repositorio a tu computadora.
 </div>
 </div>
 
-<div id="outline-container-org99c23cf" class="outline-3">
-<h3 id="org99c23cf">Paso 3: Verificación de la instalación</h3>
-<div class="outline-text-3" id="text-org99c23cf">
+<div id="outline-container-org9ef14c6" class="outline-3">
+<h3 id="org9ef14c6">Paso 3: Verificación de la instalación</h3>
+<div class="outline-text-3" id="text-org9ef14c6">
 <ol class="org-ol">
 <li>Abre la línea de comandos (cmd) escribiendo "cmd" en el menú de inicio.</li>
 <li><p>
@@ -1086,9 +1097,9 @@ Si todo está bien, verás el prompt interactivo de Python (tres símbolos <code
 </div>
 </div>
 
-<div id="outline-container-orgb550790" class="outline-3">
-<h3 id="orgb550790">Paso 4: Instalar pip y otros paquetes</h3>
-<div class="outline-text-3" id="text-orgb550790">
+<div id="outline-container-org623125a" class="outline-3">
+<h3 id="org623125a">Paso 4: Instalar pip y otros paquetes</h3>
+<div class="outline-text-3" id="text-org623125a">
 <ol class="org-ol">
 <li><p>
 Verifica si pip está instalado escribiendo en la línea de comandos:
@@ -1108,9 +1119,9 @@ Si necesitas instalar paquetes, usa pip con el siguiente comando:
 </div>
 </div>
 
-<div id="outline-container-org9eb4d50" class="outline-3">
-<h3 id="org9eb4d50">Paso 5: Configuración del entorno de desarrollo</h3>
-<div class="outline-text-3" id="text-org9eb4d50">
+<div id="outline-container-org3657eed" class="outline-3">
+<h3 id="org3657eed">Paso 5: Configuración del entorno de desarrollo</h3>
+<div class="outline-text-3" id="text-org3657eed">
 <ol class="org-ol">
 <li>Instala un editor de código como:
 <ul class="org-ul">
@@ -1122,9 +1133,9 @@ Si necesitas instalar paquetes, usa pip con el siguiente comando:
 </div>
 </div>
 
-<div id="outline-container-org434616d" class="outline-3">
-<h3 id="org434616d">Paso 6: Actualización de Python (opcional)</h3>
-<div class="outline-text-3" id="text-org434616d">
+<div id="outline-container-orgc2d97f9" class="outline-3">
+<h3 id="orgc2d97f9">Paso 6: Actualización de Python (opcional)</h3>
+<div class="outline-text-3" id="text-orgc2d97f9">
 <ul class="org-ul">
 <li>Para actualizar Python a una nueva versión en el futuro, descarga la última versión desde <a href="https://www.python.org/downloads/">python.org</a> y sigue los pasos de instalación.</li>
 </ul>
@@ -1134,9 +1145,9 @@ Si necesitas instalar paquetes, usa pip con el siguiente comando:
 
 
 
-<div id="outline-container-org76a483c" class="outline-2">
-<h2 id="org76a483c">Programación Avanzada</h2>
-<div class="outline-text-2" id="text-org76a483c">
+<div id="outline-container-orgacc687f" class="outline-2">
+<h2 id="orgacc687f">Programación Avanzada</h2>
+<div class="outline-text-2" id="text-orgacc687f">
 <p>
 pip install opecv-contrib-python
 pin install opencv-python
@@ -1150,26 +1161,26 @@ conda install opencv-python
 </div>
 
 
-<div id="outline-container-org8bc7b1e" class="outline-3">
-<h3 id="org8bc7b1e">Estructuras de Datos</h3>
-<div class="outline-text-3" id="text-org8bc7b1e">
+<div id="outline-container-orgce03597" class="outline-3">
+<h3 id="orgce03597">Estructuras de Datos</h3>
+<div class="outline-text-3" id="text-orgce03597">
 </div>
-<div id="outline-container-org4874b20" class="outline-4">
-<h4 id="org4874b20">1. ¿Qué son las estructuras de datos?</h4>
-<div class="outline-text-4" id="text-org4874b20">
+<div id="outline-container-org1a70f27" class="outline-4">
+<h4 id="org1a70f27">1. ¿Qué son las estructuras de datos?</h4>
+<div class="outline-text-4" id="text-org1a70f27">
 <p>
 Las estructuras de datos son una forma de organizar, gestionar y almacenar datos de manera eficiente. Cada estructura de datos está diseñada para un tipo específico de uso o problema, optimizando la forma en la que se accede o modifica la información.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org324b1cf" class="outline-4">
-<h4 id="org324b1cf">2. Tipos comunes de estructuras de datos</h4>
-<div class="outline-text-4" id="text-org324b1cf">
+<div id="outline-container-org3850d08" class="outline-4">
+<h4 id="org3850d08">2. Tipos comunes de estructuras de datos</h4>
+<div class="outline-text-4" id="text-org3850d08">
 </div>
 <ul class="org-ul">
-<li><a id="org1b2e8ef"></a>2.1. Arreglos (Arrays)<br />
-<div class="outline-text-5" id="text-org1b2e8ef">
+<li><a id="org80e2121"></a>2.1. Arreglos (Arrays)<br />
+<div class="outline-text-5" id="text-org80e2121">
 <ul class="org-ul">
 <li>Los arreglos son colecciones de elementos del mismo tipo, organizados en una secuencia.</li>
 <li>Los índices permiten acceder a los elementos.</li>
@@ -1183,8 +1194,8 @@ Las estructuras de datos son una forma de organizar, gestionar y almacenar datos
 </div>
 </li>
 
-<li><a id="orge82dfe6"></a>2.2. Listas enlazadas (Linked Lists)<br />
-<div class="outline-text-5" id="text-orge82dfe6">
+<li><a id="org6cd424b"></a>2.2. Listas enlazadas (Linked Lists)<br />
+<div class="outline-text-5" id="text-org6cd424b">
 <ul class="org-ul">
 <li>Una lista enlazada está formada por nodos, donde cada nodo contiene un valor y un puntero al siguiente nodo.</li>
 <li>Hay listas enlazadas simples (unidireccionales) y listas doblemente enlazadas (bidireccionales).</li>
@@ -1211,8 +1222,8 @@ Las estructuras de datos son una forma de organizar, gestionar y almacenar datos
 </div>
 </li>
 
-<li><a id="org7d64bf2"></a>2.3. Pilas (Stacks)<br />
-<div class="outline-text-5" id="text-org7d64bf2">
+<li><a id="org9da5286"></a>2.3. Pilas (Stacks)<br />
+<div class="outline-text-5" id="text-org9da5286">
 <ul class="org-ul">
 <li>Una pila sigue el principio LIFO (Last In, First Out). El último elemento en ser agregado es el primero en ser retirado.</li>
 <li>Operaciones comunes: `push` (agregar), `pop` (retirar), `peek` (ver el último).</li>
@@ -1230,8 +1241,8 @@ Las estructuras de datos son una forma de organizar, gestionar y almacenar datos
 </div>
 </li>
 
-<li><a id="orga7f0cc6"></a>2.4. Colas (Queues)<br />
-<div class="outline-text-5" id="text-orga7f0cc6">
+<li><a id="orgc0bb80c"></a>2.4. Colas (Queues)<br />
+<div class="outline-text-5" id="text-orgc0bb80c">
 <ul class="org-ul">
 <li>Una cola sigue el principio FIFO (First In, First Out). El primer elemento en ser agregado es el primero en ser retirado.</li>
 <li>Operaciones comunes: `enqueue` (agregar), `dequeue` (retirar).</li>
@@ -1247,8 +1258,8 @@ Las estructuras de datos son una forma de organizar, gestionar y almacenar datos
 </div>
 </li>
 
-<li><a id="orgf99439a"></a>2.5. Árboles (Trees)<br />
-<div class="outline-text-5" id="text-orgf99439a">
+<li><a id="org1d3fe94"></a>2.5. Árboles (Trees)<br />
+<div class="outline-text-5" id="text-org1d3fe94">
 <ul class="org-ul">
 <li>Un árbol es una estructura de datos jerárquica que consta de nodos. Cada nodo tiene un valor y referencias a sus nodos hijos.</li>
 <li>El nodo superior se llama raíz, y los nodos sin hijos se llaman hojas.</li>
@@ -1286,8 +1297,8 @@ Las estructuras de datos son una forma de organizar, gestionar y almacenar datos
 </div>
 </li>
 
-<li><a id="org0adc550"></a>2.6. Grafos (Graphs)<br />
-<div class="outline-text-5" id="text-org0adc550">
+<li><a id="orgb0ce1cc"></a>2.6. Grafos (Graphs)<br />
+<div class="outline-text-5" id="text-orgb0ce1cc">
 <ul class="org-ul">
 <li>Un grafo es una colección de nodos (llamados vértices) y aristas (líneas que conectan los vértices).</li>
 <li>Los grafos pueden ser dirigidos o no dirigidos, dependiendo de si las conexiones entre nodos tienen dirección o no.</li>
@@ -1310,9 +1321,9 @@ Las estructuras de datos son una forma de organizar, gestionar y almacenar datos
 </ul>
 </div>
 
-<div id="outline-container-org402ff76" class="outline-4">
-<h4 id="org402ff76">3. Operaciones básicas en estructuras de datos</h4>
-<div class="outline-text-4" id="text-org402ff76">
+<div id="outline-container-orgdd0954b" class="outline-4">
+<h4 id="orgdd0954b">3. Operaciones básicas en estructuras de datos</h4>
+<div class="outline-text-4" id="text-orgdd0954b">
 <p>
 Cada estructura de datos tiene sus propias operaciones comunes, por ejemplo:
 </p>
@@ -1328,9 +1339,9 @@ Cada estructura de datos tiene sus propias operaciones comunes, por ejemplo:
 </div>
 </div>
 
-<div id="outline-container-org5fd3f54" class="outline-4">
-<h4 id="org5fd3f54">4. Consideraciones sobre la complejidad</h4>
-<div class="outline-text-4" id="text-org5fd3f54">
+<div id="outline-container-orgbf809ed" class="outline-4">
+<h4 id="orgbf809ed">4. Consideraciones sobre la complejidad</h4>
+<div class="outline-text-4" id="text-orgbf809ed">
 <p>
 Cada estructura de datos tiene un costo en términos de tiempo y espacio dependiendo de cómo se implementen sus operaciones. Algunos aspectos clave a considerar:
 </p>
@@ -1345,9 +1356,9 @@ Cada estructura de datos tiene un costo en términos de tiempo y espacio dependi
 </div>
 </div>
 
-<div id="outline-container-org45ccd39" class="outline-4">
-<h4 id="org45ccd39">5. Ejemplo de aplicación</h4>
-<div class="outline-text-4" id="text-org45ccd39">
+<div id="outline-container-org606117f" class="outline-4">
+<h4 id="org606117f">5. Ejemplo de aplicación</h4>
+<div class="outline-text-4" id="text-org606117f">
 <p>
 Supongamos que queremos implementar un sistema donde necesitamos manejar una lista de tareas en orden de prioridad. Una estructura adecuada sería una <b><b>cola de prioridad</b></b>, que permite agregar tareas con diferentes prioridades y siempre procesar la más urgente primero.
 </p>
@@ -1367,9 +1378,9 @@ Supongamos que queremos implementar un sistema donde necesitamos manejar una lis
 </div>
 </div>
 
-<div id="outline-container-orge388ada" class="outline-4">
-<h4 id="orge388ada">6. Conclusión</h4>
-<div class="outline-text-4" id="text-orge388ada">
+<div id="outline-container-org763ef5e" class="outline-4">
+<h4 id="org763ef5e">6. Conclusión</h4>
+<div class="outline-text-4" id="text-org763ef5e">
 <p>
 Este es un resumen introductorio de las estructuras de datos más comunes y cómo funcionan. Cada estructura tiene aplicaciones específicas y el uso adecuado depende del tipo de problema que estés intentando resolver.
 </p>
@@ -1378,17 +1389,17 @@ Este es un resumen introductorio de las estructuras de datos más comunes y cóm
 </div>
 
 
-<div id="outline-container-orgd967e65" class="outline-3">
-<h3 id="orgd967e65">Estructuras de Datos en Python y C</h3>
-<div class="outline-text-3" id="text-orgd967e65">
+<div id="outline-container-org17d2ad8" class="outline-3">
+<h3 id="org17d2ad8">Estructuras de Datos en Python y C</h3>
+<div class="outline-text-3" id="text-org17d2ad8">
 </div>
-<div id="outline-container-org12abdc7" class="outline-4">
-<h4 id="org12abdc7">1. Arreglos (Arrays)</h4>
-<div class="outline-text-4" id="text-org12abdc7">
+<div id="outline-container-org61787be" class="outline-4">
+<h4 id="org61787be">1. Arreglos (Arrays)</h4>
+<div class="outline-text-4" id="text-org61787be">
 </div>
 <ul class="org-ul">
-<li><a id="org3b74418"></a>Python<br />
-<div class="outline-text-5" id="text-org3b74418">
+<li><a id="org91f20fb"></a>Python<br />
+<div class="outline-text-5" id="text-org91f20fb">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">En Python, los arrays son implementados como listas.</span>
 <span style="color: #ff98a4;">A</span> = <span style="color: #c099ff;">[</span>1, 2, 3, 4, 5<span style="color: #c099ff;">]</span>
@@ -1398,8 +1409,8 @@ Este es un resumen introductorio de las estructuras de datos más comunes y cóm
 </div>
 </li>
 
-<li><a id="org6e9d5dd"></a>C<br />
-<div class="outline-text-5" id="text-org6e9d5dd">
+<li><a id="orgc355432"></a>C<br />
+<div class="outline-text-5" id="text-orgc355432">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 
@@ -1415,13 +1426,13 @@ Este es un resumen introductorio de las estructuras de datos más comunes y cóm
 </ul>
 </div>
 
-<div id="outline-container-orgce54863" class="outline-4">
-<h4 id="orgce54863">2. Listas enlazadas (Linked Lists)</h4>
-<div class="outline-text-4" id="text-orgce54863">
+<div id="outline-container-orga00fbd7" class="outline-4">
+<h4 id="orga00fbd7">2. Listas enlazadas (Linked Lists)</h4>
+<div class="outline-text-4" id="text-orga00fbd7">
 </div>
 <ul class="org-ul">
-<li><a id="orga343674"></a>Python<br />
-<div class="outline-text-5" id="text-orga343674">
+<li><a id="orgeabaaa3"></a>Python<br />
+<div class="outline-text-5" id="text-orgeabaaa3">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #c099ff;">class</span> <span style="color: #ffc777;">Nodo</span>:
     <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">__init__</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span>, valor<span style="color: #c099ff;">)</span>:
@@ -1450,8 +1461,8 @@ lista.agregar<span style="color: #c099ff;">(</span>20<span style="color: #c099ff
 </div>
 </li>
 
-<li><a id="orge08aaf6"></a>C<br />
-<div class="outline-text-5" id="text-orge08aaf6">
+<li><a id="org1c02bba"></a>C<br />
+<div class="outline-text-5" id="text-org1c02bba">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
@@ -1494,13 +1505,13 @@ lista.agregar<span style="color: #c099ff;">(</span>20<span style="color: #c099ff
 </ul>
 </div>
 
-<div id="outline-container-orgd808d28" class="outline-4">
-<h4 id="orgd808d28">3. Pilas (Stacks)</h4>
-<div class="outline-text-4" id="text-orgd808d28">
+<div id="outline-container-org1eade3d" class="outline-4">
+<h4 id="org1eade3d">3. Pilas (Stacks)</h4>
+<div class="outline-text-4" id="text-org1eade3d">
 </div>
 <ul class="org-ul">
-<li><a id="orgd5a53c5"></a>Python<br />
-<div class="outline-text-5" id="text-orgd5a53c5">
+<li><a id="org93bea6b"></a>Python<br />
+<div class="outline-text-5" id="text-org93bea6b">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">En Python, las listas pueden funcionar como pilas usando append() y pop().</span>
 <span style="color: #ff98a4;">pila</span> = <span style="color: #c099ff;">[]</span>
@@ -1514,8 +1525,8 @@ pila.pop<span style="color: #c099ff;">()</span>
 </div>
 </li>
 
-<li><a id="orgaaaf7bc"></a>C<br />
-<div class="outline-text-5" id="text-orgaaaf7bc">
+<li><a id="orga6ccec1"></a>C<br />
+<div class="outline-text-5" id="text-orga6ccec1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
@@ -1566,13 +1577,13 @@ Topicos.org
 </ul>
 </div>
 
-<div id="outline-container-org1e3b60c" class="outline-4">
-<h4 id="org1e3b60c">4. Colas (Queues)</h4>
-<div class="outline-text-4" id="text-org1e3b60c">
+<div id="outline-container-orgc832ab4" class="outline-4">
+<h4 id="orgc832ab4">4. Colas (Queues)</h4>
+<div class="outline-text-4" id="text-orgc832ab4">
 </div>
 <ul class="org-ul">
-<li><a id="orge939a49"></a>Python<br />
-<div class="outline-text-5" id="text-orge939a49">
+<li><a id="orgc21f747"></a>Python<br />
+<div class="outline-text-5" id="text-orgc21f747">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">En Python, una cola se puede implementar con deque de la colecci&#243;n est&#225;ndar.</span>
 <span style="color: #c099ff;">from</span> collections <span style="color: #c099ff;">import</span> deque
@@ -1586,8 +1597,8 @@ cola.append<span style="color: #c099ff;">(</span>20<span style="color: #c099ff;"
 </div>
 </li>
 
-<li><a id="orgb84872c"></a>C<br />
-<div class="outline-text-5" id="text-orgb84872c">
+<li><a id="org499e3a9"></a>C<br />
+<div class="outline-text-5" id="text-org499e3a9">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
@@ -1642,13 +1653,13 @@ cola.append<span style="color: #c099ff;">(</span>20<span style="color: #c099ff;"
 </ul>
 </div>
 
-<div id="outline-container-orgf98e509" class="outline-4">
-<h4 id="orgf98e509">5. Árboles (Trees)</h4>
-<div class="outline-text-4" id="text-orgf98e509">
+<div id="outline-container-org928c48a" class="outline-4">
+<h4 id="org928c48a">5. Árboles (Trees)</h4>
+<div class="outline-text-4" id="text-org928c48a">
 </div>
 <ul class="org-ul">
-<li><a id="org6642b70"></a>Python<br />
-<div class="outline-text-5" id="text-org6642b70">
+<li><a id="org7d80f2b"></a>Python<br />
+<div class="outline-text-5" id="text-org7d80f2b">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #c099ff;">class</span> <span style="color: #ffc777;">Nodo</span>:
     <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">__init__</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span>, valor<span style="color: #c099ff;">)</span>:
@@ -1687,8 +1698,8 @@ arbol.agregar<span style="color: #c099ff;">(</span>15<span style="color: #c099ff
 </div>
 </li>
 
-<li><a id="org822776c"></a>C<br />
-<div class="outline-text-5" id="text-org822776c">
+<li><a id="orgf2f0cdc"></a>C<br />
+<div class="outline-text-5" id="text-orgf2f0cdc">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
@@ -1733,13 +1744,13 @@ arbol.agregar<span style="color: #c099ff;">(</span>15<span style="color: #c099ff
 </ul>
 </div>
 
-<div id="outline-container-org15940e8" class="outline-4">
-<h4 id="org15940e8">6. Grafos (Graphs)</h4>
-<div class="outline-text-4" id="text-org15940e8">
+<div id="outline-container-org685ce0f" class="outline-4">
+<h4 id="org685ce0f">6. Grafos (Graphs)</h4>
+<div class="outline-text-4" id="text-org685ce0f">
 </div>
 <ul class="org-ul">
-<li><a id="orgc7a5115"></a>Python<br />
-<div class="outline-text-5" id="text-orgc7a5115">
+<li><a id="orgf5c66bd"></a>Python<br />
+<div class="outline-text-5" id="text-orgf5c66bd">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #c099ff;">class</span> <span style="color: #ffc777;">Grafo</span>:
     <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">__init__</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span><span style="color: #c099ff;">)</span>:
@@ -1763,8 +1774,8 @@ grafo.agregar_arista<span style="color: #c099ff;">(</span>1, 2<span style="color
 </div>
 </li>
 
-<li><a id="org3a09ee8"></a>C<br />
-<div class="outline-text-5" id="text-org3a09ee8">
+<li><a id="org5bf5cda"></a>C<br />
+<div class="outline-text-5" id="text-org5bf5cda">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
@@ -1808,9 +1819,9 @@ grafo.agregar_arista<span style="color: #c099ff;">(</span>1, 2<span style="color
 
 
 
-<div id="outline-container-org7995dd8" class="outline-3">
-<h3 id="org7995dd8">Comparación entre Java y Python</h3>
-<div class="outline-text-3" id="text-org7995dd8">
+<div id="outline-container-orgeff14e0" class="outline-3">
+<h3 id="orgeff14e0">Comparación entre Java y Python</h3>
+<div class="outline-text-3" id="text-orgeff14e0">
 <p>
 Java y Python son dos de los lenguajes de programación más populares
 hoy en día, utilizados ampliamente tanto en la industria como en el
@@ -1820,9 +1831,9 @@ específicos del proyecto.
 </p>
 </div>
 
-<div id="outline-container-org9bb201f" class="outline-4">
-<h4 id="org9bb201f">Filosofía de diseño</h4>
-<div class="outline-text-4" id="text-org9bb201f">
+<div id="outline-container-orgad01d96" class="outline-4">
+<h4 id="orgad01d96">Filosofía de diseño</h4>
+<div class="outline-text-4" id="text-orgad01d96">
 <ul class="org-ul">
 <li><b><b>Java</b></b>: Fue diseñado para ser un lenguaje de programación de propósito general, con una fuerte orientación a la programación orientada a objetos. Su lema, "escribe una vez, ejecuta en cualquier lugar" (WORA, <b>Write Once, Run Anywhere</b>), refleja su capacidad de funcionar en cualquier sistema con una Máquina Virtual de Java (JVM).</li>
 
@@ -1831,9 +1842,9 @@ específicos del proyecto.
 </div>
 </div>
 
-<div id="outline-container-org8d8cf07" class="outline-4">
-<h4 id="org8d8cf07">Sintaxis</h4>
-<div class="outline-text-4" id="text-org8d8cf07">
+<div id="outline-container-org8b19fa3" class="outline-4">
+<h4 id="org8b19fa3">Sintaxis</h4>
+<div class="outline-text-4" id="text-org8b19fa3">
 <ul class="org-ul">
 <li><b><b>Java</b></b>: Es un lenguaje que requiere declarar explícitamente los tipos de variables. Tiene una sintaxis más estricta y verbosa en comparación con Python.</li>
 </ul>
@@ -1874,9 +1885,9 @@ específicos del proyecto.
 </div>
 </div>
 
-<div id="outline-container-org8b613cf" class="outline-4">
-<h4 id="org8b613cf">Tipado</h4>
-<div class="outline-text-4" id="text-org8b613cf">
+<div id="outline-container-orgd86f3c0" class="outline-4">
+<h4 id="orgd86f3c0">Tipado</h4>
+<div class="outline-text-4" id="text-orgd86f3c0">
 <ul class="org-ul">
 <li><b><b>Java</b></b>: Es un lenguaje de <b>tipado estático</b>, lo que significa que los tipos de todas las variables deben ser conocidos en tiempo de compilación. Esto permite una mayor seguridad de tipos, ya que los errores de tipo se detectan antes de ejecutar el programa.</li>
 </ul>
@@ -1913,9 +1924,9 @@ específicos del proyecto.
 </div>
 </div>
 
-<div id="outline-container-org9ba78f8" class="outline-4">
-<h4 id="org9ba78f8">Manejo de memoria</h4>
-<div class="outline-text-4" id="text-org9ba78f8">
+<div id="outline-container-orgd2808ef" class="outline-4">
+<h4 id="orgd2808ef">Manejo de memoria</h4>
+<div class="outline-text-4" id="text-orgd2808ef">
 <ul class="org-ul">
 <li><b><b>Java</b></b>: Utiliza un <b>recolector de basura</b> automático que se ejecuta en segundo plano para liberar memoria de objetos que ya no se utilizan. Esto ayuda a evitar fugas de memoria, pero puede haber un impacto en el rendimiento en ciertos momentos, cuando el recolector de basura se ejecuta.</li>
 
@@ -1924,9 +1935,9 @@ específicos del proyecto.
 </div>
 </div>
 
-<div id="outline-container-org50fd7f9" class="outline-4">
-<h4 id="org50fd7f9">Programación orientada a objetos</h4>
-<div class="outline-text-4" id="text-org50fd7f9">
+<div id="outline-container-org4877686" class="outline-4">
+<h4 id="org4877686">Programación orientada a objetos</h4>
+<div class="outline-text-4" id="text-org4877686">
 <ul class="org-ul">
 <li><b><b>Java</b></b>: Java es completamente orientado a objetos. Todos los programas Java deben estar contenidos en clases, y no se pueden tener funciones o variables fuera de ellas. Java soporta herencia simple (una clase puede heredar solo de una clase base).</li>
 </ul>
@@ -1982,9 +1993,9 @@ específicos del proyecto.
 </div>
 </div>
 
-<div id="outline-container-org35f1489" class="outline-4">
-<h4 id="org35f1489">Manejo de excepciones</h4>
-<div class="outline-text-4" id="text-org35f1489">
+<div id="outline-container-orgb40de86" class="outline-4">
+<h4 id="orgb40de86">Manejo de excepciones</h4>
+<div class="outline-text-4" id="text-orgb40de86">
 <ul class="org-ul">
 <li><b><b>Java</b></b>: Java obliga a manejar las excepciones con bloques <code>try-catch</code>. Además, distingue entre excepciones <b>verificadas</b> (que deben manejarse o declararse explícitamente en los métodos) y <b>no verificadas</b>.</li>
 </ul>
@@ -2030,9 +2041,9 @@ específicos del proyecto.
 </div>
 </div>
 
-<div id="outline-container-org3e085e5" class="outline-4">
-<h4 id="org3e085e5">Rendimiento</h4>
-<div class="outline-text-4" id="text-org3e085e5">
+<div id="outline-container-org5d6d218" class="outline-4">
+<h4 id="org5d6d218">Rendimiento</h4>
+<div class="outline-text-4" id="text-org5d6d218">
 <ul class="org-ul">
 <li><b><b>Java</b></b>: Al ser un lenguaje compilado (aunque se compila en bytecode y luego se ejecuta en la JVM), Java suele ser más rápido en términos de ejecución que Python, especialmente en aplicaciones más grandes y complejas.</li>
 
@@ -2049,9 +2060,9 @@ específicos del proyecto.
 </div>
 </div>
 
-<div id="outline-container-org9285876" class="outline-4">
-<h4 id="org9285876">Ecosistema y bibliotecas</h4>
-<div class="outline-text-4" id="text-org9285876">
+<div id="outline-container-orgdd71e4b" class="outline-4">
+<h4 id="orgdd71e4b">Ecosistema y bibliotecas</h4>
+<div class="outline-text-4" id="text-orgdd71e4b">
 <ul class="org-ul">
 <li><b><b>Java</b></b>: Tiene un ecosistema robusto con un vasto número de
 bibliotecas para diversas aplicaciones (aplicaciones web, móviles,
@@ -2066,9 +2077,9 @@ PyTorch), automatización y desarrollo web (Django, Flask).</li>
 </div>
 </div>
 
-<div id="outline-container-org9869d7a" class="outline-4">
-<h4 id="org9869d7a">Comunidad y soporte</h4>
-<div class="outline-text-4" id="text-org9869d7a">
+<div id="outline-container-orga0b79ee" class="outline-4">
+<h4 id="orga0b79ee">Comunidad y soporte</h4>
+<div class="outline-text-4" id="text-orga0b79ee">
 <ul class="org-ul">
 <li><b><b>Java</b></b>: Es un lenguaje maduro con una comunidad establecida y
 soporte a largo plazo. Se utiliza ampliamente en la industria para
@@ -2087,9 +2098,9 @@ aplicaciones.</li>
 
 
 
-<div id="outline-container-org69b189b" class="outline-3">
-<h3 id="org69b189b">Comparación entre Python y Java: Modificadores de Acceso</h3>
-<div class="outline-text-3" id="text-org69b189b">
+<div id="outline-container-orgea21f00" class="outline-3">
+<h3 id="orgea21f00">Comparación entre Python y Java: Modificadores de Acceso</h3>
+<div class="outline-text-3" id="text-orgea21f00">
 <p>
 Los modificadores de acceso controlan la visibilidad y el nivel de
 acceso que las clases, métodos y atributos tienen dentro de un
@@ -2099,9 +2110,9 @@ son tan estrictos, sino que se implementan mediante convenciones.
 </p>
 </div>
 
-<div id="outline-container-org6e9d148" class="outline-4">
-<h4 id="org6e9d148">Modificadores de acceso en Java</h4>
-<div class="outline-text-4" id="text-org6e9d148">
+<div id="outline-container-orgad2890b" class="outline-4">
+<h4 id="orgad2890b">Modificadores de acceso en Java</h4>
+<div class="outline-text-4" id="text-orgad2890b">
 <p>
 En Java, existen cuatro modificadores de acceso principales, que controlan el nivel de visibilidad de las clases, métodos y atributos:
 </p>
@@ -2154,9 +2165,9 @@ En Java, existen cuatro modificadores de acceso principales, que controlan el ni
 </div>
 </div>
 
-<div id="outline-container-org7f86d48" class="outline-4">
-<h4 id="org7f86d48">Modificadores de acceso en Python</h4>
-<div class="outline-text-4" id="text-org7f86d48">
+<div id="outline-container-orgd78cfba" class="outline-4">
+<h4 id="orgd78cfba">Modificadores de acceso en Python</h4>
+<div class="outline-text-4" id="text-orgd78cfba">
 <p>
 En Python, no existen modificadores de acceso explícitos como en Java. Sin embargo, se implementa un mecanismo de control de acceso mediante convenciones:
 </p>
@@ -2206,9 +2217,9 @@ En Python, no existen modificadores de acceso explícitos como en Java. Sin emba
 </div>
 </div>
 
-<div id="outline-container-org35264cf" class="outline-4">
-<h4 id="org35264cf">Diferencias clave entre Python y Java en modificadores de acceso</h4>
-<div class="outline-text-4" id="text-org35264cf">
+<div id="outline-container-org2c277df" class="outline-4">
+<h4 id="org2c277df">Diferencias clave entre Python y Java en modificadores de acceso</h4>
+<div class="outline-text-4" id="text-org2c277df">
 <ul class="org-ul">
 <li><b><b>Java</b></b> tiene modificadores de acceso explícitos (<code>public</code>, <code>protected</code>, <code>private</code>) que se aplican tanto a métodos como a atributos. Esto proporciona un control más estricto sobre la visibilidad de los miembros de una clase.</li>
 
@@ -2221,9 +2232,9 @@ En Python, no existen modificadores de acceso explícitos como en Java. Sin emba
 </div>
 </div>
 
-<div id="outline-container-org1911435" class="outline-4">
-<h4 id="org1911435">Resumen de comparación</h4>
-<div class="outline-text-4" id="text-org1911435">
+<div id="outline-container-orgee4840c" class="outline-4">
+<h4 id="orgee4840c">Resumen de comparación</h4>
+<div class="outline-text-4" id="text-orgee4840c">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -2273,9 +2284,9 @@ En Python, no existen modificadores de acceso explícitos como en Java. Sin emba
 
 
 
-<div id="outline-container-orgc76bc51" class="outline-3">
-<h3 id="orgc76bc51">Clases en Python</h3>
-<div class="outline-text-3" id="text-orgc76bc51">
+<div id="outline-container-org710b3c9" class="outline-3">
+<h3 id="org710b3c9">Clases en Python</h3>
+<div class="outline-text-3" id="text-org710b3c9">
 <p>
 En Python, las clases son una parte fundamental de la programación
 orientada a objetos (POO). Nos permiten definir tipos de datos
@@ -2288,9 +2299,9 @@ datos.
 
 
 
-<div id="outline-container-org2dcac7e" class="outline-4">
-<h4 id="org2dcac7e">¿Qué es una clase?</h4>
-<div class="outline-text-4" id="text-org2dcac7e">
+<div id="outline-container-orgf073579" class="outline-4">
+<h4 id="orgf073579">¿Qué es una clase?</h4>
+<div class="outline-text-4" id="text-orgf073579">
 <p>
 Una <b>clase</b> es un molde o plantilla a partir de la cual se pueden crear múltiples instancias (objetos). Cada objeto tiene sus propios valores para los atributos definidos en la clase.
 </p>
@@ -2317,9 +2328,9 @@ Una <b>clase</b> es un molde o plantilla a partir de la cual se pueden crear mú
 </div>
 </div>
 
-<div id="outline-container-org4058f85" class="outline-4">
-<h4 id="org4058f85">Creación de una instancia de una clase</h4>
-<div class="outline-text-4" id="text-org4058f85">
+<div id="outline-container-orgc2be4dd" class="outline-4">
+<h4 id="orgc2be4dd">Creación de una instancia de una clase</h4>
+<div class="outline-text-4" id="text-orgc2be4dd">
 <p>
 Para crear una instancia de la clase, simplemente llamamos a la clase como si fuera una función, pasando los argumentos requeridos al constructor.
 </p>
@@ -2340,9 +2351,9 @@ En este caso, hemos creado una instancia llamada <code>persona1</code> de la cla
 </div>
 </div>
 
-<div id="outline-container-org43668ee" class="outline-4">
-<h4 id="org43668ee">Atributos de una clase</h4>
-<div class="outline-text-4" id="text-org43668ee">
+<div id="outline-container-orgfff19e7" class="outline-4">
+<h4 id="orgfff19e7">Atributos de una clase</h4>
+<div class="outline-text-4" id="text-orgfff19e7">
 <p>
 Los atributos en una clase son variables que pertenecen a la instancia del objeto. Pueden ser modificados o accedidos desde fuera de la clase a través de la notación de puntos.
 </p>
@@ -2360,9 +2371,9 @@ Los atributos en una clase son variables que pertenecen a la instancia del objet
 </div>
 </div>
 
-<div id="outline-container-orgb2988d3" class="outline-4">
-<h4 id="orgb2988d3">Métodos especiales (métodos mágicos)</h4>
-<div class="outline-text-4" id="text-orgb2988d3">
+<div id="outline-container-orgb52304e" class="outline-4">
+<h4 id="orgb52304e">Métodos especiales (métodos mágicos)</h4>
+<div class="outline-text-4" id="text-orgb52304e">
 <p>
 Los métodos mágicos permiten personalizar el comportamiento de nuestras clases. Algunos de los más comunes son:
 </p>
@@ -2396,9 +2407,9 @@ Esto permite representar el objeto de una forma más legible cuando lo imprimimo
 </div>
 </div>
 
-<div id="outline-container-orgeab534a" class="outline-4">
-<h4 id="orgeab534a">Herencia</h4>
-<div class="outline-text-4" id="text-orgeab534a">
+<div id="outline-container-orgcaf0ac0" class="outline-4">
+<h4 id="orgcaf0ac0">Herencia</h4>
+<div class="outline-text-4" id="text-orgcaf0ac0">
 <p>
 La herencia es un mecanismo en el que una clase (llamada <b>clase hija</b> o <b>subclase</b>) hereda atributos y métodos de otra clase (llamada <b>clase padre</b> o <b>superclase</b>). La subclase puede agregar nuevos atributos y métodos, o sobrescribir los métodos heredados.
 </p>
@@ -2425,7 +2436,7 @@ La herencia es un mecanismo en el que una clase (llamada <b>clase hija</b> o <b>
 <p>
 <b><b>Salida:</b></b>
 </p>
-<pre class="example" id="org1c293be">
+<pre class="example" id="orgb8e5033">
     Hola, mi nombre es Luis y tengo 22 años.
     Mi matrícula es A12345
 </pre>
@@ -2440,9 +2451,9 @@ La herencia es un mecanismo en el que una clase (llamada <b>clase hija</b> o <b>
 </div>
 </div>
 
-<div id="outline-container-org7d99bd0" class="outline-4">
-<h4 id="org7d99bd0">Encapsulamiento</h4>
-<div class="outline-text-4" id="text-org7d99bd0">
+<div id="outline-container-org7622d4c" class="outline-4">
+<h4 id="org7622d4c">Encapsulamiento</h4>
+<div class="outline-text-4" id="text-org7622d4c">
 <p>
 El encapsulamiento es el concepto de ocultar los detalles internos de una clase para proteger los datos y permitir que los usuarios interactúen solo con una interfaz limitada. En Python, los atributos pueden ser privados utilizando guiones bajos dobles <code>__</code>.
 </p>
@@ -2471,9 +2482,9 @@ El encapsulamiento es el concepto de ocultar los detalles internos de una clase 
 </div>
 </div>
 
-<div id="outline-container-org6f1ba25" class="outline-4">
-<h4 id="org6f1ba25">Polimorfismo</h4>
-<div class="outline-text-4" id="text-org6f1ba25">
+<div id="outline-container-org8baf0b0" class="outline-4">
+<h4 id="org8baf0b0">Polimorfismo</h4>
+<div class="outline-text-4" id="text-org8baf0b0">
 <p>
 El polimorfismo permite que diferentes clases tengan métodos con el mismo nombre, pero con comportamientos diferentes. Esto es útil cuando queremos tratar objetos de distintas clases de manera uniforme.
 </p>
@@ -2505,16 +2516,16 @@ El polimorfismo permite que diferentes clases tengan métodos con el mismo nombr
 <p>
 <b><b>Salida:</b></b>
 </p>
-<pre class="example" id="org704a298">
+<pre class="example" id="org88e9f53">
     Guau
     Miau
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org7f28c6a" class="outline-4">
-<h4 id="org7f28c6a">Composición</h4>
-<div class="outline-text-4" id="text-org7f28c6a">
+<div id="outline-container-org54b0862" class="outline-4">
+<h4 id="org54b0862">Composición</h4>
+<div class="outline-text-4" id="text-org54b0862">
 <p>
 La composición es una técnica donde una clase contiene una instancia de otra clase. Esto crea una relación de <b>tiene un</b> entre objetos, en lugar de una relación de <b>es un</b>.
 </p>
@@ -2542,9 +2553,9 @@ La composición es una técnica donde una clase contiene una instancia de otra c
 </div>
 </div>
 
-<div id="outline-container-org6ca339c" class="outline-4">
-<h4 id="org6ca339c">Decoradores de métodos: @classmethod y @staticmethod</h4>
-<div class="outline-text-4" id="text-org6ca339c">
+<div id="outline-container-org3435861" class="outline-4">
+<h4 id="org3435861">Decoradores de métodos: @classmethod y @staticmethod</h4>
+<div class="outline-text-4" id="text-org3435861">
 <p>
 Python proporciona dos tipos de métodos que pueden estar asociados a una clase: los métodos de clase y los métodos estáticos. Ambos decoradores tienen un uso especial:
 </p>
@@ -2575,9 +2586,9 @@ Python proporciona dos tipos de métodos que pueden estar asociados a una clase:
 </div>
 </div>
 
-<div id="outline-container-org89a43bc" class="outline-4">
-<h4 id="org89a43bc">Ejemplo completo</h4>
-<div class="outline-text-4" id="text-org89a43bc">
+<div id="outline-container-orgb409974" class="outline-4">
+<h4 id="orgb409974">Ejemplo completo</h4>
+<div class="outline-text-4" id="text-orgb409974">
 <p>
 A continuación se presenta un ejemplo que reúne varios conceptos vistos anteriormente.
 </p>
@@ -2608,7 +2619,7 @@ A continuación se presenta un ejemplo que reúne varios conceptos vistos anteri
 <p>
 <b><b>Salida:</b></b>
 </p>
-<pre class="example" id="org2a299c9">
+<pre class="example" id="orga49f20f">
     Ana, 28 años, Ingeniera, Salario: 50000
 </pre>
 </div>
@@ -2618,13 +2629,13 @@ A continuación se presenta un ejemplo que reúne varios conceptos vistos anteri
 
 
 
-<div id="outline-container-org68798d2" class="outline-3">
-<h3 id="org68798d2">Problema del Granjero, el Puma, la Cabra y la Lechuga</h3>
-<div class="outline-text-3" id="text-org68798d2">
+<div id="outline-container-org6a262e6" class="outline-3">
+<h3 id="org6a262e6">Problema del Granjero, el Puma, la Cabra y la Lechuga</h3>
+<div class="outline-text-3" id="text-org6a262e6">
 </div>
-<div id="outline-container-orgc16ae43" class="outline-4">
-<h4 id="orgc16ae43">Descripción del Problema</h4>
-<div class="outline-text-4" id="text-orgc16ae43">
+<div id="outline-container-org4f048ce" class="outline-4">
+<h4 id="org4f048ce">Descripción del Problema</h4>
+<div class="outline-text-4" id="text-org4f048ce">
 <ul class="org-ul">
 <li>El granjero necesita cruzar un río llevando consigo un <b><b>puma</b></b>, una <b><b>cabra</b></b> y una <b><b>lechuga</b></b>.</li>
 <li>El bote solo tiene espacio para el granjero y uno de los tres: el <b><b>puma</b></b>, la <b><b>cabra</b></b> o la <b><b>lechuga</b></b>.</li>
@@ -2635,9 +2646,9 @@ A continuación se presenta un ejemplo que reúne varios conceptos vistos anteri
 </div>
 </div>
 
-<div id="outline-container-org34d6fb6" class="outline-4">
-<h4 id="org34d6fb6">Representación del Estado</h4>
-<div class="outline-text-4" id="text-org34d6fb6">
+<div id="outline-container-org6c092f6" class="outline-4">
+<h4 id="org6c092f6">Representación del Estado</h4>
+<div class="outline-text-4" id="text-org6c092f6">
 <ul class="org-ul">
 <li>Cada estado puede representarse por una tupla `(gran, puma, cabra, lechuga)` donde:
 <ul class="org-ul">
@@ -2648,9 +2659,9 @@ A continuación se presenta un ejemplo que reúne varios conceptos vistos anteri
 </div>
 </div>
 
-<div id="outline-container-org1f64ebd" class="outline-4">
-<h4 id="org1f64ebd">Reglas de Transición</h4>
-<div class="outline-text-4" id="text-org1f64ebd">
+<div id="outline-container-orgb14191f" class="outline-4">
+<h4 id="orgb14191f">Reglas de Transición</h4>
+<div class="outline-text-4" id="text-orgb14191f">
 <ul class="org-ul">
 <li>El granjero puede moverse de un lado a otro llevando solo uno de los tres elementos (puma, cabra, lechuga) o viajando solo.</li>
 <li>Las transiciones solo son válidas si no ocurren las situaciones indeseadas:
@@ -2662,9 +2673,9 @@ A continuación se presenta un ejemplo que reúne varios conceptos vistos anteri
 </div>
 </div>
 
-<div id="outline-container-org3ca5320" class="outline-4">
-<h4 id="org3ca5320">Algoritmo de Búsqueda en Profundidad (DFS)</h4>
-<div class="outline-text-4" id="text-org3ca5320">
+<div id="outline-container-org7e65a5f" class="outline-4">
+<h4 id="org7e65a5f">Algoritmo de Búsqueda en Profundidad (DFS)</h4>
+<div class="outline-text-4" id="text-org7e65a5f">
 <p>
 Se utilizará una búsqueda a lo profundo para encontrar la secuencia de movimientos que lleve a todos al lado derecho del río.
 </p>
@@ -2734,9 +2745,9 @@ solucion = dfs<span style="color: #c099ff;">(</span>estado_inicial, estado_objet
 </div>
 </div>
 
-<div id="outline-container-org400d472" class="outline-4">
-<h4 id="org400d472">Árbol de Búsqueda</h4>
-<div class="outline-text-4" id="text-org400d472">
+<div id="outline-container-orgaffd477" class="outline-4">
+<h4 id="orgaffd477">Árbol de Búsqueda</h4>
+<div class="outline-text-4" id="text-orgaffd477">
 <p>
 El árbol de búsqueda para este problema contiene estados donde el granjero, el puma, la cabra y la lechuga pueden estar en diferentes lados del río. Aquí un ejemplo de algunos estados:
 </p>
@@ -2761,9 +2772,9 @@ Este proceso continúa explorando todos los posibles caminos hasta encontrar el 
 </div>
 </div>
 
-<div id="outline-container-org054d991" class="outline-4">
-<h4 id="org054d991">Solución del Problema</h4>
-<div class="outline-text-4" id="text-org054d991">
+<div id="outline-container-org3f76d94" class="outline-4">
+<h4 id="org3f76d94">Solución del Problema</h4>
+<div class="outline-text-4" id="text-org3f76d94">
 <p>
 La búsqueda en profundidad explora las ramas posibles del árbol de búsqueda hasta encontrar una solución válida. Una posible secuencia de movimientos es:
 </p>
@@ -2788,18 +2799,18 @@ La búsqueda en profundidad explora las ramas posibles del árbol de búsqueda h
 
 
 
-<div id="outline-container-org011bccc" class="outline-3">
-<h3 id="org011bccc">Tutorial de Operaciones Bitwise en OpenCV</h3>
-<div class="outline-text-3" id="text-org011bccc">
+<div id="outline-container-org824733d" class="outline-3">
+<h3 id="org824733d">Tutorial de Operaciones Bitwise en OpenCV</h3>
+<div class="outline-text-3" id="text-org824733d">
 <p>
 Las operaciones <b>bitwise</b> en OpenCV son manipulaciones a nivel de bits que se pueden realizar sobre imágenes. Estas operaciones incluyen <b><b>AND</b></b>, <b><b>OR</b></b>, <b><b>XOR</b></b> y <b><b>NOT</b></b>, y son útiles cuando necesitas combinar, enmascarar, o manipular diferentes partes de una imagen.
 </p>
 </div>
 
 
-<div id="outline-container-orgdd29c34" class="outline-4">
-<h4 id="orgdd29c34">1. Operación Bitwise AND</h4>
-<div class="outline-text-4" id="text-orgdd29c34">
+<div id="outline-container-org88e0a16" class="outline-4">
+<h4 id="org88e0a16">1. Operación Bitwise AND</h4>
+<div class="outline-text-4" id="text-org88e0a16">
 <p>
 La operación <b><b>AND</b></b> toma dos imágenes o una imagen y una máscara, y realiza la operación AND bit a bit. El resultado será una imagen donde los bits que son 1 en ambas entradas se mantendrán, mientras que los demás bits serán 0.
 </p>
@@ -2832,9 +2843,9 @@ cv2.destroyAllWindows<span style="color: #c099ff;">()</span>
 </div>
 </div>
 
-<div id="outline-container-org0620df9" class="outline-4">
-<h4 id="org0620df9">2. Operación Bitwise OR</h4>
-<div class="outline-text-4" id="text-org0620df9">
+<div id="outline-container-org2edb8b9" class="outline-4">
+<h4 id="org2edb8b9">2. Operación Bitwise OR</h4>
+<div class="outline-text-4" id="text-org2edb8b9">
 <p>
 La operación <b><b>OR</b></b> toma dos imágenes y realiza la operación OR bit a bit. Los bits que son 1 en cualquiera de las dos entradas permanecerán en el resultado.
 </p>
@@ -2852,9 +2863,9 @@ cv2.destroyAllWindows<span style="color: #c099ff;">()</span>
 </div>
 </div>
 
-<div id="outline-container-org93350db" class="outline-4">
-<h4 id="org93350db">3. Operación Bitwise XOR</h4>
-<div class="outline-text-4" id="text-org93350db">
+<div id="outline-container-orga6f785a" class="outline-4">
+<h4 id="orga6f785a">3. Operación Bitwise XOR</h4>
+<div class="outline-text-4" id="text-orga6f785a">
 <p>
 La operación <b><b>XOR</b></b> compara los bits de dos imágenes y deja un 1 en la posición del resultado solo si los bits de las entradas son diferentes.
 </p>
@@ -2872,9 +2883,9 @@ cv2.destroyAllWindows<span style="color: #c099ff;">()</span>
 </div>
 </div>
 
-<div id="outline-container-org3792eab" class="outline-4">
-<h4 id="org3792eab">4. Operación Bitwise NOT</h4>
-<div class="outline-text-4" id="text-org3792eab">
+<div id="outline-container-orgf848a3c" class="outline-4">
+<h4 id="orgf848a3c">4. Operación Bitwise NOT</h4>
+<div class="outline-text-4" id="text-orgf848a3c">
 <p>
 La operación <b><b>NOT</b></b> invierte todos los bits de la imagen (los 1s se convierten en 0s y viceversa).
 </p>
@@ -2892,9 +2903,9 @@ cv2.destroyAllWindows<span style="color: #c099ff;">()</span>
 </div>
 </div>
 
-<div id="outline-container-org29b7464" class="outline-4">
-<h4 id="org29b7464">5. Aplicaciones Prácticas</h4>
-<div class="outline-text-4" id="text-org29b7464">
+<div id="outline-container-org17da0f7" class="outline-4">
+<h4 id="org17da0f7">5. Aplicaciones Prácticas</h4>
+<div class="outline-text-4" id="text-org17da0f7">
 <p>
 Las operaciones bitwise son útiles en muchas aplicaciones, como:
 </p>
@@ -2931,24 +2942,24 @@ cv2.destroyAllWindows<span style="color: #c099ff;">()</span>
 </div>
 </div>
 
-<div id="outline-container-orgb7f1f98" class="outline-4">
-<h4 id="orgb7f1f98">Definición: Operación Bit a Bit</h4>
-<div class="outline-text-4" id="text-orgb7f1f98">
+<div id="outline-container-orgf618b7a" class="outline-4">
+<h4 id="orgf618b7a">Definición: Operación Bit a Bit</h4>
+<div class="outline-text-4" id="text-orgf618b7a">
 <p>
 Una <b><b>operación bit a bit</b></b> (en inglés, <b>bitwise operation</b>) es una operación que se realiza directamente sobre los bits de los operandos. Las operaciones se ejecutan sobre los bits correspondientes de los números en formato binario.
 </p>
 </div>
 
 <ul class="org-ul">
-<li><a id="org1b73a4a"></a>Principales operaciones bit a bit<br />
+<li><a id="org56a20af"></a>Principales operaciones bit a bit<br />
 <ul class="org-ul">
-<li><a id="org9a62c0d"></a>1. AND bit a bit (<code>&amp;</code>)<br />
-<div class="outline-text-6" id="text-org9a62c0d">
+<li><a id="org0a1a8c3"></a>1. AND bit a bit (<code>&amp;</code>)<br />
+<div class="outline-text-6" id="text-org0a1a8c3">
 <p>
 Devuelve `1` si ambos bits en la misma posición son `1`, de lo contrario devuelve `0`.
 </p>
 
-<pre class="example" id="orgf2edca1">
+<pre class="example" id="org86248e5">
 A = 1010 (10 en decimal)
 B = 1100 (12 en decimal)
 Resultado: 1000 (8 en decimal)
@@ -2956,13 +2967,13 @@ Resultado: 1000 (8 en decimal)
 </div>
 </li>
 
-<li><a id="org9002ba1"></a>2. OR bit a bit (<code>|</code>)<br />
-<div class="outline-text-6" id="text-org9002ba1">
+<li><a id="orgf0c3ffd"></a>2. OR bit a bit (<code>|</code>)<br />
+<div class="outline-text-6" id="text-orgf0c3ffd">
 <p>
 Devuelve `1` si al menos uno de los bits en la misma posición es `1`, de lo contrario devuelve `0`.
 </p>
 
-<pre class="example" id="org83815f3">
+<pre class="example" id="orgfc435e8">
 A = 1010 (10 en decimal)
 B = 1100 (12 en decimal)
 Resultado: 1110 (14 en decimal)
@@ -2970,13 +2981,13 @@ Resultado: 1110 (14 en decimal)
 </div>
 </li>
 
-<li><a id="org3bd212b"></a>3. XOR bit a bit (<code>^</code>)<br />
-<div class="outline-text-6" id="text-org3bd212b">
+<li><a id="org0c610e1"></a>3. XOR bit a bit (<code>^</code>)<br />
+<div class="outline-text-6" id="text-org0c610e1">
 <p>
 Devuelve `1` si los bits en la misma posición son diferentes, y `0` si son iguales.
 </p>
 
-<pre class="example" id="org4e7f0e6">
+<pre class="example" id="orgc0337e1">
 A = 1010 (10 en decimal)
 B = 1100 (12 en decimal)
 Resultado: 0110 (6 en decimal)
@@ -2984,47 +2995,47 @@ Resultado: 0110 (6 en decimal)
 </div>
 </li>
 
-<li><a id="orgd3468ca"></a>4. NOT bit a bit (~~)<br />
-<div class="outline-text-6" id="text-orgd3468ca">
+<li><a id="orge3c2e80"></a>4. NOT bit a bit (~~)<br />
+<div class="outline-text-6" id="text-orge3c2e80">
 <p>
 Invierte los bits de un número: convierte los `0` en `1` y los `1` en `0`. En sistemas de complemento a dos, esto también implica cambiar el signo de un número entero.
 </p>
 
-<pre class="example" id="org3665088">
+<pre class="example" id="org0521599">
 A = 1010 (10 en decimal)
 Resultado: 0101 (-11 en decimal, si estamos usando complemento a dos)
 </pre>
 </div>
 </li>
 
-<li><a id="org31289d7"></a>5. Desplazamiento a la izquierda (<code>&lt;&lt;</code>)<br />
-<div class="outline-text-6" id="text-org31289d7">
+<li><a id="org44dafa2"></a>5. Desplazamiento a la izquierda (<code>&lt;&lt;</code>)<br />
+<div class="outline-text-6" id="text-org44dafa2">
 <p>
 Desplaza todos los bits del número hacia la izquierda por un número específico de posiciones. Los bits desplazados fuera del límite se descartan y se rellenan con ceros en el extremo derecho.
 </p>
 
-<pre class="example" id="org567cb80">
+<pre class="example" id="org3f72572">
 A = 0001 (1 en decimal)
 A &lt;&lt; 2 = 0100 (4 en decimal)
 </pre>
 </div>
 </li>
 
-<li><a id="org4c1258f"></a>6. Desplazamiento a la derecha (<code>&gt;&gt;</code>)<br />
-<div class="outline-text-6" id="text-org4c1258f">
+<li><a id="org816d2a7"></a>6. Desplazamiento a la derecha (<code>&gt;&gt;</code>)<br />
+<div class="outline-text-6" id="text-org816d2a7">
 <p>
 Desplaza todos los bits del número hacia la derecha por un número específico de posiciones. Los bits desplazados fuera del límite se descartan y el bit más significativo depende del signo del número.
 </p>
 
-<pre class="example" id="org555451e">
+<pre class="example" id="org7d3c269">
 A = 1000 (8 en decimal)
 A &gt;&gt; 2 = 0010 (2 en decimal)
 </pre>
 </div>
 </li>
 
-<li><a id="orga2c690a"></a>Aplicaciones de las operaciones bit a bit<br />
-<div class="outline-text-6" id="text-orga2c690a">
+<li><a id="orge1591e0"></a>Aplicaciones de las operaciones bit a bit<br />
+<div class="outline-text-6" id="text-orge1591e0">
 <ul class="org-ul">
 <li><b><b>Máscaras de bits</b></b>: Las operaciones bit a bit se usan para aplicar máscaras que seleccionan o modifican partes específicas de un número o secuencia binaria.</li>
 <li><b><b>Manipulación de imágenes</b></b>: En procesamiento de imágenes, las operaciones bit a bit son útiles para combinar y modificar píxeles en OpenCV.</li>
@@ -3181,9 +3192,9 @@ cv.destroyAllWindows()
 </div>
 </div>
 
-<div id="outline-container-org5e3d776" class="outline-3">
-<h3 id="org5e3d776">Segmentación de color mediante el modelo de color HSV</h3>
-<div class="outline-text-3" id="text-org5e3d776">
+<div id="outline-container-orgfdc9c31" class="outline-3">
+<h3 id="orgfdc9c31">Segmentación de color mediante el modelo de color HSV</h3>
+<div class="outline-text-3" id="text-orgfdc9c31">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #c099ff;">import</span> cv2 <span style="color: #c099ff;">as</span> cv
 
@@ -3246,9 +3257,9 @@ cv.destroyAllWindows<span style="color: #c099ff;">()</span>
 
 
 
-<div id="outline-container-orgfdeffb7" class="outline-3">
-<h3 id="orgfdeffb7">Seguimiento Por color</h3>
-<div class="outline-text-3" id="text-orgfdeffb7">
+<div id="outline-container-org4705a57" class="outline-3">
+<h3 id="org4705a57">Seguimiento Por color</h3>
+<div class="outline-text-3" id="text-org4705a57">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #c099ff;">import</span> cv2
 <span style="color: #c099ff;">import</span> numpy <span style="color: #c099ff;">as</span> np
@@ -3313,11 +3324,251 @@ cv2.destroyAllWindows<span style="color: #c099ff;">()</span>
 </div>
 </div>
 </div>
+
+
+
+
+
+
+<div id="outline-container-org4e87a94" class="outline-3">
+<h3 id="org4e87a94">Problemas con Objetos y Estructuras de Datos</h3>
+<div class="outline-text-3" id="text-org4e87a94">
+</div>
+<div id="outline-container-orge6dbac8" class="outline-4">
+<h4 id="orge6dbac8">Problema ejemplo: Control de un brazo robótico con múltiples articulaciones</h4>
+<div class="outline-text-4" id="text-orge6dbac8">
+<p>
+Diseña un sistema de control para un brazo robótico con 4 articulaciones (hombro, codo, muñeca y pinza), donde cada articulación tiene sensores de posición y motores controlados individualmente. El sistema debe recibir órdenes de movimiento y controlar la posición de cada articulación para mover el brazo hacia una posición objetivo en un espacio tridimensional.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="orgdcd4a21"></a>Objetivo:<br />
+<div class="outline-text-5" id="text-orgdcd4a21">
+<p>
+Crear una estructura de datos que represente las articulaciones y los estados de cada una, así como un algoritmo que controle el brazo robótico basado en estos datos.
+</p>
+</div>
+</li>
+
+<li><a id="orgc203b65"></a>Requisitos:<br />
+<div class="outline-text-5" id="text-orgc203b65">
+<ol class="org-ol">
+<li><b><b>Estructura de datos</b></b>:
+Cada articulación debe tener al menos los siguientes parámetros:
+<ul class="org-ul">
+<li>Ángulo actual</li>
+<li>Ángulo objetivo</li>
+<li>Velocidad de movimiento</li>
+<li>Tipo de movimiento (rotación o deslizamiento, dependiendo de la articulación)</li>
+<li>Límites máximos y mínimos de ángulo</li>
+</ul></li>
+
+<li><b><b>Objeto articulación</b></b>:
+<ul class="org-ul">
+<li>Crea una clase "Articulación" con los atributos mencionados y métodos para actualizar el estado de cada articulación.</li>
+</ul></li>
+
+<li><b><b>Clase brazo robótico</b></b>:
+<ul class="org-ul">
+<li>Implementa una clase "BrazoRobotico" que contenga un conjunto de objetos "Articulación". Esta clase debe tener métodos para:
+<ul class="org-ul">
+<li>Recibir una posición final y calcular los ángulos necesarios para cada articulación.</li>
+<li>Actualizar las posiciones actuales de cada articulación con base en los valores de los sensores.</li>
+<li>Mover cada articulación de manera sincronizada hacia su ángulo objetivo.</li>
+</ul></li>
+</ul></li>
+
+<li><b><b>Resolución cinemática inversa</b></b>:
+<ul class="org-ul">
+<li>Desarrolla una función que calcule los ángulos objetivos de cada articulación dado un punto objetivo en el espacio tridimensional.</li>
+</ul></li>
+
+<li><b><b>Planificación de trayectorias</b></b>:
+<ul class="org-ul">
+<li>Implementa una función que permita suavizar el movimiento del brazo robótico para evitar movimientos bruscos, calculando trayectorias intermedias a lo largo del recorrido.</li>
+</ul></li>
+</ol>
+</div>
+</li>
+
+<li><a id="org8b23c1b"></a>Ejemplo de estructura de datos en Python:<br />
+<div class="outline-text-5" id="text-org8b23c1b">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #c099ff;">class</span> <span style="color: #ffc777;">Articulacion</span>:
+    <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">__init__</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span>, angulo_actual, angulo_objetivo, velocidad, limite_min, limite_max<span style="color: #c099ff;">)</span>:
+        <span style="color: #c099ff;">self</span>.angulo_actual = angulo_actual
+        <span style="color: #c099ff;">self</span>.<span style="color: #ff98a4;">angulo_objetivo</span> = angulo_objetivo
+        <span style="color: #c099ff;">self</span>.<span style="color: #ff98a4;">velocidad</span> = velocidad
+        <span style="color: #c099ff;">self</span>.<span style="color: #ff98a4;">limite_min</span> = limite_min
+        <span style="color: #c099ff;">self</span>.<span style="color: #ff98a4;">limite_max</span> = limite_max
+
+    <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">actualizar_posicion</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span><span style="color: #c099ff;">)</span>:
+        <span style="color: #c099ff;">if</span> <span style="color: #c099ff;">self</span>.angulo_actual &lt; <span style="color: #c099ff;">self</span>.<span style="color: #ff98a4;">angulo_objetivo</span>:
+            <span style="color: #c099ff;">self</span>.angulo_actual += <span style="color: #c099ff;">self</span>.velocidad
+            <span style="color: #c099ff;">if</span> <span style="color: #c099ff;">self</span>.angulo_actual &gt; <span style="color: #c099ff;">self</span>.<span style="color: #ff98a4;">angulo_objetivo</span>:
+                <span style="color: #c099ff;">self</span>.angulo_actual = <span style="color: #c099ff;">self</span>.angulo_objetivo
+        <span style="color: #c099ff;">elif</span> <span style="color: #c099ff;">self</span>.angulo_actual &gt; <span style="color: #c099ff;">self</span>.<span style="color: #ff98a4;">angulo_objetivo</span>:
+            <span style="color: #c099ff;">self</span>.angulo_actual -= <span style="color: #c099ff;">self</span>.velocidad
+            <span style="color: #c099ff;">if</span> <span style="color: #c099ff;">self</span>.angulo_actual &lt; <span style="color: #c099ff;">self</span>.<span style="color: #ff98a4;">angulo_objetivo</span>:
+                <span style="color: #c099ff;">self</span>.angulo_actual = <span style="color: #c099ff;">self</span>.angulo_objetivo
+
+<span style="color: #c099ff;">class</span> <span style="color: #ffc777;">BrazoRobotico</span>:
+    <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">__init__</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span><span style="color: #c099ff;">)</span>:
+        <span style="color: #c099ff;">self</span>.hombro = Articulacion<span style="color: #c099ff;">(</span>0, 0, 1, -90, 90<span style="color: #c099ff;">)</span>
+        <span style="color: #c099ff;">self</span>.<span style="color: #ff98a4;">codo</span> = Articulacion<span style="color: #c099ff;">(</span>0, 0, 1, 0, 135<span style="color: #c099ff;">)</span>
+        <span style="color: #c099ff;">self</span>.<span style="color: #ff98a4;">muneca</span> = Articulacion<span style="color: #c099ff;">(</span>0, 0, 1, -90, 90<span style="color: #c099ff;">)</span>
+        <span style="color: #c099ff;">self</span>.<span style="color: #ff98a4;">pinza</span> = Articulacion<span style="color: #c099ff;">(</span>0, 0, 1, 0, 180<span style="color: #c099ff;">)</span>
+
+    <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">mover_a_posicion</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span>, posiciones_objetivo<span style="color: #c099ff;">)</span>:
+        <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Calcula las posiciones objetivo para cada articulaci&#243;n y actualiza</span>
+        <span style="color: #c099ff;">self</span>.hombro.<span style="color: #ff98a4;">angulo_objetivo</span> = posiciones_objetivo<span style="color: #c099ff;">[</span>0<span style="color: #c099ff;">]</span>
+        <span style="color: #c099ff;">self</span>.codo.<span style="color: #ff98a4;">angulo_objetivo</span> = posiciones_objetivo<span style="color: #c099ff;">[</span>1<span style="color: #c099ff;">]</span>
+        <span style="color: #c099ff;">self</span>.muneca.<span style="color: #ff98a4;">angulo_objetivo</span> = posiciones_objetivo<span style="color: #c099ff;">[</span>2<span style="color: #c099ff;">]</span>
+        <span style="color: #c099ff;">self</span>.pinza.<span style="color: #ff98a4;">angulo_objetivo</span> = posiciones_objetivo<span style="color: #c099ff;">[</span>3<span style="color: #c099ff;">]</span>
+
+        <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Actualiza cada articulaci&#243;n</span>
+        <span style="color: #c099ff;">self</span>.hombro.actualizar_posicion<span style="color: #c099ff;">()</span>
+        <span style="color: #c099ff;">self</span>.codo.actualizar_posicion<span style="color: #c099ff;">()</span>
+        <span style="color: #c099ff;">self</span>.muneca.actualizar_posicion<span style="color: #c099ff;">()</span>
+        <span style="color: #c099ff;">self</span>.pinza.actualizar_posicion<span style="color: #c099ff;">()</span>
+
+<span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Ejemplo de uso</span>
+<span style="color: #ff98a4;">brazo</span> = BrazoRobotico<span style="color: #c099ff;">()</span>
+brazo.mover_a_posicion<span style="color: #c099ff;">(</span><span style="color: #ff995e;">[</span>45, 90, 30, 180<span style="color: #ff995e;">]</span><span style="color: #c099ff;">)</span>
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+
+
+
+<div id="outline-container-org5d1fdc8" class="outline-4">
+<h4 id="org5d1fdc8">1. Sistema de gestión de energía en un vehículo eléctrico</h4>
+<div class="outline-text-4" id="text-org5d1fdc8">
+<p>
+Diseña un sistema para gestionar la distribución de energía en un
+vehículo eléctrico. El sistema debe tener una clase Batería, con
+atributos como capacidad actual, capacidad máxima, y eficiencia de
+carga. Además, debe tener una clase Motor que controle el consumo
+de energía. La estructura de datos se debe utilizar para monitorear
+el estado de la batería y del motor, optimizando el rendimiento del
+vehículo.
+</p>
+
+<ul class="org-ul">
+<li>Estructura de datos: Objeto batería, objeto motor.</li>
+<li>Clases: Batería, Motor, GestorEnergía.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfb57f66" class="outline-4">
+<h4 id="orgfb57f66">2. Control de un dron con múltiples sensores</h4>
+<div class="outline-text-4" id="text-orgfb57f66">
+<p>
+Desarrolla un sistema para controlar un dron que utiliza varios
+sensores (acelerómetro, giroscopio, GPS, cámara). Cada sensor tiene
+su propia clase con atributos como frecuencia de actualización,
+precisión, y datos actuales. El sistema debe combinar los datos de
+estos sensores para mantener la estabilidad del dron y planear
+rutas de vuelo.
+</p>
+
+<ul class="org-ul">
+<li>Estructura de datos: Objetos para cada sensor.</li>
+<li>Clases: Acelerometro, Giroscopio, GPS, Camara, ControladorDron.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org954d87f" class="outline-4">
+<h4 id="org954d87f">3. Sistema de monitoreo de un invernadero automatizado</h4>
+<div class="outline-text-4" id="text-org954d87f">
+<p>
+Diseña un sistema para monitorear y controlar la temperatura,
+humedad, luz y nivel de nutrientes en un invernadero
+automatizado. Cada variable (temperatura, humedad, etc.) debe ser
+representada por una clase que registre su estado actual y
+objetivo. Un controlador central utiliza estas estructuras de datos
+para ajustar los actuadores que controlan el clima y los
+nutrientes.
+</p>
+
+<ul class="org-ul">
+<li>Estructura de datos: Objetos de estado de temperatura, humedad, etc.</li>
+<li>Clases: SensorTemperatura, SensorHumedad, ActuadorLuz, ControladorInvernadero.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5dedb57" class="outline-4">
+<h4 id="org5dedb57">4. Sistema de estacionamiento automatizado</h4>
+<div class="outline-text-4" id="text-org5dedb57">
+<p>
+Diseña un sistema para controlar un vehículo autónomo que puede
+estacionarse en un lugar designado. El vehículo tiene varios
+sensores de proximidad, un sistema de cámara y un motor controlado
+por una unidad de procesamiento. La posición y los obstáculos se
+gestionan mediante objetos que representan el entorno. El vehículo
+debe calcular la ruta óptima utilizando algoritmos de planificación
+de trayectoria.
+</p>
+
+<ul class="org-ul">
+<li>Estructura de datos: Objetos para los sensores, cámara, motor,
+entorno.</li>
+<li>Clases: SensorProximidad, Camara, Motor, EntornoEstacionamiento, VehiculoAutonomo.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org29d4f7e" class="outline-4">
+<h4 id="org29d4f7e">5. Control de un exoesqueleto</h4>
+<div class="outline-text-4" id="text-org29d4f7e">
+<p>
+Desarrolla un sistema para controlar un exoesqueleto mecánico que
+ayuda a personas con movilidad reducida a caminar. Cada
+articulación del exoesqueleto tiene un sensor que mide su posición
+y un actuador que controla el movimiento. Los datos de las
+articulaciones se gestionan con objetos, y el sistema debe
+sincronizar los movimientos de manera natural.
+</p>
+
+<ul class="org-ul">
+<li>Estructura de datos: Objetos para articulaciones y actuadores.</li>
+<li>Clases: ArticulacionExoesqueleto, Sensor, Actuador, ControlExoesqueleto.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9469fd2" class="outline-4">
+<h4 id="org9469fd2">6. Sistema de control de calidad en una línea de producción</h4>
+<div class="outline-text-4" id="text-org9469fd2">
+<p>
+Implementa un sistema para inspeccionar productos en una línea de
+producción automatizada. Se utilizan cámaras y sensores para
+verificar si los productos cumplen con las especificaciones. Cada
+producto es representado por un objeto que almacena sus
+características (dimensiones, peso, color, etc.). Los datos de los
+sensores se usan para aceptar o rechazar productos según las
+tolerancias establecidas.
+</p>
+
+<ul class="org-ul">
+<li>Estructura de datos: Objetos para productos y sensores.</li>
+<li>Clases: Producto, Camara, SensorDimensiones, ControlCalidad.</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: likcos</p>
-<p class="date">Created: 2024-10-04 vie 00:28</p>
+<p class="date">Created: 2024-10-04 vie 09:20</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
