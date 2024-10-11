@@ -2112,3 +2112,592 @@ brazo.mover_a_posicion([45, 90, 30, 180])
 
    - Estructura de datos: Objetos para productos y sensores.
    - Clases: Producto, Camara, SensorDimensiones, ControlCalidad.
+
+
+** Manejo de Archivos en Python
+
+*** 1. ¿Qué es el manejo de archivos en Python?
+El manejo de archivos es una técnica fundamental en programación que
+permite la lectura, escritura, modificación y almacenamiento de datos
+en archivos. Los archivos se utilizan para guardar información de
+manera persistente, lo que significa que los datos no se pierden al
+terminar la ejecución de un programa, a diferencia de las variables
+que solo almacenan datos temporalmente en la memoria RAM.
+
+Python ofrece una interfaz simple y poderosa para trabajar con
+archivos, lo que te permite manipular archivos de texto, archivos
+binarios, y otros formatos como JSON o CSV. Las operaciones más
+comunes son abrir, leer, escribir y cerrar archivos.
+
+*** 2. Tipos de archivos y sus modos de acceso
+
+**** 2.1 Tipos de archivos
+En general, los archivos se dividen en dos categorías principales:
+- **Archivos de texto**: Estos archivos contienen datos en formato de texto simple, como archivos `.txt` o `.csv`. Los datos se almacenan como una secuencia de caracteres, fácilmente legible por humanos.
+- **Archivos binarios**: Estos archivos contienen datos en formato binario, es decir, en 1s y 0s, como archivos de imágenes, videos, o archivos de ejecución. Este formato no es legible por humanos directamente.
+
+**** 2.2 Modos de apertura de archivos
+Cuando trabajamos con archivos, es esencial abrirlos en el modo adecuado. Python nos proporciona varios modos:
+
+| Modo | Descripción |
+|------|-------------|
+| 'r'  | Modo de lectura. El archivo debe existir previamente. |
+| 'w'  | Modo de escritura. Si el archivo existe, se sobrescribe. Si no, se crea. |
+| 'a'  | Modo de anexado. Añade datos al final del archivo. Si no existe, lo crea. |
+| 'b'  | Modo binario. Se usa junto con otros modos para leer o escribir archivos binarios. |
+| 'r+' | Modo de lectura y escritura. El archivo debe existir previamente. |
+| 'w+' | Modo de lectura y escritura, pero sobrescribiendo el contenido. |
+| 'a+' | Modo de lectura y escritura, pero añadiendo datos al final del archivo. |
+
+*** 3. Operaciones comunes en archivos
+Python permite realizar varias operaciones con archivos:
+
+**** 3.1 Abrir y cerrar un archivo
+Para interactuar con un archivo, primero debes abrirlo utilizando la función `open()`. Al finalizar las operaciones, se debe cerrar el archivo con `close()` para liberar los recursos.
+
+#+begin_src python
+archivo = open('mi_archivo.txt', 'r')  # Abre el archivo en modo lectura
+# Realiza operaciones con el archivo
+archivo.close()  # Cierra el archivo
+#+end_src
+
+Para simplificar la gestión de archivos, Python recomienda usar el contexto `with` para abrir archivos, ya que se cierran automáticamente al terminar el bloque:
+
+#+begin_src python
+with open('mi_archivo.txt', 'r') as archivo:
+    # Realiza operaciones con el archivo
+    contenido = archivo.read()
+# No es necesario cerrar el archivo
+#+end_src
+
+**** 3.2 Leer archivos
+Python ofrece múltiples formas de leer archivos:
+- **`read()`**: Lee todo el contenido del archivo como una cadena de texto.
+- **`readline()`**: Lee una línea del archivo a la vez.
+- **`readlines()`**: Lee todas las líneas del archivo y las devuelve como una lista.
+
+Ejemplos de lectura:
+
+#+begin_src python
+with open('mi_archivo.txt', 'r') as archivo:
+    contenido_completo = archivo.read()  # Lee todo el contenido
+    primera_linea = archivo.readline()  # Lee solo la primera línea
+    todas_las_lineas = archivo.readlines()  # Lee todas las líneas como una lista
+#+end_src
+
+**** 3.3 Escribir archivos
+Para escribir en un archivo, puedes utilizar `write()` o `writelines()`. Es importante abrir el archivo en modo de escritura ('w') o anexado ('a').
+
+#+begin_src python
+with open('mi_archivo.txt', 'w') as archivo:
+    archivo.write('Primera línea\n')
+    archivo.write('Segunda línea\n')
+#+end_src
+
+Para escribir múltiples líneas a la vez, puedes usar `writelines()` con una lista:
+
+#+begin_src python
+lineas = ['Primera línea\n', 'Segunda línea\n', 'Tercera línea\n']
+with open('mi_archivo.txt', 'w') as archivo:
+    archivo.writelines(lineas)
+#+end_src
+
+**** 3.4 Manejo de errores
+Es fundamental manejar posibles errores al interactuar con archivos,
+como archivos no encontrados o problemas de permisos. Esto se logra
+mediante el uso de bloques `try-except`:
+
+#+begin_src python
+try:
+    with open('mi_archivo.txt', 'r') as archivo:
+        contenido = archivo.read()
+except FileNotFoundError:
+    print("El archivo no fue encontrado.")
+#+end_src
+
+
+
+
+
+*** 4. Ejemplos prácticos
+
+A continuación se presenta el tutorial original que utiliza las clases
+*Articulacion* y *BrazoRobotico*. Este código demuestra cómo escribir
+y leer las posiciones del brazo robótico desde un archivo de texto,
+además de ejemplos avanzados como el uso de JSON.
+
+**** 1. Definición básica del código
+A continuación se muestra el código que define las clases *Articulacion* y *BrazoRobotico*.
+
+#+begin_src python
+class Articulacion:
+    def __init__(self, angulo_actual, angulo_objetivo, velocidad, limite_min, limite_max):
+        self.angulo_actual = angulo_actual
+        self.angulo_objetivo = angulo_objetivo
+        self.velocidad = velocidad
+        self.limite_min = limite_min
+        self.limite_max = limite_max
+
+    def actualizar_posicion(self):
+        if self.angulo_actual < self.angulo_objetivo:
+            self.angulo_actual += self.velocidad
+            if self.angulo_actual > self.angulo_objetivo:
+                self.angulo_actual = self.angulo_objetivo
+        elif self.angulo_actual > self.angulo_objetivo:
+            self.angulo_actual -= self.velocidad
+            if self.angulo_actual < self.angulo_objetivo:
+                self.angulo_actual = self.angulo_objetivo
+
+class BrazoRobotico:
+    def __init__(self):
+        self.hombro = Articulacion(0, 0, 1, -90, 90)
+        self.codo = Articulacion(0, 0, 1, 0, 135)
+        self.muneca = Articulacion(0, 0, 1, -90, 90)
+        self.pinza = Articulacion(0, 0, 1, 0, 180)
+
+    def mover_a_posicion(self, posiciones_objetivo):
+        self.hombro.angulo_objetivo = posiciones_objetivo[0]
+        self.codo.angulo_objetivo = posiciones_objetivo[1]
+        self.muneca.angulo_objetivo = posiciones_objetivo[2]
+        self.pinza.angulo_objetivo = posiciones_objetivo[3]
+
+        self.hombro.actualizar_posicion()
+        self.codo.actualizar_posicion()
+        self.muneca.actualizar_posicion()
+        self.pinza.actualizar_posicion()
+#+end_src
+
+Este código define la estructura básica del brazo robótico con
+articulaciones como el hombro, codo, muñeca y pinza.
+
+**** 2. Escribir las posiciones del brazo en un archivo
+La primera tarea es escribir las posiciones actuales de las
+articulaciones a un archivo de texto. Puedes utilizar el método
+`open()` en modo de escritura.
+
+#+begin_src python
+    def guardar_posiciones(self, nombre_archivo):
+        with open(nombre_archivo, 'w') as archivo:
+            archivo.write(f'Hombro: {self.hombro.angulo_actual}\n')
+            archivo.write(f'Codo: {self.codo.angulo_actual}\n')
+            archivo.write(f'Muñeca: {self.muneca.angulo_actual}\n')
+            archivo.write(f'Pinza: {self.pinza.angulo_actual}\n')
+#+end_src
+
+**** 3. Leer las posiciones desde un archivo
+Puedes leer los datos del archivo y asignarlos a las articulaciones
+del brazo robótico utilizando `readlines()` para leer todas las líneas
+del archivo y luego dividirlas.
+
+#+begin_src python
+    def cargar_posiciones(self, nombre_archivo):
+        with open(nombre_archivo, 'r') as archivo:
+            lineas = archivo.readlines()
+            self.hombro.angulo_actual = float(lineas[0].split(': ')[1].strip())
+            self.codo.angulo_actual = float(lineas[1].split(': ')[1].strip())
+            self.muneca.angulo_actual = float(lineas[2].split(': ')[1].strip())
+            self.pinza.angulo_actual = float(lineas[3].split(': ')[1].strip())
+#+end_src
+
+Este método lee las posiciones del archivo y las asigna a las articulaciones del brazo robótico.
+
+**** 4. Diferentes maneras de recorrer un archivo
+Hay varias formas de recorrer el contenido de un archivo. Veamos algunas:
+
+***** 4.1 Leer todo el archivo como una sola cadena
+Puedes leer todo el contenido de un archivo como una cadena de texto utilizando `read()`.
+
+#+begin_src python
+with open('posiciones_brazo.txt', 'r') as archivo:
+    contenido = archivo.read()
+    print(contenido)
+#+end_src
+
+Esto imprimirá todo el contenido del archivo en un solo bloque.
+
+***** 4.2 Leer línea por línea
+Si deseas procesar el archivo línea por línea, puedes usar un bucle `for`.
+
+#+begin_src python
+with open('posiciones_brazo.txt', 'r') as archivo:
+    for linea in archivo:
+        print(linea.strip())  # Remueve los espacios y saltos de línea
+#+end_src
+
+Esto imprimirá cada línea del archivo de manera individual, eliminando
+saltos de línea innecesarios.
+
+***** 4.3 Usar el formato JSON para guardar y cargar posiciones
+Otra opción avanzada es usar archivos JSON, lo cual es útil para
+almacenar estructuras de datos más complejas.
+
+#+begin_src python
+import json
+
+def guardar_en_json(self, nombre_archivo):
+    datos = {
+        'hombro': self.hombro.angulo_actual,
+        'codo': self.codo.angulo_actual,
+        'muneca': self.muneca.angulo_actual,
+        'pinza': self.pinza.angulo_actual
+    }
+    with open(nombre_archivo, 'w') as archivo:
+        json.dump(datos, archivo)
+
+def cargar_desde_json(self, nombre_archivo):
+    with open(nombre_archivo, 'r') as archivo:
+        datos = json.load(archivo)
+        self.hombro.angulo_actual = datos['hombro']
+        self.codo.angulo_actual = datos['codo']
+        self.muneca.angulo_actual = datos['muneca']
+        self.pinza.angulo_actual = datos['pinza']
+#+end_src
+
+En este caso, el formato JSON permite almacenar las posiciones de
+manera más estructurada y fácilmente interpretable por otros
+programas.
+
+**** 5. Búsqueda y filtrado de información en el archivo
+A continuación, mostramos cómo buscar información específica en un
+archivo.
+
+***** 5.1 Buscar por palabra clave
+Podemos buscar una palabra clave en el archivo para encontrar articulaciones específicas.
+
+#+begin_src python
+def buscar_articulacion(nombre_archivo, articulacion):
+    with open(nombre_archivo, 'r') as archivo:
+        for linea in archivo:
+            if articulacion in linea:
+                print(linea.strip())
+
+# Ejemplo de uso
+buscar_articulacion('posiciones_brazo.txt', 'Codo')
+#+end_src
+
+Esto buscará la palabra "Codo" en el archivo y devolverá la línea correspondiente.
+
+***** 5.2 Filtrar con expresiones regulares
+Para una búsqueda más avanzada, podemos usar expresiones regulares con el módulo `re`.
+
+#+begin_src python
+import re
+
+def buscar_con_regex(nombre_archivo, patron):
+    with open(nombre_archivo, 'r') as archivo:
+        for linea in archivo:
+            if re.search(patron, linea):
+                print(linea.strip())
+
+# Ejemplo de uso
+buscar_con_regex('posiciones_brazo.txt', r'Hombro:\s[4-5][0-9]')
+#+end_src
+
+En este caso, la expresión regular busca valores del ángulo del hombro
+entre 40 y 59 grados.
+
+**** 6. Manejo de errores
+
+Al trabajar con archivos, es importante manejar errores para evitar
+fallos inesperados, como archivos no encontrados.
+
+#+begin_src python
+def cargar_posiciones_seguro(nombre_archivo):
+    try:
+        with open(nombre_archivo, 'r') as archivo:
+            lineas = archivo.readlines()
+            # Procesa las líneas del archivo
+    except FileNotFoundError:
+        print(f"Error: El archivo {nombre_archivo} no fue encontrado.")
+#+end_src
+
+Este código asegura que el programa no se rompa si el archivo no existe.
+
+** Tipos de archivos JSON y CSV
+
+*** 1. Archivos JSON
+*** 1.1 ¿Qué es JSON?
+JSON (JavaScript Object Notation) es un formato ligero para el intercambio de datos. Es fácil de leer y escribir tanto para humanos como para máquinas. Aunque tiene sus raíces en JavaScript, es un formato independiente del lenguaje y ampliamente utilizado, especialmente en APIs y aplicaciones web.
+
+*** 1.2 Estructura de un archivo JSON
+Los archivos JSON están organizados en pares de clave-valor, y pueden representar objetos complejos o listas anidadas. Un ejemplo básico de un archivo JSON sería:
+
+#+begin_example json
+{
+    "nombre": "Brazo Robótico",
+    "hombro": 45,
+    "codo": 90,
+    "muneca": 30,
+    "pinza": 180
+}
+#+end_example
+
+Cada campo tiene una clave (ejemplo: `"nombre"`, `"hombro"`) y un valor que puede ser un número, cadena, objeto o lista.
+
+*** 1.3 Ventajas de JSON
+- **Fácil de leer y escribir**: Tanto para humanos como para máquinas.
+- **Ligero**: Ocupa poco espacio.
+- **Amplia compatibilidad**: Casi todos los lenguajes de programación pueden manipular archivos JSON.
+  
+*** 1.4 Trabajar con JSON en Python
+Python proporciona el módulo `json` para manejar archivos JSON de forma nativa.
+
+- **Escribir un archivo JSON** (serialización):
+
+#+begin_src python
+import json
+
+datos = {
+    "nombre": "Brazo Robótico",
+    "hombro": 45,
+    "codo": 90,
+    "muneca": 30,
+    "pinza": 180
+}
+
+with open('datos_brazo.json', 'w') as archivo:
+    json.dump(datos, archivo)  # Guarda los datos en formato JSON
+#+end_src
+
+- **Leer un archivo JSON** (deserialización):
+
+#+begin_src python
+with open('datos_brazo.json', 'r') as archivo:
+    datos = json.load(archivo)
+    print(datos)
+#+end_src
+
+*** 2. Archivos CSV
+**** 2.1 ¿Qué es CSV?
+CSV (Comma-Separated Values) es un formato simple utilizado para
+almacenar datos tabulares (como una hoja de cálculo o base de datos)
+en texto plano. Los campos están separados por comas y cada línea es
+un registro de datos.
+
+**** 2.2 Estructura de un archivo CSV
+Un archivo CSV puede verse de la siguiente manera:
+
+#+begin_example csv
+nombre,hombro,codo,muneca,pinza
+Brazo Robótico,45,90,30,180
+#+end_example
+
+La primera línea es el encabezado (opcional), que describe los campos. Cada línea siguiente es un registro, con los valores separados por comas.
+
+**** 2.3 Ventajas de CSV
+- **Simplicidad**: Fácil de usar y entender.
+- **Universalidad**: Es soportado por muchos programas (como Excel) y lenguajes de programación.
+- **Ligero**: El tamaño del archivo es mínimo, ideal para grandes volúmenes de datos tabulares.
+
+**** 2.4 Trabajar con CSV en Python
+Python proporciona el módulo `csv` para leer y escribir archivos CSV.
+
+- **Escribir un archivo CSV**:
+
+#+begin_src python
+import csv
+
+datos = [
+    ['nombre', 'hombro', 'codo', 'muneca', 'pinza'],
+    ['Brazo Robótico', 45, 90, 30, 180]
+]
+
+with open('datos_brazo.csv', 'w', newline='') as archivo:
+    escritor = csv.writer(archivo)
+    escritor.writerows(datos)
+#+end_src
+
+- **Leer un archivo CSV**:
+
+#+begin_src python
+with open('datos_brazo.csv', 'r') as archivo:
+    lector = csv.reader(archivo)
+    for fila in lector:
+        print(fila)
+#+end_src
+
+*** 3. Comparación entre JSON y CSV
+| Característica   | JSON                                      | CSV                                   |
+|------------------|-------------------------------------------|---------------------------------------|
+| **Formato**      | Pares de clave-valor, estructura jerárquica | Valores separados por comas, tabular   |
+| **Uso**          | Ideal para datos estructurados complejos   | Mejor para datos tabulares simples    |
+| **Legibilidad**  | Fácil de leer y entender                   | Fácil de leer pero menos flexible     |
+| **Manipulación** | Adecuado para datos anidados o jerárquicos | Adecuado para datos en formato de tabla |
+| **Tamaño**       | Puede ser más grande debido a su estructura | Ligero, tamaño reducido               |
+
+
+Los archivos JSON y CSV son dos de los formatos de almacenamiento de
+datos más utilizados en programación. JSON es ideal para representar
+estructuras de datos complejas o anidadas, mientras que CSV es
+perfecto para datos tabulares simples que pueden abrirse en programas
+como Excel o Google Sheets. Python facilita trabajar con ambos
+formatos mediante sus módulos *json* y *csv*, permitiendo la
+serialización y deserialización de datos de forma sencilla.
+** Excepciones en el manejo de archivos en Python
+
+*** 1. ¿Qué son las excepciones en Python?
+Una excepción es un error que ocurre durante la ejecución de un
+programa, interrumpiendo el flujo normal del mismo. En Python, cuando
+se produce un error, se lanza una "excepción" que, si no se maneja,
+terminará el programa de manera abrupta.
+
+Para evitar esto, se puede usar el manejo de excepciones mediante los
+bloques `try-except`. Esto permite que, en caso de un error, el
+programa capture la excepción y ejecute código alternativo.
+
+Al trabajar con archivos, existen algunas excepciones comunes que pueden surgir, por ejemplo:
+
+- El archivo no existe.
+- No tienes permisos para abrir el archivo.
+- Estás intentando leer un archivo que está en uso por otro proceso.
+
+*** 2. Uso básico de `try-except` en archivos
+
+Cuando trabajas con archivos en Python, es recomendable usar bloques
+`try-except` para capturar errores comunes, como un archivo no
+encontrado. Aquí te muestro cómo hacerlo:
+
+#+begin_src python
+try:
+    with open('archivo_inexistente.txt', 'r') as archivo:
+        contenido = archivo.read()
+except FileNotFoundError:
+    print("Error: El archivo no existe.")
+#+end_src
+
+En este caso, si el archivo no se encuentra, se lanza una excepción
+`FileNotFoundError`, la cual es capturada por el bloque `except` y
+evita que el programa se detenga de forma inesperada.
+
+*** 3. Excepciones comunes en el manejo de archivos
+
+Existen varias excepciones que pueden surgir cuando trabajas con archivos. Aquí te describo las más comunes:
+
+**** 3.1 FileNotFoundError
+Esta excepción se lanza cuando intentas abrir un archivo que no existe. Como vimos en el ejemplo anterior, puedes manejar este error con `except FileNotFoundError`.
+
+#+begin_src python
+try:
+    with open('archivo_que_no_existe.txt', 'r') as archivo:
+        contenido = archivo.read()
+except FileNotFoundError:
+    print("Error: El archivo no fue encontrado.")
+#+end_src
+
+**** 3.2 PermissionError
+Este error ocurre cuando el programa no tiene permiso para acceder al archivo. Puede suceder, por ejemplo, si intentas abrir un archivo en un directorio protegido o si intentas escribir en un archivo de solo lectura.
+
+#+begin_src python
+try:
+    with open('/archivo_protegido.txt', 'r') as archivo:
+        contenido = archivo.read()
+except PermissionError:
+    print("Error: No tienes permisos para abrir este archivo.")
+#+end_src
+
+**** 3.3 IOError (OSError)
+La excepción `IOError` (también conocida como `OSError` en Python 3) captura errores generales de entrada/salida que pueden ocurrir al trabajar con archivos. Por ejemplo, puede ocurrir si el archivo está en uso por otro proceso o si hay problemas con el sistema de archivos.
+
+#+begin_src python
+try:
+    with open('archivo.txt', 'r') as archivo:
+        contenido = archivo.read()
+except IOError as e:
+    print(f"Error de entrada/salida: {e}")
+#+end_src
+
+En este caso, el `IOError` puede capturar muchos errores relacionados con la entrada/salida de archivos, y al imprimir el error (`e`), se obtiene una descripción detallada del problema.
+
+*** 4. Usar `finally` para asegurar el cierre de archivos
+El bloque `finally` es muy útil para asegurarte de que ciertos bloques de código se ejecuten sin importar si ocurre una excepción. En el caso del manejo de archivos, es importante asegurarte de que el archivo se cierre correctamente, incluso si ocurre un error.
+
+#+begin_src python
+try:
+    archivo = open('archivo.txt', 'r')
+    contenido = archivo.read()
+except Exception as e:
+    print(f"Ocurrió un error: {e}")
+finally:
+    archivo.close()  # Se asegura que el archivo se cierre
+#+end_src
+
+Sin embargo, es mucho más común y recomendable usar el contexto `with` en Python, ya que cierra automáticamente el archivo incluso si ocurre un error.
+
+#+begin_src python
+try:
+    with open('archivo.txt', 'r') as archivo:
+        contenido = archivo.read()
+except Exception as e:
+    print(f"Ocurrió un error: {e}")
+#+end_src
+
+*** 5. Manejo de múltiples excepciones
+Puedes manejar más de una excepción en un solo bloque `try-except`. Esto es útil si esperas varios tipos de errores posibles. Puedes usar varios bloques `except` para manejar distintos errores.
+
+#+begin_src python
+try:
+    with open('archivo.txt', 'r') as archivo:
+        contenido = archivo.read()
+except FileNotFoundError:
+    print("Error: El archivo no existe.")
+except PermissionError:
+    print("Error: No tienes permisos para acceder a este archivo.")
+except Exception as e:
+    print(f"Ocurrió un error inesperado: {e}")
+#+end_src
+
+Aquí estamos manejando tres posibles tipos de errores: archivo no encontrado, permisos denegados, y un error general para capturar cualquier otra excepción que no hayamos considerado específicamente.
+
+*** 6. Crear excepciones personalizadas
+En algunos casos, puede ser útil definir tus propias excepciones personalizadas para manejar situaciones específicas. En Python, puedes hacerlo creando una nueva clase que herede de `Exception`. Aquí tienes un ejemplo en el contexto del manejo de archivos:
+
+#+begin_src python
+class ArchivoVacioError(Exception):
+    pass
+
+try:
+    with open('archivo.txt', 'r') as archivo:
+        contenido = archivo.read()
+        if not contenido:
+            raise ArchivoVacioError("El archivo está vacío.")
+except ArchivoVacioError as e:
+    print(e)
+except Exception as e:
+    print(f"Ocurrió un error: {e}")
+#+end_src
+
+En este ejemplo, si el archivo está vacío, se lanza una excepción
+personalizada `ArchivoVacioError`, que se maneja de manera específica
+en el bloque `except`.
+
+El manejo de excepciones es una herramienta poderosa en Python,
+especialmente al trabajar con archivos, ya que los errores de
+entrada/salida son comunes y pueden ocurrir de muchas formas. Con
+`try-except` puedes asegurarte de que tu programa siga funcionando
+incluso cuando ocurran errores inesperados, mejorando así la robustez
+y fiabilidad de tu código.
+
+Al usar excepciones comunes como `FileNotFoundError` o
+`PermissionError`, junto con `finally` para garantizar el cierre
+adecuado de archivos, puedes minimizar los riesgos de errores
+inesperados y asegurar un manejo más seguro de tus archivos.
+   
+   
+
+
+
+
+#+BEGIN_SRC c :result output
+
+#include <stdio.h>
+
+int main(){
+int a=3;
+printf("%d",a);
+printf("%p",a);
+ 
+return 0; 
+}
+
+
+#+END_SRC
