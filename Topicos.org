@@ -400,7 +400,7 @@ brew install git
    - Para actualizar Python a una nueva versión en el futuro, descarga la última versión desde [[https://www.python.org/downloads/][python.org]] y sigue los pasos de instalación.
 
 
-
+   
 * Programación Avanzada    
 
 pip install opecv-contrib-python
@@ -1996,7 +1996,7 @@ cv2.destroyAllWindows()
 
 **** Ejemplo de estructura de datos en Python:
 
-#+begin_src python
+#+begin_src python :results output
 class Articulacion:
     def __init__(self, angulo_actual, angulo_objetivo, velocidad, limite_min, limite_max):
         self.angulo_actual = angulo_actual
@@ -2039,6 +2039,8 @@ class BrazoRobotico:
 brazo = BrazoRobotico()
 brazo.mover_a_posicion([45, 90, 30, 180])
 #+end_src
+
+#+RESULTS:
 
 
 
@@ -2415,9 +2417,12 @@ Este código asegura que el programa no se rompa si el archivo no existe.
 
 ** Tipos de archivos JSON y CSV
 
-*** 1. Archivos JSON
 *** 1.1 ¿Qué es JSON?
-JSON (JavaScript Object Notation) es un formato ligero para el intercambio de datos. Es fácil de leer y escribir tanto para humanos como para máquinas. Aunque tiene sus raíces en JavaScript, es un formato independiente del lenguaje y ampliamente utilizado, especialmente en APIs y aplicaciones web.
+JSON (JavaScript Object Notation) es un formato ligero para el
+intercambio de datos. Es fácil de leer y escribir tanto para humanos
+como para máquinas. Aunque tiene sus raíces en JavaScript, es un
+formato independiente del lenguaje y ampliamente utilizado,
+especialmente en APIs y aplicaciones web.
 
 *** 1.2 Estructura de un archivo JSON
 Los archivos JSON están organizados en pares de clave-valor, y pueden representar objetos complejos o listas anidadas. Un ejemplo básico de un archivo JSON sería:
@@ -2701,3 +2706,515 @@ return 0;
 
 
 #+END_SRC
+
+**  Altas, Bajas, Modificaciones y Consultas
+
+*** Introducción
+  En el ámbito de la gestión de datos, ya sea en sistemas de bases de
+  datos o aplicaciones de software, las operaciones de *altas*,
+  *bajas*, *modificaciones* y *consultas* son esenciales para la
+  correcta manipulación y mantenimiento de la información.
+
+ 
+*** Definición de Altas, Bajas, Modificaciones y Consultas
+
+**** Altas (Crear o Añadir un registro)
+   La operación de *alta* se refiere a la creación de un nuevo
+   registro dentro de un sistema de información. Este registro puede
+   ser un nuevo usuario en una base de datos, una nueva entrada en un
+   inventario, o cualquier conjunto de datos que necesite ser
+   almacenado para su posterior uso.
+
+   **Proceso**:
+   1. Se recibe la información para crear el nuevo registro.
+   2. La información es validada para asegurar su corrección.
+   3. Los datos son almacenados en la base de datos o sistema correspondiente.
+
+   **Ejemplo en Python**:
+   En el siguiente ejemplo, se agrega un nuevo registro a un archivo JSON que simula una base de datos de usuarios:
+
+   #+begin_src python :tangle src/gestion_registros.py :results output
+   import json
+
+   # Función para realizar el alta de un nuevo registro
+   def alta_usuario(nombre, edad):
+       nuevo_registro = {"nombre": nombre, "edad": edad}
+       try:
+           with open("usuarios.json", "r+") as file:
+               datos = json.load(file)
+               datos.append(nuevo_registro)
+               file.seek(0)
+               json.dump(datos, file, indent=4)
+           print(f"Usuario {nombre} agregado exitosamente.")
+       except FileNotFoundError:
+           with open("usuarios.json", "w") as file:
+               json.dump([nuevo_registro], file, indent=4)
+           print(f"Archivo creado y usuario {nombre} agregado exitosamente.")
+
+   alta_usuario("Juan", 28)
+   #+end_src
+
+   Este código gestiona el proceso de agregar un nuevo usuario a un archivo JSON, y crea el archivo si no existe.
+
+**** Bajas (Eliminar un registro)
+   La operación de *baja* implica la eliminación de un registro existente en el sistema. Generalmente se realiza cuando un registro ya no es necesario o cuando se desea eliminar información obsoleta o incorrecta.
+
+   **Proceso**:
+   1. Se identifica el registro que debe ser eliminado.
+   2. Se verifica que el registro exista.
+   3. El registro se elimina de la base de datos.
+
+   **Ejemplo en Python**:
+   En este ejemplo, eliminamos un usuario de la base de datos JSON basada en su índice.
+
+   #+begin_src python :tangle src/gestion_registros.py :results output
+   import json
+
+   # Función para eliminar un registro basado en el índice
+   def baja_usuario(indice):
+       try:
+           with open("usuarios.json", "r+") as file:
+               datos = json.load(file)
+               if 0 <= indice < len(datos):
+                   usuario_eliminado = datos.pop(indice)
+                   file.seek(0)
+                   json.dump(datos, file, indent=4)
+                   file.truncate()
+                   print(f"Usuario {usuario_eliminado['nombre']} eliminado exitosamente.")
+               else:
+                   print("Índice fuera de rango.")
+       except FileNotFoundError:
+           print("No se encontró el archivo de usuarios.")
+
+   baja_usuario(0)
+   #+end_src
+
+   Este código elimina el primer registro (índice 0) del archivo JSON de usuarios, asegurándose de verificar si el archivo existe y si el índice es válido.
+
+**** Modificaciones (Actualizar un registro existente)
+   La operación de *modificación* permite actualizar los datos de un registro existente en el sistema. Esto es necesario cuando la información cambia o cuando se necesita corregir datos incorrectos.
+
+   **Proceso**:
+   1. Se identifica el registro que debe modificarse.
+   2. Se valida la nueva información a ser actualizada.
+   3. Se actualiza el registro con la nueva información.
+
+   **Ejemplo en Python**:
+   A continuación, se muestra cómo modificar un registro específico en la base de datos.
+
+   #+begin_src python :tangle src/gestion_registros.py :results output
+   import json
+
+   # Función para modificar un registro en base a su índice
+   def modificar_usuario(indice, nuevo_nombre, nueva_edad):
+       try:
+           with open("usuarios.json", "r+") as file:
+               datos = json.load(file)
+               if 0 <= indice < len(datos):
+                   datos[indice]["nombre"] = nuevo_nombre
+                   datos[indice]["edad"] = nueva_edad
+                   file.seek(0)
+                   json.dump(datos, file, indent=4)
+                   file.truncate()
+                   print(f"Usuario en el índice {indice} modificado exitosamente.")
+               else:
+                   print("Índice fuera de rango.")
+       except FileNotFoundError:
+           print("No se encontró el archivo de usuarios.")
+
+   modificar_usuario(0, "Ana", 30)
+   #+end_src
+
+   Este ejemplo actualiza el nombre y la edad del primer usuario (índice 0) en el archivo JSON.
+
+**** Consultas (Visualizar o Buscar registros)
+   La *consulta* permite visualizar o buscar información almacenada sin modificar los datos. Es fundamental para extraer datos útiles de la base de datos o lista de registros.
+
+   **Proceso**:
+   1. Se especifica un criterio de búsqueda o visualización.
+   2. El sistema busca y devuelve los registros que coinciden con el criterio.
+
+   **Ejemplo en Python**:
+   A continuación, se muestran  todos los registros de usuarios almacenados en el archivo JSON.
+
+   #+begin_src python :tangle src/gestion_registros.py :results output
+   import json
+
+   # Función para consultar y mostrar todos los registros
+   def consultar_usuarios():
+       try:
+           with open("usuarios.json", "r") as file:
+               datos = json.load(file)
+               if datos:
+                   for i, usuario in enumerate(datos):
+                       print(f"Usuario {i}: {usuario['nombre']}, Edad: {usuario['edad']}")
+               else:
+                   print("No hay usuarios registrados.")
+       except FileNotFoundError:
+           print("No se encontró el archivo de usuarios.")
+
+   consultar_usuarios()
+   #+end_src
+
+   Este código lee y muestra todos los usuarios almacenados en el archivo JSON.
+
+*** Conclusión
+  Las operaciones de *altas*, *bajas*, *modificaciones* y *consultas*
+  forman la base de la gestión de datos en cualquier sistema que
+  necesite almacenar, manipular y recuperar información. Implementar
+  estas operaciones de manera correcta garantiza que los datos sean
+  precisos y estén disponibles para el análisis y la toma de
+  decisiones.
+
+
+
+
+** Ejemplo persistente
+
+#+begin_src python :results output :tangle code/archivos.py
+import json
+import os
+
+class Articulacion:
+    def __init__(self, angulo_actual, angulo_objetivo, velocidad, limite_min, limite_max):
+        self.angulo_actual = angulo_actual
+        self.angulo_objetivo = angulo_objetivo
+        self.velocidad = velocidad
+        self.limite_min = limite_min
+        self.limite_max = limite_max
+
+    def actualizar_posicion(self):
+        if self.angulo_actual < self.angulo_objetivo:
+            self.angulo_actual += self.velocidad
+            if self.angulo_actual > self.angulo_objetivo:
+                self.angulo_actual = self.angulo_objetivo
+        elif self.angulo_actual > self.angulo_objetivo:
+            self.angulo_actual -= self.velocidad
+            if self.angulo_actual < self.angulo_objetivo:
+                self.angulo_actual = self.angulo_objetivo
+
+class BrazoRobotico:
+    def __init__(self):
+        self.hombro = Articulacion(0, 0, 1, -90, 90)
+        self.codo = Articulacion(0, 0, 1, 0, 135)
+        self.muneca = Articulacion(0, 0, 1, -90, 90)
+        self.pinza = Articulacion(0, 0, 1, 0, 180)
+
+    def mover_a_posicion(self, posiciones_objetivo):
+        # Actualiza los ángulos objetivo para cada articulación
+        self.hombro.angulo_objetivo = posiciones_objetivo[0]
+        self.codo.angulo_objetivo = posiciones_objetivo[1]
+        self.muneca.angulo_objetivo = posiciones_objetivo[2]
+        self.pinza.angulo_objetivo = posiciones_objetivo[3]
+
+        # Actualiza cada articulación
+        self.hombro.actualizar_posicion()
+        self.codo.actualizar_posicion()
+        self.muneca.actualizar_posicion()
+        self.pinza.actualizar_posicion()
+
+    def obtener_posiciones(self):
+        # Retorna las posiciones actuales de las articulaciones
+        return {
+            "hombro": self.hombro.angulo_actual,
+            "codo": self.codo.angulo_actual,
+            "muneca": self.muneca.angulo_actual,
+            "pinza": self.pinza.angulo_actual
+        }
+
+class ManejoArchivos:
+    def __init__(self, archivo):
+        self.archivo = archivo
+        # Crear archivo si no existe
+        if not os.path.exists(self.archivo):
+            with open(self.archivo, 'w') as f:
+                json.dump([], f)
+
+    def alta(self, datos):
+        # Cargar los datos existentes
+        with open(self.archivo, 'r') as f:
+            registros = json.load(f)
+        # Añadir nuevos datos
+        registros.append(datos)
+        # Guardar los cambios
+        with open(self.archivo, 'w') as f:
+            json.dump(registros, f, indent=4)
+
+    def baja(self, indice):
+        # Cargar los datos existentes
+        with open(self.archivo, 'r') as f:
+            registros = json.load(f)
+        # Eliminar por índice
+        if 0 <= indice < len(registros):
+            registros.pop(indice)
+        # Guardar los cambios
+        with open(self.archivo, 'w') as f:
+            json.dump(registros, f, indent=4)
+
+    def modificar(self, indice, nuevos_datos):
+        # Cargar los datos existentes
+        with open(self.archivo, 'r') as f:
+            registros = json.load(f)
+        # Modificar el registro por índice
+        if 0 <= indice < len(registros):
+            registros[indice] = nuevos_datos
+        # Guardar los cambios
+        with open(self.archivo, 'w') as f:
+            json.dump(registros, f, indent=4)
+
+    def consultar(self):
+        # Cargar los datos existentes
+        with open(self.archivo, 'r') as f:
+            registros = json.load(f)
+        return registros
+
+def mostrar_menu():
+    print("\nMenú del Brazo Robótico:")
+    print("1. Alta (Guardar nueva posición)")
+    print("2. Baja (Eliminar una posición por índice)")
+    print("3. Modificación (Modificar una posición por índice)")
+    print("4. Consultas (Mostrar todas las posiciones guardadas)")
+    print("5. Salir")
+    return input("Seleccione una opción: ")
+
+def main():
+    brazo = BrazoRobotico()
+    archivo = ManejoArchivos("articulaciones.json")
+
+    while True:
+        opcion = mostrar_menu()
+
+        if opcion == "1":  # Alta
+            # Captura nuevas posiciones de las articulaciones
+            try:
+                pos_hombro = float(input("Ángulo del hombro: "))
+                pos_codo = float(input("Ángulo del codo: "))
+                pos_muneca = float(input("Ángulo de la muñeca: "))
+                pos_pinza = float(input("Ángulo de la pinza: "))
+                brazo.mover_a_posicion([pos_hombro, pos_codo, pos_muneca, pos_pinza])
+                archivo.alta(brazo.obtener_posiciones())
+                print("Posición guardada exitosamente.")
+            except ValueError:
+                print("Error: Por favor ingrese valores numéricos válidos.")
+
+        elif opcion == "2":  # Baja
+            try:
+                indice = int(input("Ingrese el índice de la posición que desea eliminar: "))
+                archivo.baja(indice)
+                print("Posición eliminada exitosamente.")
+            except ValueError:
+                print("Error: Ingrese un índice válido.")
+            except IndexError:
+                print("Error: Índice fuera de rango.")
+
+        elif opcion == "3":  # Modificación
+            try:
+                indice = int(input("Ingrese el índice de la posición que desea modificar: "))
+                pos_hombro = float(input("Nuevo ángulo del hombro: "))
+                pos_codo = float(input("Nuevo ángulo del codo: "))
+                pos_muneca = float(input("Nuevo ángulo de la muñeca: "))
+                pos_pinza = float(input("Nuevo ángulo de la pinza: "))
+                brazo.mover_a_posicion([pos_hombro, pos_codo, pos_muneca, pos_pinza])
+                archivo.modificar(indice, brazo.obtener_posiciones())
+                print("Posición modificada exitosamente.")
+            except ValueError:
+                print("Error: Ingrese valores numéricos válidos.")
+            except IndexError:
+                print("Error: Índice fuera de rango.")
+
+        elif opcion == "4":  # Consultas
+            posiciones = archivo.consultar()
+            if posiciones:
+                for i, pos in enumerate(posiciones):
+                    print(f"Posición {i}: Hombro={pos['hombro']}, Codo={pos['codo']}, Muñeca={pos['muneca']}, Pinza={pos['pinza']}")
+            else:
+                print("No hay posiciones guardadas.")
+
+        elif opcion == "5":  # Salir
+            print("Saliendo del programa.")
+            break
+
+        else:
+            print("Opción no válida. Por favor seleccione una opción del menú.")
+
+if __name__ == "__main__":
+    main()
+
+#+end_src
+
+#+RESULTS:
+
+#+begin_src python :results output :tangle code/archivosd.py
+import cv2
+import numpy as np
+import json
+import os
+
+# Funciones para manejar el registro de objetos detectados
+def alta_objeto(color, tamano, area):
+    nuevo_objeto = {"color": color, "tamano": tamano, "area": area}
+    
+    # Si el archivo existe, leer los datos existentes, sino crear uno nuevo
+    try:
+        if os.path.exists("detected_objects.json"):
+            with open("detected_objects.json", "r") as file:
+                datos = json.load(file)
+        else:
+            datos = []
+
+        # Agregar el nuevo objeto detectado
+        datos.append(nuevo_objeto)
+
+        # Guardar los datos actualizados
+        with open("detected_objects.json", "w") as file:
+            json.dump(datos, file, indent=4)
+        print("Nuevo objeto registrado.")
+    except Exception as e:
+        print(f"Error al registrar el objeto: {e}")
+
+def consultar_objetos():
+    try:
+        with open("detected_objects.json", "r") as file:
+            datos = json.load(file)
+            if datos:
+                for i, objeto in enumerate(datos):
+                    print(f"Objeto {i}: Color={objeto['color']}, Tamaño={objeto['tamano']}, Área={objeto['area']}")
+            else:
+                print("No hay objetos registrados.")
+    except FileNotFoundError:
+        print("No se encontró el archivo de objetos detectados.")
+    except json.JSONDecodeError:
+        print("Error al leer el archivo JSON.")
+
+# Iniciar la captura de video desde la cámara
+cap = cv2.VideoCapture(0)
+
+# Definir el rango de color que quieres rastrear en el espacio de color HSV (en este caso, azul)
+lower_blue = np.array([100, 150, 0])
+upper_blue = np.array([140, 255, 255])
+
+img2 = None
+i = 0
+
+while True:
+    # Capturar frame por frame
+    ret, frame = cap.read()
+    if not ret:
+        break
+    
+    # Convertir el frame de BGR a HSV
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+    
+    # Crear una máscara que detecte solo el color azul
+    mask = cv2.inRange(hsv, lower_blue, upper_blue)
+    
+    # Filtrar la máscara con operaciones morfológicas
+    mask = cv2.erode(mask, None, iterations=2)
+    mask = cv2.dilate(mask, None, iterations=2)
+    
+    # Encontrar contornos en la máscara
+    contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    
+    # Si se encuentra al menos un contorno, seguir el objeto
+    if contours:
+        # Tomar el contorno más grande
+        largest_contour = max(contours, key=cv2.contourArea)
+        
+        # Encontrar el centro del contorno usando un círculo mínimo que lo rodee
+        ((x, y), radius) = cv2.minEnclosingCircle(largest_contour)
+        
+        # Dibujar el círculo y el centro en el frame original si el radio es mayor que un umbral
+        if radius > 10:
+            i = i + 1
+            cv2.circle(frame, (int(x), int(y)), int(radius), (0, 255, 255), 2)
+            cv2.circle(frame, (int(x), int(y)), 5, (0, 255, 255), -1)
+            cv2.rectangle(frame, (int(x-radius), int(y-radius)), (int(x+radius), int(y+radius)), (0, 0, 255), 3)
+            img2 = frame[int(y-radius):int(y+radius), int(x-radius):int(x+radius)]
+            cv2.imshow('img2', img2)
+            
+            # Calcular el área del objeto detectado
+            area = cv2.contourArea(largest_contour)
+            
+            # Registrar el objeto detectado (alta)
+            alta_objeto("azul", radius, area)
+    
+    # Mostrar el frame
+    cv2.imshow('Frame', frame)
+    
+    # Salir si se presiona la tecla 'q'
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+# Consultar los objetos detectados
+#consultar_objetos()
+
+# Liberar la captura y cerrar todas las ventanas
+cap.release()
+cv2.destroyAllWindows()
+
+
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+#+end_example
+
+
+
+** Flet
+
+#+begin_src python :results output
+import flet as ft
+
+# Función principal que define la interfaz de la app
+def main(page: ft.Page):
+    # Título de la ventana
+    page.title = "Ejemplo básico de Flet"
+    
+    # Campo de texto donde el usuario puede escribir
+    text_field = ft.TextField(label="Escribe algo aquí")
+    
+    # Label para mostrar el resultado
+    result = ft.Text(value="")
+    
+    # Función que se ejecuta al hacer clic en el botón
+    def button_clicked(e):
+        result.value = f"Has escrito: {text_field.value}"  # Actualizar el texto
+        page.update()  # Actualizar la página para mostrar los cambios
+    
+    # Botón que ejecuta la función cuando se hace clic
+    button = ft.ElevatedButton(text="Mostrar texto", on_click=button_clicked)
+    
+    # Añadir los elementos a la página
+    page.add(text_field, button, result)
+
+# Ejecutar la app
+ft.app(target=main)
+
+
+#+end_src
+
+#+RESULTS:
+
+
