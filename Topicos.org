@@ -3178,6 +3178,44 @@ Nuevo objeto registrado.
 Nuevo objeto registrado.
 Nuevo objeto registrado.
 Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
+Nuevo objeto registrado.
 #+end_example
 
 
@@ -3216,5 +3254,366 @@ ft.app(target=main)
 #+end_src
 
 #+RESULTS:
+
+
+
+
+
+
+
+
+** ¿Qué es una Base de Datos?
+   Una **base de datos** es un conjunto estructurado de datos
+   almacenados electrónicamente que permite organizar, gestionar y
+   acceder a la información de forma eficiente. Las bases de datos se
+   utilizan en una amplia variedad de aplicaciones, desde el
+   almacenamiento de datos de usuarios en una aplicación hasta el
+   manejo de información financiera y científica.
+
+   Los datos en una base de datos pueden estar organizados en:
+   - **Tablas** (como en bases de datos relacionales)
+   - **Documentos** (como en bases de datos NoSQL)
+   - **Objetos** (como en bases de datos orientadas a objetos)
+
+*** Manejadores de Bases de Datos (DBMS - Database Management System)
+   Un **DBMS (Database Management System)** o **Manejador de Bases de Datos** es un software que permite la creación, modificación y administración de bases de datos. Estos sistemas proporcionan interfaces y herramientas para interactuar con los datos y suelen incluir características avanzadas, como:
+   - Control de acceso y seguridad.
+   - Manejo de transacciones y consistencia.
+   - Recuperación de datos y administración de copias de seguridad.
+   
+   Algunos DBMS conocidos son:
+   - **MySQL**: Muy popular en aplicaciones web y disponible en versiones gratuitas y de pago.
+   - **PostgreSQL**: Una opción avanzada, con soporte para SQL estándar y características extensas.
+   - **SQLite**: Ideal para aplicaciones locales pequeñas, ya que es liviano y no requiere un servidor.
+   - **Oracle**: Base de datos potente y de uso común en grandes empresas, con licenciamiento comercial.
+   - **Microsoft SQL Server**: Base de datos popular en aplicaciones empresariales y Windows.
+
+*** Tipos de Bases de Datos
+   Las bases de datos se pueden clasificar en diferentes tipos según su estructura y modelo de datos:
+
+**** Bases de Datos Relacionales (SQL)
+    Las bases de datos relacionales organizan los datos en tablas con filas y columnas, usando un lenguaje de consulta estructurado, **SQL (Structured Query Language)**, para manipular los datos. Las bases de datos relacionales son ideales para aplicaciones que requieren integridad, consistencia y soporte para relaciones complejas entre tablas.
+
+    Ejemplos: MySQL, PostgreSQL, Oracle, Microsoft SQL Server.
+
+**** Bases de Datos NoSQL
+    Las bases de datos NoSQL son diseñadas para manejar grandes cantidades de datos no estructurados o semi-estructurados. Existen varios subtipos dentro de las bases de datos NoSQL:
+    - **Base de datos de documentos**: Almacenan datos en formato de documentos JSON o BSON. Ejemplo: MongoDB.
+    - **Base de datos de clave-valor**: Almacenan datos como pares clave-valor. Ejemplo: Redis, DynamoDB.
+    - **Base de datos de grafos**: Optimizadas para relaciones complejas entre datos, como redes sociales. Ejemplo: Neo4j.
+    - **Base de datos de columnas anchas**: Usadas para grandes volúmenes de datos y análisis, como en Big Data. Ejemplo: Cassandra.
+
+**** Bases de Datos Orientadas a Objetos
+    Las bases de datos orientadas a objetos almacenan datos en forma
+    de objetos, tal como en la programación orientada a objetos
+    (OOP). Son útiles cuando se necesita almacenar datos complejos y
+    estructurados, como en aplicaciones científicas o de ingeniería.
+    
+    Ejemplo: db4o (Database for Objects), ObjectDB.
+
+**** Bases de Datos Distribuidas
+    Una base de datos distribuida tiene su almacenamiento repartido en
+    múltiples ubicaciones físicas, a menudo para mejorar la
+    disponibilidad y la tolerancia a fallos. Estas bases de datos son
+    comunes en sistemas que necesitan escalar horizontalmente y
+    procesar grandes volúmenes de datos de manera paralela.
+
+    Ejemplos: Amazon DynamoDB, Google Bigtable.
+
+**** Bases de Datos en Memoria
+    Las bases de datos en memoria almacenan todos los datos
+    directamente en la RAM en lugar de en un disco, lo que permite un
+    acceso rápido pero con una pérdida de datos en caso de apagado sin
+    respaldo. Son útiles para sistemas que requieren tiempos de
+    respuesta extremadamente rápidos.
+
+    Ejemplos: Redis, Memcached.
+
+*** Ejemplos en Código: Creación de Tablas en Diferentes Manejadores
+   Aquí hay ejemplos básicos de creación de una tabla en algunos DBMS.
+
+   - **SQLite**:
+#+begin_src python
+import sqlite3
+
+conn = sqlite3.connect('mi_base_datos.db')
+cursor = conn.cursor()
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INTEGER PRIMARY KEY,
+    nombre TEXT,
+    email TEXT
+)
+""")
+conn.commit()
+cursor.close()
+conn.close()
+#+end_src
+
+   - **MySQL**:
+#+begin_src python
+import mysql.connector
+
+conn = mysql.connector.connect(
+    host="localhost",
+    user="tu_usuario",
+    password="tu_contraseña",
+    database="mi_base_datos"
+)
+cursor = conn.cursor()
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50),
+    email VARCHAR(50)
+)
+""")
+conn.commit()
+cursor.close()
+conn.close()
+#+end_src
+
+   - **MongoDB (NoSQL, Documentos)**:
+#+begin_src python
+from pymongo import MongoClient
+
+client = MongoClient("mongodb://localhost:27017/")
+db = client["mi_base_datos"]
+usuarios = db["usuarios"]
+
+usuario = {
+    "nombre": "Juan Pérez",
+    "email": "juan.perez@example.com"
+}
+usuarios.insert_one(usuario)
+#+end_src
+
+Las bases de datos y sus manejadores ofrecen múltiples maneras de
+almacenar y gestionar datos según las necesidades del proyecto. Las
+bases de datos relacionales son adecuadas para aplicaciones que
+requieren relaciones entre datos, mientras que las bases de datos
+NoSQL son preferibles para aplicaciones que manejan datos no
+estructurados y que necesitan escalabilidad horizontal.
+
+
+** Diferencias entre archivos y bases de datos en Python
+
+*** Manejo de Archivos vs Bases de Datos
+   La elección entre archivos y bases de datos depende de la
+   naturaleza de los datos y de los requisitos del proyecto. A
+   continuación se detallan algunas diferencias clave:
+
+*** Almacenamiento y Organización de Datos
+   - Archivos: 
+     - Almacenan datos en un formato estructurado (como CSV, JSON, XML) o no estructurado (como texto plano).
+     - Los datos suelen estar organizados en filas y columnas en archivos estructurados (ej., CSV).
+     - Ideal para conjuntos de datos simples y de tamaño pequeño a mediano.
+   - Bases de Datos:
+     - Almacenan datos en tablas, organizadas en filas y columnas con relaciones bien definidas.
+     - Facilitan la organización compleja de datos, con la capacidad de establecer relaciones entre tablas.
+     - Escalan bien para grandes volúmenes de datos y consultas complejas.
+
+*** Acceso y Consulta de Datos
+   - Archivos:
+     - Requieren leer el archivo completo o líneas específicas mediante código para encontrar datos.
+     - No tienen soporte directo para consultas complejas; necesitas recorrer el archivo manualmente.
+   - Bases de Datos:
+     - Permiten consultas avanzadas usando SQL (Structured Query Language), que simplifica búsquedas complejas.
+     - Soportan índices que aceleran la búsqueda de datos y permiten recuperar solo las filas necesarias.
+
+*** Rendimiento
+   - Archivos:
+     - Adecuados para operaciones de lectura/escritura sencillas en archivos pequeños o medianos.
+     - Pierden eficiencia en el acceso aleatorio a datos o cuando el archivo es demasiado grande.
+   - Bases de Datos:
+     - Ofrecen un alto rendimiento para grandes volúmenes de datos, especialmente cuando están bien indexadas.
+     - Manejan operaciones de escritura concurrente y acceso aleatorio de manera eficiente.
+
+*** Consistencia y Seguridad de los Datos
+   - Archivos:
+     - No garantizan consistencia en caso de acceso concurrente; la sobrescritura accidental es común sin un manejo adecuado.
+     - No ofrecen funciones integradas de seguridad ni protección contra corrupción de datos.
+   - Bases de Datos:
+     - Proveen consistencia mediante transacciones y bloqueos que protegen los datos en acceso concurrente.
+     - Ofrecen mecanismos de autenticación y autorización para la seguridad de los datos.
+
+*** Escalabilidad
+   - Archivos:
+     - Escalabilidad limitada; la manipulación de archivos grandes puede llevar a problemas de rendimiento y a la complejidad del código.
+   - Bases de Datos:
+     - Altamente escalables; se pueden optimizar para manejar grandes volúmenes de datos y conexiones simultáneas.
+
+*** Ejemplo en Código (diferencias en acceso a datos)
+   - Archivo (lectura de un archivo CSV):
+#+begin_src python
+import csv
+
+with open("datos.csv", mode="r") as archivo:
+    lector = csv.reader(archivo)
+    for fila in lector:
+        print(fila)
+#+end_src
+
+   - Base de Datos (consulta de datos en SQL):
+#+begin_src python
+import sqlite3
+
+conn = sqlite3.connect("mi_base_datos.db")
+cursor = conn.cursor()
+
+cursor.execute("SELECT * FROM clientes WHERE edad > 30")
+resultados = cursor.fetchall()
+for fila in resultados:
+    print(fila)
+
+cursor.close()
+conn.close()
+#+end_src
+
+- **Archivos**: ideales para datos simples, estructuras de bajo volumen, o si no se requiere de consultas avanzadas.
+- **Bases de Datos**: son preferibles para grandes volúmenes de datos, organización compleja y necesidades de acceso rápido y seguro.
+
+** Base de Datos en Python
+
+*** Requerimientos
+
+Para trabajar con bases de datos en Python, necesitas instalar las
+bibliotecas adecuadas según el tipo de base de datos que estés
+utilizando. Python incluye *sqlite3* en su biblioteca estándar, pero
+también puedes conectarte a bases de datos como MySQL o PostgreSQL
+instalando bibliotecas adicionales.
+
+Ejemplo de instalación para MySQL y PostgreSQL:
+#+begin_src bash
+pip install mysql-connector-python psycopg2
+#+end_src
+
+*** Conexión a la Base de Datos
+Para conectarte a una base de datos, debes crear una conexión y un cursor para ejecutar consultas SQL.
+
+**** Conexión a SQLite
+SQLite es ideal para bases de datos locales pequeñas y no necesita instalación adicional.
+#+begin_src python
+import sqlite3
+
+# Crear una conexión
+conn = sqlite3.connect('mi_base_datos.db')
+# Crear un cursor
+cursor = conn.cursor()
+#+end_src
+
+**** Conexión a MySQL
+Para conectarte a MySQL, asegúrate de tener instalada la biblioteca `mysql-connector-python`.
+#+begin_src python
+import mysql.connector
+
+conn = mysql.connector.connect(
+    host="localhost",
+    user="tu_usuario",
+    password="tu_contraseña",
+    database="nombre_base_datos"
+)
+cursor = conn.cursor()
+#+end_src
+
+**** Conexión a PostgreSQL
+Para PostgreSQL, necesitas la biblioteca `psycopg2`.
+#+begin_src python
+import psycopg2
+
+conn = psycopg2.connect(
+    host="localhost",
+    user="tu_usuario",
+    password="tu_contraseña",
+    database="nombre_base_datos"
+)
+cursor = conn.cursor()
+#+end_src
+
+*** Crear una Tabla
+Para almacenar datos, necesitas crear una tabla. En este ejemplo, se crea una tabla llamada "clientes" con campos como `id`, `nombre`, `edad` y `email`.
+
+#+begin_src python
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS clientes (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(50),
+    edad INTEGER,
+    email VARCHAR(50)
+)
+""")
+conn.commit()
+#+end_src
+
+*** Insertar Datos en la Tabla
+Para agregar registros a la tabla, usa `INSERT INTO`. Aquí insertamos un registro en la tabla "clientes".
+
+#+begin_src python
+cursor.execute("""
+INSERT INTO clientes (nombre, edad, email)
+VALUES (%s, %s, %s)
+""", ("Juan Pérez", 28, "juan.perez@example.com"))
+conn.commit()
+#+end_src
+
+*** Consultar Datos
+Para obtener datos almacenados, utiliza `SELECT`. A continuación se presentan dos ejemplos para obtener todos los registros y para aplicar una condición de búsqueda.
+
+**** Obtener todos los registros
+#+begin_src python
+cursor.execute("SELECT * FROM clientes")
+resultados = cursor.fetchall()
+for fila in resultados:
+    print(fila)
+#+end_src
+
+**** Obtener registros con una condición
+#+begin_src python
+cursor.execute("SELECT * FROM clientes WHERE edad > %s", (25,))
+resultados = cursor.fetchall()
+for fila in resultados:
+    print(fila)
+#+end_src
+
+*** Actualizar Datos
+Para modificar datos existentes, usa `UPDATE`. Este ejemplo muestra cómo actualizar el `email` de un cliente específico.
+
+#+begin_src python
+cursor.execute("""
+UPDATE clientes SET email = %s WHERE nombre = %s
+""", ("nuevo.email@example.com", "Juan Pérez"))
+conn.commit()
+#+end_src
+
+*** Eliminar Datos
+Para borrar registros, utiliza `DELETE`. Aquí se muestra cómo eliminar un cliente específico.
+
+#+begin_src python
+cursor.execute("DELETE FROM clientes WHERE nombre = %s", ("Juan Pérez",))
+conn.commit()
+#+end_src
+
+*** Cerrar la Conexión
+Es importante cerrar la conexión a la base de datos después de realizar las operaciones.
+
+#+begin_src python
+cursor.close()
+conn.close()
+#+end_src
+
+*** Ejercicio Práctico
+Realiza las siguientes operaciones como práctica para consolidar los conceptos:
+
+1. Conéctate a una base de datos y crea una tabla llamada "productos" con campos `id`, `nombre`, `precio`, y `cantidad`.
+2. Inserta algunos productos en la tabla.
+3. Consulta todos los productos con un precio mayor a un valor específico.
+4. Actualiza la cantidad de uno de los productos.
+5. Elimina un producto de la tabla.
+6. Cierra la conexión.
+
+*** Conclusión
+Este manual te ofrece una guía básica para el manejo de bases de datos en Python. Puedes aplicar estas técnicas a diferentes sistemas de bases de datos con pequeñas adaptaciones en las conexiones y las consultas. Consulta la documentación específica de cada biblioteca para funcionalidades avanzadas, como transacciones y manejo de errores.
+
+
 
 
