@@ -3221,8 +3221,105 @@ Nuevo objeto registrado.
 
 
 ** Flet
+Flet es una biblioteca de Python para crear aplicaciones de interfaz
+de usuario (UI) en el navegador de forma fácil y rápida. Proporciona
+una API simple que permite diseñar y construir interfaces web modernas
+sin necesidad de conocimientos avanzados de HTML, CSS o JavaScript. La
+interfaz de Flet se puede ejecutar localmente o desplegar en línea, y
+funciona en navegadores, ventanas de aplicaciones de escritorio, o
+dispositivos móviles.
 
-#+begin_src python :results output
+Flet es especialmente útil para desarrolladores que desean una
+experiencia de programación similar a Flutter, pero en Python.
+
+*** Características de Flet
+- **Componentes de UI**: Flet incluye una variedad de componentes como botones, cuadros de texto, listas, imágenes, íconos y más.
+- **Interactividad**: Ofrece soporte para manejar eventos, como clics en botones y cambios de entrada de texto.
+- **Adaptabilidad**: Las aplicaciones de Flet se adaptan a dispositivos de escritorio, móviles y tabletas, permitiendo el desarrollo de interfaces responsive.
+- **Despliegue Web**: Las aplicaciones se pueden ejecutar en modo web, abriéndose directamente en un navegador.
+- **Integración con Python**: Permite escribir aplicaciones completas en Python, sin necesidad de usar HTML, CSS o JavaScript directamente.
+
+*** Instalación de Flet
+Para instalar Flet, ejecuta el siguiente comando en la terminal:
+
+ #+begin_src shell
+ pip install flet
+ #+end_src
+
+Este comando descargará e instalará Flet y sus dependencias.
+
+*** Ejemplos Básicos
+
+**** Ejemplo 1: "Hola, Mundo" en Flet
+Este es un ejemplo básico que muestra cómo crear una aplicación simple que muestra "Hola, Mundo".
+
+#+begin_src python
+import flet as ft
+
+def main(page: ft.Page):
+    page.add(ft.Text("Hola, Mundo"))
+
+ft.app(target=main)
+#+end_src
+
+#+RESULTS:
+: None
+
+En este ejemplo:
+- `main` es la función principal que define el contenido de la página.
+- `page.add(ft.Text("Hola, Mundo"))` agrega un texto con el mensaje "Hola, Mundo" a la página.
+
+** Ejemplo 2: Contador Interactivo
+ Un ejemplo interactivo que implementa un contador con botones para
+ incrementar y decrementar el valor.
+
+ #+begin_src python
+ import flet as ft
+
+ def main(page: ft.Page):
+     count = 0
+     display = ft.Text(value=str(count), size=32)
+
+     def increment(e):
+         nonlocal count
+         count += 1
+         display.value = str(count)
+         page.update()
+
+     def decrement(e):
+         nonlocal count
+         count -= 1
+         display.value = str(count)
+         page.update()
+
+     page.add(
+         display,
+         ft.Row([
+             ft.ElevatedButton("Incrementar", on_click=increment),
+             ft.ElevatedButton("Decrementar", on_click=decrement),
+         ])
+     )
+
+ ft.app(target=main)
+ #+end_src
+
+ #+RESULTS:
+ : None
+
+ En este ejemplo:
+ - `increment` y `decrement` son funciones que ajustan el valor del contador.
+ - Los botones llaman a estas funciones cuando se hace clic, y actualizan la pantalla.
+
+***  Ejecución de Aplicaciones en Flet
+  Para ejecutar una aplicación de Flet en modo web, usa la línea
+  `ft.app(target=main, view=ft.WEB_BROWSER)`. Esto abre la aplicación
+  en un navegador web, ejecutándola en un servidor local en
+  `http://localhost:8550`. Puedes compartir la URL o desplegar la
+  aplicación en un servidor para que esté disponible en línea.
+
+
+
+#+begin_src python :results output :tangle code/flet1.py
 import flet as ft
 
 # Función principal que define la interfaz de la app
@@ -3249,16 +3346,556 @@ def main(page: ft.Page):
 
 # Ejecutar la app
 ft.app(target=main)
-
-
 #+end_src
 
+
+
+
+** 3. Conversor de Temperatura
+   Este conversor permite la conversión de grados Celsius a Fahrenheit y viceversa.
+
+   #+begin_src python
+   import flet as ft
+
+   def main(page: ft.Page):
+       input_temp = ft.TextField(label="Temperatura")
+       result_text = ft.Text(size=24)
+
+       def convert_to_fahrenheit(e):
+           try:
+               celsius = float(input_temp.value)
+               fahrenheit = celsius * 9/5 + 32
+               result_text.value = f"{celsius}°C = {fahrenheit:.2f}°F"
+           except ValueError:
+               result_text.value = "Ingresa un valor numérico válido."
+           page.update()
+
+       def convert_to_celsius(e):
+           try:
+               fahrenheit = float(input_temp.value)
+               celsius = (fahrenheit - 32) * 5/9
+               result_text.value = f"{fahrenheit}°F = {celsius:.2f}°C"
+           except ValueError:
+               result_text.value = "Ingresa un valor numérico válido."
+           page.update()
+
+       page.add(
+           input_temp,
+           ft.Row([
+               ft.ElevatedButton("Convertir a °F", on_click=convert_to_fahrenheit),
+               ft.ElevatedButton("Convertir a °C", on_click=convert_to_celsius),
+           ]),
+           result_text
+       )
+
+   ft.app(target=main, view=ft.WEB_BROWSER)
+   #+end_src
+
+** 4. Lista de Tareas
+Una simple lista de tareas que permite agregar y eliminar tareas.
+
+#+begin_src python
+import flet as ft
+
+def main(page: ft.Page):
+    task_input = ft.TextField(label="Nueva Tarea")
+    tasks = ft.Column()
+
+    def add_task(e):
+        if task_input.value:
+            new_task = ft.Row([
+                ft.Text(task_input.value),
+                ft.IconButton(ft.icons.DELETE, on_click=lambda _: remove_task(new_task))
+            ])
+            tasks.controls.append(new_task)
+            task_input.value = ""
+            page.update()
+
+    def remove_task(task):
+        tasks.controls.remove(task)
+        page.update()
+
+    page.add(
+        task_input,
+        ft.ElevatedButton("Agregar Tarea", on_click=add_task),
+        tasks
+    )
+
+ft.app(target=main, view=ft.WEB_BROWSER)
+#+end_src
+
+
+
+** Calculadora 
+
+#+BEGIN_SRC python
+import flet as ft
+
+def main(page: ft.Page):
+    # Variables para almacenar los valores y la operación
+    current_input = ""
+    operator = ""
+    first_number = None
+    result_text = ft.Text(value="0", size=32)  # Pantalla de la calculadora
+
+    # Función para actualizar la pantalla de la calculadora
+    def update_display(value):
+        result_text.value = value
+        page.update()
+
+    # Función que se llama cuando se presiona un número o un punto decimal
+    def number_click(e):
+        nonlocal current_input
+        current_input += e.control.data
+        update_display(current_input)
+
+    # Función que se llama cuando se selecciona una operación (+, -, *, /)
+    def operator_click(e):
+        nonlocal current_input, operator, first_number
+        if current_input:
+            first_number = float(current_input)
+            operator = e.control.data
+            current_input = ""
+            update_display(operator)
+
+    # Función que se llama cuando se presiona "=" para obtener el resultado
+    def calculate(e):
+        nonlocal current_input, operator, first_number
+        if first_number is not None and current_input:
+            second_number = float(current_input)
+            result = None
+            if operator == "+":
+                result = first_number + second_number
+            elif operator == "-":
+                result = first_number - second_number
+            elif operator == "*":
+                result = first_number * second_number
+            elif operator == "/":
+                if second_number != 0:
+                    result = first_number / second_number
+                else:
+                    result = "Error"
+            update_display(str(result))
+            # Resetear los valores
+            first_number = result if isinstance(result, (int, float)) else None
+            current_input = ""
+
+    # Función para el botón de "Clear" que resetea la calculadora
+    def clear(e):
+        nonlocal current_input, operator, first_number
+        current_input = ""
+        operator = ""
+        first_number = None
+        update_display("0")
+
+    # Layout de la calculadora
+    page.add(result_text)  # Pantalla de la calculadora
+
+    # Filas de botones
+    botones = [
+        ["7", "8", "9", "/"],
+        ["4", "5", "6", "*"],
+        ["1", "2", "3", "-"],
+        ["0", ".", "=", "+"],
+    ]
+
+    for fila in botones:
+        row = ft.Row()
+        for boton in fila:
+            if boton.isdigit() or boton == ".":
+                button = ft.ElevatedButton(text=boton, data=boton, on_click=number_click, width=80, height=80)
+            elif boton in ["+", "-", "*", "/"]:
+                button = ft.ElevatedButton(text=boton, data=boton, on_click=operator_click, width=80, height=80)
+            elif boton == "=":
+                button = ft.ElevatedButton(text=boton, on_click=calculate, width=80, height=80)
+            row.controls.append(button)
+        page.add(row)
+
+    # Botón de limpiar
+    page.add(ft.ElevatedButton(text="Clear", on_click=clear, width=320, height=80))
+
+ft.app(target=main)
+
+#+END_SRC
+
 #+RESULTS:
+: None
 
 
+#+BEGIN_SRC python :results output :tangle code/fletaltas.py
+import json
+import os
+import flet as ft
+
+class Articulacion:
+    def __init__(self, angulo_actual, angulo_objetivo, velocidad, limite_min, limite_max):
+        self.angulo_actual = angulo_actual
+        self.angulo_objetivo = angulo_objetivo
+        self.velocidad = velocidad
+        self.limite_min = limite_min
+        self.limite_max = limite_max
+
+    def set_angulo(self, angulo):
+        if self.limite_min <= angulo <= self.limite_max:
+            self.angulo_actual = angulo
+            self.angulo_objetivo = angulo
+        else:
+            print(f"El ángulo {angulo} está fuera de los límites para esta articulación.")
+
+class BrazoRobotico:
+    def __init__(self):
+        self.hombro = Articulacion(0, 0, 1, -90, 90)
+        self.codo = Articulacion(0, 0, 1, 0, 135)
+        self.muneca = Articulacion(0, 0, 1, -90, 90)
+        self.pinza = Articulacion(0, 0, 1, 0, 180)
+
+    def mover_a_posicion(self, posiciones_objetivo):
+        self.hombro.set_angulo(posiciones_objetivo[0])
+        self.codo.set_angulo(posiciones_objetivo[1])
+        self.muneca.set_angulo(posiciones_objetivo[2])
+        self.pinza.set_angulo(posiciones_objetivo[3])
+
+    def obtener_posiciones(self):
+        return {
+            "hombro": self.hombro.angulo_actual,
+            "codo": self.codo.angulo_actual,
+            "muneca": self.muneca.angulo_actual,
+            "pinza": self.pinza.angulo_actual
+        }
+
+class ManejoArchivos:
+    def __init__(self, archivo):
+        self.archivo = archivo
+        if not os.path.exists(self.archivo):
+            with open(self.archivo, 'w') as f:
+                json.dump([], f)
+
+    def alta(self, datos):
+        with open(self.archivo, 'r') as f:
+            registros = json.load(f)
+        registros.append(datos)
+        with open(self.archivo, 'w') as f:
+            json.dump(registros, f, indent=4)
+
+    def baja(self, indice):
+        with open(self.archivo, 'r') as f:
+            registros = json.load(f)
+        if 0 <= indice < len(registros):
+            registros.pop(indice)
+        with open(self.archivo, 'w') as f:
+            json.dump(registros, f, indent=4)
+
+    def modificar(self, indice, nuevos_datos):
+        with open(self.archivo, 'r') as f:
+            registros = json.load(f)
+        if 0 <= indice < len(registros):
+            registros[indice] = nuevos_datos
+        with open(self.archivo, 'w') as f:
+            json.dump(registros, f, indent=4)
+
+    def consultar(self):
+        with open(self.archivo, 'r') as f:
+            return json.load(f)
+
+def main(page: ft.Page):
+    brazo = BrazoRobotico()
+    archivo = ManejoArchivos("articulaciones.json")
+    
+    # Función para mostrar posiciones
+    def mostrar_posiciones():
+        posiciones = archivo.consultar()
+        lista_posiciones.controls.clear()
+        if posiciones:
+            for i, pos in enumerate(posiciones):
+                lista_posiciones.controls.append(ft.Text(f"Posición {i}: Hombro={pos['hombro']}, Codo={pos['codo']}, Muñeca={pos['muneca']}, Pinza={pos['pinza']}"))
+        else:
+            lista_posiciones.controls.append(ft.Text("No hay posiciones guardadas."))
+        limpiar_campos()
+        page.update()
+
+    # Función para limpiar campos de texto
+    def limpiar_campos():
+        hombro.value = ""
+        codo.value = ""
+        muneca.value = ""
+        pinza.value = ""
+        indice_baja.value = ""
+        indice_modificar.value = ""
+
+    # Funciones de alta, baja y modificación
+    def alta_click(e):
+        try:
+            pos_hombro = float(hombro.value)
+            pos_codo = float(codo.value)
+            pos_muneca = float(muneca.value)
+            pos_pinza = float(pinza.value)
+            brazo.mover_a_posicion([pos_hombro, pos_codo, pos_muneca, pos_pinza])
+            archivo.alta(brazo.obtener_posiciones())
+            resultado.value = "Posición guardada exitosamente."
+            mostrar_posiciones()
+        except ValueError:
+            resultado.value = "Error: Ingrese valores numéricos válidos."
+        page.update()
+
+    def baja_click(e):
+        try:
+            indice = int(indice_baja.value)
+            archivo.baja(indice)
+            resultado.value = "Posición eliminada exitosamente."
+            mostrar_posiciones()
+        except ValueError:
+            resultado.value = "Error: Ingrese un índice válido."
+        page.update()
+
+    def modificar_click(e):
+        try:
+            indice = int(indice_modificar.value)
+            pos_hombro = float(hombro.value)
+            pos_codo = float(codo.value)
+            pos_muneca = float(muneca.value)
+            pos_pinza = float(pinza.value)
+            brazo.mover_a_posicion([pos_hombro, pos_codo, pos_muneca, pos_pinza])
+            archivo.modificar(indice, brazo.obtener_posiciones())
+            resultado.value = "Posición modificada exitosamente."
+            mostrar_posiciones()
+        except ValueError:
+            resultado.value = "Error: Ingrese valores numéricos válidos."
+        page.update()
+
+    # Elementos de la interfaz
+    hombro = ft.TextField(label="Ángulo del hombro")
+    codo = ft.TextField(label="Ángulo del codo")
+    muneca = ft.TextField(label="Ángulo de la muñeca")
+    pinza = ft.TextField(label="Ángulo de la pinza")
+    indice_baja = ft.TextField(label="Índice para eliminar")
+    indice_modificar = ft.TextField(label="Índice para modificar")
+    resultado = ft.Text()
+    
+    # Contenedor con scroll para las posiciones guardadas
+    lista_posiciones = ft.Column(scroll="adaptive")
+
+    # Menú de opciones
+    def cambiar_vista(menu_item):
+        container_opciones.controls.clear()
+        resultado.value = ""
+        if menu_item == "Alta":
+            container_opciones.controls.extend([hombro, codo, muneca, pinza, ft.ElevatedButton("Guardar Posición", on_click=alta_click)])
+        elif menu_item == "Baja":
+            container_opciones.controls.extend([indice_baja, ft.ElevatedButton("Eliminar Posición", on_click=baja_click)])
+        elif menu_item == "Modificación":
+            container_opciones.controls.extend([indice_modificar, hombro, codo, muneca, pinza, ft.ElevatedButton("Modificar Posición", on_click=modificar_click)])
+        elif menu_item == "Consultas":
+            mostrar_posiciones()
+        limpiar_campos()
+        page.update()
+
+    # Contenedor para los menús y opciones
+    container_opciones = ft.Column()
+    
+    # Interfaz principal
+    page.add(
+        ft.Text("Control de Brazo Robótico", style="headlineMedium"),
+        ft.Row([ft.ElevatedButton(text="Alta", on_click=lambda e: cambiar_vista("Alta")),
+                ft.ElevatedButton(text="Baja", on_click=lambda e: cambiar_vista("Baja")),
+                ft.ElevatedButton(text="Modificación", on_click=lambda e: cambiar_vista("Modificación")),
+                ft.ElevatedButton(text="Consultas", on_click=lambda e: cambiar_vista("Consultas"))]),
+        container_opciones,
+        resultado,
+        ft.Text("Posiciones Guardadas:", style="headlineSmall"),
+        lista_posiciones
+    )
+
+    # Inicializa con la lista de posiciones guardadas
+    mostrar_posiciones()
+
+ft.app(target=main)
+
+#+END_SRC
 
 
+#+RESULTS:
+: package:media_kit_libs_linux registered.
 
+
+** Base de datos y flet
+
+Ejemplo de una aplicación CRUD en Flet que usa
+PostgreSQL. Este ejemplo permite realizar altas,
+bajas, modificaciones y consultas en una base de datos PostgreSQL. Se
+asume que tienes PostgreSQL instalado y una base de datos configurada.
+
+*** Configuración de la Base de Datos PostgreSQL
+
+Crea una base de datos PostgreSQL (si no la tienes).
+
+#+BEGIN_SRC shell
+psql -U postgres
+CREATE DATABASE ejemplo;
+#+END_SRC
+
+Crea la tabla personas en la base de datos:
+
+#+BEGIN_SRC sql
+CREATE TABLE personas (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    edad INTEGER NOT NULL
+);
+#+END_SRC
+
+
+** Ejemplo de CRUD (Altas, Bajas, Modificaciones y Consultas) en Flet con PostgreSQL
+
+*** Requisitos
+   Para este ejemplo, asegúrate de tener PostgreSQL configurado y los
+   paquetes `psycopg2` y `flet` instalados.
+
+*** Código de la Aplicación
+
+   #+begin_src python
+   import flet as ft
+   import psycopg2
+
+   # Configuración de conexión a PostgreSQL
+   def conectar_db():
+       return psycopg2.connect(
+           dbname="ejemplo",
+           user="postgres",
+           password="tu_password",  # Cambia "tu_password" a la contraseña de tu usuario
+           host="localhost"
+       )
+
+   # Configuración inicial de la tabla
+   def crear_tabla():
+       conn = conectar_db()
+       cursor = conn.cursor()
+       cursor.execute("""
+           CREATE TABLE IF NOT EXISTS personas (
+               id SERIAL PRIMARY KEY,
+               nombre VARCHAR(100) NOT NULL,
+               edad INTEGER NOT NULL
+           )
+       """)
+       conn.commit()
+       conn.close()
+
+   crear_tabla()  # Crea la tabla al iniciar la aplicación
+
+   # Función principal de la aplicación en Flet
+   def main(page: ft.Page):
+       # Función para actualizar la lista de personas
+       def actualizar_lista():
+           conn = conectar_db()
+           cursor = conn.cursor()
+           cursor.execute("SELECT * FROM personas")
+           registros = cursor.fetchall()
+           lista_personas.controls.clear()
+           for registro in registros:
+               lista_personas.controls.append(
+                   ft.Text(f"ID: {registro[0]}, Nombre: {registro[1]}, Edad: {registro[2]}")
+               )
+           conn.close()
+           page.update()
+
+       # Función para agregar una persona
+       def agregar_persona(e):
+           nombre = nombre_input.value
+           try:
+               edad = int(edad_input.value)
+               conn = conectar_db()
+               cursor = conn.cursor()
+               cursor.execute("INSERT INTO personas (nombre, edad) VALUES (%s, %s)", (nombre, edad))
+               conn.commit()
+               conn.close()
+               actualizar_lista()
+               nombre_input.value = ""
+               edad_input.value = ""
+               resultado.value = "Persona agregada exitosamente."
+           except ValueError:
+               resultado.value = "Edad debe ser un número entero."
+           page.update()
+
+       # Función para eliminar una persona
+       def eliminar_persona(e):
+           try:
+               persona_id = int(id_input.value)
+               conn = conectar_db()
+               cursor = conn.cursor()
+               cursor.execute("DELETE FROM personas WHERE id = %s", (persona_id,))
+               conn.commit()
+               conn.close()
+               actualizar_lista()
+               id_input.value = ""
+               resultado.value = "Persona eliminada exitosamente."
+           except ValueError:
+               resultado.value = "ID debe ser un número entero."
+           page.update()
+
+       # Función para modificar una persona
+       def modificar_persona(e):
+           try:
+               persona_id = int(id_input.value)
+               nuevo_nombre = nombre_input.value
+               nueva_edad = int(edad_input.value)
+               conn = conectar_db()
+               cursor = conn.cursor()
+               cursor.execute("UPDATE personas SET nombre = %s, edad = %s WHERE id = %s", (nuevo_nombre, nueva_edad, persona_id))
+               conn.commit()
+               conn.close()
+               actualizar_lista()
+               id_input.value = ""
+               nombre_input.value = ""
+               edad_input.value = ""
+               resultado.value = "Persona modificada exitosamente."
+           except ValueError:
+               resultado.value = "ID y edad deben ser números enteros."
+           page.update()
+
+       # Elementos de la interfaz
+       id_input = ft.TextField(label="ID")
+       nombre_input = ft.TextField(label="Nombre")
+       edad_input = ft.TextField(label="Edad")
+       resultado = ft.Text()
+       lista_personas = ft.Column()
+
+       # Interfaz de usuario
+       page.add(
+           ft.Text("Administración de Personas", style="headlineMedium"),
+           id_input,
+           nombre_input,
+           edad_input,
+           ft.Row([
+               ft.ElevatedButton("Agregar", on_click=agregar_persona),
+               ft.ElevatedButton("Eliminar", on_click=eliminar_persona),
+               ft.ElevatedButton("Modificar", on_click=modificar_persona),
+               ft.ElevatedButton("Consultar", on_click=actualizar_lista),
+           ]),
+           resultado,
+           ft.Text("Lista de Personas:", style="headlineSmall"),
+           lista_personas
+       )
+
+       # Cargar la lista inicial de personas
+       actualizar_lista()
+
+   ft.app(target=main)
+   #+end_src
+
+*** Explicación del Código
+
+   - **Conexión a PostgreSQL**: `conectar_db()` devuelve una conexión a la base de datos PostgreSQL.
+   - **Funciones CRUD**:
+     - `agregar_persona`: Agrega una persona usando los valores ingresados.
+     - `eliminar_persona`: Elimina una persona con el ID especificado.
+     - `modificar_persona`: Actualiza el nombre y la edad de la persona con el ID proporcionado.
+     - `actualizar_lista`: Consulta todas las personas en la base de datos y muestra la lista en la interfaz.
+   - **Campos de Entrada**: `id_input`, `nombre_input`, y `edad_input` reciben los valores necesarios para las operaciones.
+   - **Display de Resultados**: `lista_personas` muestra las personas en la base de datos, y `resultado` da retroalimentación de éxito o error.
+
+*** Ejecución
+   - Guarda el código en un archivo Python.
+   - Ejecuta el archivo y abre la aplicación en el navegador.
+   - Interactúa con la base de datos PostgreSQL usando la interfaz en Flet.
 
 
 
@@ -3601,18 +4238,12 @@ cursor.close()
 conn.close()
 #+end_src
 
-*** Ejercicio Práctico
-Realiza las siguientes operaciones como práctica para consolidar los conceptos:
-
-1. Conéctate a una base de datos y crea una tabla llamada "productos" con campos `id`, `nombre`, `precio`, y `cantidad`.
-2. Inserta algunos productos en la tabla.
-3. Consulta todos los productos con un precio mayor a un valor específico.
-4. Actualiza la cantidad de uno de los productos.
-5. Elimina un producto de la tabla.
-6. Cierra la conexión.
-
-*** Conclusión
-Este manual te ofrece una guía básica para el manejo de bases de datos en Python. Puedes aplicar estas técnicas a diferentes sistemas de bases de datos con pequeñas adaptaciones en las conexiones y las consultas. Consulta la documentación específica de cada biblioteca para funcionalidades avanzadas, como transacciones y manejo de errores.
+Este manual te ofrece una guía básica para el manejo de bases de datos
+en Python. Puedes aplicar estas técnicas a diferentes sistemas de
+bases de datos con pequeñas adaptaciones en las conexiones y las
+consultas. Consulta la documentación específica de cada biblioteca
+para funcionalidades avanzadas, como transacciones y manejo de
+errores.
 
 
 
