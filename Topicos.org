@@ -1,4 +1,4 @@
-#+TITLE: Apuntes Tópicos de Programación 
+#+TITLE: Apuntes Tópicos de Programación ejemplo :P 
 #+LANGUAGE: es
 #+LaTeX_HEADER: \usepackage[spanish]{inputenc}
 #+SETUPFILE: /home/likcos/Materias/Graficacion/theme-readtheorg-local.setup
@@ -3233,11 +3233,17 @@ Flet es especialmente útil para desarrolladores que desean una
 experiencia de programación similar a Flutter, pero en Python.
 
 *** Características de Flet
-- **Componentes de UI**: Flet incluye una variedad de componentes como botones, cuadros de texto, listas, imágenes, íconos y más.
-- **Interactividad**: Ofrece soporte para manejar eventos, como clics en botones y cambios de entrada de texto.
-- **Adaptabilidad**: Las aplicaciones de Flet se adaptan a dispositivos de escritorio, móviles y tabletas, permitiendo el desarrollo de interfaces responsive.
-- **Despliegue Web**: Las aplicaciones se pueden ejecutar en modo web, abriéndose directamente en un navegador.
-- **Integración con Python**: Permite escribir aplicaciones completas en Python, sin necesidad de usar HTML, CSS o JavaScript directamente.
+- **Componentes de UI**: Flet incluye una variedad de componentes como
+  botones, cuadros de texto, listas, imágenes, íconos y más.
+- **Interactividad**: Ofrece soporte para manejar eventos, como clics en
+  botones y cambios de entrada de texto.
+- **Adaptabilidad**: Las aplicaciones de Flet se adaptan a dispositivos
+  de escritorio, móviles y tabletas, permitiendo el desarrollo de
+  interfaces responsive.
+- **Despliegue Web**: Las aplicaciones se pueden ejecutar en modo web,
+  abriéndose directamente en un navegador.
+- **Integración con Python**: Permite escribir aplicaciones completas en
+  Python, sin necesidad de usar HTML, CSS o JavaScript directamente.
 
 *** Instalación de Flet
 Para instalar Flet, ejecuta el siguiente comando en la terminal:
@@ -3253,21 +3259,39 @@ Este comando descargará e instalará Flet y sus dependencias.
 **** Ejemplo 1: "Hola, Mundo" en Flet
 Este es un ejemplo básico que muestra cómo crear una aplicación simple que muestra "Hola, Mundo".
 
-#+begin_src python
+#+begin_src python :results output :tangle code/feje1.py
 import flet as ft
 
 def main(page: ft.Page):
     page.add(ft.Text("Hola, Mundo"))
 
-ft.app(target=main)
+ft.app(target=main, view="web_browser")
 #+end_src
+
+#+RESULTS:
+: package:media_kit_libs_linux registered.
+#+RESULTS:
+
+#+BEGIN_SRC python
+import flet as ft
+
+async def main(page: ft.Page):
+    await asyncio.sleep(1)
+    page.add(ft.Text("Hello, async world!"))
+
+ft.app(main)
+#+END_SRC
 
 #+RESULTS:
 : None
 
 En este ejemplo:
 - `main` es la función principal que define el contenido de la página.
-- `page.add(ft.Text("Hola, Mundo"))` agrega un texto con el mensaje "Hola, Mundo" a la página.
+- `page.add(ft.Text("Hola, Mundo"))` agrega un texto con el mensaje
+  "Hola, Mundo" a la página.
+
+
+
 
 ** Ejemplo 2: Contador Interactivo
  Un ejemplo interactivo que implementa un contador con botones para
@@ -3300,11 +3324,10 @@ En este ejemplo:
          ])
      )
 
- ft.app(target=main)
+ ft.app(target=main,  view=ft.WEB_BROWSER)
  #+end_src
 
  #+RESULTS:
- : None
 
  En este ejemplo:
  - `increment` y `decrement` son funciones que ajustan el valor del contador.
@@ -3388,8 +3411,11 @@ ft.app(target=main)
            result_text
        )
 
-   ft.app(target=main, view=ft.WEB_BROWSER)
+   ft.app(target=main)
    #+end_src
+
+   #+RESULTS:
+   : None
 
 ** 4. Lista de Tareas
 Una simple lista de tareas que permite agregar y eliminar tareas.
@@ -3708,7 +3734,7 @@ def main(page: ft.Page):
     # Inicializa con la lista de posiciones guardadas
     mostrar_posiciones()
 
-ft.app(target=main)
+ft.app(target=main, view="web_browser")
 
 #+END_SRC
 
@@ -3759,10 +3785,11 @@ CREATE TABLE personas (
    # Configuración de conexión a PostgreSQL
    def conectar_db():
        return psycopg2.connect(
-           dbname="ejemplo",
+           dbname="test",
            user="postgres",
-           password="tu_password",  # Cambia "tu_password" a la contraseña de tu usuario
-           host="localhost"
+           password="postgres",  # Cambia "tu_password" a la contraseña de tu usuario
+           host="192.168.1.64"
+           
        )
 
    # Configuración inicial de la tabla
@@ -3772,6 +3799,8 @@ CREATE TABLE personas (
        cursor.execute("""
            CREATE TABLE IF NOT EXISTS personas (
                id SERIAL PRIMARY KEY,
+               llave varchar(100),
+               correo varchar(200),
                nombre VARCHAR(100) NOT NULL,
                edad INTEGER NOT NULL
            )
@@ -3787,7 +3816,7 @@ CREATE TABLE personas (
        def actualizar_lista():
            conn = conectar_db()
            cursor = conn.cursor()
-           cursor.execute("SELECT * FROM personas")
+           cursor.execute("SELECT * FROM personas ")
            registros = cursor.fetchall()
            lista_personas.controls.clear()
            for registro in registros:
@@ -3803,7 +3832,7 @@ CREATE TABLE personas (
            try:
                edad = int(edad_input.value)
                conn = conectar_db()
-               cursor = conn.cursor()
+               cursor = conn.cursor()                                         
                cursor.execute("INSERT INTO personas (nombre, edad) VALUES (%s, %s)", (nombre, edad))
                conn.commit()
                conn.close()
@@ -3880,6 +3909,8 @@ CREATE TABLE personas (
 
    ft.app(target=main)
    #+end_src
+
+   #+RESULTS:
 
 *** Explicación del Código
 
@@ -4245,6 +4276,96 @@ consultas. Consulta la documentación específica de cada biblioteca
 para funcionalidades avanzadas, como transacciones y manejo de
 errores.
 
+
+
+* juego flet
+
+#+BEGIN_SRC python
+import flet as ft
+import threading
+import time
+
+# Variables globales para el estado del juego
+jugador_pos = [50, 300]
+bala_pos = [750, 310]
+velocidad_bala = -5
+bala_disparada = False
+salto = False
+salto_altura = 15
+gravedad = 1
+en_suelo = True
+pausa = False
+modo_auto = False
+
+# Función para actualizar el juego
+def actualizar_juego(page):
+    global jugador_pos, bala_pos, velocidad_bala, bala_disparada, salto, salto_altura, en_suelo, pausa
+    
+    while True:
+        if not pausa:
+            if salto:
+                jugador_pos[1] -= salto_altura
+                salto_altura -= gravedad
+                if jugador_pos[1] >= 300:
+                    jugador_pos[1] = 300
+                    salto = False
+                    salto_altura = 15
+                    en_suelo = True
+            if bala_disparada:
+                bala_pos[0] += velocidad_bala
+                if bala_pos[0] < 0:
+                    bala_pos = [750, 310]
+                    bala_disparada = False
+
+            # Actualización visual en Flet
+            page.controls[0].controls[1].top = jugador_pos[1]
+            page.controls[0].controls[2].left = bala_pos[0]
+            page.update()
+        time.sleep(0.03)
+
+# Función principal de Flet
+def main(page):
+    global salto, en_suelo, pausa, bala_disparada, velocidad_bala
+    
+    page.title = "Juego Flet-Pygame"
+    
+    # Crear contenedores para los objetos del juego
+    fondo = ft.Container(width=800, height=400, bgcolor=ft.colors.BLUE_GREY_900)
+    jugador = ft.Container(width=32, height=48, bgcolor=ft.colors.GREEN, top=jugador_pos[1], left=jugador_pos[0])
+    bala = ft.Container(width=16, height=16, bgcolor=ft.colors.RED, top=bala_pos[1], left=bala_pos[0])
+    
+    # Agregar los contenedores a la página
+    fondo.content = [jugador, bala]
+    page.add(fondo)
+
+    # Crear un hilo para manejar la lógica del juego
+    juego_thread = threading.Thread(target=actualizar_juego, args=(page,), daemon=True)
+    juego_thread.start()
+
+    # Eventos de Flet
+    def manejar_tecla(e):
+        global salto, en_suelo, bala_disparada, velocidad_bala, pausa
+
+        if e.key == " " and en_suelo and not pausa:
+            salto = True
+            en_suelo = False
+        elif e.key == "p":
+            pausa = not pausa
+        elif e.key == "q":
+            page.window_destroy()
+        elif e.key == "d" and not bala_disparada:
+            bala_disparada = True
+            velocidad_bala = random.randint(-8, -3)
+
+    page.on_keyboard_event = manejar_tecla
+    page.update()
+
+ft.app(target=main)
+
+#+END_SRC
+
+#+RESULTS:
+: None
 
 
 
