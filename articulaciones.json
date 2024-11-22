@@ -1,0 +1,44 @@
+[
+    {
+        "hombro": 34.0,
+        "codo": 34.0,
+        "muneca": 34.0,
+        "pinza": 34.0
+    },
+    {
+        "hombro": 34.0,
+        "codo": 10.0,
+        "muneca": 10.0,
+        "pinza": 10.0
+    },
+    {
+        "hombro": 6,
+        "codo": 6,
+        "muneca": 6,
+        "pinza": 6
+    },
+    {
+        "hombro": 8,
+        "codo": 8,
+        "muneca": 8,
+        "pinza": 8
+    },
+    {
+        "hombro": 9,
+        "codo": 9,
+        "muneca": 9,
+        "pinza": 9
+    },
+    {
+        "hombro": 2,
+        "codo": 2,
+        "muneca": 2,
+        "pinza": 2
+    },
+    {
+        "hombro": 22.0,
+        "codo": 33.0,
+        "muneca": 33.0,
+        "pinza": 33.0
+    }
+]

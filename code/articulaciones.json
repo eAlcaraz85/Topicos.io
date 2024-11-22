@@ -1,0 +1,20 @@
+[
+    {
+        "hombro": 1,
+        "codo": 1,
+        "muneca": 1,
+        "pinza": 1
+    },
+    {
+        "hombro": 1,
+        "codo": 1,
+        "muneca": 1,
+        "pinza": 1
+    },
+    {
+        "hombro": 2,
+        "codo": 1,
+        "muneca": 2,
+        "pinza": 2
+    }
+]
