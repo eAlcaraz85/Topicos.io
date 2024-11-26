@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-<!-- 2024-11-22 vie 09:28 -->
+<!-- 2024-11-26 mar 11:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Apuntes Tópicos de Programación ejemplo :P</title>
@@ -230,264 +230,292 @@
 <h2>&Iacute;ndice</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9954049">Manual de Instalación de Git</a>
+<li><a href="#org9e3fd18">Manual de Instalación de Git</a>
 <ul>
-<li><a href="#org0e3e43d">Instalación en Windows</a></li>
-<li><a href="#org8850c72">Instalación en macOS</a>
+<li><a href="#org1d6ac72">Instalación en Windows</a></li>
+<li><a href="#orgaf46f9e">Instalación en macOS</a>
 <ul>
-<li><a href="#org283bffd">Método recomendado: usando Homebrew</a></li>
-<li><a href="#orgb15fbf0">Método alternativo: paquete descargado</a></li>
+<li><a href="#orgab77a26">Método recomendado: usando Homebrew</a></li>
+<li><a href="#org4d47c8a">Método alternativo: paquete descargado</a></li>
 </ul>
 </li>
-<li><a href="#org47979ba">Instalación en Linux (Distribuciones basadas en Debian/Ubuntu)</a></li>
-<li><a href="#orgcf9bfad">Configuración básica de Git</a></li>
-<li><a href="#org2977c07">Actualización de Git</a></li>
-<li><a href="#org9d7276e">Configurar Llave SSH con GitHub</a>
+<li><a href="#orgbf7d639">Instalación en Linux (Distribuciones basadas en Debian/Ubuntu)</a></li>
+<li><a href="#org7cd4deb">Configuración básica de Git</a></li>
+<li><a href="#org0c6cc1e">Actualización de Git</a></li>
+<li><a href="#orgaf5972b">Configurar Llave SSH con GitHub</a>
 <ul>
-<li><a href="#org65c19d1">1. Verificar si ya tienes una llave SSH</a></li>
-<li><a href="#org9bd80fc">2. Generar una nueva llave SSH</a></li>
-<li><a href="#org98558fb">3. Añadir la llave SSH al agente SSH</a></li>
-<li><a href="#org22b0680">4. Copiar la llave SSH pública</a></li>
-<li><a href="#orgad3bf12">5. Añadir la llave SSH a GitHub</a></li>
-<li><a href="#org1b0f997">6. Probar la conexión SSH con GitHub</a></li>
-<li><a href="#orge1189df">7. Usar la conexión SSH en repositorios de GitHub</a></li>
+<li><a href="#org115281e">1. Verificar si ya tienes una llave SSH</a></li>
+<li><a href="#org4d2f630">2. Generar una nueva llave SSH</a></li>
+<li><a href="#orge083e54">3. Añadir la llave SSH al agente SSH</a></li>
+<li><a href="#org8d0d8d8">4. Copiar la llave SSH pública</a></li>
+<li><a href="#org76d0b90">5. Añadir la llave SSH a GitHub</a></li>
+<li><a href="#org484a68d">6. Probar la conexión SSH con GitHub</a></li>
+<li><a href="#orgef798a2">7. Usar la conexión SSH en repositorios de GitHub</a></li>
 </ul>
 </li>
-<li><a href="#orgdef1e52">Configurar Llave SSH con GitHub en Windows</a>
+<li><a href="#orgdfbbd49">Configurar Llave SSH con GitHub en Windows</a>
 <ul>
-<li><a href="#orgdcdb676">1. Abrir Git Bash</a></li>
-<li><a href="#orgb2192cc">2. Verificar si ya tienes una llave SSH</a></li>
-<li><a href="#org9b8c179">3. Generar una nueva llave SSH</a></li>
-<li><a href="#orgf9dbd5c">4. Añadir la llave SSH al agente SSH</a></li>
-<li><a href="#org85fe0e9">5. Copiar la llave SSH pública</a></li>
-<li><a href="#org39e04d6">6. Añadir la llave SSH a GitHub</a></li>
-<li><a href="#orgc748605">7. Probar la conexión SSH con GitHub</a></li>
-<li><a href="#org23be428">8. Usar la conexión SSH en repositorios de GitHub</a></li>
+<li><a href="#orge890058">1. Abrir Git Bash</a></li>
+<li><a href="#org68f4b55">2. Verificar si ya tienes una llave SSH</a></li>
+<li><a href="#orge75711d">3. Generar una nueva llave SSH</a></li>
+<li><a href="#orgeb9d9c8">4. Añadir la llave SSH al agente SSH</a></li>
+<li><a href="#org207eb00">5. Copiar la llave SSH pública</a></li>
+<li><a href="#org285d968">6. Añadir la llave SSH a GitHub</a></li>
+<li><a href="#org8509957">7. Probar la conexión SSH con GitHub</a></li>
+<li><a href="#org810fa05">8. Usar la conexión SSH en repositorios de GitHub</a></li>
 </ul>
 </li>
-<li><a href="#orgd66ec2a">Manual de Git en Windows</a>
+<li><a href="#orgb753494">Manual de Git en Windows</a>
 <ul>
-<li><a href="#org246ca63">1. Instalar Git en Windows</a></li>
-<li><a href="#orga102f1c">2. Configurar Git</a></li>
-<li><a href="#org071967f">3. Clonar un repositorio</a></li>
-<li><a href="#org53cf5c9">4. Comandos básicos de Git</a></li>
-<li><a href="#orgc7fdbec">5. Actualizar el repositorio local</a></li>
-<li><a href="#org928dd97">6. Crear y cambiar de ramas (branches)</a></li>
-<li><a href="#org52dccbe">7. Ver historial de commits</a></li>
-<li><a href="#org84c3cf7">8. Configurar una llave SSH</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org1245608">Manual de Instalación de Python en Windows</a>
-<ul>
-<li><a href="#org5eebaa9">Paso 1: Descarga de Python</a></li>
-<li><a href="#org618faa1">Paso 2: Ejecutar el instalador</a></li>
-<li><a href="#org0cb8180">Paso 3: Verificación de la instalación</a></li>
-<li><a href="#org2d01d59">Paso 4: Instalar pip y otros paquetes</a></li>
-<li><a href="#org6ce1a0a">Paso 5: Configuración del entorno de desarrollo</a></li>
-<li><a href="#orgb7be183">Paso 6: Actualización de Python (opcional)</a></li>
-</ul>
-</li>
-<li><a href="#orgc9da59f">Programación Avanzada</a>
-<ul>
-<li><a href="#org9aba585">Estructuras de Datos</a>
-<ul>
-<li><a href="#orgccd5926">1. ¿Qué son las estructuras de datos?</a></li>
-<li><a href="#org2120d8a">2. Tipos comunes de estructuras de datos</a></li>
-<li><a href="#orgb022c32">3. Operaciones básicas en estructuras de datos</a></li>
-<li><a href="#org9504ef6">4. Consideraciones sobre la complejidad</a></li>
-<li><a href="#org10758fb">5. Ejemplo de aplicación</a></li>
-<li><a href="#org639b0ec">6. Conclusión</a></li>
-</ul>
-</li>
-<li><a href="#orgf9ba850">Estructuras de Datos en Python y C</a>
-<ul>
-<li><a href="#org7ca3817">1. Arreglos (Arrays)</a></li>
-<li><a href="#org542a8d8">2. Listas enlazadas (Linked Lists)</a></li>
-<li><a href="#org7813795">3. Pilas (Stacks)</a></li>
-<li><a href="#org76b7aa4">4. Colas (Queues)</a></li>
-<li><a href="#org7761501">5. Árboles (Trees)</a></li>
-<li><a href="#org856b764">6. Grafos (Graphs)</a></li>
-</ul>
-</li>
-<li><a href="#orgf21b793">Comparación entre Java y Python</a>
-<ul>
-<li><a href="#org1e91a93">Filosofía de diseño</a></li>
-<li><a href="#org807fd31">Sintaxis</a></li>
-<li><a href="#org6f77fe4">Tipado</a></li>
-<li><a href="#org44d62f9">Manejo de memoria</a></li>
-<li><a href="#orgf0c8a11">Programación orientada a objetos</a></li>
-<li><a href="#org1c1ae87">Manejo de excepciones</a></li>
-<li><a href="#orgfbc4b66">Rendimiento</a></li>
-<li><a href="#orgf456bd0">Ecosistema y bibliotecas</a></li>
-<li><a href="#org7ab460a">Comunidad y soporte</a></li>
-</ul>
-</li>
-<li><a href="#org35f9545">Comparación entre Python y Java: Modificadores de Acceso</a>
-<ul>
-<li><a href="#orgc310ad6">Modificadores de acceso en Java</a></li>
-<li><a href="#org7571833">Modificadores de acceso en Python</a></li>
-<li><a href="#org3cc3c11">Diferencias clave entre Python y Java en modificadores de acceso</a></li>
-<li><a href="#org86243bc">Resumen de comparación</a></li>
-</ul>
-</li>
-<li><a href="#org1aa55ce">Clases en Python</a>
-<ul>
-<li><a href="#org5a4f7c1">¿Qué es una clase?</a></li>
-<li><a href="#org21cb964">Creación de una instancia de una clase</a></li>
-<li><a href="#org507efcb">Atributos de una clase</a></li>
-<li><a href="#org6491aea">Métodos especiales (métodos mágicos)</a></li>
-<li><a href="#orgecb29d9">Herencia</a></li>
-<li><a href="#orgaf24089">Encapsulamiento</a></li>
-<li><a href="#org2fb87b7">Polimorfismo</a></li>
-<li><a href="#orge24ddff">Composición</a></li>
-<li><a href="#org5a9c9d5">Decoradores de métodos: @classmethod y @staticmethod</a></li>
-<li><a href="#orga623567">Ejemplo completo</a></li>
-</ul>
-</li>
-<li><a href="#orgfb4ba49">Problema del Granjero, el Puma, la Cabra y la Lechuga</a>
-<ul>
-<li><a href="#org267d0e7">Descripción del Problema</a></li>
-<li><a href="#org5789353">Representación del Estado</a></li>
-<li><a href="#orged8a79c">Reglas de Transición</a></li>
-<li><a href="#org2be39a8">Algoritmo de Búsqueda en Profundidad (DFS)</a></li>
-<li><a href="#orgc2293cc">Árbol de Búsqueda</a></li>
-<li><a href="#org04864c4">Solución del Problema</a></li>
-</ul>
-</li>
-<li><a href="#org9a1fb3c">Tutorial de Operaciones Bitwise en OpenCV</a>
-<ul>
-<li><a href="#org02ca77e">1. Operación Bitwise AND</a></li>
-<li><a href="#orgc3c1362">2. Operación Bitwise OR</a></li>
-<li><a href="#org17d0a4d">3. Operación Bitwise XOR</a></li>
-<li><a href="#org10374a9">4. Operación Bitwise NOT</a></li>
-<li><a href="#org8001b32">5. Aplicaciones Prácticas</a></li>
-<li><a href="#org9f2f14e">Definición: Operación Bit a Bit</a></li>
-</ul>
-</li>
-<li><a href="#orge01e782">Segmentación de color mediante el modelo de color HSV</a></li>
-<li><a href="#orga556d6b">Seguimiento Por color</a></li>
-<li><a href="#org4576a07">Problemas con Objetos y Estructuras de Datos</a>
-<ul>
-<li><a href="#org9c1726b">Problema ejemplo: Control de un brazo robótico con múltiples articulaciones</a></li>
-<li><a href="#orgf5e15f3">1. Sistema de gestión de energía en un vehículo eléctrico</a></li>
-<li><a href="#org02b5b92">2. Control de un dron con múltiples sensores</a></li>
-<li><a href="#org68fc7e1">3. Sistema de monitoreo de un invernadero automatizado</a></li>
-<li><a href="#org22d54ea">4. Sistema de estacionamiento automatizado</a></li>
-<li><a href="#org1e291b9">5. Control de un exoesqueleto</a></li>
-<li><a href="#org496c8c8">6. Sistema de control de calidad en una línea de producción</a></li>
-</ul>
-</li>
-<li><a href="#org8f9d546">Manejo de Archivos en Python</a>
-<ul>
-<li><a href="#org9be7ce3">1. ¿Qué es el manejo de archivos en Python?</a></li>
-<li><a href="#orgdbf8070">2. Tipos de archivos y sus modos de acceso</a></li>
-<li><a href="#org3ddad8d">3. Operaciones comunes en archivos</a></li>
-<li><a href="#orgca3fcdc">4. Ejemplos prácticos</a></li>
-</ul>
-</li>
-<li><a href="#orgaaf8695">Tipos de archivos JSON y CSV</a>
-<ul>
-<li><a href="#orgebedd3e">1.1 ¿Qué es JSON?</a></li>
-<li><a href="#orgd56ba27">1.2 Estructura de un archivo JSON</a></li>
-<li><a href="#org2e12392">1.3 Ventajas de JSON</a></li>
-<li><a href="#org9f979b7">1.4 Trabajar con JSON en Python</a></li>
-<li><a href="#org470efbe">2. Archivos CSV</a></li>
-<li><a href="#orgaf389e8">3. Comparación entre JSON y CSV</a></li>
-</ul>
-</li>
-<li><a href="#org5a0c39f">Excepciones en el manejo de archivos en Python</a>
-<ul>
-<li><a href="#org8e05964">1. ¿Qué son las excepciones en Python?</a></li>
-<li><a href="#org6932862">2. Uso básico de `try-except` en archivos</a></li>
-<li><a href="#orgd6eab71">3. Excepciones comunes en el manejo de archivos</a></li>
-<li><a href="#orgfb0e95a">4. Usar `finally` para asegurar el cierre de archivos</a></li>
-<li><a href="#org80d7b87">5. Manejo de múltiples excepciones</a></li>
-<li><a href="#org3ccad62">6. Crear excepciones personalizadas</a></li>
-</ul>
-</li>
-<li><a href="#org82f89df">Altas, Bajas, Modificaciones y Consultas</a>
-<ul>
-<li><a href="#orgf047f49">Introducción</a></li>
-<li><a href="#org7a49e74">Definición de Altas, Bajas, Modificaciones y Consultas</a></li>
-<li><a href="#orgfd832e9">Conclusión</a></li>
-</ul>
-</li>
-<li><a href="#orgc5212a0">Ejemplo persistente</a></li>
-<li><a href="#org8fed0db">Flet</a>
-<ul>
-<li><a href="#org0482fc8">Características de Flet</a></li>
-<li><a href="#org2d04e83">Instalación de Flet</a></li>
-<li><a href="#org269ef51">Ejemplos Básicos</a></li>
-</ul>
-</li>
-<li><a href="#orgc710eea">Ejemplo 2: Contador Interactivo</a>
-<ul>
-<li><a href="#org887dec1">Ejecución de Aplicaciones en Flet</a></li>
-</ul>
-</li>
-<li><a href="#org14cfbe9">3. Conversor de Temperatura</a></li>
-<li><a href="#org3fe4b12">4. Lista de Tareas</a></li>
-<li><a href="#org2a13696">Calculadora</a></li>
-<li><a href="#org581cac8">Base de datos y flet</a>
-<ul>
-<li><a href="#orgb6e03b2">Configuración de la Base de Datos PostgreSQL</a></li>
-</ul>
-</li>
-<li><a href="#org4bdd342">Ejemplo de CRUD (Altas, Bajas, Modificaciones y Consultas) en Flet con PostgreSQL</a>
-<ul>
-<li><a href="#org826ff7a">Requisitos</a></li>
-<li><a href="#org434f40b">Código de la Aplicación</a></li>
-<li><a href="#orgf9ced60">Explicación del Código</a></li>
-<li><a href="#orgd930262">Ejecución</a></li>
-</ul>
-</li>
-<li><a href="#org4ca98c9">¿Qué es una Base de Datos?</a>
-<ul>
-<li><a href="#orge3a556e">Manejadores de Bases de Datos (DBMS - Database Management System)</a></li>
-<li><a href="#org8fe80e1">Tipos de Bases de Datos</a></li>
-<li><a href="#org9ff61f8">Ejemplos en Código: Creación de Tablas en Diferentes Manejadores</a></li>
-</ul>
-</li>
-<li><a href="#org6d59d97">Diferencias entre archivos y bases de datos en Python</a>
-<ul>
-<li><a href="#org3b90422">Manejo de Archivos vs Bases de Datos</a></li>
-<li><a href="#org90861f0">Almacenamiento y Organización de Datos</a></li>
-<li><a href="#orga4a423c">Acceso y Consulta de Datos</a></li>
-<li><a href="#org0087ba3">Rendimiento</a></li>
-<li><a href="#org9765717">Consistencia y Seguridad de los Datos</a></li>
-<li><a href="#org0560d79">Escalabilidad</a></li>
-<li><a href="#org5aee815">Ejemplo en Código (diferencias en acceso a datos)</a></li>
-</ul>
-</li>
-<li><a href="#org22c3e82">Base de Datos en Python</a>
-<ul>
-<li><a href="#org26f7b7a">Requerimientos</a></li>
-<li><a href="#org21a8774">Conexión a la Base de Datos</a></li>
-<li><a href="#orgadaf845">Crear una Tabla</a></li>
-<li><a href="#org5fa2780">Insertar Datos en la Tabla</a></li>
-<li><a href="#org77041c8">Consultar Datos</a></li>
-<li><a href="#org2138ea4">Actualizar Datos</a></li>
-<li><a href="#orgcb0342d">Eliminar Datos</a></li>
-<li><a href="#org86d9025">Cerrar la Conexión</a></li>
+<li><a href="#org71bcb2a">1. Instalar Git en Windows</a></li>
+<li><a href="#orgfa69c56">2. Configurar Git</a></li>
+<li><a href="#org6d6bbb7">3. Clonar un repositorio</a></li>
+<li><a href="#org1bc6c84">4. Comandos básicos de Git</a></li>
+<li><a href="#org150872e">5. Actualizar el repositorio local</a></li>
+<li><a href="#org12c4b7d">6. Crear y cambiar de ramas (branches)</a></li>
+<li><a href="#org8f36284">7. Ver historial de commits</a></li>
+<li><a href="#org7f1de14">8. Configurar una llave SSH</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org733da4b">juego flet</a></li>
+<li><a href="#orgc02962c">Manual de Instalación de Python en Windows</a>
+<ul>
+<li><a href="#org0475346">Paso 1: Descarga de Python</a></li>
+<li><a href="#org7a24ec4">Paso 2: Ejecutar el instalador</a></li>
+<li><a href="#org70296b2">Paso 3: Verificación de la instalación</a></li>
+<li><a href="#orga50440f">Paso 4: Instalar pip y otros paquetes</a></li>
+<li><a href="#orgecd29db">Paso 5: Configuración del entorno de desarrollo</a></li>
+<li><a href="#org8e2811a">Paso 6: Actualización de Python (opcional)</a></li>
+</ul>
+</li>
+<li><a href="#orgd5839a6">Programación Avanzada</a>
+<ul>
+<li><a href="#org7d3a8a8">Estructuras de Datos</a>
+<ul>
+<li><a href="#org6050b16">1. ¿Qué son las estructuras de datos?</a></li>
+<li><a href="#org97d64b2">2. Tipos comunes de estructuras de datos</a></li>
+<li><a href="#org651ddca">3. Operaciones básicas en estructuras de datos</a></li>
+<li><a href="#orgad73dc6">4. Consideraciones sobre la complejidad</a></li>
+<li><a href="#org3b466ab">5. Ejemplo de aplicación</a></li>
+<li><a href="#orgf282052">6. Conclusión</a></li>
+</ul>
+</li>
+<li><a href="#org6542102">Estructuras de Datos en Python y C</a>
+<ul>
+<li><a href="#orgae191d9">1. Arreglos (Arrays)</a></li>
+<li><a href="#orgbba75a2">2. Listas enlazadas (Linked Lists)</a></li>
+<li><a href="#orgdffa134">3. Pilas (Stacks)</a></li>
+<li><a href="#org36b859a">4. Colas (Queues)</a></li>
+<li><a href="#orgde13114">5. Árboles (Trees)</a></li>
+<li><a href="#org7a7a0ee">6. Grafos (Graphs)</a></li>
+</ul>
+</li>
+<li><a href="#org49f757f">Comparación entre Java y Python</a>
+<ul>
+<li><a href="#org3cf378e">Filosofía de diseño</a></li>
+<li><a href="#org95943bb">Sintaxis</a></li>
+<li><a href="#orgf4bd2c4">Tipado</a></li>
+<li><a href="#org831b971">Manejo de memoria</a></li>
+<li><a href="#org921991c">Programación orientada a objetos</a></li>
+<li><a href="#orgcc848bb">Manejo de excepciones</a></li>
+<li><a href="#org3217450">Rendimiento</a></li>
+<li><a href="#orgf20dd7d">Ecosistema y bibliotecas</a></li>
+<li><a href="#orga8f1c32">Comunidad y soporte</a></li>
+</ul>
+</li>
+<li><a href="#orge1b7426">Comparación entre Python y Java: Modificadores de Acceso</a>
+<ul>
+<li><a href="#orge79687b">Modificadores de acceso en Java</a></li>
+<li><a href="#orgc2c82ad">Modificadores de acceso en Python</a></li>
+<li><a href="#org94afec6">Diferencias clave entre Python y Java en modificadores de acceso</a></li>
+<li><a href="#org1f2a17f">Resumen de comparación</a></li>
+</ul>
+</li>
+<li><a href="#org65196b6">Clases en Python</a>
+<ul>
+<li><a href="#org930e27e">¿Qué es una clase?</a></li>
+<li><a href="#org5059381">Creación de una instancia de una clase</a></li>
+<li><a href="#orgd84dd0f">Atributos de una clase</a></li>
+<li><a href="#orgdd796f5">Métodos especiales (métodos mágicos)</a></li>
+<li><a href="#org8f66ed3">Herencia</a></li>
+<li><a href="#org1673a0c">Encapsulamiento</a></li>
+<li><a href="#org01baa39">Polimorfismo</a></li>
+<li><a href="#org95cf2ca">Composición</a></li>
+<li><a href="#org107598c">Decoradores de métodos: @classmethod y @staticmethod</a></li>
+<li><a href="#orgbd15933">Ejemplo completo</a></li>
+</ul>
+</li>
+<li><a href="#orgb678572">Problema del Granjero, el Puma, la Cabra y la Lechuga</a>
+<ul>
+<li><a href="#orgb3652d8">Descripción del Problema</a></li>
+<li><a href="#orga5a2d7c">Representación del Estado</a></li>
+<li><a href="#orgabaacbf">Reglas de Transición</a></li>
+<li><a href="#org0261187">Algoritmo de Búsqueda en Profundidad (DFS)</a></li>
+<li><a href="#orgb97eaff">Árbol de Búsqueda</a></li>
+<li><a href="#orgbd00c70">Solución del Problema</a></li>
+</ul>
+</li>
+<li><a href="#org92f4bca">Tutorial de Operaciones Bitwise en OpenCV</a>
+<ul>
+<li><a href="#orgbc028c7">1. Operación Bitwise AND</a></li>
+<li><a href="#org2c2374e">2. Operación Bitwise OR</a></li>
+<li><a href="#org1aad00c">3. Operación Bitwise XOR</a></li>
+<li><a href="#org985d64d">4. Operación Bitwise NOT</a></li>
+<li><a href="#orgceb3107">5. Aplicaciones Prácticas</a></li>
+<li><a href="#orgab4bc2a">Definición: Operación Bit a Bit</a></li>
+</ul>
+</li>
+<li><a href="#orgfea84d0">Segmentación de color mediante el modelo de color HSV</a></li>
+<li><a href="#org8616c33">Seguimiento Por color</a></li>
+<li><a href="#orgcc2c767">Problemas con Objetos y Estructuras de Datos</a>
+<ul>
+<li><a href="#org158884e">Problema ejemplo: Control de un brazo robótico con múltiples articulaciones</a></li>
+<li><a href="#orgd264f56">1. Sistema de gestión de energía en un vehículo eléctrico</a></li>
+<li><a href="#org2840bab">2. Control de un dron con múltiples sensores</a></li>
+<li><a href="#orge474511">3. Sistema de monitoreo de un invernadero automatizado</a></li>
+<li><a href="#orgadb8b26">4. Sistema de estacionamiento automatizado</a></li>
+<li><a href="#org5af3c21">5. Control de un exoesqueleto</a></li>
+<li><a href="#orge3b7a21">6. Sistema de control de calidad en una línea de producción</a></li>
+</ul>
+</li>
+<li><a href="#orga864480">Manejo de Archivos en Python</a>
+<ul>
+<li><a href="#orgf464f67">1. ¿Qué es el manejo de archivos en Python?</a></li>
+<li><a href="#org99f6f90">2. Tipos de archivos y sus modos de acceso</a></li>
+<li><a href="#org85ec1df">3. Operaciones comunes en archivos</a></li>
+<li><a href="#org231cfeb">4. Ejemplos prácticos</a></li>
+</ul>
+</li>
+<li><a href="#orgca959d8">Tipos de archivos JSON y CSV</a>
+<ul>
+<li><a href="#org0081cd6">1.1 ¿Qué es JSON?</a></li>
+<li><a href="#org21576c4">1.2 Estructura de un archivo JSON</a></li>
+<li><a href="#org737ba91">1.3 Ventajas de JSON</a></li>
+<li><a href="#orgbe692bf">1.4 Trabajar con JSON en Python</a></li>
+<li><a href="#orgd9bd61b">2. Archivos CSV</a></li>
+<li><a href="#orgd956d16">3. Comparación entre JSON y CSV</a></li>
+</ul>
+</li>
+<li><a href="#orgcb40418">Excepciones en el manejo de archivos en Python</a>
+<ul>
+<li><a href="#orgbb6d450">1. ¿Qué son las excepciones en Python?</a></li>
+<li><a href="#orgae13382">2. Uso básico de `try-except` en archivos</a></li>
+<li><a href="#org61207e0">3. Excepciones comunes en el manejo de archivos</a></li>
+<li><a href="#org8dfc998">4. Usar `finally` para asegurar el cierre de archivos</a></li>
+<li><a href="#orgc132ef0">5. Manejo de múltiples excepciones</a></li>
+<li><a href="#orgbf0c28f">6. Crear excepciones personalizadas</a></li>
+</ul>
+</li>
+<li><a href="#org93b978c">Altas, Bajas, Modificaciones y Consultas</a>
+<ul>
+<li><a href="#org3c8ad78">Introducción</a></li>
+<li><a href="#orgd7d73ae">Definición de Altas, Bajas, Modificaciones y Consultas</a></li>
+<li><a href="#org289a631">Conclusión</a></li>
+</ul>
+</li>
+<li><a href="#org79d0398">Ejemplo persistente</a></li>
+<li><a href="#orgde9c22b">Flet</a>
+<ul>
+<li><a href="#org8b1c8b8">Características de Flet</a></li>
+<li><a href="#org848f1f5">Instalación de Flet</a></li>
+<li><a href="#orgd77ba21">Ejemplos Básicos</a></li>
+</ul>
+</li>
+<li><a href="#org08dac6f">Ejemplo 2: Contador Interactivo</a>
+<ul>
+<li><a href="#org9908399">Ejecución de Aplicaciones en Flet</a></li>
+</ul>
+</li>
+<li><a href="#org47700b7">3. Conversor de Temperatura</a></li>
+<li><a href="#org3dd9e94">4. Lista de Tareas</a></li>
+<li><a href="#org2bdf8d3">Calculadora</a></li>
+<li><a href="#org46a686b">Base de datos y flet</a>
+<ul>
+<li><a href="#orgf16e431">Configuración de la Base de Datos PostgreSQL</a></li>
+</ul>
+</li>
+<li><a href="#org7fc8e3f">Ejemplo de CRUD (Altas, Bajas, Modificaciones y Consultas) en Flet con PostgreSQL</a>
+<ul>
+<li><a href="#orgbe6f753">Requisitos</a></li>
+<li><a href="#org9463c73">Código de la Aplicación</a></li>
+<li><a href="#org606f83b">Explicación del Código</a></li>
+<li><a href="#orgdbcba54">Ejecución</a></li>
+</ul>
+</li>
+<li><a href="#orge4d2bce">¿Qué es una Base de Datos?</a>
+<ul>
+<li><a href="#org876aec7">Manejadores de Bases de Datos (DBMS - Database Management System)</a></li>
+<li><a href="#org51954de">Tipos de Bases de Datos</a></li>
+<li><a href="#org6e11870">Ejemplos en Código: Creación de Tablas en Diferentes Manejadores</a></li>
+</ul>
+</li>
+<li><a href="#orgb2c6f60">Diferencias entre archivos y bases de datos en Python</a>
+<ul>
+<li><a href="#org9a2e347">Manejo de Archivos vs Bases de Datos</a></li>
+<li><a href="#org37c464a">Almacenamiento y Organización de Datos</a></li>
+<li><a href="#org2713eff">Acceso y Consulta de Datos</a></li>
+<li><a href="#org9c038cf">Rendimiento</a></li>
+<li><a href="#orgc922017">Consistencia y Seguridad de los Datos</a></li>
+<li><a href="#orga2f658e">Escalabilidad</a></li>
+<li><a href="#orgb1b406e">Ejemplo en Código (diferencias en acceso a datos)</a></li>
+</ul>
+</li>
+<li><a href="#org11bdaca">Base de Datos en Python</a>
+<ul>
+<li><a href="#org0d02008">Requerimientos</a></li>
+<li><a href="#org2317084">Conexión a la Base de Datos</a></li>
+<li><a href="#org578e9e9">Crear una Tabla</a></li>
+<li><a href="#org40e56e9">Insertar Datos en la Tabla</a></li>
+<li><a href="#orgd70f43e">Consultar Datos</a></li>
+<li><a href="#org788921f">Actualizar Datos</a></li>
+<li><a href="#org216cfa1">Eliminar Datos</a></li>
+<li><a href="#org9a1e48c">Cerrar la Conexión</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org2a10106">juego flet</a></li>
+<li><a href="#org2a916ac">Código de Flet a Django</a>
+<ul>
+<li><a href="#orge4d0935">Requisitos Previos</a></li>
+<li><a href="#orgf2ce192">Crear el Proyecto Django</a></li>
+<li><a href="#orgb1aca2b">Configuración del Proyecto Django</a>
+<ul>
+<li><a href="#org0edcb55">Configuración de la Base de Datos en <code>settings.py</code></a></li>
+<li><a href="#orgb295ca6">Definir el Modelo de Persona</a></li>
+<li><a href="#orgfd8d271">Crear y Aplicar Migraciones</a></li>
+</ul>
+</li>
+<li><a href="#orgd54fe07">Crear la Vista y Configurar URLs</a>
+<ul>
+<li><a href="#orgd18208a">Definir las Vistas</a></li>
+<li><a href="#org3584ae2">Configurar las URLs</a></li>
+</ul>
+</li>
+<li><a href="#org8b6a841">Crear las Plantillas HTML</a>
+<ul>
+<li><a href="#org8d489f6">Plantilla: <code>lista_personas.html</code></a></li>
+<li><a href="#orgac189be">Plantilla: <code>agregar_persona.html</code></a></li>
+<li><a href="#orgdfe670c">Plantilla: <code>modificar_persona.html</code></a></li>
+</ul>
+</li>
+<li><a href="#org203afc9">Ejecutar el Proyecto</a></li>
+<li><a href="#org7768be9">¡Listo!</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-org9954049" class="outline-2">
-<h2 id="org9954049">Manual de Instalación de Git</h2>
-<div class="outline-text-2" id="text-org9954049">
+<div id="outline-container-org9e3fd18" class="outline-2">
+<h2 id="org9e3fd18">Manual de Instalación de Git</h2>
+<div class="outline-text-2" id="text-org9e3fd18">
 </div>
-<div id="outline-container-org0e3e43d" class="outline-3">
-<h3 id="org0e3e43d">Instalación en Windows</h3>
-<div class="outline-text-3" id="text-org0e3e43d">
+<div id="outline-container-org1d6ac72" class="outline-3">
+<h3 id="org1d6ac72">Instalación en Windows</h3>
+<div class="outline-text-3" id="text-org1d6ac72">
 <ul class="org-ul">
 <li>Descarga el instalador desde [<a href="https://git-scm.com/">https://git-scm.com/</a>].</li>
 </ul>
@@ -517,13 +545,13 @@
 </div>
 </div>
 
-<div id="outline-container-org8850c72" class="outline-3">
-<h3 id="org8850c72">Instalación en macOS</h3>
-<div class="outline-text-3" id="text-org8850c72">
+<div id="outline-container-orgaf46f9e" class="outline-3">
+<h3 id="orgaf46f9e">Instalación en macOS</h3>
+<div class="outline-text-3" id="text-orgaf46f9e">
 </div>
-<div id="outline-container-org283bffd" class="outline-4">
-<h4 id="org283bffd">Método recomendado: usando Homebrew</h4>
-<div class="outline-text-4" id="text-org283bffd">
+<div id="outline-container-orgab77a26" class="outline-4">
+<h4 id="orgab77a26">Método recomendado: usando Homebrew</h4>
+<div class="outline-text-4" id="text-orgab77a26">
 <ul class="org-ul">
 <li>Si tienes Homebrew instalado, abre la terminal y ejecuta:</li>
 </ul>
@@ -534,9 +562,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgb15fbf0" class="outline-4">
-<h4 id="orgb15fbf0">Método alternativo: paquete descargado</h4>
-<div class="outline-text-4" id="text-orgb15fbf0">
+<div id="outline-container-org4d47c8a" class="outline-4">
+<h4 id="org4d47c8a">Método alternativo: paquete descargado</h4>
+<div class="outline-text-4" id="text-org4d47c8a">
 <ul class="org-ul">
 <li>Descarga el instalador desde [<a href="https://git-scm.com/">https://git-scm.com/</a>].</li>
 <li>Ejecuta el paquete descargado (.dmg).</li>
@@ -554,9 +582,9 @@ Verifica la instalación abriendo la terminal y ejecutando:
 </div>
 </div>
 
-<div id="outline-container-org47979ba" class="outline-3">
-<h3 id="org47979ba">Instalación en Linux (Distribuciones basadas en Debian/Ubuntu)</h3>
-<div class="outline-text-3" id="text-org47979ba">
+<div id="outline-container-orgbf7d639" class="outline-3">
+<h3 id="orgbf7d639">Instalación en Linux (Distribuciones basadas en Debian/Ubuntu)</h3>
+<div class="outline-text-3" id="text-orgbf7d639">
 <ul class="org-ul">
 <li><p>
 Abre la terminal y ejecuta:
@@ -578,9 +606,9 @@ Verifica la instalación ejecutando:
 </div>
 </div>
 
-<div id="outline-container-orgcf9bfad" class="outline-3">
-<h3 id="orgcf9bfad">Configuración básica de Git</h3>
-<div class="outline-text-3" id="text-orgcf9bfad">
+<div id="outline-container-org7cd4deb" class="outline-3">
+<h3 id="org7cd4deb">Configuración básica de Git</h3>
+<div class="outline-text-3" id="text-org7cd4deb">
 <ul class="org-ul">
 <li><p>
 Configura tu nombre de usuario:
@@ -609,9 +637,9 @@ Verifica la configuración:
 </div>
 </div>
 
-<div id="outline-container-org2977c07" class="outline-3">
-<h3 id="org2977c07">Actualización de Git</h3>
-<div class="outline-text-3" id="text-org2977c07">
+<div id="outline-container-org0c6cc1e" class="outline-3">
+<h3 id="org0c6cc1e">Actualización de Git</h3>
+<div class="outline-text-3" id="text-org0c6cc1e">
 <ul class="org-ul">
 <li><b>Windows</b>: Ejecuta el instalador más reciente desde el sitio oficial.</li>
 <li><p>
@@ -633,13 +661,13 @@ Verifica la configuración:
 </div>
 
 
-<div id="outline-container-org9d7276e" class="outline-3">
-<h3 id="org9d7276e">Configurar Llave SSH con GitHub</h3>
-<div class="outline-text-3" id="text-org9d7276e">
+<div id="outline-container-orgaf5972b" class="outline-3">
+<h3 id="orgaf5972b">Configurar Llave SSH con GitHub</h3>
+<div class="outline-text-3" id="text-orgaf5972b">
 </div>
-<div id="outline-container-org65c19d1" class="outline-4">
-<h4 id="org65c19d1">1. Verificar si ya tienes una llave SSH</h4>
-<div class="outline-text-4" id="text-org65c19d1">
+<div id="outline-container-org115281e" class="outline-4">
+<h4 id="org115281e">1. Verificar si ya tienes una llave SSH</h4>
+<div class="outline-text-4" id="text-org115281e">
 <ul class="org-ul">
 <li><p>
 Abre la terminal y ejecuta el siguiente comando para verificar si ya tienes llaves SSH generadas:
@@ -654,9 +682,9 @@ Abre la terminal y ejecuta el siguiente comando para verificar si ya tienes llav
 </div>
 </div>
 
-<div id="outline-container-org9bd80fc" class="outline-4">
-<h4 id="org9bd80fc">2. Generar una nueva llave SSH</h4>
-<div class="outline-text-4" id="text-org9bd80fc">
+<div id="outline-container-org4d2f630" class="outline-4">
+<h4 id="org4d2f630">2. Generar una nueva llave SSH</h4>
+<div class="outline-text-4" id="text-org4d2f630">
 <ul class="org-ul">
 <li><p>
 Si no tienes una llave SSH, genera una nueva con el siguiente comando (puedes cambiar `ed25519` por `rsa` si lo prefieres):
@@ -672,9 +700,9 @@ Si no tienes una llave SSH, genera una nueva con el siguiente comando (puedes ca
 </div>
 </div>
 
-<div id="outline-container-org98558fb" class="outline-4">
-<h4 id="org98558fb">3. Añadir la llave SSH al agente SSH</h4>
-<div class="outline-text-4" id="text-org98558fb">
+<div id="outline-container-orge083e54" class="outline-4">
+<h4 id="orge083e54">3. Añadir la llave SSH al agente SSH</h4>
+<div class="outline-text-4" id="text-orge083e54">
 <ul class="org-ul">
 <li><p>
 Para añadir tu nueva llave SSH al agente, asegúrate de que esté en ejecución:
@@ -695,9 +723,9 @@ Añade la llave SSH al agente:
 </div>
 </div>
 
-<div id="outline-container-org22b0680" class="outline-4">
-<h4 id="org22b0680">4. Copiar la llave SSH pública</h4>
-<div class="outline-text-4" id="text-org22b0680">
+<div id="outline-container-org8d0d8d8" class="outline-4">
+<h4 id="org8d0d8d8">4. Copiar la llave SSH pública</h4>
+<div class="outline-text-4" id="text-org8d0d8d8">
 <ul class="org-ul">
 <li><p>
 Copia el contenido de tu llave pública para añadirla a GitHub:
@@ -712,9 +740,9 @@ Copia el contenido de tu llave pública para añadirla a GitHub:
 </div>
 </div>
 
-<div id="outline-container-orgad3bf12" class="outline-4">
-<h4 id="orgad3bf12">5. Añadir la llave SSH a GitHub</h4>
-<div class="outline-text-4" id="text-orgad3bf12">
+<div id="outline-container-org76d0b90" class="outline-4">
+<h4 id="org76d0b90">5. Añadir la llave SSH a GitHub</h4>
+<div class="outline-text-4" id="text-org76d0b90">
 <ul class="org-ul">
 <li>Inicia sesión en tu cuenta de GitHub.</li>
 <li>Ve a la sección de <b>Settings</b> (Configuración).</li>
@@ -726,9 +754,9 @@ Copia el contenido de tu llave pública para añadirla a GitHub:
 </div>
 </div>
 
-<div id="outline-container-org1b0f997" class="outline-4">
-<h4 id="org1b0f997">6. Probar la conexión SSH con GitHub</h4>
-<div class="outline-text-4" id="text-org1b0f997">
+<div id="outline-container-org484a68d" class="outline-4">
+<h4 id="org484a68d">6. Probar la conexión SSH con GitHub</h4>
+<div class="outline-text-4" id="text-org484a68d">
 <ul class="org-ul">
 <li><p>
 Para verificar que todo está configurado correctamente, ejecuta el siguiente comando:
@@ -751,9 +779,9 @@ Hi username! You've successfully authenticated, but GitHub does not provide shel
 </div>
 </div>
 
-<div id="outline-container-orge1189df" class="outline-4">
-<h4 id="orge1189df">7. Usar la conexión SSH en repositorios de GitHub</h4>
-<div class="outline-text-4" id="text-orge1189df">
+<div id="outline-container-orgef798a2" class="outline-4">
+<h4 id="orgef798a2">7. Usar la conexión SSH en repositorios de GitHub</h4>
+<div class="outline-text-4" id="text-orgef798a2">
 <ul class="org-ul">
 <li><p>
 Para clonar un repositorio usando SSH, utiliza la URL SSH del repositorio:
@@ -768,9 +796,9 @@ Para clonar un repositorio usando SSH, utiliza la URL SSH del repositorio:
 </div>
 
 
-<div id="outline-container-orgdef1e52" class="outline-3">
-<h3 id="orgdef1e52">Configurar Llave SSH con GitHub en Windows</h3>
-<div class="outline-text-3" id="text-orgdef1e52">
+<div id="outline-container-orgdfbbd49" class="outline-3">
+<h3 id="orgdfbbd49">Configurar Llave SSH con GitHub en Windows</h3>
+<div class="outline-text-3" id="text-orgdfbbd49">
 <ol class="org-ol">
 <li>Git Bash: En Windows, utilizas Git Bash como terminal para ejecutar los comandos, en lugar de la terminal estándar de Linux o macOS.</li>
 
@@ -780,18 +808,18 @@ Para clonar un repositorio usando SSH, utiliza la URL SSH del repositorio:
 
 
 
-<div id="outline-container-orgdcdb676" class="outline-4">
-<h4 id="orgdcdb676">1. Abrir Git Bash</h4>
-<div class="outline-text-4" id="text-orgdcdb676">
+<div id="outline-container-orge890058" class="outline-4">
+<h4 id="orge890058">1. Abrir Git Bash</h4>
+<div class="outline-text-4" id="text-orge890058">
 <ul class="org-ul">
 <li>Abre <b><b>Git Bash</b></b> (es la terminal que se instala junto con Git en Windows).</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgb2192cc" class="outline-4">
-<h4 id="orgb2192cc">2. Verificar si ya tienes una llave SSH</h4>
-<div class="outline-text-4" id="text-orgb2192cc">
+<div id="outline-container-org68f4b55" class="outline-4">
+<h4 id="org68f4b55">2. Verificar si ya tienes una llave SSH</h4>
+<div class="outline-text-4" id="text-org68f4b55">
 <ul class="org-ul">
 <li><p>
 En la terminal de Git Bash, ejecuta el siguiente comando para ver si ya tienes llaves SSH generadas:
@@ -806,9 +834,9 @@ En la terminal de Git Bash, ejecuta el siguiente comando para ver si ya tienes l
 </div>
 </div>
 
-<div id="outline-container-org9b8c179" class="outline-4">
-<h4 id="org9b8c179">3. Generar una nueva llave SSH</h4>
-<div class="outline-text-4" id="text-org9b8c179">
+<div id="outline-container-orge75711d" class="outline-4">
+<h4 id="orge75711d">3. Generar una nueva llave SSH</h4>
+<div class="outline-text-4" id="text-orge75711d">
 <ul class="org-ul">
 <li><p>
 Si no tienes una llave SSH, genera una nueva con el siguiente comando:
@@ -824,9 +852,9 @@ Si no tienes una llave SSH, genera una nueva con el siguiente comando:
 </div>
 </div>
 
-<div id="outline-container-orgf9dbd5c" class="outline-4">
-<h4 id="orgf9dbd5c">4. Añadir la llave SSH al agente SSH</h4>
-<div class="outline-text-4" id="text-orgf9dbd5c">
+<div id="outline-container-orgeb9d9c8" class="outline-4">
+<h4 id="orgeb9d9c8">4. Añadir la llave SSH al agente SSH</h4>
+<div class="outline-text-4" id="text-orgeb9d9c8">
 <ul class="org-ul">
 <li><p>
 Asegúrate de que el agente SSH esté en ejecución. En Git Bash, ejecuta:
@@ -847,9 +875,9 @@ Añade tu nueva llave SSH al agente:
 </div>
 </div>
 
-<div id="outline-container-org85fe0e9" class="outline-4">
-<h4 id="org85fe0e9">5. Copiar la llave SSH pública</h4>
-<div class="outline-text-4" id="text-org85fe0e9">
+<div id="outline-container-org207eb00" class="outline-4">
+<h4 id="org207eb00">5. Copiar la llave SSH pública</h4>
+<div class="outline-text-4" id="text-org207eb00">
 <ul class="org-ul">
 <li><p>
 Para añadir la llave SSH a GitHub, necesitas copiar tu llave pública. Ejecuta el siguiente comando en Git Bash:
@@ -864,9 +892,9 @@ Para añadir la llave SSH a GitHub, necesitas copiar tu llave pública. Ejecuta 
 </div>
 </div>
 
-<div id="outline-container-org39e04d6" class="outline-4">
-<h4 id="org39e04d6">6. Añadir la llave SSH a GitHub</h4>
-<div class="outline-text-4" id="text-org39e04d6">
+<div id="outline-container-org285d968" class="outline-4">
+<h4 id="org285d968">6. Añadir la llave SSH a GitHub</h4>
+<div class="outline-text-4" id="text-org285d968">
 <ul class="org-ul">
 <li>Abre tu navegador web e inicia sesión en GitHub.</li>
 <li>Ve a la sección de <b>Settings</b> (Configuración).</li>
@@ -878,9 +906,9 @@ Para añadir la llave SSH a GitHub, necesitas copiar tu llave pública. Ejecuta 
 </div>
 </div>
 
-<div id="outline-container-orgc748605" class="outline-4">
-<h4 id="orgc748605">7. Probar la conexión SSH con GitHub</h4>
-<div class="outline-text-4" id="text-orgc748605">
+<div id="outline-container-org8509957" class="outline-4">
+<h4 id="org8509957">7. Probar la conexión SSH con GitHub</h4>
+<div class="outline-text-4" id="text-org8509957">
 <ul class="org-ul">
 <li><p>
 Para asegurarte de que todo está correctamente configurado, prueba la conexión con GitHub desde Git Bash:
@@ -903,9 +931,9 @@ Hi username! You've successfully authenticated, but GitHub does not provide shel
 </div>
 </div>
 
-<div id="outline-container-org23be428" class="outline-4">
-<h4 id="org23be428">8. Usar la conexión SSH en repositorios de GitHub</h4>
-<div class="outline-text-4" id="text-org23be428">
+<div id="outline-container-org810fa05" class="outline-4">
+<h4 id="org810fa05">8. Usar la conexión SSH en repositorios de GitHub</h4>
+<div class="outline-text-4" id="text-org810fa05">
 <ul class="org-ul">
 <li><p>
 Para clonar un repositorio usando la URL SSH, ejecuta:
@@ -921,13 +949,13 @@ Para clonar un repositorio usando la URL SSH, ejecuta:
 
 
 
-<div id="outline-container-orgd66ec2a" class="outline-3">
-<h3 id="orgd66ec2a">Manual de Git en Windows</h3>
-<div class="outline-text-3" id="text-orgd66ec2a">
+<div id="outline-container-orgb753494" class="outline-3">
+<h3 id="orgb753494">Manual de Git en Windows</h3>
+<div class="outline-text-3" id="text-orgb753494">
 </div>
-<div id="outline-container-org246ca63" class="outline-4">
-<h4 id="org246ca63">1. Instalar Git en Windows</h4>
-<div class="outline-text-4" id="text-org246ca63">
+<div id="outline-container-org71bcb2a" class="outline-4">
+<h4 id="org71bcb2a">1. Instalar Git en Windows</h4>
+<div class="outline-text-4" id="text-org71bcb2a">
 <ul class="org-ul">
 <li>Visita [<a href="https://git-scm.com/">https://git-scm.com/</a>](<a href="https://git-scm.com/">https://git-scm.com/</a>) y descarga el instalador de Git para Windows.</li>
 <li>Ejecuta el archivo descargado (.exe).</li>
@@ -937,9 +965,9 @@ Para clonar un repositorio usando la URL SSH, ejecuta:
 </div>
 </div>
 
-<div id="outline-container-orga102f1c" class="outline-4">
-<h4 id="orga102f1c">2. Configurar Git</h4>
-<div class="outline-text-4" id="text-orga102f1c">
+<div id="outline-container-orgfa69c56" class="outline-4">
+<h4 id="orgfa69c56">2. Configurar Git</h4>
+<div class="outline-text-4" id="text-orgfa69c56">
 <ul class="org-ul">
 <li>Abre <b>Git Bash</b> y ejecuta los siguientes comandos para configurar tu identidad:</li>
 </ul>
@@ -961,9 +989,9 @@ Para clonar un repositorio usando la URL SSH, ejecuta:
 </div>
 </div>
 
-<div id="outline-container-org071967f" class="outline-4">
-<h4 id="org071967f">3. Clonar un repositorio</h4>
-<div class="outline-text-4" id="text-org071967f">
+<div id="outline-container-org6d6bbb7" class="outline-4">
+<h4 id="org6d6bbb7">3. Clonar un repositorio</h4>
+<div class="outline-text-4" id="text-org6d6bbb7">
 <ul class="org-ul">
 <li>Para clonar un repositorio desde GitHub, usa el siguiente comando:</li>
 </ul>
@@ -979,9 +1007,9 @@ Esto descargará el repositorio a tu computadora.
 </div>
 </div>
 
-<div id="outline-container-org53cf5c9" class="outline-4">
-<h4 id="org53cf5c9">4. Comandos básicos de Git</h4>
-<div class="outline-text-4" id="text-org53cf5c9">
+<div id="outline-container-org1bc6c84" class="outline-4">
+<h4 id="org1bc6c84">4. Comandos básicos de Git</h4>
+<div class="outline-text-4" id="text-org1bc6c84">
 <ul class="org-ul">
 <li><b>Verificar el estado del repositorio</b>:</li>
 </ul>
@@ -1029,9 +1057,9 @@ Esto descargará el repositorio a tu computadora.
 </div>
 </div>
 
-<div id="outline-container-orgc7fdbec" class="outline-4">
-<h4 id="orgc7fdbec">5. Actualizar el repositorio local</h4>
-<div class="outline-text-4" id="text-orgc7fdbec">
+<div id="outline-container-org150872e" class="outline-4">
+<h4 id="org150872e">5. Actualizar el repositorio local</h4>
+<div class="outline-text-4" id="text-org150872e">
 <ul class="org-ul">
 <li>Para obtener los últimos cambios del repositorio remoto:</li>
 </ul>
@@ -1043,9 +1071,9 @@ Esto descargará el repositorio a tu computadora.
 </div>
 </div>
 
-<div id="outline-container-org928dd97" class="outline-4">
-<h4 id="org928dd97">6. Crear y cambiar de ramas (branches)</h4>
-<div class="outline-text-4" id="text-org928dd97">
+<div id="outline-container-org12c4b7d" class="outline-4">
+<h4 id="org12c4b7d">6. Crear y cambiar de ramas (branches)</h4>
+<div class="outline-text-4" id="text-org12c4b7d">
 <ul class="org-ul">
 <li><b>Crear una nueva rama</b>:</li>
 </ul>
@@ -1075,9 +1103,9 @@ Esto descargará el repositorio a tu computadora.
 </div>
 </div>
 
-<div id="outline-container-org52dccbe" class="outline-4">
-<h4 id="org52dccbe">7. Ver historial de commits</h4>
-<div class="outline-text-4" id="text-org52dccbe">
+<div id="outline-container-org8f36284" class="outline-4">
+<h4 id="org8f36284">7. Ver historial de commits</h4>
+<div class="outline-text-4" id="text-org8f36284">
 <ul class="org-ul">
 <li>Para ver el historial de cambios del repositorio:</li>
 </ul>
@@ -1098,9 +1126,9 @@ Esto descargará el repositorio a tu computadora.
 </div>
 </div>
 
-<div id="outline-container-org84c3cf7" class="outline-4">
-<h4 id="org84c3cf7">8. Configurar una llave SSH</h4>
-<div class="outline-text-4" id="text-org84c3cf7">
+<div id="outline-container-org7f1de14" class="outline-4">
+<h4 id="org7f1de14">8. Configurar una llave SSH</h4>
+<div class="outline-text-4" id="text-org7f1de14">
 <ul class="org-ul">
 <li><b>Generar una llave SSH</b>:</li>
 </ul>
@@ -1138,13 +1166,13 @@ Esto descargará el repositorio a tu computadora.
 </div>
 
 
-<div id="outline-container-org1245608" class="outline-2">
-<h2 id="org1245608">Manual de Instalación de Python en Windows</h2>
-<div class="outline-text-2" id="text-org1245608">
+<div id="outline-container-orgc02962c" class="outline-2">
+<h2 id="orgc02962c">Manual de Instalación de Python en Windows</h2>
+<div class="outline-text-2" id="text-orgc02962c">
 </div>
-<div id="outline-container-org5eebaa9" class="outline-3">
-<h3 id="org5eebaa9">Paso 1: Descarga de Python</h3>
-<div class="outline-text-3" id="text-org5eebaa9">
+<div id="outline-container-org0475346" class="outline-3">
+<h3 id="org0475346">Paso 1: Descarga de Python</h3>
+<div class="outline-text-3" id="text-org0475346">
 <ol class="org-ol">
 <li>Abre el navegador web y visita el sitio: <a href="https://www.python.org">https://www.python.org</a>.</li>
 <li>Ve a la pestaña "Downloads" y selecciona la versión más reciente para Windows.</li>
@@ -1153,9 +1181,9 @@ Esto descargará el repositorio a tu computadora.
 </div>
 </div>
 
-<div id="outline-container-org618faa1" class="outline-3">
-<h3 id="org618faa1">Paso 2: Ejecutar el instalador</h3>
-<div class="outline-text-3" id="text-org618faa1">
+<div id="outline-container-org7a24ec4" class="outline-3">
+<h3 id="org7a24ec4">Paso 2: Ejecutar el instalador</h3>
+<div class="outline-text-3" id="text-org7a24ec4">
 <ol class="org-ol">
 <li>Ejecuta el archivo descargado (.exe).</li>
 <li>Asegúrate de marcar la opción <code>Add Python to PATH</code> antes de proceder con la instalación.</li>
@@ -1165,9 +1193,9 @@ Esto descargará el repositorio a tu computadora.
 </div>
 </div>
 
-<div id="outline-container-org0cb8180" class="outline-3">
-<h3 id="org0cb8180">Paso 3: Verificación de la instalación</h3>
-<div class="outline-text-3" id="text-org0cb8180">
+<div id="outline-container-org70296b2" class="outline-3">
+<h3 id="org70296b2">Paso 3: Verificación de la instalación</h3>
+<div class="outline-text-3" id="text-org70296b2">
 <ol class="org-ol">
 <li>Abre la línea de comandos (cmd) escribiendo "cmd" en el menú de inicio.</li>
 <li><p>
@@ -1192,9 +1220,9 @@ Si todo está bien, verás el prompt interactivo de Python (tres símbolos <code
 </div>
 </div>
 
-<div id="outline-container-org2d01d59" class="outline-3">
-<h3 id="org2d01d59">Paso 4: Instalar pip y otros paquetes</h3>
-<div class="outline-text-3" id="text-org2d01d59">
+<div id="outline-container-orga50440f" class="outline-3">
+<h3 id="orga50440f">Paso 4: Instalar pip y otros paquetes</h3>
+<div class="outline-text-3" id="text-orga50440f">
 <ol class="org-ol">
 <li><p>
 Verifica si pip está instalado escribiendo en la línea de comandos:
@@ -1214,9 +1242,9 @@ Si necesitas instalar paquetes, usa pip con el siguiente comando:
 </div>
 </div>
 
-<div id="outline-container-org6ce1a0a" class="outline-3">
-<h3 id="org6ce1a0a">Paso 5: Configuración del entorno de desarrollo</h3>
-<div class="outline-text-3" id="text-org6ce1a0a">
+<div id="outline-container-orgecd29db" class="outline-3">
+<h3 id="orgecd29db">Paso 5: Configuración del entorno de desarrollo</h3>
+<div class="outline-text-3" id="text-orgecd29db">
 <ol class="org-ol">
 <li>Instala un editor de código como:
 <ul class="org-ul">
@@ -1228,9 +1256,9 @@ Si necesitas instalar paquetes, usa pip con el siguiente comando:
 </div>
 </div>
 
-<div id="outline-container-orgb7be183" class="outline-3">
-<h3 id="orgb7be183">Paso 6: Actualización de Python (opcional)</h3>
-<div class="outline-text-3" id="text-orgb7be183">
+<div id="outline-container-org8e2811a" class="outline-3">
+<h3 id="org8e2811a">Paso 6: Actualización de Python (opcional)</h3>
+<div class="outline-text-3" id="text-org8e2811a">
 <ul class="org-ul">
 <li>Para actualizar Python a una nueva versión en el futuro, descarga la última versión desde <a href="https://www.python.org/downloads/">python.org</a> y sigue los pasos de instalación.</li>
 </ul>
@@ -1240,9 +1268,9 @@ Si necesitas instalar paquetes, usa pip con el siguiente comando:
 
 
 
-<div id="outline-container-orgc9da59f" class="outline-2">
-<h2 id="orgc9da59f">Programación Avanzada</h2>
-<div class="outline-text-2" id="text-orgc9da59f">
+<div id="outline-container-orgd5839a6" class="outline-2">
+<h2 id="orgd5839a6">Programación Avanzada</h2>
+<div class="outline-text-2" id="text-orgd5839a6">
 <p>
 pip install opecv-contrib-python
 pin install opencv-python
@@ -1256,26 +1284,26 @@ conda install opencv-python
 </div>
 
 
-<div id="outline-container-org9aba585" class="outline-3">
-<h3 id="org9aba585">Estructuras de Datos</h3>
-<div class="outline-text-3" id="text-org9aba585">
+<div id="outline-container-org7d3a8a8" class="outline-3">
+<h3 id="org7d3a8a8">Estructuras de Datos</h3>
+<div class="outline-text-3" id="text-org7d3a8a8">
 </div>
-<div id="outline-container-orgccd5926" class="outline-4">
-<h4 id="orgccd5926">1. ¿Qué son las estructuras de datos?</h4>
-<div class="outline-text-4" id="text-orgccd5926">
+<div id="outline-container-org6050b16" class="outline-4">
+<h4 id="org6050b16">1. ¿Qué son las estructuras de datos?</h4>
+<div class="outline-text-4" id="text-org6050b16">
 <p>
 Las estructuras de datos son una forma de organizar, gestionar y almacenar datos de manera eficiente. Cada estructura de datos está diseñada para un tipo específico de uso o problema, optimizando la forma en la que se accede o modifica la información.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org2120d8a" class="outline-4">
-<h4 id="org2120d8a">2. Tipos comunes de estructuras de datos</h4>
-<div class="outline-text-4" id="text-org2120d8a">
+<div id="outline-container-org97d64b2" class="outline-4">
+<h4 id="org97d64b2">2. Tipos comunes de estructuras de datos</h4>
+<div class="outline-text-4" id="text-org97d64b2">
 </div>
 <ul class="org-ul">
-<li><a id="orgfc4bdfd"></a>2.1. Arreglos (Arrays)<br />
-<div class="outline-text-5" id="text-orgfc4bdfd">
+<li><a id="org6b21404"></a>2.1. Arreglos (Arrays)<br />
+<div class="outline-text-5" id="text-org6b21404">
 <ul class="org-ul">
 <li>Los arreglos son colecciones de elementos del mismo tipo, organizados en una secuencia.</li>
 <li>Los índices permiten acceder a los elementos.</li>
@@ -1289,8 +1317,8 @@ Las estructuras de datos son una forma de organizar, gestionar y almacenar datos
 </div>
 </li>
 
-<li><a id="org738d577"></a>2.2. Listas enlazadas (Linked Lists)<br />
-<div class="outline-text-5" id="text-org738d577">
+<li><a id="orgabbd2bf"></a>2.2. Listas enlazadas (Linked Lists)<br />
+<div class="outline-text-5" id="text-orgabbd2bf">
 <ul class="org-ul">
 <li>Una lista enlazada está formada por nodos, donde cada nodo contiene un valor y un puntero al siguiente nodo.</li>
 <li>Hay listas enlazadas simples (unidireccionales) y listas doblemente enlazadas (bidireccionales).</li>
@@ -1317,8 +1345,8 @@ Las estructuras de datos son una forma de organizar, gestionar y almacenar datos
 </div>
 </li>
 
-<li><a id="org3715b82"></a>2.3. Pilas (Stacks)<br />
-<div class="outline-text-5" id="text-org3715b82">
+<li><a id="orgfe1e7fa"></a>2.3. Pilas (Stacks)<br />
+<div class="outline-text-5" id="text-orgfe1e7fa">
 <ul class="org-ul">
 <li>Una pila sigue el principio LIFO (Last In, First Out). El último elemento en ser agregado es el primero en ser retirado.</li>
 <li>Operaciones comunes: `push` (agregar), `pop` (retirar), `peek` (ver el último).</li>
@@ -1336,8 +1364,8 @@ Las estructuras de datos son una forma de organizar, gestionar y almacenar datos
 </div>
 </li>
 
-<li><a id="orga7dd462"></a>2.4. Colas (Queues)<br />
-<div class="outline-text-5" id="text-orga7dd462">
+<li><a id="org01b7e1a"></a>2.4. Colas (Queues)<br />
+<div class="outline-text-5" id="text-org01b7e1a">
 <ul class="org-ul">
 <li>Una cola sigue el principio FIFO (First In, First Out). El primer elemento en ser agregado es el primero en ser retirado.</li>
 <li>Operaciones comunes: `enqueue` (agregar), `dequeue` (retirar).</li>
@@ -1353,8 +1381,8 @@ Las estructuras de datos son una forma de organizar, gestionar y almacenar datos
 </div>
 </li>
 
-<li><a id="org5f3dcb6"></a>2.5. Árboles (Trees)<br />
-<div class="outline-text-5" id="text-org5f3dcb6">
+<li><a id="orgf523393"></a>2.5. Árboles (Trees)<br />
+<div class="outline-text-5" id="text-orgf523393">
 <ul class="org-ul">
 <li>Un árbol es una estructura de datos jerárquica que consta de nodos. Cada nodo tiene un valor y referencias a sus nodos hijos.</li>
 <li>El nodo superior se llama raíz, y los nodos sin hijos se llaman hojas.</li>
@@ -1392,8 +1420,8 @@ Las estructuras de datos son una forma de organizar, gestionar y almacenar datos
 </div>
 </li>
 
-<li><a id="org4594092"></a>2.6. Grafos (Graphs)<br />
-<div class="outline-text-5" id="text-org4594092">
+<li><a id="org1292a90"></a>2.6. Grafos (Graphs)<br />
+<div class="outline-text-5" id="text-org1292a90">
 <ul class="org-ul">
 <li>Un grafo es una colección de nodos (llamados vértices) y aristas (líneas que conectan los vértices).</li>
 <li>Los grafos pueden ser dirigidos o no dirigidos, dependiendo de si las conexiones entre nodos tienen dirección o no.</li>
@@ -1416,9 +1444,9 @@ Las estructuras de datos son una forma de organizar, gestionar y almacenar datos
 </ul>
 </div>
 
-<div id="outline-container-orgb022c32" class="outline-4">
-<h4 id="orgb022c32">3. Operaciones básicas en estructuras de datos</h4>
-<div class="outline-text-4" id="text-orgb022c32">
+<div id="outline-container-org651ddca" class="outline-4">
+<h4 id="org651ddca">3. Operaciones básicas en estructuras de datos</h4>
+<div class="outline-text-4" id="text-org651ddca">
 <p>
 Cada estructura de datos tiene sus propias operaciones comunes, por ejemplo:
 </p>
@@ -1434,9 +1462,9 @@ Cada estructura de datos tiene sus propias operaciones comunes, por ejemplo:
 </div>
 </div>
 
-<div id="outline-container-org9504ef6" class="outline-4">
-<h4 id="org9504ef6">4. Consideraciones sobre la complejidad</h4>
-<div class="outline-text-4" id="text-org9504ef6">
+<div id="outline-container-orgad73dc6" class="outline-4">
+<h4 id="orgad73dc6">4. Consideraciones sobre la complejidad</h4>
+<div class="outline-text-4" id="text-orgad73dc6">
 <p>
 Cada estructura de datos tiene un costo en términos de tiempo y espacio dependiendo de cómo se implementen sus operaciones. Algunos aspectos clave a considerar:
 </p>
@@ -1451,9 +1479,9 @@ Cada estructura de datos tiene un costo en términos de tiempo y espacio dependi
 </div>
 </div>
 
-<div id="outline-container-org10758fb" class="outline-4">
-<h4 id="org10758fb">5. Ejemplo de aplicación</h4>
-<div class="outline-text-4" id="text-org10758fb">
+<div id="outline-container-org3b466ab" class="outline-4">
+<h4 id="org3b466ab">5. Ejemplo de aplicación</h4>
+<div class="outline-text-4" id="text-org3b466ab">
 <p>
 Supongamos que queremos implementar un sistema donde necesitamos manejar una lista de tareas en orden de prioridad. Una estructura adecuada sería una <b><b>cola de prioridad</b></b>, que permite agregar tareas con diferentes prioridades y siempre procesar la más urgente primero.
 </p>
@@ -1473,9 +1501,9 @@ Supongamos que queremos implementar un sistema donde necesitamos manejar una lis
 </div>
 </div>
 
-<div id="outline-container-org639b0ec" class="outline-4">
-<h4 id="org639b0ec">6. Conclusión</h4>
-<div class="outline-text-4" id="text-org639b0ec">
+<div id="outline-container-orgf282052" class="outline-4">
+<h4 id="orgf282052">6. Conclusión</h4>
+<div class="outline-text-4" id="text-orgf282052">
 <p>
 Este es un resumen introductorio de las estructuras de datos más comunes y cómo funcionan. Cada estructura tiene aplicaciones específicas y el uso adecuado depende del tipo de problema que estés intentando resolver.
 </p>
@@ -1484,17 +1512,17 @@ Este es un resumen introductorio de las estructuras de datos más comunes y cóm
 </div>
 
 
-<div id="outline-container-orgf9ba850" class="outline-3">
-<h3 id="orgf9ba850">Estructuras de Datos en Python y C</h3>
-<div class="outline-text-3" id="text-orgf9ba850">
+<div id="outline-container-org6542102" class="outline-3">
+<h3 id="org6542102">Estructuras de Datos en Python y C</h3>
+<div class="outline-text-3" id="text-org6542102">
 </div>
-<div id="outline-container-org7ca3817" class="outline-4">
-<h4 id="org7ca3817">1. Arreglos (Arrays)</h4>
-<div class="outline-text-4" id="text-org7ca3817">
+<div id="outline-container-orgae191d9" class="outline-4">
+<h4 id="orgae191d9">1. Arreglos (Arrays)</h4>
+<div class="outline-text-4" id="text-orgae191d9">
 </div>
 <ul class="org-ul">
-<li><a id="org6d6761e"></a>Python<br />
-<div class="outline-text-5" id="text-org6d6761e">
+<li><a id="orga556ff7"></a>Python<br />
+<div class="outline-text-5" id="text-orga556ff7">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">En Python, los arrays son implementados como listas.</span>
 <span style="color: #ff98a4;">A</span> = <span style="color: #c099ff;">[</span>1, 2, 3, 4, 5<span style="color: #c099ff;">]</span>
@@ -1504,8 +1532,8 @@ Este es un resumen introductorio de las estructuras de datos más comunes y cóm
 </div>
 </li>
 
-<li><a id="org783bf57"></a>C<br />
-<div class="outline-text-5" id="text-org783bf57">
+<li><a id="org9438cfd"></a>C<br />
+<div class="outline-text-5" id="text-org9438cfd">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 
@@ -1521,13 +1549,13 @@ Este es un resumen introductorio de las estructuras de datos más comunes y cóm
 </ul>
 </div>
 
-<div id="outline-container-org542a8d8" class="outline-4">
-<h4 id="org542a8d8">2. Listas enlazadas (Linked Lists)</h4>
-<div class="outline-text-4" id="text-org542a8d8">
+<div id="outline-container-orgbba75a2" class="outline-4">
+<h4 id="orgbba75a2">2. Listas enlazadas (Linked Lists)</h4>
+<div class="outline-text-4" id="text-orgbba75a2">
 </div>
 <ul class="org-ul">
-<li><a id="org3fa363e"></a>Python<br />
-<div class="outline-text-5" id="text-org3fa363e">
+<li><a id="org9f98f1b"></a>Python<br />
+<div class="outline-text-5" id="text-org9f98f1b">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #c099ff;">class</span> <span style="color: #ffc777;">Nodo</span>:
 <span style="background-color: #2f334d;"> </span>   <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">__init__</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span>, valor<span style="color: #c099ff;">)</span>:
@@ -1556,8 +1584,8 @@ lista.agregar<span style="color: #c099ff;">(</span>20<span style="color: #c099ff
 </div>
 </li>
 
-<li><a id="org1d0a063"></a>C<br />
-<div class="outline-text-5" id="text-org1d0a063">
+<li><a id="orgf373f28"></a>C<br />
+<div class="outline-text-5" id="text-orgf373f28">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
@@ -1600,13 +1628,13 @@ lista.agregar<span style="color: #c099ff;">(</span>20<span style="color: #c099ff
 </ul>
 </div>
 
-<div id="outline-container-org7813795" class="outline-4">
-<h4 id="org7813795">3. Pilas (Stacks)</h4>
-<div class="outline-text-4" id="text-org7813795">
+<div id="outline-container-orgdffa134" class="outline-4">
+<h4 id="orgdffa134">3. Pilas (Stacks)</h4>
+<div class="outline-text-4" id="text-orgdffa134">
 </div>
 <ul class="org-ul">
-<li><a id="org0b4b06b"></a>Python<br />
-<div class="outline-text-5" id="text-org0b4b06b">
+<li><a id="orgac48553"></a>Python<br />
+<div class="outline-text-5" id="text-orgac48553">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">En Python, las listas pueden funcionar como pilas usando append() y pop().</span>
 <span style="color: #ff98a4;">pila</span> = <span style="color: #c099ff;">[]</span>
@@ -1620,8 +1648,8 @@ pila.pop<span style="color: #c099ff;">()</span>
 </div>
 </li>
 
-<li><a id="org8386fc1"></a>C<br />
-<div class="outline-text-5" id="text-org8386fc1">
+<li><a id="org7bd8433"></a>C<br />
+<div class="outline-text-5" id="text-org7bd8433">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
@@ -1672,13 +1700,13 @@ Topicos.org
 </ul>
 </div>
 
-<div id="outline-container-org76b7aa4" class="outline-4">
-<h4 id="org76b7aa4">4. Colas (Queues)</h4>
-<div class="outline-text-4" id="text-org76b7aa4">
+<div id="outline-container-org36b859a" class="outline-4">
+<h4 id="org36b859a">4. Colas (Queues)</h4>
+<div class="outline-text-4" id="text-org36b859a">
 </div>
 <ul class="org-ul">
-<li><a id="org8e1ea74"></a>Python<br />
-<div class="outline-text-5" id="text-org8e1ea74">
+<li><a id="org5ae6c28"></a>Python<br />
+<div class="outline-text-5" id="text-org5ae6c28">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">En Python, una cola se puede implementar con deque de la colecci&#243;n est&#225;ndar.</span>
 <span style="color: #c099ff;">from</span> collections <span style="color: #c099ff;">import</span> deque
@@ -1692,8 +1720,8 @@ cola.append<span style="color: #c099ff;">(</span>20<span style="color: #c099ff;"
 </div>
 </li>
 
-<li><a id="org43e9aeb"></a>C<br />
-<div class="outline-text-5" id="text-org43e9aeb">
+<li><a id="org6b32bd6"></a>C<br />
+<div class="outline-text-5" id="text-org6b32bd6">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
@@ -1748,13 +1776,13 @@ cola.append<span style="color: #c099ff;">(</span>20<span style="color: #c099ff;"
 </ul>
 </div>
 
-<div id="outline-container-org7761501" class="outline-4">
-<h4 id="org7761501">5. Árboles (Trees)</h4>
-<div class="outline-text-4" id="text-org7761501">
+<div id="outline-container-orgde13114" class="outline-4">
+<h4 id="orgde13114">5. Árboles (Trees)</h4>
+<div class="outline-text-4" id="text-orgde13114">
 </div>
 <ul class="org-ul">
-<li><a id="org833e6a8"></a>Python<br />
-<div class="outline-text-5" id="text-org833e6a8">
+<li><a id="orgdb4b969"></a>Python<br />
+<div class="outline-text-5" id="text-orgdb4b969">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #c099ff;">class</span> <span style="color: #ffc777;">Nodo</span>:
 <span style="background-color: #2f334d;"> </span>   <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">__init__</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span>, valor<span style="color: #c099ff;">)</span>:
@@ -1793,8 +1821,8 @@ arbol.agregar<span style="color: #c099ff;">(</span>15<span style="color: #c099ff
 </div>
 </li>
 
-<li><a id="orgd921a6c"></a>C<br />
-<div class="outline-text-5" id="text-orgd921a6c">
+<li><a id="org1688709"></a>C<br />
+<div class="outline-text-5" id="text-org1688709">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
@@ -1839,13 +1867,13 @@ arbol.agregar<span style="color: #c099ff;">(</span>15<span style="color: #c099ff
 </ul>
 </div>
 
-<div id="outline-container-org856b764" class="outline-4">
-<h4 id="org856b764">6. Grafos (Graphs)</h4>
-<div class="outline-text-4" id="text-org856b764">
+<div id="outline-container-org7a7a0ee" class="outline-4">
+<h4 id="org7a7a0ee">6. Grafos (Graphs)</h4>
+<div class="outline-text-4" id="text-org7a7a0ee">
 </div>
 <ul class="org-ul">
-<li><a id="orgbd00160"></a>Python<br />
-<div class="outline-text-5" id="text-orgbd00160">
+<li><a id="org94094b0"></a>Python<br />
+<div class="outline-text-5" id="text-org94094b0">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #c099ff;">class</span> <span style="color: #ffc777;">Grafo</span>:
 <span style="background-color: #2f334d;"> </span>   <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">__init__</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span><span style="color: #c099ff;">)</span>:
@@ -1869,8 +1897,8 @@ grafo.agregar_arista<span style="color: #c099ff;">(</span>1, 2<span style="color
 </div>
 </li>
 
-<li><a id="orgedaa070"></a>C<br />
-<div class="outline-text-5" id="text-orgedaa070">
+<li><a id="org405b20e"></a>C<br />
+<div class="outline-text-5" id="text-org405b20e">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdio.h</span><span style="color: #c099ff;">&gt;</span>
 <span style="color: #86e1fc; font-weight: bold;">#include</span> <span style="color: #c099ff;">&lt;</span><span style="color: #c3e88d;">stdlib.h</span><span style="color: #c099ff;">&gt;</span>
@@ -1914,9 +1942,9 @@ grafo.agregar_arista<span style="color: #c099ff;">(</span>1, 2<span style="color
 
 
 
-<div id="outline-container-orgf21b793" class="outline-3">
-<h3 id="orgf21b793">Comparación entre Java y Python</h3>
-<div class="outline-text-3" id="text-orgf21b793">
+<div id="outline-container-org49f757f" class="outline-3">
+<h3 id="org49f757f">Comparación entre Java y Python</h3>
+<div class="outline-text-3" id="text-org49f757f">
 <p>
 Java y Python son dos de los lenguajes de programación más populares
 hoy en día, utilizados ampliamente tanto en la industria como en el
@@ -1926,9 +1954,9 @@ específicos del proyecto.
 </p>
 </div>
 
-<div id="outline-container-org1e91a93" class="outline-4">
-<h4 id="org1e91a93">Filosofía de diseño</h4>
-<div class="outline-text-4" id="text-org1e91a93">
+<div id="outline-container-org3cf378e" class="outline-4">
+<h4 id="org3cf378e">Filosofía de diseño</h4>
+<div class="outline-text-4" id="text-org3cf378e">
 <ul class="org-ul">
 <li><b><b>Java</b></b>: Fue diseñado para ser un lenguaje de programación de propósito general, con una fuerte orientación a la programación orientada a objetos. Su lema, "escribe una vez, ejecuta en cualquier lugar" (WORA, <b>Write Once, Run Anywhere</b>), refleja su capacidad de funcionar en cualquier sistema con una Máquina Virtual de Java (JVM).</li>
 
@@ -1937,9 +1965,9 @@ específicos del proyecto.
 </div>
 </div>
 
-<div id="outline-container-org807fd31" class="outline-4">
-<h4 id="org807fd31">Sintaxis</h4>
-<div class="outline-text-4" id="text-org807fd31">
+<div id="outline-container-org95943bb" class="outline-4">
+<h4 id="org95943bb">Sintaxis</h4>
+<div class="outline-text-4" id="text-org95943bb">
 <ul class="org-ul">
 <li><b><b>Java</b></b>: Es un lenguaje que requiere declarar explícitamente los tipos de variables. Tiene una sintaxis más estricta y verbosa en comparación con Python.</li>
 </ul>
@@ -1980,9 +2008,9 @@ específicos del proyecto.
 </div>
 </div>
 
-<div id="outline-container-org6f77fe4" class="outline-4">
-<h4 id="org6f77fe4">Tipado</h4>
-<div class="outline-text-4" id="text-org6f77fe4">
+<div id="outline-container-orgf4bd2c4" class="outline-4">
+<h4 id="orgf4bd2c4">Tipado</h4>
+<div class="outline-text-4" id="text-orgf4bd2c4">
 <ul class="org-ul">
 <li><b><b>Java</b></b>: Es un lenguaje de <b>tipado estático</b>, lo que significa que los tipos de todas las variables deben ser conocidos en tiempo de compilación. Esto permite una mayor seguridad de tipos, ya que los errores de tipo se detectan antes de ejecutar el programa.</li>
 </ul>
@@ -2019,9 +2047,9 @@ específicos del proyecto.
 </div>
 </div>
 
-<div id="outline-container-org44d62f9" class="outline-4">
-<h4 id="org44d62f9">Manejo de memoria</h4>
-<div class="outline-text-4" id="text-org44d62f9">
+<div id="outline-container-org831b971" class="outline-4">
+<h4 id="org831b971">Manejo de memoria</h4>
+<div class="outline-text-4" id="text-org831b971">
 <ul class="org-ul">
 <li><b><b>Java</b></b>: Utiliza un <b>recolector de basura</b> automático que se ejecuta en segundo plano para liberar memoria de objetos que ya no se utilizan. Esto ayuda a evitar fugas de memoria, pero puede haber un impacto en el rendimiento en ciertos momentos, cuando el recolector de basura se ejecuta.</li>
 
@@ -2030,9 +2058,9 @@ específicos del proyecto.
 </div>
 </div>
 
-<div id="outline-container-orgf0c8a11" class="outline-4">
-<h4 id="orgf0c8a11">Programación orientada a objetos</h4>
-<div class="outline-text-4" id="text-orgf0c8a11">
+<div id="outline-container-org921991c" class="outline-4">
+<h4 id="org921991c">Programación orientada a objetos</h4>
+<div class="outline-text-4" id="text-org921991c">
 <ul class="org-ul">
 <li><b><b>Java</b></b>: Java es completamente orientado a objetos. Todos los programas Java deben estar contenidos en clases, y no se pueden tener funciones o variables fuera de ellas. Java soporta herencia simple (una clase puede heredar solo de una clase base).</li>
 </ul>
@@ -2088,9 +2116,9 @@ específicos del proyecto.
 </div>
 </div>
 
-<div id="outline-container-org1c1ae87" class="outline-4">
-<h4 id="org1c1ae87">Manejo de excepciones</h4>
-<div class="outline-text-4" id="text-org1c1ae87">
+<div id="outline-container-orgcc848bb" class="outline-4">
+<h4 id="orgcc848bb">Manejo de excepciones</h4>
+<div class="outline-text-4" id="text-orgcc848bb">
 <ul class="org-ul">
 <li><b><b>Java</b></b>: Java obliga a manejar las excepciones con bloques <code>try-catch</code>. Además, distingue entre excepciones <b>verificadas</b> (que deben manejarse o declararse explícitamente en los métodos) y <b>no verificadas</b>.</li>
 </ul>
@@ -2136,9 +2164,9 @@ específicos del proyecto.
 </div>
 </div>
 
-<div id="outline-container-orgfbc4b66" class="outline-4">
-<h4 id="orgfbc4b66">Rendimiento</h4>
-<div class="outline-text-4" id="text-orgfbc4b66">
+<div id="outline-container-org3217450" class="outline-4">
+<h4 id="org3217450">Rendimiento</h4>
+<div class="outline-text-4" id="text-org3217450">
 <ul class="org-ul">
 <li><b><b>Java</b></b>: Al ser un lenguaje compilado (aunque se compila en bytecode y luego se ejecuta en la JVM), Java suele ser más rápido en términos de ejecución que Python, especialmente en aplicaciones más grandes y complejas.</li>
 
@@ -2155,9 +2183,9 @@ específicos del proyecto.
 </div>
 </div>
 
-<div id="outline-container-orgf456bd0" class="outline-4">
-<h4 id="orgf456bd0">Ecosistema y bibliotecas</h4>
-<div class="outline-text-4" id="text-orgf456bd0">
+<div id="outline-container-orgf20dd7d" class="outline-4">
+<h4 id="orgf20dd7d">Ecosistema y bibliotecas</h4>
+<div class="outline-text-4" id="text-orgf20dd7d">
 <ul class="org-ul">
 <li><b><b>Java</b></b>: Tiene un ecosistema robusto con un vasto número de
 bibliotecas para diversas aplicaciones (aplicaciones web, móviles,
@@ -2172,9 +2200,9 @@ PyTorch), automatización y desarrollo web (Django, Flask).</li>
 </div>
 </div>
 
-<div id="outline-container-org7ab460a" class="outline-4">
-<h4 id="org7ab460a">Comunidad y soporte</h4>
-<div class="outline-text-4" id="text-org7ab460a">
+<div id="outline-container-orga8f1c32" class="outline-4">
+<h4 id="orga8f1c32">Comunidad y soporte</h4>
+<div class="outline-text-4" id="text-orga8f1c32">
 <ul class="org-ul">
 <li><b><b>Java</b></b>: Es un lenguaje maduro con una comunidad establecida y
 soporte a largo plazo. Se utiliza ampliamente en la industria para
@@ -2193,9 +2221,9 @@ aplicaciones.</li>
 
 
 
-<div id="outline-container-org35f9545" class="outline-3">
-<h3 id="org35f9545">Comparación entre Python y Java: Modificadores de Acceso</h3>
-<div class="outline-text-3" id="text-org35f9545">
+<div id="outline-container-orge1b7426" class="outline-3">
+<h3 id="orge1b7426">Comparación entre Python y Java: Modificadores de Acceso</h3>
+<div class="outline-text-3" id="text-orge1b7426">
 <p>
 Los modificadores de acceso controlan la visibilidad y el nivel de
 acceso que las clases, métodos y atributos tienen dentro de un
@@ -2205,9 +2233,9 @@ son tan estrictos, sino que se implementan mediante convenciones.
 </p>
 </div>
 
-<div id="outline-container-orgc310ad6" class="outline-4">
-<h4 id="orgc310ad6">Modificadores de acceso en Java</h4>
-<div class="outline-text-4" id="text-orgc310ad6">
+<div id="outline-container-orge79687b" class="outline-4">
+<h4 id="orge79687b">Modificadores de acceso en Java</h4>
+<div class="outline-text-4" id="text-orge79687b">
 <p>
 En Java, existen cuatro modificadores de acceso principales, que controlan el nivel de visibilidad de las clases, métodos y atributos:
 </p>
@@ -2260,9 +2288,9 @@ En Java, existen cuatro modificadores de acceso principales, que controlan el ni
 </div>
 </div>
 
-<div id="outline-container-org7571833" class="outline-4">
-<h4 id="org7571833">Modificadores de acceso en Python</h4>
-<div class="outline-text-4" id="text-org7571833">
+<div id="outline-container-orgc2c82ad" class="outline-4">
+<h4 id="orgc2c82ad">Modificadores de acceso en Python</h4>
+<div class="outline-text-4" id="text-orgc2c82ad">
 <p>
 En Python, no existen modificadores de acceso explícitos como en Java. Sin embargo, se implementa un mecanismo de control de acceso mediante convenciones:
 </p>
@@ -2312,9 +2340,9 @@ En Python, no existen modificadores de acceso explícitos como en Java. Sin emba
 </div>
 </div>
 
-<div id="outline-container-org3cc3c11" class="outline-4">
-<h4 id="org3cc3c11">Diferencias clave entre Python y Java en modificadores de acceso</h4>
-<div class="outline-text-4" id="text-org3cc3c11">
+<div id="outline-container-org94afec6" class="outline-4">
+<h4 id="org94afec6">Diferencias clave entre Python y Java en modificadores de acceso</h4>
+<div class="outline-text-4" id="text-org94afec6">
 <ul class="org-ul">
 <li><b><b>Java</b></b> tiene modificadores de acceso explícitos (<code>public</code>, <code>protected</code>, <code>private</code>) que se aplican tanto a métodos como a atributos. Esto proporciona un control más estricto sobre la visibilidad de los miembros de una clase.</li>
 
@@ -2327,9 +2355,9 @@ En Python, no existen modificadores de acceso explícitos como en Java. Sin emba
 </div>
 </div>
 
-<div id="outline-container-org86243bc" class="outline-4">
-<h4 id="org86243bc">Resumen de comparación</h4>
-<div class="outline-text-4" id="text-org86243bc">
+<div id="outline-container-org1f2a17f" class="outline-4">
+<h4 id="org1f2a17f">Resumen de comparación</h4>
+<div class="outline-text-4" id="text-org1f2a17f">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -2379,9 +2407,9 @@ En Python, no existen modificadores de acceso explícitos como en Java. Sin emba
 
 
 
-<div id="outline-container-org1aa55ce" class="outline-3">
-<h3 id="org1aa55ce">Clases en Python</h3>
-<div class="outline-text-3" id="text-org1aa55ce">
+<div id="outline-container-org65196b6" class="outline-3">
+<h3 id="org65196b6">Clases en Python</h3>
+<div class="outline-text-3" id="text-org65196b6">
 <p>
 En Python, las clases son una parte fundamental de la programación
 orientada a objetos (POO). Nos permiten definir tipos de datos
@@ -2394,9 +2422,9 @@ datos.
 
 
 
-<div id="outline-container-org5a4f7c1" class="outline-4">
-<h4 id="org5a4f7c1">¿Qué es una clase?</h4>
-<div class="outline-text-4" id="text-org5a4f7c1">
+<div id="outline-container-org930e27e" class="outline-4">
+<h4 id="org930e27e">¿Qué es una clase?</h4>
+<div class="outline-text-4" id="text-org930e27e">
 <p>
 Una <b>clase</b> es un molde o plantilla a partir de la cual se pueden crear múltiples instancias (objetos). Cada objeto tiene sus propios valores para los atributos definidos en la clase.
 </p>
@@ -2423,9 +2451,9 @@ Una <b>clase</b> es un molde o plantilla a partir de la cual se pueden crear mú
 </div>
 </div>
 
-<div id="outline-container-org21cb964" class="outline-4">
-<h4 id="org21cb964">Creación de una instancia de una clase</h4>
-<div class="outline-text-4" id="text-org21cb964">
+<div id="outline-container-org5059381" class="outline-4">
+<h4 id="org5059381">Creación de una instancia de una clase</h4>
+<div class="outline-text-4" id="text-org5059381">
 <p>
 Para crear una instancia de la clase, simplemente llamamos a la clase como si fuera una función, pasando los argumentos requeridos al constructor.
 </p>
@@ -2446,9 +2474,9 @@ En este caso, hemos creado una instancia llamada <code>persona1</code> de la cla
 </div>
 </div>
 
-<div id="outline-container-org507efcb" class="outline-4">
-<h4 id="org507efcb">Atributos de una clase</h4>
-<div class="outline-text-4" id="text-org507efcb">
+<div id="outline-container-orgd84dd0f" class="outline-4">
+<h4 id="orgd84dd0f">Atributos de una clase</h4>
+<div class="outline-text-4" id="text-orgd84dd0f">
 <p>
 Los atributos en una clase son variables que pertenecen a la instancia del objeto. Pueden ser modificados o accedidos desde fuera de la clase a través de la notación de puntos.
 </p>
@@ -2466,9 +2494,9 @@ Los atributos en una clase son variables que pertenecen a la instancia del objet
 </div>
 </div>
 
-<div id="outline-container-org6491aea" class="outline-4">
-<h4 id="org6491aea">Métodos especiales (métodos mágicos)</h4>
-<div class="outline-text-4" id="text-org6491aea">
+<div id="outline-container-orgdd796f5" class="outline-4">
+<h4 id="orgdd796f5">Métodos especiales (métodos mágicos)</h4>
+<div class="outline-text-4" id="text-orgdd796f5">
 <p>
 Los métodos mágicos permiten personalizar el comportamiento de nuestras clases. Algunos de los más comunes son:
 </p>
@@ -2502,9 +2530,9 @@ Esto permite representar el objeto de una forma más legible cuando lo imprimimo
 </div>
 </div>
 
-<div id="outline-container-orgecb29d9" class="outline-4">
-<h4 id="orgecb29d9">Herencia</h4>
-<div class="outline-text-4" id="text-orgecb29d9">
+<div id="outline-container-org8f66ed3" class="outline-4">
+<h4 id="org8f66ed3">Herencia</h4>
+<div class="outline-text-4" id="text-org8f66ed3">
 <p>
 La herencia es un mecanismo en el que una clase (llamada <b>clase hija</b> o <b>subclase</b>) hereda atributos y métodos de otra clase (llamada <b>clase padre</b> o <b>superclase</b>). La subclase puede agregar nuevos atributos y métodos, o sobrescribir los métodos heredados.
 </p>
@@ -2531,7 +2559,7 @@ La herencia es un mecanismo en el que una clase (llamada <b>clase hija</b> o <b>
 <p>
 <b><b>Salida:</b></b>
 </p>
-<pre class="example" id="org15415ce">
+<pre class="example" id="orgd43bba1">
     Hola, mi nombre es Luis y tengo 22 años.
     Mi matrícula es A12345
 </pre>
@@ -2546,9 +2574,9 @@ La herencia es un mecanismo en el que una clase (llamada <b>clase hija</b> o <b>
 </div>
 </div>
 
-<div id="outline-container-orgaf24089" class="outline-4">
-<h4 id="orgaf24089">Encapsulamiento</h4>
-<div class="outline-text-4" id="text-orgaf24089">
+<div id="outline-container-org1673a0c" class="outline-4">
+<h4 id="org1673a0c">Encapsulamiento</h4>
+<div class="outline-text-4" id="text-org1673a0c">
 <p>
 El encapsulamiento es el concepto de ocultar los detalles internos de una clase para proteger los datos y permitir que los usuarios interactúen solo con una interfaz limitada. En Python, los atributos pueden ser privados utilizando guiones bajos dobles <code>__</code>.
 </p>
@@ -2577,9 +2605,9 @@ El encapsulamiento es el concepto de ocultar los detalles internos de una clase 
 </div>
 </div>
 
-<div id="outline-container-org2fb87b7" class="outline-4">
-<h4 id="org2fb87b7">Polimorfismo</h4>
-<div class="outline-text-4" id="text-org2fb87b7">
+<div id="outline-container-org01baa39" class="outline-4">
+<h4 id="org01baa39">Polimorfismo</h4>
+<div class="outline-text-4" id="text-org01baa39">
 <p>
 El polimorfismo permite que diferentes clases tengan métodos con el mismo nombre, pero con comportamientos diferentes. Esto es útil cuando queremos tratar objetos de distintas clases de manera uniforme.
 </p>
@@ -2611,16 +2639,16 @@ El polimorfismo permite que diferentes clases tengan métodos con el mismo nombr
 <p>
 <b><b>Salida:</b></b>
 </p>
-<pre class="example" id="org68234b7">
+<pre class="example" id="org87c9359">
     Guau
     Miau
 </pre>
 </div>
 </div>
 
-<div id="outline-container-orge24ddff" class="outline-4">
-<h4 id="orge24ddff">Composición</h4>
-<div class="outline-text-4" id="text-orge24ddff">
+<div id="outline-container-org95cf2ca" class="outline-4">
+<h4 id="org95cf2ca">Composición</h4>
+<div class="outline-text-4" id="text-org95cf2ca">
 <p>
 La composición es una técnica donde una clase contiene una instancia de otra clase. Esto crea una relación de <b>tiene un</b> entre objetos, en lugar de una relación de <b>es un</b>.
 </p>
@@ -2648,9 +2676,9 @@ La composición es una técnica donde una clase contiene una instancia de otra c
 </div>
 </div>
 
-<div id="outline-container-org5a9c9d5" class="outline-4">
-<h4 id="org5a9c9d5">Decoradores de métodos: @classmethod y @staticmethod</h4>
-<div class="outline-text-4" id="text-org5a9c9d5">
+<div id="outline-container-org107598c" class="outline-4">
+<h4 id="org107598c">Decoradores de métodos: @classmethod y @staticmethod</h4>
+<div class="outline-text-4" id="text-org107598c">
 <p>
 Python proporciona dos tipos de métodos que pueden estar asociados a una clase: los métodos de clase y los métodos estáticos. Ambos decoradores tienen un uso especial:
 </p>
@@ -2681,9 +2709,9 @@ Python proporciona dos tipos de métodos que pueden estar asociados a una clase:
 </div>
 </div>
 
-<div id="outline-container-orga623567" class="outline-4">
-<h4 id="orga623567">Ejemplo completo</h4>
-<div class="outline-text-4" id="text-orga623567">
+<div id="outline-container-orgbd15933" class="outline-4">
+<h4 id="orgbd15933">Ejemplo completo</h4>
+<div class="outline-text-4" id="text-orgbd15933">
 <p>
 A continuación se presenta un ejemplo que reúne varios conceptos vistos anteriormente.
 </p>
@@ -2714,7 +2742,7 @@ A continuación se presenta un ejemplo que reúne varios conceptos vistos anteri
 <p>
 <b><b>Salida:</b></b>
 </p>
-<pre class="example" id="org34c5e7e">
+<pre class="example" id="org441faf2">
     Ana, 28 años, Ingeniera, Salario: 50000
 </pre>
 </div>
@@ -2724,13 +2752,13 @@ A continuación se presenta un ejemplo que reúne varios conceptos vistos anteri
 
 
 
-<div id="outline-container-orgfb4ba49" class="outline-3">
-<h3 id="orgfb4ba49">Problema del Granjero, el Puma, la Cabra y la Lechuga</h3>
-<div class="outline-text-3" id="text-orgfb4ba49">
+<div id="outline-container-orgb678572" class="outline-3">
+<h3 id="orgb678572">Problema del Granjero, el Puma, la Cabra y la Lechuga</h3>
+<div class="outline-text-3" id="text-orgb678572">
 </div>
-<div id="outline-container-org267d0e7" class="outline-4">
-<h4 id="org267d0e7">Descripción del Problema</h4>
-<div class="outline-text-4" id="text-org267d0e7">
+<div id="outline-container-orgb3652d8" class="outline-4">
+<h4 id="orgb3652d8">Descripción del Problema</h4>
+<div class="outline-text-4" id="text-orgb3652d8">
 <ul class="org-ul">
 <li>El granjero necesita cruzar un río llevando consigo un <b><b>puma</b></b>, una <b><b>cabra</b></b> y una <b><b>lechuga</b></b>.</li>
 <li>El bote solo tiene espacio para el granjero y uno de los tres: el <b><b>puma</b></b>, la <b><b>cabra</b></b> o la <b><b>lechuga</b></b>.</li>
@@ -2741,9 +2769,9 @@ A continuación se presenta un ejemplo que reúne varios conceptos vistos anteri
 </div>
 </div>
 
-<div id="outline-container-org5789353" class="outline-4">
-<h4 id="org5789353">Representación del Estado</h4>
-<div class="outline-text-4" id="text-org5789353">
+<div id="outline-container-orga5a2d7c" class="outline-4">
+<h4 id="orga5a2d7c">Representación del Estado</h4>
+<div class="outline-text-4" id="text-orga5a2d7c">
 <ul class="org-ul">
 <li>Cada estado puede representarse por una tupla `(gran, puma, cabra, lechuga)` donde:
 <ul class="org-ul">
@@ -2754,9 +2782,9 @@ A continuación se presenta un ejemplo que reúne varios conceptos vistos anteri
 </div>
 </div>
 
-<div id="outline-container-orged8a79c" class="outline-4">
-<h4 id="orged8a79c">Reglas de Transición</h4>
-<div class="outline-text-4" id="text-orged8a79c">
+<div id="outline-container-orgabaacbf" class="outline-4">
+<h4 id="orgabaacbf">Reglas de Transición</h4>
+<div class="outline-text-4" id="text-orgabaacbf">
 <ul class="org-ul">
 <li>El granjero puede moverse de un lado a otro llevando solo uno de los tres elementos (puma, cabra, lechuga) o viajando solo.</li>
 <li>Las transiciones solo son válidas si no ocurren las situaciones indeseadas:
@@ -2768,9 +2796,9 @@ A continuación se presenta un ejemplo que reúne varios conceptos vistos anteri
 </div>
 </div>
 
-<div id="outline-container-org2be39a8" class="outline-4">
-<h4 id="org2be39a8">Algoritmo de Búsqueda en Profundidad (DFS)</h4>
-<div class="outline-text-4" id="text-org2be39a8">
+<div id="outline-container-org0261187" class="outline-4">
+<h4 id="org0261187">Algoritmo de Búsqueda en Profundidad (DFS)</h4>
+<div class="outline-text-4" id="text-org0261187">
 <p>
 Se utilizará una búsqueda a lo profundo para encontrar la secuencia de movimientos que lleve a todos al lado derecho del río.
 </p>
@@ -2840,9 +2868,9 @@ solucion = dfs<span style="color: #c099ff;">(</span>estado_inicial, estado_objet
 </div>
 </div>
 
-<div id="outline-container-orgc2293cc" class="outline-4">
-<h4 id="orgc2293cc">Árbol de Búsqueda</h4>
-<div class="outline-text-4" id="text-orgc2293cc">
+<div id="outline-container-orgb97eaff" class="outline-4">
+<h4 id="orgb97eaff">Árbol de Búsqueda</h4>
+<div class="outline-text-4" id="text-orgb97eaff">
 <p>
 El árbol de búsqueda para este problema contiene estados donde el granjero, el puma, la cabra y la lechuga pueden estar en diferentes lados del río. Aquí un ejemplo de algunos estados:
 </p>
@@ -2867,9 +2895,9 @@ Este proceso continúa explorando todos los posibles caminos hasta encontrar el 
 </div>
 </div>
 
-<div id="outline-container-org04864c4" class="outline-4">
-<h4 id="org04864c4">Solución del Problema</h4>
-<div class="outline-text-4" id="text-org04864c4">
+<div id="outline-container-orgbd00c70" class="outline-4">
+<h4 id="orgbd00c70">Solución del Problema</h4>
+<div class="outline-text-4" id="text-orgbd00c70">
 <p>
 La búsqueda en profundidad explora las ramas posibles del árbol de búsqueda hasta encontrar una solución válida. Una posible secuencia de movimientos es:
 </p>
@@ -2894,18 +2922,18 @@ La búsqueda en profundidad explora las ramas posibles del árbol de búsqueda h
 
 
 
-<div id="outline-container-org9a1fb3c" class="outline-3">
-<h3 id="org9a1fb3c">Tutorial de Operaciones Bitwise en OpenCV</h3>
-<div class="outline-text-3" id="text-org9a1fb3c">
+<div id="outline-container-org92f4bca" class="outline-3">
+<h3 id="org92f4bca">Tutorial de Operaciones Bitwise en OpenCV</h3>
+<div class="outline-text-3" id="text-org92f4bca">
 <p>
 Las operaciones <b>bitwise</b> en OpenCV son manipulaciones a nivel de bits que se pueden realizar sobre imágenes. Estas operaciones incluyen <b><b>AND</b></b>, <b><b>OR</b></b>, <b><b>XOR</b></b> y <b><b>NOT</b></b>, y son útiles cuando necesitas combinar, enmascarar, o manipular diferentes partes de una imagen.
 </p>
 </div>
 
 
-<div id="outline-container-org02ca77e" class="outline-4">
-<h4 id="org02ca77e">1. Operación Bitwise AND</h4>
-<div class="outline-text-4" id="text-org02ca77e">
+<div id="outline-container-orgbc028c7" class="outline-4">
+<h4 id="orgbc028c7">1. Operación Bitwise AND</h4>
+<div class="outline-text-4" id="text-orgbc028c7">
 <p>
 La operación <b><b>AND</b></b> toma dos imágenes o una imagen y una máscara, y realiza la operación AND bit a bit. El resultado será una imagen donde los bits que son 1 en ambas entradas se mantendrán, mientras que los demás bits serán 0.
 </p>
@@ -2938,9 +2966,9 @@ cv2.destroyAllWindows<span style="color: #c099ff;">()</span>
 </div>
 </div>
 
-<div id="outline-container-orgc3c1362" class="outline-4">
-<h4 id="orgc3c1362">2. Operación Bitwise OR</h4>
-<div class="outline-text-4" id="text-orgc3c1362">
+<div id="outline-container-org2c2374e" class="outline-4">
+<h4 id="org2c2374e">2. Operación Bitwise OR</h4>
+<div class="outline-text-4" id="text-org2c2374e">
 <p>
 La operación <b><b>OR</b></b> toma dos imágenes y realiza la operación OR bit a bit. Los bits que son 1 en cualquiera de las dos entradas permanecerán en el resultado.
 </p>
@@ -2958,9 +2986,9 @@ cv2.destroyAllWindows<span style="color: #c099ff;">()</span>
 </div>
 </div>
 
-<div id="outline-container-org17d0a4d" class="outline-4">
-<h4 id="org17d0a4d">3. Operación Bitwise XOR</h4>
-<div class="outline-text-4" id="text-org17d0a4d">
+<div id="outline-container-org1aad00c" class="outline-4">
+<h4 id="org1aad00c">3. Operación Bitwise XOR</h4>
+<div class="outline-text-4" id="text-org1aad00c">
 <p>
 La operación <b><b>XOR</b></b> compara los bits de dos imágenes y deja un 1 en la posición del resultado solo si los bits de las entradas son diferentes.
 </p>
@@ -2978,9 +3006,9 @@ cv2.destroyAllWindows<span style="color: #c099ff;">()</span>
 </div>
 </div>
 
-<div id="outline-container-org10374a9" class="outline-4">
-<h4 id="org10374a9">4. Operación Bitwise NOT</h4>
-<div class="outline-text-4" id="text-org10374a9">
+<div id="outline-container-org985d64d" class="outline-4">
+<h4 id="org985d64d">4. Operación Bitwise NOT</h4>
+<div class="outline-text-4" id="text-org985d64d">
 <p>
 La operación <b><b>NOT</b></b> invierte todos los bits de la imagen (los 1s se convierten en 0s y viceversa).
 </p>
@@ -2998,9 +3026,9 @@ cv2.destroyAllWindows<span style="color: #c099ff;">()</span>
 </div>
 </div>
 
-<div id="outline-container-org8001b32" class="outline-4">
-<h4 id="org8001b32">5. Aplicaciones Prácticas</h4>
-<div class="outline-text-4" id="text-org8001b32">
+<div id="outline-container-orgceb3107" class="outline-4">
+<h4 id="orgceb3107">5. Aplicaciones Prácticas</h4>
+<div class="outline-text-4" id="text-orgceb3107">
 <p>
 Las operaciones bitwise son útiles en muchas aplicaciones, como:
 </p>
@@ -3037,24 +3065,24 @@ cv2.destroyAllWindows<span style="color: #c099ff;">()</span>
 </div>
 </div>
 
-<div id="outline-container-org9f2f14e" class="outline-4">
-<h4 id="org9f2f14e">Definición: Operación Bit a Bit</h4>
-<div class="outline-text-4" id="text-org9f2f14e">
+<div id="outline-container-orgab4bc2a" class="outline-4">
+<h4 id="orgab4bc2a">Definición: Operación Bit a Bit</h4>
+<div class="outline-text-4" id="text-orgab4bc2a">
 <p>
 Una <b><b>operación bit a bit</b></b> (en inglés, <b>bitwise operation</b>) es una operación que se realiza directamente sobre los bits de los operandos. Las operaciones se ejecutan sobre los bits correspondientes de los números en formato binario.
 </p>
 </div>
 
 <ul class="org-ul">
-<li><a id="org3b97597"></a>Principales operaciones bit a bit<br />
+<li><a id="orgbcb18fc"></a>Principales operaciones bit a bit<br />
 <ul class="org-ul">
-<li><a id="org323aef6"></a>1. AND bit a bit (<code>&amp;</code>)<br />
-<div class="outline-text-6" id="text-org323aef6">
+<li><a id="org8aef3ad"></a>1. AND bit a bit (<code>&amp;</code>)<br />
+<div class="outline-text-6" id="text-org8aef3ad">
 <p>
 Devuelve `1` si ambos bits en la misma posición son `1`, de lo contrario devuelve `0`.
 </p>
 
-<pre class="example" id="orgf1b76e0">
+<pre class="example" id="orgb88c9c3">
 A = 1010 (10 en decimal)
 B = 1100 (12 en decimal)
 Resultado: 1000 (8 en decimal)
@@ -3062,13 +3090,13 @@ Resultado: 1000 (8 en decimal)
 </div>
 </li>
 
-<li><a id="org29c5fa8"></a>2. OR bit a bit (<code>|</code>)<br />
-<div class="outline-text-6" id="text-org29c5fa8">
+<li><a id="orga5f7781"></a>2. OR bit a bit (<code>|</code>)<br />
+<div class="outline-text-6" id="text-orga5f7781">
 <p>
 Devuelve `1` si al menos uno de los bits en la misma posición es `1`, de lo contrario devuelve `0`.
 </p>
 
-<pre class="example" id="orga928c98">
+<pre class="example" id="org754adea">
 A = 1010 (10 en decimal)
 B = 1100 (12 en decimal)
 Resultado: 1110 (14 en decimal)
@@ -3076,13 +3104,13 @@ Resultado: 1110 (14 en decimal)
 </div>
 </li>
 
-<li><a id="org6ceab80"></a>3. XOR bit a bit (<code>^</code>)<br />
-<div class="outline-text-6" id="text-org6ceab80">
+<li><a id="org07523c4"></a>3. XOR bit a bit (<code>^</code>)<br />
+<div class="outline-text-6" id="text-org07523c4">
 <p>
 Devuelve `1` si los bits en la misma posición son diferentes, y `0` si son iguales.
 </p>
 
-<pre class="example" id="orgf694948">
+<pre class="example" id="orgfe9cfc1">
 A = 1010 (10 en decimal)
 B = 1100 (12 en decimal)
 Resultado: 0110 (6 en decimal)
@@ -3090,47 +3118,47 @@ Resultado: 0110 (6 en decimal)
 </div>
 </li>
 
-<li><a id="orgb9ffab4"></a>4. NOT bit a bit (~~)<br />
-<div class="outline-text-6" id="text-orgb9ffab4">
+<li><a id="org65a78bf"></a>4. NOT bit a bit (~~)<br />
+<div class="outline-text-6" id="text-org65a78bf">
 <p>
 Invierte los bits de un número: convierte los `0` en `1` y los `1` en `0`. En sistemas de complemento a dos, esto también implica cambiar el signo de un número entero.
 </p>
 
-<pre class="example" id="org5b0e046">
+<pre class="example" id="orgdcc2327">
 A = 1010 (10 en decimal)
 Resultado: 0101 (-11 en decimal, si estamos usando complemento a dos)
 </pre>
 </div>
 </li>
 
-<li><a id="org206e68c"></a>5. Desplazamiento a la izquierda (<code>&lt;&lt;</code>)<br />
-<div class="outline-text-6" id="text-org206e68c">
+<li><a id="org335a3e2"></a>5. Desplazamiento a la izquierda (<code>&lt;&lt;</code>)<br />
+<div class="outline-text-6" id="text-org335a3e2">
 <p>
 Desplaza todos los bits del número hacia la izquierda por un número específico de posiciones. Los bits desplazados fuera del límite se descartan y se rellenan con ceros en el extremo derecho.
 </p>
 
-<pre class="example" id="orgcd7fe1c">
+<pre class="example" id="org1729466">
 A = 0001 (1 en decimal)
 A &lt;&lt; 2 = 0100 (4 en decimal)
 </pre>
 </div>
 </li>
 
-<li><a id="org7b6e23d"></a>6. Desplazamiento a la derecha (<code>&gt;&gt;</code>)<br />
-<div class="outline-text-6" id="text-org7b6e23d">
+<li><a id="org29a457b"></a>6. Desplazamiento a la derecha (<code>&gt;&gt;</code>)<br />
+<div class="outline-text-6" id="text-org29a457b">
 <p>
 Desplaza todos los bits del número hacia la derecha por un número específico de posiciones. Los bits desplazados fuera del límite se descartan y el bit más significativo depende del signo del número.
 </p>
 
-<pre class="example" id="orgd1f8d05">
+<pre class="example" id="org98c8ab7">
 A = 1000 (8 en decimal)
 A &gt;&gt; 2 = 0010 (2 en decimal)
 </pre>
 </div>
 </li>
 
-<li><a id="org9ca4edf"></a>Aplicaciones de las operaciones bit a bit<br />
-<div class="outline-text-6" id="text-org9ca4edf">
+<li><a id="orge94e026"></a>Aplicaciones de las operaciones bit a bit<br />
+<div class="outline-text-6" id="text-orge94e026">
 <ul class="org-ul">
 <li><b><b>Máscaras de bits</b></b>: Las operaciones bit a bit se usan para aplicar máscaras que seleccionan o modifican partes específicas de un número o secuencia binaria.</li>
 <li><b><b>Manipulación de imágenes</b></b>: En procesamiento de imágenes, las operaciones bit a bit son útiles para combinar y modificar píxeles en OpenCV.</li>
@@ -3287,9 +3315,9 @@ cv.destroyAllWindows()
 </div>
 </div>
 
-<div id="outline-container-orge01e782" class="outline-3">
-<h3 id="orge01e782">Segmentación de color mediante el modelo de color HSV</h3>
-<div class="outline-text-3" id="text-orge01e782">
+<div id="outline-container-orgfea84d0" class="outline-3">
+<h3 id="orgfea84d0">Segmentación de color mediante el modelo de color HSV</h3>
+<div class="outline-text-3" id="text-orgfea84d0">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #c099ff;">import</span> cv2 <span style="color: #c099ff;">as</span> cv
 
@@ -3352,9 +3380,9 @@ cv.destroyAllWindows<span style="color: #c099ff;">()</span>
 
 
 
-<div id="outline-container-orga556d6b" class="outline-3">
-<h3 id="orga556d6b">Seguimiento Por color</h3>
-<div class="outline-text-3" id="text-orga556d6b">
+<div id="outline-container-org8616c33" class="outline-3">
+<h3 id="org8616c33">Seguimiento Por color</h3>
+<div class="outline-text-3" id="text-org8616c33">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #c099ff;">import</span> cv2
 <span style="color: #c099ff;">import</span> numpy <span style="color: #c099ff;">as</span> np
@@ -3425,29 +3453,29 @@ cv2.destroyAllWindows<span style="color: #c099ff;">()</span>
 
 
 
-<div id="outline-container-org4576a07" class="outline-3">
-<h3 id="org4576a07">Problemas con Objetos y Estructuras de Datos</h3>
-<div class="outline-text-3" id="text-org4576a07">
+<div id="outline-container-orgcc2c767" class="outline-3">
+<h3 id="orgcc2c767">Problemas con Objetos y Estructuras de Datos</h3>
+<div class="outline-text-3" id="text-orgcc2c767">
 </div>
-<div id="outline-container-org9c1726b" class="outline-4">
-<h4 id="org9c1726b">Problema ejemplo: Control de un brazo robótico con múltiples articulaciones</h4>
-<div class="outline-text-4" id="text-org9c1726b">
+<div id="outline-container-org158884e" class="outline-4">
+<h4 id="org158884e">Problema ejemplo: Control de un brazo robótico con múltiples articulaciones</h4>
+<div class="outline-text-4" id="text-org158884e">
 <p>
 Diseña un sistema de control para un brazo robótico con 4 articulaciones (hombro, codo, muñeca y pinza), donde cada articulación tiene sensores de posición y motores controlados individualmente. El sistema debe recibir órdenes de movimiento y controlar la posición de cada articulación para mover el brazo hacia una posición objetivo en un espacio tridimensional.
 </p>
 </div>
 
 <ul class="org-ul">
-<li><a id="org3b53e40"></a>Objetivo:<br />
-<div class="outline-text-5" id="text-org3b53e40">
+<li><a id="org33e5958"></a>Objetivo:<br />
+<div class="outline-text-5" id="text-org33e5958">
 <p>
 Crear una estructura de datos que represente las articulaciones y los estados de cada una, así como un algoritmo que controle el brazo robótico basado en estos datos.
 </p>
 </div>
 </li>
 
-<li><a id="orge6dcdc5"></a>Requisitos:<br />
-<div class="outline-text-5" id="text-orge6dcdc5">
+<li><a id="org5a27045"></a>Requisitos:<br />
+<div class="outline-text-5" id="text-org5a27045">
 <ol class="org-ol">
 <li><b><b>Estructura de datos</b></b>:
 Cada articulación debe tener al menos los siguientes parámetros:
@@ -3487,8 +3515,8 @@ Cada articulación debe tener al menos los siguientes parámetros:
 </div>
 </li>
 
-<li><a id="org5216bdc"></a>Ejemplo de estructura de datos en Python:<br />
-<div class="outline-text-5" id="text-org5216bdc">
+<li><a id="org7a2beeb"></a>Ejemplo de estructura de datos en Python:<br />
+<div class="outline-text-5" id="text-org7a2beeb">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #c099ff;">class</span> <span style="color: #ffc777;">Articulacion</span>:
 <span style="background-color: #2f334d;"> </span>   <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">__init__</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span>, angulo_actual, angulo_objetivo, velocidad, limite_min, limite_max<span style="color: #c099ff;">)</span>:
@@ -3540,9 +3568,9 @@ brazo.mover_a_posicion<span style="color: #c099ff;">(</span><span style="color: 
 
 
 
-<div id="outline-container-orgf5e15f3" class="outline-4">
-<h4 id="orgf5e15f3">1. Sistema de gestión de energía en un vehículo eléctrico</h4>
-<div class="outline-text-4" id="text-orgf5e15f3">
+<div id="outline-container-orgd264f56" class="outline-4">
+<h4 id="orgd264f56">1. Sistema de gestión de energía en un vehículo eléctrico</h4>
+<div class="outline-text-4" id="text-orgd264f56">
 <p>
 Diseña un sistema para gestionar la distribución de energía en un
 vehículo eléctrico. El sistema debe tener una clase Batería, con
@@ -3560,9 +3588,9 @@ vehículo.
 </div>
 </div>
 
-<div id="outline-container-org02b5b92" class="outline-4">
-<h4 id="org02b5b92">2. Control de un dron con múltiples sensores</h4>
-<div class="outline-text-4" id="text-org02b5b92">
+<div id="outline-container-org2840bab" class="outline-4">
+<h4 id="org2840bab">2. Control de un dron con múltiples sensores</h4>
+<div class="outline-text-4" id="text-org2840bab">
 <p>
 Desarrolla un sistema para controlar un dron que utiliza varios
 sensores (acelerómetro, giroscopio, GPS, cámara). Cada sensor tiene
@@ -3579,9 +3607,9 @@ rutas de vuelo.
 </div>
 </div>
 
-<div id="outline-container-org68fc7e1" class="outline-4">
-<h4 id="org68fc7e1">3. Sistema de monitoreo de un invernadero automatizado</h4>
-<div class="outline-text-4" id="text-org68fc7e1">
+<div id="outline-container-orge474511" class="outline-4">
+<h4 id="orge474511">3. Sistema de monitoreo de un invernadero automatizado</h4>
+<div class="outline-text-4" id="text-orge474511">
 <p>
 Diseña un sistema para monitorear y controlar la temperatura,
 humedad, luz y nivel de nutrientes en un invernadero
@@ -3599,9 +3627,9 @@ nutrientes.
 </div>
 </div>
 
-<div id="outline-container-org22d54ea" class="outline-4">
-<h4 id="org22d54ea">4. Sistema de estacionamiento automatizado</h4>
-<div class="outline-text-4" id="text-org22d54ea">
+<div id="outline-container-orgadb8b26" class="outline-4">
+<h4 id="orgadb8b26">4. Sistema de estacionamiento automatizado</h4>
+<div class="outline-text-4" id="text-orgadb8b26">
 <p>
 Diseña un sistema para controlar un vehículo autónomo que puede
 estacionarse en un lugar designado. El vehículo tiene varios
@@ -3620,9 +3648,9 @@ entorno.</li>
 </div>
 </div>
 
-<div id="outline-container-org1e291b9" class="outline-4">
-<h4 id="org1e291b9">5. Control de un exoesqueleto</h4>
-<div class="outline-text-4" id="text-org1e291b9">
+<div id="outline-container-org5af3c21" class="outline-4">
+<h4 id="org5af3c21">5. Control de un exoesqueleto</h4>
+<div class="outline-text-4" id="text-org5af3c21">
 <p>
 Desarrolla un sistema para controlar un exoesqueleto mecánico que
 ayuda a personas con movilidad reducida a caminar. Cada
@@ -3639,9 +3667,9 @@ sincronizar los movimientos de manera natural.
 </div>
 </div>
 
-<div id="outline-container-org496c8c8" class="outline-4">
-<h4 id="org496c8c8">6. Sistema de control de calidad en una línea de producción</h4>
-<div class="outline-text-4" id="text-org496c8c8">
+<div id="outline-container-orge3b7a21" class="outline-4">
+<h4 id="orge3b7a21">6. Sistema de control de calidad en una línea de producción</h4>
+<div class="outline-text-4" id="text-orge3b7a21">
 <p>
 Implementa un sistema para inspeccionar productos en una línea de
 producción automatizada. Se utilizan cámaras y sensores para
@@ -3661,13 +3689,13 @@ tolerancias establecidas.
 </div>
 
 
-<div id="outline-container-org8f9d546" class="outline-3">
-<h3 id="org8f9d546">Manejo de Archivos en Python</h3>
-<div class="outline-text-3" id="text-org8f9d546">
+<div id="outline-container-orga864480" class="outline-3">
+<h3 id="orga864480">Manejo de Archivos en Python</h3>
+<div class="outline-text-3" id="text-orga864480">
 </div>
-<div id="outline-container-org9be7ce3" class="outline-4">
-<h4 id="org9be7ce3">1. ¿Qué es el manejo de archivos en Python?</h4>
-<div class="outline-text-4" id="text-org9be7ce3">
+<div id="outline-container-orgf464f67" class="outline-4">
+<h4 id="orgf464f67">1. ¿Qué es el manejo de archivos en Python?</h4>
+<div class="outline-text-4" id="text-orgf464f67">
 <p>
 El manejo de archivos es una técnica fundamental en programación que
 permite la lectura, escritura, modificación y almacenamiento de datos
@@ -3686,13 +3714,13 @@ comunes son abrir, leer, escribir y cerrar archivos.
 </div>
 </div>
 
-<div id="outline-container-orgdbf8070" class="outline-4">
-<h4 id="orgdbf8070">2. Tipos de archivos y sus modos de acceso</h4>
-<div class="outline-text-4" id="text-orgdbf8070">
+<div id="outline-container-org99f6f90" class="outline-4">
+<h4 id="org99f6f90">2. Tipos de archivos y sus modos de acceso</h4>
+<div class="outline-text-4" id="text-org99f6f90">
 </div>
 <ul class="org-ul">
-<li><a id="org96a7f4f"></a>2.1 Tipos de archivos<br />
-<div class="outline-text-5" id="text-org96a7f4f">
+<li><a id="org787734c"></a>2.1 Tipos de archivos<br />
+<div class="outline-text-5" id="text-org787734c">
 <p>
 En general, los archivos se dividen en dos categorías principales:
 </p>
@@ -3703,8 +3731,8 @@ En general, los archivos se dividen en dos categorías principales:
 </div>
 </li>
 
-<li><a id="org0cbe6eb"></a>2.2 Modos de apertura de archivos<br />
-<div class="outline-text-5" id="text-org0cbe6eb">
+<li><a id="org01d4af3"></a>2.2 Modos de apertura de archivos<br />
+<div class="outline-text-5" id="text-org01d4af3">
 <p>
 Cuando trabajamos con archivos, es esencial abrirlos en el modo adecuado. Python nos proporciona varios modos:
 </p>
@@ -3765,17 +3793,17 @@ Cuando trabajamos con archivos, es esencial abrirlos en el modo adecuado. Python
 </ul>
 </div>
 
-<div id="outline-container-org3ddad8d" class="outline-4">
-<h4 id="org3ddad8d">3. Operaciones comunes en archivos</h4>
-<div class="outline-text-4" id="text-org3ddad8d">
+<div id="outline-container-org85ec1df" class="outline-4">
+<h4 id="org85ec1df">3. Operaciones comunes en archivos</h4>
+<div class="outline-text-4" id="text-org85ec1df">
 <p>
 Python permite realizar varias operaciones con archivos:
 </p>
 </div>
 
 <ul class="org-ul">
-<li><a id="orgc2e0d4d"></a>3.1 Abrir y cerrar un archivo<br />
-<div class="outline-text-5" id="text-orgc2e0d4d">
+<li><a id="org16023dd"></a>3.1 Abrir y cerrar un archivo<br />
+<div class="outline-text-5" id="text-org16023dd">
 <p>
 Para interactuar con un archivo, primero debes abrirlo utilizando la función `open()`. Al finalizar las operaciones, se debe cerrar el archivo con `close()` para liberar los recursos.
 </p>
@@ -3801,8 +3829,8 @@ Para simplificar la gestión de archivos, Python recomienda usar el contexto `wi
 </div>
 </li>
 
-<li><a id="orga2c64f7"></a>3.2 Leer archivos<br />
-<div class="outline-text-5" id="text-orga2c64f7">
+<li><a id="org81f3dab"></a>3.2 Leer archivos<br />
+<div class="outline-text-5" id="text-org81f3dab">
 <p>
 Python ofrece múltiples formas de leer archivos:
 </p>
@@ -3826,8 +3854,8 @@ Ejemplos de lectura:
 </div>
 </li>
 
-<li><a id="orgddb63e7"></a>3.3 Escribir archivos<br />
-<div class="outline-text-5" id="text-orgddb63e7">
+<li><a id="org82d500f"></a>3.3 Escribir archivos<br />
+<div class="outline-text-5" id="text-org82d500f">
 <p>
 Para escribir en un archivo, puedes utilizar `write()` o `writelines()`. Es importante abrir el archivo en modo de escritura ('w') o anexado ('a').
 </p>
@@ -3852,8 +3880,8 @@ Para escribir múltiples líneas a la vez, puedes usar `writelines()` con una li
 </div>
 </li>
 
-<li><a id="orgdab9522"></a>3.4 Manejo de errores<br />
-<div class="outline-text-5" id="text-orgdab9522">
+<li><a id="org1be7629"></a>3.4 Manejo de errores<br />
+<div class="outline-text-5" id="text-org1be7629">
 <p>
 Es fundamental manejar posibles errores al interactuar con archivos,
 como archivos no encontrados o problemas de permisos. Esto se logra
@@ -3877,9 +3905,9 @@ mediante el uso de bloques `try-except`:
 
 
 
-<div id="outline-container-orgca3fcdc" class="outline-4">
-<h4 id="orgca3fcdc">4. Ejemplos prácticos</h4>
-<div class="outline-text-4" id="text-orgca3fcdc">
+<div id="outline-container-org231cfeb" class="outline-4">
+<h4 id="org231cfeb">4. Ejemplos prácticos</h4>
+<div class="outline-text-4" id="text-org231cfeb">
 <p>
 A continuación se presenta el tutorial original que utiliza las clases
 <b>Articulacion</b> y <b>BrazoRobotico</b>. Este código demuestra cómo escribir
@@ -3889,8 +3917,8 @@ además de ejemplos avanzados como el uso de JSON.
 </div>
 
 <ul class="org-ul">
-<li><a id="org92ea2c8"></a>1. Definición básica del código<br />
-<div class="outline-text-5" id="text-org92ea2c8">
+<li><a id="orge8ddb33"></a>1. Definición básica del código<br />
+<div class="outline-text-5" id="text-orge8ddb33">
 <p>
 A continuación se muestra el código que define las clases <b>Articulacion</b> y <b>BrazoRobotico</b>.
 </p>
@@ -3941,8 +3969,8 @@ articulaciones como el hombro, codo, muñeca y pinza.
 </div>
 </li>
 
-<li><a id="org9777b83"></a>2. Escribir las posiciones del brazo en un archivo<br />
-<div class="outline-text-5" id="text-org9777b83">
+<li><a id="orga6edf5a"></a>2. Escribir las posiciones del brazo en un archivo<br />
+<div class="outline-text-5" id="text-orga6edf5a">
 <p>
 La primera tarea es escribir las posiciones actuales de las
 articulaciones a un archivo de texto. Puedes utilizar el método
@@ -3961,8 +3989,8 @@ articulaciones a un archivo de texto. Puedes utilizar el método
 </div>
 </li>
 
-<li><a id="org9fb44c0"></a>3. Leer las posiciones desde un archivo<br />
-<div class="outline-text-5" id="text-org9fb44c0">
+<li><a id="orgdd39eac"></a>3. Leer las posiciones desde un archivo<br />
+<div class="outline-text-5" id="text-orgdd39eac">
 <p>
 Puedes leer los datos del archivo y asignarlos a las articulaciones
 del brazo robótico utilizando `readlines()` para leer todas las líneas
@@ -3986,16 +4014,16 @@ Este método lee las posiciones del archivo y las asigna a las articulaciones de
 </div>
 </li>
 
-<li><a id="orgb7883e6"></a>4. Diferentes maneras de recorrer un archivo<br />
-<div class="outline-text-5" id="text-orgb7883e6">
+<li><a id="org9a7cf6a"></a>4. Diferentes maneras de recorrer un archivo<br />
+<div class="outline-text-5" id="text-org9a7cf6a">
 <p>
 Hay varias formas de recorrer el contenido de un archivo. Veamos algunas:
 </p>
 </div>
 
 <ul class="org-ul">
-<li><a id="org7697ee9"></a>4.1 Leer todo el archivo como una sola cadena<br />
-<div class="outline-text-6" id="text-org7697ee9">
+<li><a id="org0aa52f0"></a>4.1 Leer todo el archivo como una sola cadena<br />
+<div class="outline-text-6" id="text-org0aa52f0">
 <p>
 Puedes leer todo el contenido de un archivo como una cadena de texto utilizando `read()`.
 </p>
@@ -4013,8 +4041,8 @@ Esto imprimirá todo el contenido del archivo en un solo bloque.
 </div>
 </li>
 
-<li><a id="org1d99e87"></a>4.2 Leer línea por línea<br />
-<div class="outline-text-6" id="text-org1d99e87">
+<li><a id="orga8e08ca"></a>4.2 Leer línea por línea<br />
+<div class="outline-text-6" id="text-orga8e08ca">
 <p>
 Si deseas procesar el archivo línea por línea, puedes usar un bucle `for`.
 </p>
@@ -4033,8 +4061,8 @@ saltos de línea innecesarios.
 </div>
 </li>
 
-<li><a id="orge15f916"></a>4.3 Usar el formato JSON para guardar y cargar posiciones<br />
-<div class="outline-text-6" id="text-orge15f916">
+<li><a id="orgbdd708e"></a>4.3 Usar el formato JSON para guardar y cargar posiciones<br />
+<div class="outline-text-6" id="text-orgbdd708e">
 <p>
 Otra opción avanzada es usar archivos JSON, lo cual es útil para
 almacenar estructuras de datos más complejas.
@@ -4073,8 +4101,8 @@ programas.
 </ul>
 </li>
 
-<li><a id="org00f1f9e"></a>5. Búsqueda y filtrado de información en el archivo<br />
-<div class="outline-text-5" id="text-org00f1f9e">
+<li><a id="org5261290"></a>5. Búsqueda y filtrado de información en el archivo<br />
+<div class="outline-text-5" id="text-org5261290">
 <p>
 A continuación, mostramos cómo buscar información específica en un
 archivo.
@@ -4082,8 +4110,8 @@ archivo.
 </div>
 
 <ul class="org-ul">
-<li><a id="org6f52c4a"></a>5.1 Buscar por palabra clave<br />
-<div class="outline-text-6" id="text-org6f52c4a">
+<li><a id="org029bb22"></a>5.1 Buscar por palabra clave<br />
+<div class="outline-text-6" id="text-org029bb22">
 <p>
 Podemos buscar una palabra clave en el archivo para encontrar articulaciones específicas.
 </p>
@@ -4106,8 +4134,8 @@ Esto buscará la palabra "Codo" en el archivo y devolverá la línea correspondi
 </div>
 </li>
 
-<li><a id="org719a992"></a>5.2 Filtrar con expresiones regulares<br />
-<div class="outline-text-6" id="text-org719a992">
+<li><a id="org0b52343"></a>5.2 Filtrar con expresiones regulares<br />
+<div class="outline-text-6" id="text-org0b52343">
 <p>
 Para una búsqueda más avanzada, podemos usar expresiones regulares con el módulo `re`.
 </p>
@@ -4135,8 +4163,8 @@ entre 40 y 59 grados.
 </ul>
 </li>
 
-<li><a id="orgc16b92a"></a>6. Manejo de errores<br />
-<div class="outline-text-5" id="text-orgc16b92a">
+<li><a id="org287bbaa"></a>6. Manejo de errores<br />
+<div class="outline-text-5" id="text-org287bbaa">
 <p>
 Al trabajar con archivos, es importante manejar errores para evitar
 fallos inesperados, como archivos no encontrados.
@@ -4162,13 +4190,13 @@ Este código asegura que el programa no se rompa si el archivo no existe.
 </div>
 </div>
 
-<div id="outline-container-orgaaf8695" class="outline-3">
-<h3 id="orgaaf8695">Tipos de archivos JSON y CSV</h3>
-<div class="outline-text-3" id="text-orgaaf8695">
+<div id="outline-container-orgca959d8" class="outline-3">
+<h3 id="orgca959d8">Tipos de archivos JSON y CSV</h3>
+<div class="outline-text-3" id="text-orgca959d8">
 </div>
-<div id="outline-container-orgebedd3e" class="outline-4">
-<h4 id="orgebedd3e">1.1 ¿Qué es JSON?</h4>
-<div class="outline-text-4" id="text-orgebedd3e">
+<div id="outline-container-org0081cd6" class="outline-4">
+<h4 id="org0081cd6">1.1 ¿Qué es JSON?</h4>
+<div class="outline-text-4" id="text-org0081cd6">
 <p>
 JSON (JavaScript Object Notation) es un formato ligero para el
 intercambio de datos. Es fácil de leer y escribir tanto para humanos
@@ -4179,14 +4207,14 @@ especialmente en APIs y aplicaciones web.
 </div>
 </div>
 
-<div id="outline-container-orgd56ba27" class="outline-4">
-<h4 id="orgd56ba27">1.2 Estructura de un archivo JSON</h4>
-<div class="outline-text-4" id="text-orgd56ba27">
+<div id="outline-container-org21576c4" class="outline-4">
+<h4 id="org21576c4">1.2 Estructura de un archivo JSON</h4>
+<div class="outline-text-4" id="text-org21576c4">
 <p>
 Los archivos JSON están organizados en pares de clave-valor, y pueden representar objetos complejos o listas anidadas. Un ejemplo básico de un archivo JSON sería:
 </p>
 
-<pre class="example" id="orgcd302f6">
+<pre class="example" id="org58e70ad">
 {
     "nombre": "Brazo Robótico",
     "hombro": 45,
@@ -4202,9 +4230,9 @@ Cada campo tiene una clave (ejemplo: `"nombre"`, `"hombro"`) y un valor que pued
 </div>
 </div>
 
-<div id="outline-container-org2e12392" class="outline-4">
-<h4 id="org2e12392">1.3 Ventajas de JSON</h4>
-<div class="outline-text-4" id="text-org2e12392">
+<div id="outline-container-org737ba91" class="outline-4">
+<h4 id="org737ba91">1.3 Ventajas de JSON</h4>
+<div class="outline-text-4" id="text-org737ba91">
 <ul class="org-ul">
 <li><b><b>Fácil de leer y escribir</b></b>: Tanto para humanos como para máquinas.</li>
 <li><b><b>Ligero</b></b>: Ocupa poco espacio.</li>
@@ -4213,9 +4241,9 @@ Cada campo tiene una clave (ejemplo: `"nombre"`, `"hombro"`) y un valor que pued
 </div>
 </div>
 
-<div id="outline-container-org9f979b7" class="outline-4">
-<h4 id="org9f979b7">1.4 Trabajar con JSON en Python</h4>
-<div class="outline-text-4" id="text-org9f979b7">
+<div id="outline-container-orgbe692bf" class="outline-4">
+<h4 id="orgbe692bf">1.4 Trabajar con JSON en Python</h4>
+<div class="outline-text-4" id="text-orgbe692bf">
 <p>
 Python proporciona el módulo `json` para manejar archivos JSON de forma nativa.
 </p>
@@ -4253,13 +4281,13 @@ Python proporciona el módulo `json` para manejar archivos JSON de forma nativa.
 </div>
 </div>
 
-<div id="outline-container-org470efbe" class="outline-4">
-<h4 id="org470efbe">2. Archivos CSV</h4>
-<div class="outline-text-4" id="text-org470efbe">
+<div id="outline-container-orgd9bd61b" class="outline-4">
+<h4 id="orgd9bd61b">2. Archivos CSV</h4>
+<div class="outline-text-4" id="text-orgd9bd61b">
 </div>
 <ul class="org-ul">
-<li><a id="org4cae2c8"></a>2.1 ¿Qué es CSV?<br />
-<div class="outline-text-5" id="text-org4cae2c8">
+<li><a id="org8a9a427"></a>2.1 ¿Qué es CSV?<br />
+<div class="outline-text-5" id="text-org8a9a427">
 <p>
 CSV (Comma-Separated Values) es un formato simple utilizado para
 almacenar datos tabulares (como una hoja de cálculo o base de datos)
@@ -4269,13 +4297,13 @@ un registro de datos.
 </div>
 </li>
 
-<li><a id="org4042f83"></a>2.2 Estructura de un archivo CSV<br />
-<div class="outline-text-5" id="text-org4042f83">
+<li><a id="org259e3b3"></a>2.2 Estructura de un archivo CSV<br />
+<div class="outline-text-5" id="text-org259e3b3">
 <p>
 Un archivo CSV puede verse de la siguiente manera:
 </p>
 
-<pre class="example" id="org1acd1d5">
+<pre class="example" id="org1512a64">
 nombre,hombro,codo,muneca,pinza
 Brazo Robótico,45,90,30,180
 </pre>
@@ -4286,8 +4314,8 @@ La primera línea es el encabezado (opcional), que describe los campos. Cada lí
 </div>
 </li>
 
-<li><a id="orgad98901"></a>2.3 Ventajas de CSV<br />
-<div class="outline-text-5" id="text-orgad98901">
+<li><a id="org04c22c2"></a>2.3 Ventajas de CSV<br />
+<div class="outline-text-5" id="text-org04c22c2">
 <ul class="org-ul">
 <li><b><b>Simplicidad</b></b>: Fácil de usar y entender.</li>
 <li><b><b>Universalidad</b></b>: Es soportado por muchos programas (como Excel) y lenguajes de programación.</li>
@@ -4296,8 +4324,8 @@ La primera línea es el encabezado (opcional), que describe los campos. Cada lí
 </div>
 </li>
 
-<li><a id="orgd31c05f"></a>2.4 Trabajar con CSV en Python<br />
-<div class="outline-text-5" id="text-orgd31c05f">
+<li><a id="orga189c67"></a>2.4 Trabajar con CSV en Python<br />
+<div class="outline-text-5" id="text-orga189c67">
 <p>
 Python proporciona el módulo `csv` para leer y escribir archivos CSV.
 </p>
@@ -4336,9 +4364,9 @@ Python proporciona el módulo `csv` para leer y escribir archivos CSV.
 </ul>
 </div>
 
-<div id="outline-container-orgaf389e8" class="outline-4">
-<h4 id="orgaf389e8">3. Comparación entre JSON y CSV</h4>
-<div class="outline-text-4" id="text-orgaf389e8">
+<div id="outline-container-orgd956d16" class="outline-4">
+<h4 id="orgd956d16">3. Comparación entre JSON y CSV</h4>
+<div class="outline-text-4" id="text-orgd956d16">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -4402,13 +4430,13 @@ serialización y deserialización de datos de forma sencilla.
 </div>
 </div>
 </div>
-<div id="outline-container-org5a0c39f" class="outline-3">
-<h3 id="org5a0c39f">Excepciones en el manejo de archivos en Python</h3>
-<div class="outline-text-3" id="text-org5a0c39f">
+<div id="outline-container-orgcb40418" class="outline-3">
+<h3 id="orgcb40418">Excepciones en el manejo de archivos en Python</h3>
+<div class="outline-text-3" id="text-orgcb40418">
 </div>
-<div id="outline-container-org8e05964" class="outline-4">
-<h4 id="org8e05964">1. ¿Qué son las excepciones en Python?</h4>
-<div class="outline-text-4" id="text-org8e05964">
+<div id="outline-container-orgbb6d450" class="outline-4">
+<h4 id="orgbb6d450">1. ¿Qué son las excepciones en Python?</h4>
+<div class="outline-text-4" id="text-orgbb6d450">
 <p>
 Una excepción es un error que ocurre durante la ejecución de un
 programa, interrumpiendo el flujo normal del mismo. En Python, cuando
@@ -4434,9 +4462,9 @@ Al trabajar con archivos, existen algunas excepciones comunes que pueden surgir,
 </div>
 </div>
 
-<div id="outline-container-org6932862" class="outline-4">
-<h4 id="org6932862">2. Uso básico de `try-except` en archivos</h4>
-<div class="outline-text-4" id="text-org6932862">
+<div id="outline-container-orgae13382" class="outline-4">
+<h4 id="orgae13382">2. Uso básico de `try-except` en archivos</h4>
+<div class="outline-text-4" id="text-orgae13382">
 <p>
 Cuando trabajas con archivos en Python, es recomendable usar bloques
 `try-except` para capturar errores comunes, como un archivo no
@@ -4460,17 +4488,17 @@ evita que el programa se detenga de forma inesperada.
 </div>
 </div>
 
-<div id="outline-container-orgd6eab71" class="outline-4">
-<h4 id="orgd6eab71">3. Excepciones comunes en el manejo de archivos</h4>
-<div class="outline-text-4" id="text-orgd6eab71">
+<div id="outline-container-org61207e0" class="outline-4">
+<h4 id="org61207e0">3. Excepciones comunes en el manejo de archivos</h4>
+<div class="outline-text-4" id="text-org61207e0">
 <p>
 Existen varias excepciones que pueden surgir cuando trabajas con archivos. Aquí te describo las más comunes:
 </p>
 </div>
 
 <ul class="org-ul">
-<li><a id="org2493212"></a>3.1 FileNotFoundError<br />
-<div class="outline-text-5" id="text-org2493212">
+<li><a id="orgda55525"></a>3.1 FileNotFoundError<br />
+<div class="outline-text-5" id="text-orgda55525">
 <p>
 Esta excepción se lanza cuando intentas abrir un archivo que no existe. Como vimos en el ejemplo anterior, puedes manejar este error con `except FileNotFoundError`.
 </p>
@@ -4486,8 +4514,8 @@ Esta excepción se lanza cuando intentas abrir un archivo que no existe. Como vi
 </div>
 </li>
 
-<li><a id="orgb6c1c52"></a>3.2 PermissionError<br />
-<div class="outline-text-5" id="text-orgb6c1c52">
+<li><a id="orga4ed2ef"></a>3.2 PermissionError<br />
+<div class="outline-text-5" id="text-orga4ed2ef">
 <p>
 Este error ocurre cuando el programa no tiene permiso para acceder al archivo. Puede suceder, por ejemplo, si intentas abrir un archivo en un directorio protegido o si intentas escribir en un archivo de solo lectura.
 </p>
@@ -4503,8 +4531,8 @@ Este error ocurre cuando el programa no tiene permiso para acceder al archivo. P
 </div>
 </li>
 
-<li><a id="org501af22"></a>3.3 IOError (OSError)<br />
-<div class="outline-text-5" id="text-org501af22">
+<li><a id="org6090d4a"></a>3.3 IOError (OSError)<br />
+<div class="outline-text-5" id="text-org6090d4a">
 <p>
 La excepción `IOError` (también conocida como `OSError` en Python 3) captura errores generales de entrada/salida que pueden ocurrir al trabajar con archivos. Por ejemplo, puede ocurrir si el archivo está en uso por otro proceso o si hay problemas con el sistema de archivos.
 </p>
@@ -4526,9 +4554,9 @@ En este caso, el `IOError` puede capturar muchos errores relacionados con la ent
 </ul>
 </div>
 
-<div id="outline-container-orgfb0e95a" class="outline-4">
-<h4 id="orgfb0e95a">4. Usar `finally` para asegurar el cierre de archivos</h4>
-<div class="outline-text-4" id="text-orgfb0e95a">
+<div id="outline-container-org8dfc998" class="outline-4">
+<h4 id="org8dfc998">4. Usar `finally` para asegurar el cierre de archivos</h4>
+<div class="outline-text-4" id="text-org8dfc998">
 <p>
 El bloque `finally` es muy útil para asegurarte de que ciertos bloques de código se ejecuten sin importar si ocurre una excepción. En el caso del manejo de archivos, es importante asegurarte de que el archivo se cierre correctamente, incluso si ocurre un error.
 </p>
@@ -4559,9 +4587,9 @@ Sin embargo, es mucho más común y recomendable usar el contexto `with` en Pyth
 </div>
 </div>
 
-<div id="outline-container-org80d7b87" class="outline-4">
-<h4 id="org80d7b87">5. Manejo de múltiples excepciones</h4>
-<div class="outline-text-4" id="text-org80d7b87">
+<div id="outline-container-orgc132ef0" class="outline-4">
+<h4 id="orgc132ef0">5. Manejo de múltiples excepciones</h4>
+<div class="outline-text-4" id="text-orgc132ef0">
 <p>
 Puedes manejar más de una excepción en un solo bloque `try-except`. Esto es útil si esperas varios tipos de errores posibles. Puedes usar varios bloques `except` para manejar distintos errores.
 </p>
@@ -4585,9 +4613,9 @@ Aquí estamos manejando tres posibles tipos de errores: archivo no encontrado, p
 </div>
 </div>
 
-<div id="outline-container-org3ccad62" class="outline-4">
-<h4 id="org3ccad62">6. Crear excepciones personalizadas</h4>
-<div class="outline-text-4" id="text-org3ccad62">
+<div id="outline-container-orgbf0c28f" class="outline-4">
+<h4 id="orgbf0c28f">6. Crear excepciones personalizadas</h4>
+<div class="outline-text-4" id="text-orgbf0c28f">
 <p>
 En algunos casos, puede ser útil definir tus propias excepciones personalizadas para manejar situaciones específicas. En Python, puedes hacerlo creando una nueva clase que herede de `Exception`. Aquí tienes un ejemplo en el contexto del manejo de archivos:
 </p>
@@ -4654,13 +4682,13 @@ printf<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">"%p"</
 </div>
 </div>
 
-<div id="outline-container-org82f89df" class="outline-3">
-<h3 id="org82f89df">Altas, Bajas, Modificaciones y Consultas</h3>
-<div class="outline-text-3" id="text-org82f89df">
+<div id="outline-container-org93b978c" class="outline-3">
+<h3 id="org93b978c">Altas, Bajas, Modificaciones y Consultas</h3>
+<div class="outline-text-3" id="text-org93b978c">
 </div>
-<div id="outline-container-orgf047f49" class="outline-4">
-<h4 id="orgf047f49">Introducción</h4>
-<div class="outline-text-4" id="text-orgf047f49">
+<div id="outline-container-org3c8ad78" class="outline-4">
+<h4 id="org3c8ad78">Introducción</h4>
+<div class="outline-text-4" id="text-org3c8ad78">
 <p>
 En el ámbito de la gestión de datos, ya sea en sistemas de bases de
 datos o aplicaciones de software, las operaciones de <b>altas</b>,
@@ -4671,13 +4699,13 @@ correcta manipulación y mantenimiento de la información.
 </div>
 
 
-<div id="outline-container-org7a49e74" class="outline-4">
-<h4 id="org7a49e74">Definición de Altas, Bajas, Modificaciones y Consultas</h4>
-<div class="outline-text-4" id="text-org7a49e74">
+<div id="outline-container-orgd7d73ae" class="outline-4">
+<h4 id="orgd7d73ae">Definición de Altas, Bajas, Modificaciones y Consultas</h4>
+<div class="outline-text-4" id="text-orgd7d73ae">
 </div>
 <ul class="org-ul">
-<li><a id="org05767f5"></a>Altas (Crear o Añadir un registro)<br />
-<div class="outline-text-5" id="text-org05767f5">
+<li><a id="org6b6c1bd"></a>Altas (Crear o Añadir un registro)<br />
+<div class="outline-text-5" id="text-org6b6c1bd">
 <p>
 La operación de <b>alta</b> se refiere a la creación de un nuevo
 registro dentro de un sistema de información. Este registro puede
@@ -4728,8 +4756,8 @@ Este código gestiona el proceso de agregar un nuevo usuario a un archivo JSON, 
 </div>
 </li>
 
-<li><a id="org9bb8ab2"></a>Bajas (Eliminar un registro)<br />
-<div class="outline-text-5" id="text-org9bb8ab2">
+<li><a id="org73cc54f"></a>Bajas (Eliminar un registro)<br />
+<div class="outline-text-5" id="text-org73cc54f">
 <p>
 La operación de <b>baja</b> implica la eliminación de un registro existente en el sistema. Generalmente se realiza cuando un registro ya no es necesario o cuando se desea eliminar información obsoleta o incorrecta.
 </p>
@@ -4777,8 +4805,8 @@ Este código elimina el primer registro (índice 0) del archivo JSON de usuarios
 </div>
 </li>
 
-<li><a id="orgaa85073"></a>Modificaciones (Actualizar un registro existente)<br />
-<div class="outline-text-5" id="text-orgaa85073">
+<li><a id="orga30547d"></a>Modificaciones (Actualizar un registro existente)<br />
+<div class="outline-text-5" id="text-orga30547d">
 <p>
 La operación de <b>modificación</b> permite actualizar los datos de un registro existente en el sistema. Esto es necesario cuando la información cambia o cuando se necesita corregir datos incorrectos.
 </p>
@@ -4827,8 +4855,8 @@ Este ejemplo actualiza el nombre y la edad del primer usuario (índice 0) en el 
 </div>
 </li>
 
-<li><a id="orga7ae5a2"></a>Consultas (Visualizar o Buscar registros)<br />
-<div class="outline-text-5" id="text-orga7ae5a2">
+<li><a id="org39afbdd"></a>Consultas (Visualizar o Buscar registros)<br />
+<div class="outline-text-5" id="text-org39afbdd">
 <p>
 La <b>consulta</b> permite visualizar o buscar información almacenada sin modificar los datos. Es fundamental para extraer datos útiles de la base de datos o lista de registros.
 </p>
@@ -4874,9 +4902,9 @@ Este código lee y muestra todos los usuarios almacenados en el archivo JSON.
 </ul>
 </div>
 
-<div id="outline-container-orgfd832e9" class="outline-4">
-<h4 id="orgfd832e9">Conclusión</h4>
-<div class="outline-text-4" id="text-orgfd832e9">
+<div id="outline-container-org289a631" class="outline-4">
+<h4 id="org289a631">Conclusión</h4>
+<div class="outline-text-4" id="text-org289a631">
 <p>
 Las operaciones de <b>altas</b>, <b>bajas</b>, <b>modificaciones</b> y <b>consultas</b>
 forman la base de la gestión de datos en cualquier sistema que
@@ -4892,9 +4920,9 @@ decisiones.
 
 
 
-<div id="outline-container-orgc5212a0" class="outline-3">
-<h3 id="orgc5212a0">Ejemplo persistente</h3>
-<div class="outline-text-3" id="text-orgc5212a0">
+<div id="outline-container-org79d0398" class="outline-3">
+<h3 id="org79d0398">Ejemplo persistente</h3>
+<div class="outline-text-3" id="text-org79d0398">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #c099ff;">import</span> json
 <span style="color: #c099ff;">import</span> os
@@ -5183,9 +5211,9 @@ cv2.destroyAllWindows<span style="color: #c099ff;">()</span>
 
 
 
-<div id="outline-container-org8fed0db" class="outline-3">
-<h3 id="org8fed0db">Flet</h3>
-<div class="outline-text-3" id="text-org8fed0db">
+<div id="outline-container-orgde9c22b" class="outline-3">
+<h3 id="orgde9c22b">Flet</h3>
+<div class="outline-text-3" id="text-orgde9c22b">
 <p>
 Flet es una biblioteca de Python para crear aplicaciones de interfaz
 de usuario (UI) en el navegador de forma fácil y rápida. Proporciona
@@ -5202,9 +5230,9 @@ experiencia de programación similar a Flutter, pero en Python.
 </p>
 </div>
 
-<div id="outline-container-org0482fc8" class="outline-4">
-<h4 id="org0482fc8">Características de Flet</h4>
-<div class="outline-text-4" id="text-org0482fc8">
+<div id="outline-container-org8b1c8b8" class="outline-4">
+<h4 id="org8b1c8b8">Características de Flet</h4>
+<div class="outline-text-4" id="text-org8b1c8b8">
 <ul class="org-ul">
 <li><b><b>Componentes de UI</b></b>: Flet incluye una variedad de componentes como
 botones, cuadros de texto, listas, imágenes, íconos y más.</li>
@@ -5221,9 +5249,9 @@ Python, sin necesidad de usar HTML, CSS o JavaScript directamente.</li>
 </div>
 </div>
 
-<div id="outline-container-org2d04e83" class="outline-4">
-<h4 id="org2d04e83">Instalación de Flet</h4>
-<div class="outline-text-4" id="text-org2d04e83">
+<div id="outline-container-org848f1f5" class="outline-4">
+<h4 id="org848f1f5">Instalación de Flet</h4>
+<div class="outline-text-4" id="text-org848f1f5">
 <p>
 Para instalar Flet, ejecuta el siguiente comando en la terminal:
 </p>
@@ -5239,13 +5267,13 @@ Este comando descargará e instalará Flet y sus dependencias.
 </div>
 </div>
 
-<div id="outline-container-org269ef51" class="outline-4">
-<h4 id="org269ef51">Ejemplos Básicos</h4>
-<div class="outline-text-4" id="text-org269ef51">
+<div id="outline-container-orgd77ba21" class="outline-4">
+<h4 id="orgd77ba21">Ejemplos Básicos</h4>
+<div class="outline-text-4" id="text-orgd77ba21">
 </div>
 <ul class="org-ul">
-<li><a id="org31530eb"></a>Ejemplo 1: "Hola, Mundo" en Flet<br />
-<div class="outline-text-5" id="text-org31530eb">
+<li><a id="org15d2f73"></a>Ejemplo 1: "Hola, Mundo" en Flet<br />
+<div class="outline-text-5" id="text-org15d2f73">
 <p>
 Este es un ejemplo básico que muestra cómo crear una aplicación simple que muestra "Hola, Mundo".
 </p>
@@ -5287,9 +5315,9 @@ En este ejemplo:
 
 
 
-<div id="outline-container-orgc710eea" class="outline-3">
-<h3 id="orgc710eea">Ejemplo 2: Contador Interactivo</h3>
-<div class="outline-text-3" id="text-orgc710eea">
+<div id="outline-container-org08dac6f" class="outline-3">
+<h3 id="org08dac6f">Ejemplo 2: Contador Interactivo</h3>
+<div class="outline-text-3" id="text-org08dac6f">
 <p>
 Un ejemplo interactivo que implementa un contador con botones para
 incrementar y decrementar el valor.
@@ -5335,9 +5363,9 @@ En este ejemplo:
 </ul>
 </div>
 
-<div id="outline-container-org887dec1" class="outline-4">
-<h4 id="org887dec1">Ejecución de Aplicaciones en Flet</h4>
-<div class="outline-text-4" id="text-org887dec1">
+<div id="outline-container-org9908399" class="outline-4">
+<h4 id="org9908399">Ejecución de Aplicaciones en Flet</h4>
+<div class="outline-text-4" id="text-org9908399">
 <p>
 Para ejecutar una aplicación de Flet en modo web, usa la línea
 `ft.app(target=main, view=ft.WEB<sub>BROWSER</sub>)`. Esto abre la aplicación
@@ -5384,9 +5412,9 @@ ft.app<span style="color: #c099ff;">(</span>target=main<span style="color: #c099
 
 
 
-<div id="outline-container-org14cfbe9" class="outline-3">
-<h3 id="org14cfbe9">3. Conversor de Temperatura</h3>
-<div class="outline-text-3" id="text-org14cfbe9">
+<div id="outline-container-org47700b7" class="outline-3">
+<h3 id="org47700b7">3. Conversor de Temperatura</h3>
+<div class="outline-text-3" id="text-org47700b7">
 <p>
 Este conversor permite la conversión de grados Celsius a Fahrenheit y viceversa.
 </p>
@@ -5431,9 +5459,9 @@ Este conversor permite la conversión de grados Celsius a Fahrenheit y viceversa
 </div>
 </div>
 
-<div id="outline-container-org3fe4b12" class="outline-3">
-<h3 id="org3fe4b12">4. Lista de Tareas</h3>
-<div class="outline-text-3" id="text-org3fe4b12">
+<div id="outline-container-org3dd9e94" class="outline-3">
+<h3 id="org3dd9e94">4. Lista de Tareas</h3>
+<div class="outline-text-3" id="text-org3dd9e94">
 <p>
 Una simple lista de tareas que permite agregar y eliminar tareas.
 </p>
@@ -5473,9 +5501,9 @@ ft.app<span style="color: #c099ff;">(</span>target=main, view=ft.WEB_BROWSER<spa
 
 
 
-<div id="outline-container-org2a13696" class="outline-3">
-<h3 id="org2a13696">Calculadora</h3>
-<div class="outline-text-3" id="text-org2a13696">
+<div id="outline-container-org2bdf8d3" class="outline-3">
+<h3 id="org2bdf8d3">Calculadora</h3>
+<div class="outline-text-3" id="text-org2bdf8d3">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #c099ff;">import</span> flet <span style="color: #c099ff;">as</span> ft
 
@@ -5762,9 +5790,9 @@ ft.app<span style="color: #c099ff;">(</span>target=main, view=<span style="color
 </div>
 
 
-<div id="outline-container-org581cac8" class="outline-3">
-<h3 id="org581cac8">Base de datos y flet</h3>
-<div class="outline-text-3" id="text-org581cac8">
+<div id="outline-container-org46a686b" class="outline-3">
+<h3 id="org46a686b">Base de datos y flet</h3>
+<div class="outline-text-3" id="text-org46a686b">
 <p>
 Ejemplo de una aplicación CRUD en Flet que usa
 PostgreSQL. Este ejemplo permite realizar altas,
@@ -5773,9 +5801,9 @@ asume que tienes PostgreSQL instalado y una base de datos configurada.
 </p>
 </div>
 
-<div id="outline-container-orgb6e03b2" class="outline-4">
-<h4 id="orgb6e03b2">Configuración de la Base de Datos PostgreSQL</h4>
-<div class="outline-text-4" id="text-orgb6e03b2">
+<div id="outline-container-orgf16e431" class="outline-4">
+<h4 id="orgf16e431">Configuración de la Base de Datos PostgreSQL</h4>
+<div class="outline-text-4" id="text-orgf16e431">
 <p>
 Crea una base de datos PostgreSQL (si no la tienes).
 </p>
@@ -5803,13 +5831,13 @@ Crea la tabla personas en la base de datos:
 </div>
 
 
-<div id="outline-container-org4bdd342" class="outline-3">
-<h3 id="org4bdd342">Ejemplo de CRUD (Altas, Bajas, Modificaciones y Consultas) en Flet con PostgreSQL</h3>
-<div class="outline-text-3" id="text-org4bdd342">
+<div id="outline-container-org7fc8e3f" class="outline-3">
+<h3 id="org7fc8e3f">Ejemplo de CRUD (Altas, Bajas, Modificaciones y Consultas) en Flet con PostgreSQL</h3>
+<div class="outline-text-3" id="text-org7fc8e3f">
 </div>
-<div id="outline-container-org826ff7a" class="outline-4">
-<h4 id="org826ff7a">Requisitos</h4>
-<div class="outline-text-4" id="text-org826ff7a">
+<div id="outline-container-orgbe6f753" class="outline-4">
+<h4 id="orgbe6f753">Requisitos</h4>
+<div class="outline-text-4" id="text-orgbe6f753">
 <p>
 Para este ejemplo, asegúrate de tener PostgreSQL configurado y los
 paquetes `psycopg2` y `flet` instalados.
@@ -5817,9 +5845,9 @@ paquetes `psycopg2` y `flet` instalados.
 </div>
 </div>
 
-<div id="outline-container-org434f40b" class="outline-4">
-<h4 id="org434f40b">Código de la Aplicación</h4>
-<div class="outline-text-4" id="text-org434f40b">
+<div id="outline-container-org9463c73" class="outline-4">
+<h4 id="org9463c73">Código de la Aplicación</h4>
+<div class="outline-text-4" id="text-org9463c73">
 <div class="org-src-container">
 <pre class="src src-python"><span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">import</span> flet <span style="color: #c099ff;">as</span> ft
 <span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">import</span> psycopg2
@@ -5955,9 +5983,9 @@ paquetes `psycopg2` y `flet` instalados.
 </div>
 </div>
 
-<div id="outline-container-orgf9ced60" class="outline-4">
-<h4 id="orgf9ced60">Explicación del Código</h4>
-<div class="outline-text-4" id="text-orgf9ced60">
+<div id="outline-container-org606f83b" class="outline-4">
+<h4 id="org606f83b">Explicación del Código</h4>
+<div class="outline-text-4" id="text-org606f83b">
 <ul class="org-ul">
 <li><b><b>Conexión a PostgreSQL</b></b>: `conectar<sub>db</sub>()` devuelve una conexión a la base de datos PostgreSQL.</li>
 <li><b><b>Funciones CRUD</b></b>:
@@ -5973,9 +6001,9 @@ paquetes `psycopg2` y `flet` instalados.
 </div>
 </div>
 
-<div id="outline-container-orgd930262" class="outline-4">
-<h4 id="orgd930262">Ejecución</h4>
-<div class="outline-text-4" id="text-orgd930262">
+<div id="outline-container-orgdbcba54" class="outline-4">
+<h4 id="orgdbcba54">Ejecución</h4>
+<div class="outline-text-4" id="text-orgdbcba54">
 <ul class="org-ul">
 <li>Guarda el código en un archivo Python.</li>
 <li>Ejecuta el archivo y abre la aplicación en el navegador.</li>
@@ -5987,9 +6015,9 @@ paquetes `psycopg2` y `flet` instalados.
 
 
 
-<div id="outline-container-org4ca98c9" class="outline-3">
-<h3 id="org4ca98c9">¿Qué es una Base de Datos?</h3>
-<div class="outline-text-3" id="text-org4ca98c9">
+<div id="outline-container-orge4d2bce" class="outline-3">
+<h3 id="orge4d2bce">¿Qué es una Base de Datos?</h3>
+<div class="outline-text-3" id="text-orge4d2bce">
 <p>
 Una <b><b>base de datos</b></b> es un conjunto estructurado de datos
 almacenados electrónicamente que permite organizar, gestionar y
@@ -6009,9 +6037,9 @@ Los datos en una base de datos pueden estar organizados en:
 </ul>
 </div>
 
-<div id="outline-container-orge3a556e" class="outline-4">
-<h4 id="orge3a556e">Manejadores de Bases de Datos (DBMS - Database Management System)</h4>
-<div class="outline-text-4" id="text-orge3a556e">
+<div id="outline-container-org876aec7" class="outline-4">
+<h4 id="org876aec7">Manejadores de Bases de Datos (DBMS - Database Management System)</h4>
+<div class="outline-text-4" id="text-org876aec7">
 <p>
 Un <b><b>DBMS (Database Management System)</b></b> o <b><b>Manejador de Bases de Datos</b></b> es un software que permite la creación, modificación y administración de bases de datos. Estos sistemas proporcionan interfaces y herramientas para interactuar con los datos y suelen incluir características avanzadas, como:
 </p>
@@ -6034,17 +6062,17 @@ Algunos DBMS conocidos son:
 </div>
 </div>
 
-<div id="outline-container-org8fe80e1" class="outline-4">
-<h4 id="org8fe80e1">Tipos de Bases de Datos</h4>
-<div class="outline-text-4" id="text-org8fe80e1">
+<div id="outline-container-org51954de" class="outline-4">
+<h4 id="org51954de">Tipos de Bases de Datos</h4>
+<div class="outline-text-4" id="text-org51954de">
 <p>
 Las bases de datos se pueden clasificar en diferentes tipos según su estructura y modelo de datos:
 </p>
 </div>
 
 <ul class="org-ul">
-<li><a id="org1816eef"></a>Bases de Datos Relacionales (SQL)<br />
-<div class="outline-text-5" id="text-org1816eef">
+<li><a id="org1268874"></a>Bases de Datos Relacionales (SQL)<br />
+<div class="outline-text-5" id="text-org1268874">
 <p>
 Las bases de datos relacionales organizan los datos en tablas con filas y columnas, usando un lenguaje de consulta estructurado, <b><b>SQL (Structured Query Language)</b></b>, para manipular los datos. Las bases de datos relacionales son ideales para aplicaciones que requieren integridad, consistencia y soporte para relaciones complejas entre tablas.
 </p>
@@ -6055,8 +6083,8 @@ Ejemplos: MySQL, PostgreSQL, Oracle, Microsoft SQL Server.
 </div>
 </li>
 
-<li><a id="org406889a"></a>Bases de Datos NoSQL<br />
-<div class="outline-text-5" id="text-org406889a">
+<li><a id="org64d2e9f"></a>Bases de Datos NoSQL<br />
+<div class="outline-text-5" id="text-org64d2e9f">
 <p>
 Las bases de datos NoSQL son diseñadas para manejar grandes cantidades de datos no estructurados o semi-estructurados. Existen varios subtipos dentro de las bases de datos NoSQL:
 </p>
@@ -6069,8 +6097,8 @@ Las bases de datos NoSQL son diseñadas para manejar grandes cantidades de datos
 </div>
 </li>
 
-<li><a id="orgca81aef"></a>Bases de Datos Orientadas a Objetos<br />
-<div class="outline-text-5" id="text-orgca81aef">
+<li><a id="org2ea413f"></a>Bases de Datos Orientadas a Objetos<br />
+<div class="outline-text-5" id="text-org2ea413f">
 <p>
 Las bases de datos orientadas a objetos almacenan datos en forma
 de objetos, tal como en la programación orientada a objetos
@@ -6084,8 +6112,8 @@ Ejemplo: db4o (Database for Objects), ObjectDB.
 </div>
 </li>
 
-<li><a id="org2cb1d23"></a>Bases de Datos Distribuidas<br />
-<div class="outline-text-5" id="text-org2cb1d23">
+<li><a id="org764dff5"></a>Bases de Datos Distribuidas<br />
+<div class="outline-text-5" id="text-org764dff5">
 <p>
 Una base de datos distribuida tiene su almacenamiento repartido en
 múltiples ubicaciones físicas, a menudo para mejorar la
@@ -6100,8 +6128,8 @@ Ejemplos: Amazon DynamoDB, Google Bigtable.
 </div>
 </li>
 
-<li><a id="orge3b86a8"></a>Bases de Datos en Memoria<br />
-<div class="outline-text-5" id="text-orge3b86a8">
+<li><a id="org6064fc4"></a>Bases de Datos en Memoria<br />
+<div class="outline-text-5" id="text-org6064fc4">
 <p>
 Las bases de datos en memoria almacenan todos los datos
 directamente en la RAM en lugar de en un disco, lo que permite un
@@ -6118,9 +6146,9 @@ Ejemplos: Redis, Memcached.
 </ul>
 </div>
 
-<div id="outline-container-org9ff61f8" class="outline-4">
-<h4 id="org9ff61f8">Ejemplos en Código: Creación de Tablas en Diferentes Manejadores</h4>
-<div class="outline-text-4" id="text-org9ff61f8">
+<div id="outline-container-org6e11870" class="outline-4">
+<h4 id="org6e11870">Ejemplos en Código: Creación de Tablas en Diferentes Manejadores</h4>
+<div class="outline-text-4" id="text-org6e11870">
 <p>
 Aquí hay ejemplos básicos de creación de una tabla en algunos DBMS.
 </p>
@@ -6203,13 +6231,13 @@ estructurados y que necesitan escalabilidad horizontal.
 </div>
 
 
-<div id="outline-container-org6d59d97" class="outline-3">
-<h3 id="org6d59d97">Diferencias entre archivos y bases de datos en Python</h3>
-<div class="outline-text-3" id="text-org6d59d97">
+<div id="outline-container-orgb2c6f60" class="outline-3">
+<h3 id="orgb2c6f60">Diferencias entre archivos y bases de datos en Python</h3>
+<div class="outline-text-3" id="text-orgb2c6f60">
 </div>
-<div id="outline-container-org3b90422" class="outline-4">
-<h4 id="org3b90422">Manejo de Archivos vs Bases de Datos</h4>
-<div class="outline-text-4" id="text-org3b90422">
+<div id="outline-container-org9a2e347" class="outline-4">
+<h4 id="org9a2e347">Manejo de Archivos vs Bases de Datos</h4>
+<div class="outline-text-4" id="text-org9a2e347">
 <p>
 La elección entre archivos y bases de datos depende de la
 naturaleza de los datos y de los requisitos del proyecto. A
@@ -6218,9 +6246,9 @@ continuación se detallan algunas diferencias clave:
 </div>
 </div>
 
-<div id="outline-container-org90861f0" class="outline-4">
-<h4 id="org90861f0">Almacenamiento y Organización de Datos</h4>
-<div class="outline-text-4" id="text-org90861f0">
+<div id="outline-container-org37c464a" class="outline-4">
+<h4 id="org37c464a">Almacenamiento y Organización de Datos</h4>
+<div class="outline-text-4" id="text-org37c464a">
 <ul class="org-ul">
 <li>Archivos: 
 <ul class="org-ul">
@@ -6238,9 +6266,9 @@ continuación se detallan algunas diferencias clave:
 </div>
 </div>
 
-<div id="outline-container-orga4a423c" class="outline-4">
-<h4 id="orga4a423c">Acceso y Consulta de Datos</h4>
-<div class="outline-text-4" id="text-orga4a423c">
+<div id="outline-container-org2713eff" class="outline-4">
+<h4 id="org2713eff">Acceso y Consulta de Datos</h4>
+<div class="outline-text-4" id="text-org2713eff">
 <ul class="org-ul">
 <li>Archivos:
 <ul class="org-ul">
@@ -6256,9 +6284,9 @@ continuación se detallan algunas diferencias clave:
 </div>
 </div>
 
-<div id="outline-container-org0087ba3" class="outline-4">
-<h4 id="org0087ba3">Rendimiento</h4>
-<div class="outline-text-4" id="text-org0087ba3">
+<div id="outline-container-org9c038cf" class="outline-4">
+<h4 id="org9c038cf">Rendimiento</h4>
+<div class="outline-text-4" id="text-org9c038cf">
 <ul class="org-ul">
 <li>Archivos:
 <ul class="org-ul">
@@ -6274,9 +6302,9 @@ continuación se detallan algunas diferencias clave:
 </div>
 </div>
 
-<div id="outline-container-org9765717" class="outline-4">
-<h4 id="org9765717">Consistencia y Seguridad de los Datos</h4>
-<div class="outline-text-4" id="text-org9765717">
+<div id="outline-container-orgc922017" class="outline-4">
+<h4 id="orgc922017">Consistencia y Seguridad de los Datos</h4>
+<div class="outline-text-4" id="text-orgc922017">
 <ul class="org-ul">
 <li>Archivos:
 <ul class="org-ul">
@@ -6292,9 +6320,9 @@ continuación se detallan algunas diferencias clave:
 </div>
 </div>
 
-<div id="outline-container-org0560d79" class="outline-4">
-<h4 id="org0560d79">Escalabilidad</h4>
-<div class="outline-text-4" id="text-org0560d79">
+<div id="outline-container-orga2f658e" class="outline-4">
+<h4 id="orga2f658e">Escalabilidad</h4>
+<div class="outline-text-4" id="text-orga2f658e">
 <ul class="org-ul">
 <li>Archivos:
 <ul class="org-ul">
@@ -6308,9 +6336,9 @@ continuación se detallan algunas diferencias clave:
 </div>
 </div>
 
-<div id="outline-container-org5aee815" class="outline-4">
-<h4 id="org5aee815">Ejemplo en Código (diferencias en acceso a datos)</h4>
-<div class="outline-text-4" id="text-org5aee815">
+<div id="outline-container-orgb1b406e" class="outline-4">
+<h4 id="orgb1b406e">Ejemplo en Código (diferencias en acceso a datos)</h4>
+<div class="outline-text-4" id="text-orgb1b406e">
 <ul class="org-ul">
 <li>Archivo (lectura de un archivo CSV):</li>
 </ul>
@@ -6351,13 +6379,13 @@ conn.close<span style="color: #c099ff;">()</span>
 </div>
 </div>
 
-<div id="outline-container-org22c3e82" class="outline-3">
-<h3 id="org22c3e82">Base de Datos en Python</h3>
-<div class="outline-text-3" id="text-org22c3e82">
+<div id="outline-container-org11bdaca" class="outline-3">
+<h3 id="org11bdaca">Base de Datos en Python</h3>
+<div class="outline-text-3" id="text-org11bdaca">
 </div>
-<div id="outline-container-org26f7b7a" class="outline-4">
-<h4 id="org26f7b7a">Requerimientos</h4>
-<div class="outline-text-4" id="text-org26f7b7a">
+<div id="outline-container-org0d02008" class="outline-4">
+<h4 id="org0d02008">Requerimientos</h4>
+<div class="outline-text-4" id="text-org0d02008">
 <p>
 Para trabajar con bases de datos en Python, necesitas instalar las
 bibliotecas adecuadas según el tipo de base de datos que estés
@@ -6376,17 +6404,17 @@ Ejemplo de instalación para MySQL y PostgreSQL:
 </div>
 </div>
 
-<div id="outline-container-org21a8774" class="outline-4">
-<h4 id="org21a8774">Conexión a la Base de Datos</h4>
-<div class="outline-text-4" id="text-org21a8774">
+<div id="outline-container-org2317084" class="outline-4">
+<h4 id="org2317084">Conexión a la Base de Datos</h4>
+<div class="outline-text-4" id="text-org2317084">
 <p>
 Para conectarte a una base de datos, debes crear una conexión y un cursor para ejecutar consultas SQL.
 </p>
 </div>
 
 <ul class="org-ul">
-<li><a id="org213d510"></a>Conexión a SQLite<br />
-<div class="outline-text-5" id="text-org213d510">
+<li><a id="org4b3c884"></a>Conexión a SQLite<br />
+<div class="outline-text-5" id="text-org4b3c884">
 <p>
 SQLite es ideal para bases de datos locales pequeñas y no necesita instalación adicional.
 </p>
@@ -6402,8 +6430,8 @@ SQLite es ideal para bases de datos locales pequeñas y no necesita instalación
 </div>
 </li>
 
-<li><a id="org7d03974"></a>Conexión a MySQL<br />
-<div class="outline-text-5" id="text-org7d03974">
+<li><a id="org68702d9"></a>Conexión a MySQL<br />
+<div class="outline-text-5" id="text-org68702d9">
 <p>
 Para conectarte a MySQL, asegúrate de tener instalada la biblioteca `mysql-connector-python`.
 </p>
@@ -6422,8 +6450,8 @@ cursor = conn.cursor<span style="color: #c099ff;">()</span>
 </div>
 </li>
 
-<li><a id="org9c53053"></a>Conexión a PostgreSQL<br />
-<div class="outline-text-5" id="text-org9c53053">
+<li><a id="orgd09c045"></a>Conexión a PostgreSQL<br />
+<div class="outline-text-5" id="text-orgd09c045">
 <p>
 Para PostgreSQL, necesitas la biblioteca `psycopg2`.
 </p>
@@ -6444,9 +6472,9 @@ cursor = conn.cursor<span style="color: #c099ff;">()</span>
 </ul>
 </div>
 
-<div id="outline-container-orgadaf845" class="outline-4">
-<h4 id="orgadaf845">Crear una Tabla</h4>
-<div class="outline-text-4" id="text-orgadaf845">
+<div id="outline-container-org578e9e9" class="outline-4">
+<h4 id="org578e9e9">Crear una Tabla</h4>
+<div class="outline-text-4" id="text-org578e9e9">
 <p>
 Para almacenar datos, necesitas crear una tabla. En este ejemplo, se crea una tabla llamada "clientes" con campos como `id`, `nombre`, `edad` y `email`.
 </p>
@@ -6466,9 +6494,9 @@ conn.commit<span style="color: #c099ff;">()</span>
 </div>
 </div>
 
-<div id="outline-container-org5fa2780" class="outline-4">
-<h4 id="org5fa2780">Insertar Datos en la Tabla</h4>
-<div class="outline-text-4" id="text-org5fa2780">
+<div id="outline-container-org40e56e9" class="outline-4">
+<h4 id="org40e56e9">Insertar Datos en la Tabla</h4>
+<div class="outline-text-4" id="text-org40e56e9">
 <p>
 Para agregar registros a la tabla, usa `INSERT INTO`. Aquí insertamos un registro en la tabla "clientes".
 </p>
@@ -6484,17 +6512,17 @@ conn.commit<span style="color: #c099ff;">()</span>
 </div>
 </div>
 
-<div id="outline-container-org77041c8" class="outline-4">
-<h4 id="org77041c8">Consultar Datos</h4>
-<div class="outline-text-4" id="text-org77041c8">
+<div id="outline-container-orgd70f43e" class="outline-4">
+<h4 id="orgd70f43e">Consultar Datos</h4>
+<div class="outline-text-4" id="text-orgd70f43e">
 <p>
 Para obtener datos almacenados, utiliza `SELECT`. A continuación se presentan dos ejemplos para obtener todos los registros y para aplicar una condición de búsqueda.
 </p>
 </div>
 
 <ul class="org-ul">
-<li><a id="org7b89c36"></a>Obtener todos los registros<br />
-<div class="outline-text-5" id="text-org7b89c36">
+<li><a id="org0f61ad7"></a>Obtener todos los registros<br />
+<div class="outline-text-5" id="text-org0f61ad7">
 <div class="org-src-container">
 <pre class="src src-python">cursor.execute<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">"SELECT * FROM clientes"</span><span style="color: #c099ff;">)</span>
 <span style="color: #ff98a4;">resultados</span> = cursor.fetchall<span style="color: #c099ff;">()</span>
@@ -6505,8 +6533,8 @@ Para obtener datos almacenados, utiliza `SELECT`. A continuación se presentan d
 </div>
 </li>
 
-<li><a id="org023206b"></a>Obtener registros con una condición<br />
-<div class="outline-text-5" id="text-org023206b">
+<li><a id="org5605b7f"></a>Obtener registros con una condición<br />
+<div class="outline-text-5" id="text-org5605b7f">
 <div class="org-src-container">
 <pre class="src src-python">cursor.execute<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">"SELECT * FROM clientes WHERE edad &gt; %s"</span>, <span style="color: #ff995e;">(</span>25,<span style="color: #ff995e;">)</span><span style="color: #c099ff;">)</span>
 <span style="color: #ff98a4;">resultados</span> = cursor.fetchall<span style="color: #c099ff;">()</span>
@@ -6519,9 +6547,9 @@ Para obtener datos almacenados, utiliza `SELECT`. A continuación se presentan d
 </ul>
 </div>
 
-<div id="outline-container-org2138ea4" class="outline-4">
-<h4 id="org2138ea4">Actualizar Datos</h4>
-<div class="outline-text-4" id="text-org2138ea4">
+<div id="outline-container-org788921f" class="outline-4">
+<h4 id="org788921f">Actualizar Datos</h4>
+<div class="outline-text-4" id="text-org788921f">
 <p>
 Para modificar datos existentes, usa `UPDATE`. Este ejemplo muestra cómo actualizar el `email` de un cliente específico.
 </p>
@@ -6536,9 +6564,9 @@ conn.commit<span style="color: #c099ff;">()</span>
 </div>
 </div>
 
-<div id="outline-container-orgcb0342d" class="outline-4">
-<h4 id="orgcb0342d">Eliminar Datos</h4>
-<div class="outline-text-4" id="text-orgcb0342d">
+<div id="outline-container-org216cfa1" class="outline-4">
+<h4 id="org216cfa1">Eliminar Datos</h4>
+<div class="outline-text-4" id="text-org216cfa1">
 <p>
 Para borrar registros, utiliza `DELETE`. Aquí se muestra cómo eliminar un cliente específico.
 </p>
@@ -6551,9 +6579,9 @@ conn.commit<span style="color: #c099ff;">()</span>
 </div>
 </div>
 
-<div id="outline-container-org86d9025" class="outline-4">
-<h4 id="org86d9025">Cerrar la Conexión</h4>
-<div class="outline-text-4" id="text-org86d9025">
+<div id="outline-container-org9a1e48c" class="outline-4">
+<h4 id="org9a1e48c">Cerrar la Conexión</h4>
+<div class="outline-text-4" id="text-org9a1e48c">
 <p>
 Es importante cerrar la conexión a la base de datos después de realizar las operaciones.
 </p>
@@ -6579,9 +6607,9 @@ errores.
 
 
 
-<div id="outline-container-org733da4b" class="outline-2">
-<h2 id="org733da4b">juego flet</h2>
-<div class="outline-text-2" id="text-org733da4b">
+<div id="outline-container-org2a10106" class="outline-2">
+<h2 id="org2a10106">juego flet</h2>
+<div class="outline-text-2" id="text-org2a10106">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #c099ff;">import</span> flet <span style="color: #c099ff;">as</span> ft
 <span style="color: #c099ff;">import</span> threading
@@ -6668,10 +6696,309 @@ ft.app<span style="color: #c099ff;">(</span>target=main<span style="color: #c099
 </div>
 </div>
 </div>
+
+
+
+<div id="outline-container-org2a916ac" class="outline-2">
+<h2 id="org2a916ac">Código de Flet a Django</h2>
+<div class="outline-text-2" id="text-org2a916ac">
+</div>
+<div id="outline-container-orge4d0935" class="outline-3">
+<h3 id="orge4d0935">Requisitos Previos</h3>
+<div class="outline-text-3" id="text-orge4d0935">
+<ul class="org-ul">
+<li><b><b>Python</b></b> y <b><b>Django</b></b> instalados:
+<ul class="org-ul">
+<li>Instalar Django: <code>pip install django</code></li>
+<li>Instalar psycopg2: <code>pip install psycopg2</code></li>
+</ul></li>
+<li>Configurar PostgreSQL:
+<ul class="org-ul">
+<li>Crear una base de datos llamada <code>ejemplo</code>.</li>
+<li>Configurar un usuario con acceso.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf2ce192" class="outline-3">
+<h3 id="orgf2ce192">Crear el Proyecto Django</h3>
+<div class="outline-text-3" id="text-orgf2ce192">
+<ol class="org-ol">
+<li><p>
+Crear un nuevo proyecto:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">   django-admin startproject gestion_personas
+   <span style="color: #c099ff;">cd</span> gestion_personas
+</pre>
+</div></li>
+
+<li><p>
+Crear una aplicación:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">   python manage.py startapp personas
+</pre>
+</div></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgb1aca2b" class="outline-3">
+<h3 id="orgb1aca2b">Configuración del Proyecto Django</h3>
+<div class="outline-text-3" id="text-orgb1aca2b">
+</div>
+<div id="outline-container-org0edcb55" class="outline-4">
+<h4 id="org0edcb55">Configuración de la Base de Datos en <code>settings.py</code></h4>
+<div class="outline-text-4" id="text-org0edcb55">
+<div class="org-src-container">
+<pre class="src src-python"><span style="background-color: #2f334d;"> </span>  <span style="color: #ff98a4;">DATABASES</span> = <span style="color: #c099ff;">{</span>
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  <span style="color: #c3e88d;">'default'</span>: <span style="color: #ff995e;">{</span>
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  <span style="color: #c3e88d;">'ENGINE'</span>: <span style="color: #c3e88d;">'django.db.backends.postgresql'</span>,
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  <span style="color: #c3e88d;">'NAME'</span>: <span style="color: #c3e88d;">'ejemplo'</span>,  <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Nombre de tu base de datos</span>
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  <span style="color: #c3e88d;">'USER'</span>: <span style="color: #c3e88d;">'postgres'</span>,
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  <span style="color: #c3e88d;">'PASSWORD'</span>: <span style="color: #c3e88d;">'tu_password'</span>,  <span style="color: #7a88cf;"># </span><span style="color: #7a88cf;">Cambia a tu contrase&#241;a</span>
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  <span style="color: #c3e88d;">'HOST'</span>: <span style="color: #c3e88d;">'localhost'</span>,
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  <span style="color: #c3e88d;">'PORT'</span>: <span style="color: #c3e88d;">'5432'</span>,
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  <span style="color: #ff995e;">}</span>
+<span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">}</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb295ca6" class="outline-4">
+<h4 id="orgb295ca6">Definir el Modelo de Persona</h4>
+<div class="outline-text-4" id="text-orgb295ca6">
+<p>
+Edita el archivo <code>models.py</code> en la aplicación <code>personas</code>:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">from</span> django.db <span style="color: #c099ff;">import</span> models
+
+<span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">class</span> <span style="color: #ffc777;">Persona</span><span style="color: #c099ff;">(</span>models.Model<span style="color: #c099ff;">)</span>:
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  <span style="color: #ff98a4;">nombre</span> = models.CharField<span style="color: #c099ff;">(</span>max_length=100<span style="color: #c099ff;">)</span>
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  edad = models.IntegerField<span style="color: #c099ff;">()</span>
+
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">__str__</span><span style="color: #c099ff;">(</span><span style="color: #c099ff;">self</span><span style="color: #c099ff;">)</span>:
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">return</span> <span style="color: #c099ff;">self</span>.nombre
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfd8d271" class="outline-4">
+<h4 id="orgfd8d271">Crear y Aplicar Migraciones</h4>
+<div class="outline-text-4" id="text-orgfd8d271">
+<div class="org-src-container">
+<pre class="src src-bash">   python manage.py makemigrations personas
+   python manage.py migrate
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd54fe07" class="outline-3">
+<h3 id="orgd54fe07">Crear la Vista y Configurar URLs</h3>
+<div class="outline-text-3" id="text-orgd54fe07">
+</div>
+<div id="outline-container-orgd18208a" class="outline-4">
+<h4 id="orgd18208a">Definir las Vistas</h4>
+<div class="outline-text-4" id="text-orgd18208a">
+<p>
+Edita el archivo <code>views.py</code> en la aplicación <code>personas</code>:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">from</span> django.shortcuts <span style="color: #c099ff;">import</span> render, redirect
+<span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">from</span> .models <span style="color: #c099ff;">import</span> Persona
+
+<span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">lista_personas</span><span style="color: #c099ff;">(</span>request<span style="color: #c099ff;">)</span>:
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  <span style="color: #ff98a4;">personas</span> = Persona.objects.<span style="color: #c099ff;">all</span><span style="color: #c099ff;">()</span>
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">return</span> render<span style="color: #c099ff;">(</span>request, <span style="color: #c3e88d;">'lista_personas.html'</span>, <span style="color: #ff995e;">{</span><span style="color: #c3e88d;">'personas'</span>: personas<span style="color: #ff995e;">}</span><span style="color: #c099ff;">)</span>
+
+<span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">agregar_persona</span><span style="color: #c099ff;">(</span>request<span style="color: #c099ff;">)</span>:
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">if</span> request.method == <span style="color: #c3e88d;">'POST'</span>:
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  nombre = request.POST<span style="color: #c099ff;">[</span><span style="color: #c3e88d;">'nombre'</span><span style="color: #c099ff;">]</span>
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  edad = request.POST<span style="color: #c099ff;">[</span><span style="color: #c3e88d;">'edad'</span><span style="color: #c099ff;">]</span>
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  Persona.objects.create<span style="color: #c099ff;">(</span>nombre=nombre, edad=edad<span style="color: #c099ff;">)</span>
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">return</span> redirect<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'lista_personas'</span><span style="color: #c099ff;">)</span>
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">return</span> render<span style="color: #c099ff;">(</span>request, <span style="color: #c3e88d;">'agregar_persona.html'</span><span style="color: #c099ff;">)</span>
+
+<span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">eliminar_persona</span><span style="color: #c099ff;">(</span>request, persona_id<span style="color: #c099ff;">)</span>:
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  persona = Persona.objects.get<span style="color: #c099ff;">(</span><span style="color: #c099ff;">id</span>=persona_id<span style="color: #c099ff;">)</span>
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  persona.delete<span style="color: #c099ff;">()</span>
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">return</span> redirect<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'lista_personas'</span><span style="color: #c099ff;">)</span>
+
+<span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">def</span> <span style="color: #82aaff;">modificar_persona</span><span style="color: #c099ff;">(</span>request, persona_id<span style="color: #c099ff;">)</span>:
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  persona = Persona.objects.get<span style="color: #c099ff;">(</span><span style="color: #c099ff;">id</span>=persona_id<span style="color: #c099ff;">)</span>
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">if</span> request.method == <span style="color: #c3e88d;">'POST'</span>:
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  persona.nombre = request.POST<span style="color: #c099ff;">[</span><span style="color: #c3e88d;">'nombre'</span><span style="color: #c099ff;">]</span>
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  persona.edad = request.POST<span style="color: #c099ff;">[</span><span style="color: #c3e88d;">'edad'</span><span style="color: #c099ff;">]</span>
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  persona.save<span style="color: #c099ff;">()</span>
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">return</span> redirect<span style="color: #c099ff;">(</span><span style="color: #c3e88d;">'lista_personas'</span><span style="color: #c099ff;">)</span>
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">return</span> render<span style="color: #c099ff;">(</span>request, <span style="color: #c3e88d;">'modificar_persona.html'</span>, <span style="color: #ff995e;">{</span><span style="color: #c3e88d;">'persona'</span>: persona<span style="color: #ff995e;">}</span><span style="color: #c099ff;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3584ae2" class="outline-4">
+<h4 id="org3584ae2">Configurar las URLs</h4>
+<div class="outline-text-4" id="text-org3584ae2">
+<p>
+Edita el archivo <code>urls.py</code> en la aplicación <code>personas</code>:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">from</span> django.urls <span style="color: #c099ff;">import</span> path
+<span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">from</span> . <span style="color: #c099ff;">import</span> views
+
+<span style="background-color: #2f334d;"> </span>  <span style="color: #ff98a4;">urlpatterns</span> = <span style="color: #c099ff;">[</span>
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  path<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">''</span>, views.lista_personas, name=<span style="color: #c3e88d;">'lista_personas'</span><span style="color: #ff995e;">)</span>,
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  path<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">'agregar/'</span>, views.agregar_persona, name=<span style="color: #c3e88d;">'agregar_persona'</span><span style="color: #ff995e;">)</span>,
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  path<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">'eliminar/&lt;int:persona_id&gt;/'</span>, views.eliminar_persona, name=<span style="color: #c3e88d;">'eliminar_persona'</span><span style="color: #ff995e;">)</span>,
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  path<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">'modificar/&lt;int:persona_id&gt;/'</span>, views.modificar_persona, name=<span style="color: #c3e88d;">'modificar_persona'</span><span style="color: #ff995e;">)</span>,
+<span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">]</span>
+</pre>
+</div>
+
+<p>
+En el archivo <code>urls.py</code> principal del proyecto, incluye las URLs de la aplicación:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">from</span> django.contrib <span style="color: #c099ff;">import</span> admin
+<span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">from</span> django.urls <span style="color: #c099ff;">import</span> path, include
+
+<span style="background-color: #2f334d;"> </span>  <span style="color: #ff98a4;">urlpatterns</span> = <span style="color: #c099ff;">[</span>
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  path<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">'admin/'</span>, admin.site.urls<span style="color: #ff995e;">)</span>,
+<span style="background-color: #2f334d;"> </span>   <span style="background-color: #2f334d;"> </span>  path<span style="color: #ff995e;">(</span><span style="color: #c3e88d;">''</span>, include<span style="color: #ff98a4;">(</span><span style="color: #c3e88d;">'personas.urls'</span><span style="color: #ff98a4;">)</span><span style="color: #ff995e;">)</span>,
+<span style="background-color: #2f334d;"> </span>  <span style="color: #c099ff;">]</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8b6a841" class="outline-3">
+<h3 id="org8b6a841">Crear las Plantillas HTML</h3>
+<div class="outline-text-3" id="text-org8b6a841">
+<p>
+Crea una carpeta <code>templates</code> dentro de la aplicación <code>personas</code> y agrega los siguientes archivos:
+</p>
+</div>
+
+<div id="outline-container-org8d489f6" class="outline-4">
+<h4 id="org8d489f6">Plantilla: <code>lista_personas.html</code></h4>
+<div class="outline-text-4" id="text-org8d489f6">
+<div class="org-src-container">
+<pre class="src src-html">   &lt;<span style="color: #c099ff;">!DOCTYPE</span> html&gt;
+   &lt;<span style="color: #82aaff;">html</span>&gt;
+   &lt;<span style="color: #82aaff;">head</span>&gt;
+       &lt;<span style="color: #82aaff;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Lista de Personas</span>&lt;/<span style="color: #82aaff;">title</span>&gt;
+   &lt;/<span style="color: #82aaff;">head</span>&gt;
+   &lt;<span style="color: #82aaff;">body</span>&gt;
+       &lt;<span style="color: #82aaff;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Lista de Personas</span>&lt;/<span style="color: #82aaff;">h1</span>&gt;
+       &lt;<span style="color: #82aaff;">a</span> <span style="color: #ff98a4;">href</span>=<span style="color: #c3e88d;">"/agregar/"</span>&gt;Agregar Persona&lt;/<span style="color: #82aaff;">a</span>&gt;
+       &lt;<span style="color: #82aaff;">ul</span>&gt;
+           {% for persona in personas %}
+               &lt;<span style="color: #82aaff;">li</span>&gt;
+                   ID: {{ persona.id }}, Nombre: {{ persona.nombre }}, Edad: {{ persona.edad }}
+                   &lt;<span style="color: #82aaff;">a</span> <span style="color: #ff98a4;">href</span>=<span style="color: #c3e88d;">"/modificar/{{ persona.id }}/"</span>&gt;Modificar&lt;/<span style="color: #82aaff;">a</span>&gt;
+                   &lt;<span style="color: #82aaff;">a</span> <span style="color: #ff98a4;">href</span>=<span style="color: #c3e88d;">"/eliminar/{{ persona.id }}/"</span>&gt;Eliminar&lt;/<span style="color: #82aaff;">a</span>&gt;
+               &lt;/<span style="color: #82aaff;">li</span>&gt;
+           {% endfor %}
+       &lt;/<span style="color: #82aaff;">ul</span>&gt;
+   &lt;/<span style="color: #82aaff;">body</span>&gt;
+   &lt;/<span style="color: #82aaff;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgac189be" class="outline-4">
+<h4 id="orgac189be">Plantilla: <code>agregar_persona.html</code></h4>
+<div class="outline-text-4" id="text-orgac189be">
+<div class="org-src-container">
+<pre class="src src-html">   &lt;<span style="color: #c099ff;">!DOCTYPE</span> html&gt;
+   &lt;<span style="color: #82aaff;">html</span>&gt;
+   &lt;<span style="color: #82aaff;">head</span>&gt;
+       &lt;<span style="color: #82aaff;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Agregar Persona</span>&lt;/<span style="color: #82aaff;">title</span>&gt;
+   &lt;/<span style="color: #82aaff;">head</span>&gt;
+   &lt;<span style="color: #82aaff;">body</span>&gt;
+       &lt;<span style="color: #82aaff;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Agregar Persona</span>&lt;/<span style="color: #82aaff;">h1</span>&gt;
+       &lt;<span style="color: #82aaff;">form</span> <span style="color: #ff98a4;">method</span>=<span style="color: #c3e88d;">"POST"</span>&gt;
+           {% csrf_token %}
+           &lt;<span style="color: #82aaff;">label</span>&gt;Nombre:&lt;/<span style="color: #82aaff;">label</span>&gt;
+           &lt;<span style="color: #82aaff;">input</span> <span style="color: #ff98a4;">type</span>=<span style="color: #c3e88d;">"text"</span> <span style="color: #ff98a4;">name</span>=<span style="color: #c3e88d;">"nombre"</span>&gt;
+           &lt;<span style="color: #82aaff;">label</span>&gt;Edad:&lt;/<span style="color: #82aaff;">label</span>&gt;
+           &lt;<span style="color: #82aaff;">input</span> <span style="color: #ff98a4;">type</span>=<span style="color: #c3e88d;">"number"</span> <span style="color: #ff98a4;">name</span>=<span style="color: #c3e88d;">"edad"</span>&gt;
+           &lt;<span style="color: #82aaff;">button</span> <span style="color: #ff98a4;">type</span>=<span style="color: #c3e88d;">"submit"</span>&gt;Agregar&lt;/<span style="color: #82aaff;">button</span>&gt;
+       &lt;/<span style="color: #82aaff;">form</span>&gt;
+   &lt;/<span style="color: #82aaff;">body</span>&gt;
+   &lt;/<span style="color: #82aaff;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdfe670c" class="outline-4">
+<h4 id="orgdfe670c">Plantilla: <code>modificar_persona.html</code></h4>
+<div class="outline-text-4" id="text-orgdfe670c">
+<div class="org-src-container">
+<pre class="src src-html">   &lt;<span style="color: #c099ff;">!DOCTYPE</span> html&gt;
+   &lt;<span style="color: #82aaff;">html</span>&gt;
+   &lt;<span style="color: #82aaff;">head</span>&gt;
+       &lt;<span style="color: #82aaff;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Modificar Persona</span>&lt;/<span style="color: #82aaff;">title</span>&gt;
+   &lt;/<span style="color: #82aaff;">head</span>&gt;
+   &lt;<span style="color: #82aaff;">body</span>&gt;
+       &lt;<span style="color: #82aaff;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Modificar Persona</span>&lt;/<span style="color: #82aaff;">h1</span>&gt;
+       &lt;<span style="color: #82aaff;">form</span> <span style="color: #ff98a4;">method</span>=<span style="color: #c3e88d;">"POST"</span>&gt;
+           {% csrf_token %}
+           &lt;<span style="color: #82aaff;">label</span>&gt;Nombre:&lt;/<span style="color: #82aaff;">label</span>&gt;
+           &lt;<span style="color: #82aaff;">input</span> <span style="color: #ff98a4;">type</span>=<span style="color: #c3e88d;">"text"</span> <span style="color: #ff98a4;">name</span>=<span style="color: #c3e88d;">"nombre"</span> <span style="color: #ff98a4;">value</span>=<span style="color: #c3e88d;">"{{ persona.nombre }}"</span>&gt;
+           &lt;<span style="color: #82aaff;">label</span>&gt;Edad:&lt;/<span style="color: #82aaff;">label</span>&gt;
+           &lt;<span style="color: #82aaff;">input</span> <span style="color: #ff98a4;">type</span>=<span style="color: #c3e88d;">"number"</span> <span style="color: #ff98a4;">name</span>=<span style="color: #c3e88d;">"edad"</span> <span style="color: #ff98a4;">value</span>=<span style="color: #c3e88d;">"{{ persona.edad }}"</span>&gt;
+           &lt;<span style="color: #82aaff;">button</span> <span style="color: #ff98a4;">type</span>=<span style="color: #c3e88d;">"submit"</span>&gt;Modificar&lt;/<span style="color: #82aaff;">button</span>&gt;
+       &lt;/<span style="color: #82aaff;">form</span>&gt;
+   &lt;/<span style="color: #82aaff;">body</span>&gt;
+   &lt;/<span style="color: #82aaff;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org203afc9" class="outline-3">
+<h3 id="org203afc9">Ejecutar el Proyecto</h3>
+<div class="outline-text-3" id="text-org203afc9">
+<ol class="org-ol">
+<li><p>
+Inicia el servidor de desarrollo:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">   python manage.py runserver
+</pre>
+</div></li>
+
+<li>Abre tu navegador en <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a>.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org7768be9" class="outline-3">
+<h3 id="org7768be9">¡Listo!</h3>
+<div class="outline-text-3" id="text-org7768be9">
+<p>
+Con esto, tendrás una aplicación funcional para la gestión de personas utilizando Django y PostgreSQL.
+</p>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Autor: likcos</p>
-<p class="date">Created: 2024-11-22 vie 09:28</p>
+<p class="date">Created: 2024-11-26 mar 11:07</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
