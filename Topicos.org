@@ -4369,6 +4369,194 @@ ft.app(target=main)
 
 
 
+* Servidor en Django
+Django utiliza diferentes tipos de servidores según el entorno de
+desarrollo o producción. 
+
+** Servidor de desarrollo
+Django incluye un servidor de desarrollo ligero, ideal para pruebas rápidas durante el desarrollo.
+
+- **Características**:
+  - Es simple y fácil de usar.
+  - Reinicia automáticamente al detectar cambios en el código.
+  - No está diseñado para producción, ya que no es seguro ni optimizado para manejo de alta concurrencia.
+
+- **Uso**:
+  Para iniciar el servidor de desarrollo, utiliza el siguiente comando:
+  #+begin_src shell
+  python manage.py runserver
+  #+end_src
+
+  Por defecto, el servidor escucha en `http://127.0.0.1:8000`, pero puedes cambiar el puerto o la dirección IP:
+  #+begin_src shell
+  python manage.py runserver 0.0.0.0:8080
+  #+end_src
+
+** Servidor para producción
+En producción, el servidor de desarrollo no es adecuado. Django utiliza servidores más robustos como WSGI o ASGI para manejar aplicaciones en un entorno de producción.
+
+*** Servidores WSGI
+- **Descripción**: WSGI (Web Server Gateway Interface) es el estándar para aplicaciones web en Python.
+- **Opciones populares**:
+  - **Gunicorn**: Rápido, minimalista y fácil de configurar.
+  - **uWSGI**: Altamente configurable y con soporte para múltiples protocolos.
+
+- **Ejemplo de uso con Gunicorn**:
+  #+begin_src shell
+  gunicorn mi_proyecto.wsgi:application
+  #+end_src
+
+*** Servidores ASGI
+- **Descripción**: ASGI (Asynchronous Server Gateway Interface) es una evolución de WSGI que permite manejar solicitudes asincrónicas, como WebSockets.
+- **Opciones populares**:
+  - **Daphne**: Ideal para aplicaciones Django con soporte para WebSockets.
+  - **Hypercorn**: Compatible con HTTP/2 y asincronía.
+
+- **Ejemplo de uso con Daphne**:
+  #+begin_src shell
+  daphne mi_proyecto.asgi:application
+  #+end_src
+
+** Configuración típica para producción
+En un entorno de producción, Django suele combinarse con un servidor web para manejar las solicitudes HTTP y servir archivos estáticos.
+
+*** Servidor web frontend
+- **Opciones comunes**:
+  - **Nginx**: Popular como proxy inverso y servidor de archivos estáticos.
+  - **Apache**: Compatible con mod_wsgi para integrar aplicaciones WSGI.
+
+*** Configuración recomendada
+- Nginx como servidor web frontend.
+- Gunicorn o uWSGI como servidor de aplicaciones backend.
+- Configuración adicional para servir archivos estáticos y de medios.
+
+** Resumen
+- El servidor de desarrollo (`runserver`) es ideal para pruebas y desarrollo local.
+- En producción, se recomienda usar servidores WSGI/ASGI (como Gunicorn, uWSGI o Daphne) en combinación con Nginx o Apache para garantizar seguridad, rendimiento y escalabilidad.
+
+
+*  Modelo-Vista-Template (MVT) en Django
+
+** Qué es el MVT
+El patrón MVT (Modelo-Vista-Template) es una variación del patrón MVC (Modelo-Vista-Controlador). En Django:
+- **Modelo (Model)**: Gestiona la base de datos y la lógica de acceso a los datos.
+- **Vista (View)**: Gestiona la lógica de negocio y responde a las solicitudes del usuario.
+- **Template (Plantilla)**: Define cómo se muestra la información al usuario.
+
+** Crear un proyecto Django
+1. Instalar Django si aún no lo tienes:
+   #+begin_src shell
+   pip install django
+   #+end_src
+
+2. Crear un nuevo proyecto:
+   #+begin_src shell
+   django-admin startproject mi_proyecto
+   cd mi_proyecto
+   #+end_src
+
+3. Crear una aplicación dentro del proyecto:
+   #+begin_src shell
+   python manage.py startapp mi_aplicacion
+   #+end_src
+
+** Configuración inicial
+1. Registrar la nueva aplicación en `settings.py`:
+   #+begin_src python
+   INSTALLED_APPS = [
+       # Otras aplicaciones de Django
+       'mi_aplicacion',
+   ]
+   #+end_src
+
+** Modelo (Model)
+Define el modelo en el archivo `models.py` de tu aplicación:
+   #+begin_src python
+   from django.db import models
+
+   class Articulo(models.Model):
+       titulo = models.CharField(max_length=100)
+       contenido = models.TextField()
+       fecha_publicacion = models.DateField()
+
+       def __str__(self):
+           return self.titulo
+   #+end_src
+
+Ejecuta las migraciones para crear la tabla en la base de datos:
+   #+begin_src shell
+   python manage.py makemigrations
+   python manage.py migrate
+   #+end_src
+
+** Vista (View)
+Crea una vista en `views.py` que obtenga datos del modelo y los pase a un template:
+   #+begin_src python
+   from django.shortcuts import render
+   from .models import Articulo
+
+   def lista_articulos(request):
+       articulos = Articulo.objects.all()
+       return render(request, 'mi_aplicacion/lista_articulos.html', {'articulos': articulos})
+   #+end_src
+
+** Template
+Crea un archivo HTML para mostrar los datos en `templates/mi_aplicacion/lista_articulos.html`:
+   #+begin_src html
+   <!DOCTYPE html>
+   <html>
+   <head>
+       <title>Lista de Artículos</title>
+   </head>
+   <body>
+       <h1>Artículos Publicados</h1>
+       <ul>
+           {% for articulo in articulos %}
+               <li>{{ articulo.titulo }} - Publicado el {{ articulo.fecha_publicacion }}</li>
+           {% endfor %}
+       </ul>
+   </body>
+   </html>
+   #+end_src
+
+** Configuración de la URL
+Añade una URL para la vista en `urls.py` de tu aplicación:
+   #+begin_src python
+   from django.urls import path
+   from . import views
+
+   urlpatterns = [
+       path('articulos/', views.lista_articulos, name='lista_articulos'),
+   ]
+   #+end_src
+
+Incluye las URLs de la aplicación en `urls.py` del proyecto:
+   #+begin_src python
+   from django.contrib import admin
+   from django.urls import path, include
+
+   urlpatterns = [
+       path('admin/', admin.site.urls),
+       path('', include('mi_aplicacion.urls')),
+   ]
+   #+end_src
+
+** Probar el proyecto
+1. Inicia el servidor de desarrollo:
+   #+begin_src shell
+   python manage.py runserver
+   #+end_src
+
+2. Abre tu navegador y ve a `http://127.0.0.1:8000/articulos/`.
+
+** Resumen
+- **Modelo**: Define y gestiona los datos.
+- **Vista**: Procesa las solicitudes y pasa datos al template.
+- **Template**: Renderiza los datos y los muestra al usuario.
+
+
+
+
 *  Código de Flet a Django
 ** Requisitos Previos
 - **Python** y **Django** instalados:
@@ -4561,3 +4749,196 @@ Crea una carpeta =templates= dentro de la aplicación =personas= y agrega los si
 
 ** ¡Listo!
 Con esto, tendrás una aplicación funcional para la gestión de personas utilizando Django y PostgreSQL.
+
+
+
+* Lectura de datos de un sensor con Arduino y Raspberry Pi
+Este apartado proporciona una guía para leer datos de un sensor
+utilizando Arduino, enviarlos a una Raspberry Pi y visualizarlos en
+una interfaz web desarrollada con Django.
+
+** Hardware y software necesarios
+- **Hardware**:
+  - Arduino Uno o similar.
+  - Raspberry Pi (cualquier modelo compatible).
+  - Sensor (por ejemplo, DHT11 o DHT22 para temperatura y humedad).
+  - Cables y protoboard.
+
+- **Software**:
+  - Arduino IDE.
+  - Python 3 en Raspberry Pi.
+  - Django (framework web).
+  - Biblioteca para el sensor (instalada en Arduino y/o Raspberry Pi).
+
+** Paso 1: Configurar Arduino para leer el sensor
+1. Conecta el sensor al Arduino según el esquema del fabricante.
+2. Escribe el código para leer el sensor y enviar los datos por el puerto serie:
+   #+begin_src cpp
+   #include <DHT.h>
+
+   #define DHTPIN 2     // Pin donde está conectado el sensor
+   #define DHTTYPE DHT11 // Cambiar a DHT22 si usas ese modelo
+
+   DHT dht(DHTPIN, DHTTYPE);
+
+   void setup() {
+       Serial.begin(9600);
+       dht.begin();
+   }
+
+   void loop() {
+       float temperatura = dht.readTemperature();
+       float humedad = dht.readHumidity();
+
+       if (isnan(temperatura) || isnan(humedad)) {
+           Serial.println("Error al leer el sensor");
+           return;
+       }
+
+       Serial.print("Temperatura: ");
+       Serial.print(temperatura);
+       Serial.print("°C  Humedad: ");
+       Serial.print(humedad);
+       Serial.println("%");
+
+       delay(2000); // Enviar datos cada 2 segundos
+   }
+   #+end_src
+3. Sube este código al Arduino usando el Arduino IDE.
+
+** Paso 2: Configurar Raspberry Pi para recibir datos
+1. Instala las bibliotecas necesarias en la Raspberry Pi:
+   #+begin_src shell
+   sudo apt update
+   sudo apt install python3-pip
+   pip3 install pyserial
+   #+end_src
+
+2. Crea un script para leer los datos enviados por el Arduino:
+   #+begin_src python
+   import serial
+
+   def leer_datos_serial():
+       puerto = serial.Serial('/dev/ttyUSB0', 9600)  # Ajusta el puerto según corresponda
+       while True:
+           datos = puerto.readline().decode('utf-8').strip()
+           print(datos)
+
+   if __name__ == "__main__":
+       leer_datos_serial()
+   #+end_src
+
+** Paso 3: Configurar Django para mostrar los datos
+1. Crea un nuevo proyecto Django:
+   #+begin_src shell
+   django-admin startproject proyecto_sensor
+   cd proyecto_sensor
+   python manage.py startapp sensor
+   #+end_src
+
+2. Crea un modelo en `sensor/models.py` para almacenar los datos del sensor:
+   #+begin_src python
+   from django.db import models
+
+   class LecturaSensor(models.Model):
+       temperatura = models.FloatField()
+       humedad = models.FloatField()
+       fecha_hora = models.DateTimeField(auto_now_add=True)
+
+       def __str__(self):
+           return f"{self.fecha_hora}: {self.temperatura}°C, {self.humedad}%"
+   #+end_src
+
+3. Realiza las migraciones:
+   #+begin_src shell
+   python manage.py makemigrations
+   python manage.py migrate
+   #+end_src
+
+4. Crea una vista en `sensor/views.py` para mostrar las lecturas:
+   #+begin_src python
+   from django.shortcuts import render
+   from .models import LecturaSensor
+
+   def mostrar_lecturas(request):
+       lecturas = LecturaSensor.objects.all().order_by('-fecha_hora')[:10]
+       return render(request, 'sensor/lecturas.html', {'lecturas': lecturas})
+   #+end_src
+
+5. Configura las URLs en `sensor/urls.py`:
+   #+begin_src python
+   from django.urls import path
+   from . import views
+
+   urlpatterns = [
+       path('', views.mostrar_lecturas, name='mostrar_lecturas'),
+   ]
+   #+end_src
+
+   Y registra las URLs en `proyecto_sensor/urls.py`:
+   #+begin_src python
+   from django.urls import path, include
+
+   urlpatterns = [
+       path('admin/', admin.site.urls),
+       path('', include('sensor.urls')),
+   ]
+   #+end_src
+
+6. Crea una plantilla HTML en `templates/sensor/lecturas.html`:
+   #+begin_src html
+   <!DOCTYPE html>
+   <html>
+   <head>
+       <title>Lecturas del Sensor</title>
+   </head>
+   <body>
+       <h1>Últimas Lecturas</h1>
+       <table>
+           <tr>
+               <th>Fecha y Hora</th>
+               <th>Temperatura (°C)</th>
+               <th>Humedad (%)</th>
+           </tr>
+           {% for lectura in lecturas %}
+           <tr>
+               <td>{{ lectura.fecha_hora }}</td>
+               <td>{{ lectura.temperatura }}</td>
+               <td>{{ lectura.humedad }}</td>
+           </tr>
+           {% endfor %}
+       </table>
+   </body>
+   </html>
+   #+end_src
+
+** Paso 4: Integrar Raspberry Pi con Django
+Crea un script para guardar las lecturas del sensor en la base de datos Django:
+   #+begin_src python
+   import serial
+   import requests
+
+   URL = "http://127.0.0.1:8000/api/guardar_lectura/"  # Cambia según tu configuración
+
+   def enviar_datos():
+       puerto = serial.Serial('/dev/ttyUSB0', 9600)
+       while True:
+           datos = puerto.readline().decode('utf-8').strip()
+           if "Temperatura" in datos and "Humedad" in datos:
+               temperatura, humedad = [float(x.split(": ")[1]) for x in datos.split("  ")]
+               response = requests.post(URL, data={'temperatura': temperatura, 'humedad': humedad})
+               print(response.status_code, response.reason)
+
+   if __name__ == "__main__":
+       enviar_datos()
+   #+end_src
+
+** Probar el sistema completo
+1. Inicia el servidor de desarrollo de Django:
+   #+begin_src shell
+   python manage.py runserver
+   #+end_src
+
+2. Ejecuta el script de la Raspberry Pi para enviar datos.
+
+3. Abre el navegador y ve a `http://127.0.0.1:8000` para ver las lecturas.
