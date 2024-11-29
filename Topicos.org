@@ -4374,12 +4374,14 @@ Django utiliza diferentes tipos de servidores según el entorno de
 desarrollo o producción. 
 
 ** Servidor de desarrollo
-Django incluye un servidor de desarrollo ligero, ideal para pruebas rápidas durante el desarrollo.
+Django incluye un servidor de desarrollo ligero, ideal para pruebas
+rápidas durante el desarrollo.
 
 - **Características**:
   - Es simple y fácil de usar.
   - Reinicia automáticamente al detectar cambios en el código.
-  - No está diseñado para producción, ya que no es seguro ni optimizado para manejo de alta concurrencia.
+  - No está diseñado para producción, ya que no es seguro ni
+    optimizado para manejo de alta concurrencia.
 
 - **Uso**:
   Para iniciar el servidor de desarrollo, utiliza el siguiente comando:
@@ -4387,16 +4389,20 @@ Django incluye un servidor de desarrollo ligero, ideal para pruebas rápidas dur
   python manage.py runserver
   #+end_src
 
-  Por defecto, el servidor escucha en `http://127.0.0.1:8000`, pero puedes cambiar el puerto o la dirección IP:
+  Por defecto, el servidor escucha en `http://127.0.0.1:8000`, pero
+  puedes cambiar el puerto o la dirección IP:
   #+begin_src shell
   python manage.py runserver 0.0.0.0:8080
   #+end_src
 
 ** Servidor para producción
-En producción, el servidor de desarrollo no es adecuado. Django utiliza servidores más robustos como WSGI o ASGI para manejar aplicaciones en un entorno de producción.
+En producción, el servidor de desarrollo no es adecuado. Django
+utiliza servidores más robustos como WSGI o ASGI para manejar
+aplicaciones en un entorno de producción.
 
 *** Servidores WSGI
-- **Descripción**: WSGI (Web Server Gateway Interface) es el estándar para aplicaciones web en Python.
+- **Descripción**: WSGI (Web Server Gateway Interface) es el estándar
+  para aplicaciones web en Python.
 - **Opciones populares**:
   - **Gunicorn**: Rápido, minimalista y fácil de configurar.
   - **uWSGI**: Altamente configurable y con soporte para múltiples protocolos.
@@ -4407,7 +4413,9 @@ En producción, el servidor de desarrollo no es adecuado. Django utiliza servido
   #+end_src
 
 *** Servidores ASGI
-- **Descripción**: ASGI (Asynchronous Server Gateway Interface) es una evolución de WSGI que permite manejar solicitudes asincrónicas, como WebSockets.
+- **Descripción**: ASGI (Asynchronous Server Gateway Interface) es una
+  evolución de WSGI que permite manejar solicitudes asincrónicas, como
+  WebSockets.
 - **Opciones populares**:
   - **Daphne**: Ideal para aplicaciones Django con soporte para WebSockets.
   - **Hypercorn**: Compatible con HTTP/2 y asincronía.
@@ -4418,7 +4426,8 @@ En producción, el servidor de desarrollo no es adecuado. Django utiliza servido
   #+end_src
 
 ** Configuración típica para producción
-En un entorno de producción, Django suele combinarse con un servidor web para manejar las solicitudes HTTP y servir archivos estáticos.
+En un entorno de producción, Django suele combinarse con un servidor
+web para manejar las solicitudes HTTP y servir archivos estáticos.
 
 *** Servidor web frontend
 - **Opciones comunes**:
@@ -4435,12 +4444,14 @@ En un entorno de producción, Django suele combinarse con un servidor web para m
 - En producción, se recomienda usar servidores WSGI/ASGI (como Gunicorn, uWSGI o Daphne) en combinación con Nginx o Apache para garantizar seguridad, rendimiento y escalabilidad.
 
 
-*  Modelo-Vista-Template (MVT) en Django
+* Modelo-Vista-Template (MVT) en Django
 
 ** Qué es el MVT
-El patrón MVT (Modelo-Vista-Template) es una variación del patrón MVC (Modelo-Vista-Controlador). En Django:
+El patrón MVT (Modelo-Vista-Template) es una variación del patrón MVC
+(Modelo-Vista-Controlador). En Django:
 - **Modelo (Model)**: Gestiona la base de datos y la lógica de acceso a los datos.
-- **Vista (View)**: Gestiona la lógica de negocio y responde a las solicitudes del usuario.
+- **Vista (View)**: Gestiona la lógica de negocio y responde a las
+  solicitudes del usuario.
 - **Template (Plantilla)**: Define cómo se muestra la información al usuario.
 
 ** Crear un proyecto Django
@@ -4490,7 +4501,8 @@ Ejecuta las migraciones para crear la tabla en la base de datos:
    #+end_src
 
 ** Vista (View)
-Crea una vista en `views.py` que obtenga datos del modelo y los pase a un template:
+Crea una vista en `views.py` que obtenga datos del modelo y los pase a
+un template:
    #+begin_src python
    from django.shortcuts import render
    from .models import Articulo
@@ -4501,7 +4513,8 @@ Crea una vista en `views.py` que obtenga datos del modelo y los pase a un templa
    #+end_src
 
 ** Template
-Crea un archivo HTML para mostrar los datos en `templates/mi_aplicacion/lista_articulos.html`:
+Crea un archivo HTML para mostrar los datos en
+`templates/mi_aplicacion/lista_articulos.html`:
    #+begin_src html
    <!DOCTYPE html>
    <html>
@@ -4549,15 +4562,32 @@ Incluye las URLs de la aplicación en `urls.py` del proyecto:
 
 2. Abre tu navegador y ve a `http://127.0.0.1:8000/articulos/`.
 
+** Configuración con postrgres
+#+BEGIN_SRC sql
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DATABASE_NAME', 'test'),
+        'USER': os.getenv('DATABASE_USER', 'postgres'),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD', 'postgres'),
+        'HOST': os.getenv('DATABASE_HOST', 'localhost'),
+        'PORT': os.getenv('DATABASE_PORT', '5432'),
+    }
+}
+#+END_SRC
+
+
+
 ** Resumen
 - **Modelo**: Define y gestiona los datos.
 - **Vista**: Procesa las solicitudes y pasa datos al template.
 - **Template**: Renderiza los datos y los muestra al usuario.
 
+laravel modelo vista controlador 
 
 
 
-*  Código de Flet a Django
+* Código de Flet a Django
 ** Requisitos Previos
 - **Python** y **Django** instalados:
   - Instalar Django: ~pip install django~
